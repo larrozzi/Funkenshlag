@@ -21,7 +21,6 @@ using std::to_string;
  {}
 
  string getName() const{
-	 int x = 5;
 	 return name;
  }
 
