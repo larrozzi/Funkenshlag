@@ -21,14 +21,12 @@ using std::to_string;
  {}
 
  string getName() const{
-	 int x = 5;
 	 return name;
  }
 
  void setName(string name) {
 	 this->name = name;
  }
-
 
  int getElektro() const {
 	 return elektro;
