@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D05F861220E488E0089C2B7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D05F860220E488E0089C2B7 /* main.cpp */; };
-		2D05F869220E48D40089C2B7 /* SummaryCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D05F868220E48D40089C2B7 /* SummaryCards.cpp */; };
-		2D05F86C220E49520089C2B7 /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D05F86A220E49520089C2B7 /* PowerPlantCards.cpp */; };
-		2D05F86F220E49F70089C2B7 /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D05F86D220E49F70089C2B7 /* Step3Card.cpp */; };
-		2D05F872220E4B6D0089C2B7 /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D05F870220E4B6D0089C2B7 /* Cards.cpp */; };
+		2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D52213688A0001893D /* SummaryCards.cpp */; };
+		2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D72213688A0001893D /* PowerPlantCards.cpp */; };
+		2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D82213688A0001893D /* Step3Card.cpp */; };
+		2D49C7DD221368B80001893D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7DC221368B80001893D /* main.cpp */; };
+		2D49C7E3221381620001893D /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7E1221381620001893D /* Cards.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2D05F85B220E488D0089C2B7 /* CopyFiles */ = {
+		2D49C7BA22135C780001893D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -27,20 +27,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D05F85D220E488E0089C2B7 /* COMP345Ass1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = COMP345Ass1; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D05F860220E488E0089C2B7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		2D05F867220E48BC0089C2B7 /* SummaryCards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryCards.h; sourceTree = "<group>"; };
-		2D05F868220E48D40089C2B7 /* SummaryCards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SummaryCards.cpp; sourceTree = "<group>"; };
-		2D05F86A220E49520089C2B7 /* PowerPlantCards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PowerPlantCards.cpp; sourceTree = "<group>"; };
-		2D05F86B220E49520089C2B7 /* PowerPlantCards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerPlantCards.h; sourceTree = "<group>"; };
-		2D05F86D220E49F70089C2B7 /* Step3Card.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
-		2D05F86E220E49F70089C2B7 /* Step3Card.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step3Card.h; sourceTree = "<group>"; };
-		2D05F870220E4B6D0089C2B7 /* Cards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
-		2D05F87322110CD40089C2B7 /* Cards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		2D49C7BC22135C780001893D /* COMP345A1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = COMP345A1; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D49C7D22213688A0001893D /* SummaryCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCards.h; sourceTree = "<group>"; };
+		2D49C7D42213688A0001893D /* Step3Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step3Card.h; sourceTree = "<group>"; };
+		2D49C7D52213688A0001893D /* SummaryCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SummaryCards.cpp; sourceTree = "<group>"; };
+		2D49C7D62213688A0001893D /* PowerPlantCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerPlantCards.h; sourceTree = "<group>"; };
+		2D49C7D72213688A0001893D /* PowerPlantCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerPlantCards.cpp; sourceTree = "<group>"; };
+		2D49C7D82213688A0001893D /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
+		2D49C7DC221368B80001893D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		2D49C7E1221381620001893D /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
+		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2D05F85A220E488D0089C2B7 /* Frameworks */ = {
+		2D49C7B922135C780001893D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,106 +50,106 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D05F854220E488D0089C2B7 = {
+		2D49C7B322135C780001893D = {
 			isa = PBXGroup;
 			children = (
-				2D05F85F220E488E0089C2B7 /* COMP345Ass1 */,
-				2D05F85E220E488E0089C2B7 /* Products */,
+				2D49C7BE22135C780001893D /* COMP345A1 */,
+				2D49C7BD22135C780001893D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2D05F85E220E488E0089C2B7 /* Products */ = {
+		2D49C7BD22135C780001893D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D05F85D220E488E0089C2B7 /* COMP345Ass1 */,
+				2D49C7BC22135C780001893D /* COMP345A1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2D05F85F220E488E0089C2B7 /* COMP345Ass1 */ = {
+		2D49C7BE22135C780001893D /* COMP345A1 */ = {
 			isa = PBXGroup;
 			children = (
-				2D05F860220E488E0089C2B7 /* main.cpp */,
-				2D05F87322110CD40089C2B7 /* Cards.h */,
-				2D05F870220E4B6D0089C2B7 /* Cards.cpp */,
-				2D05F867220E48BC0089C2B7 /* SummaryCards.h */,
-				2D05F868220E48D40089C2B7 /* SummaryCards.cpp */,
-				2D05F86B220E49520089C2B7 /* PowerPlantCards.h */,
-				2D05F86A220E49520089C2B7 /* PowerPlantCards.cpp */,
-				2D05F86E220E49F70089C2B7 /* Step3Card.h */,
-				2D05F86D220E49F70089C2B7 /* Step3Card.cpp */,
+				2D49C7DC221368B80001893D /* main.cpp */,
+				2D49C7E2221381620001893D /* Cards.h */,
+				2D49C7E1221381620001893D /* Cards.cpp */,
+				2D49C7D22213688A0001893D /* SummaryCards.h */,
+				2D49C7D52213688A0001893D /* SummaryCards.cpp */,
+				2D49C7D42213688A0001893D /* Step3Card.h */,
+				2D49C7D82213688A0001893D /* Step3Card.cpp */,
+				2D49C7D62213688A0001893D /* PowerPlantCards.h */,
+				2D49C7D72213688A0001893D /* PowerPlantCards.cpp */,
 			);
-			path = COMP345Ass1;
+			path = COMP345A1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2D05F85C220E488D0089C2B7 /* COMP345Ass1 */ = {
+		2D49C7BB22135C780001893D /* COMP345A1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D05F864220E488E0089C2B7 /* Build configuration list for PBXNativeTarget "COMP345Ass1" */;
+			buildConfigurationList = 2D49C7C322135C780001893D /* Build configuration list for PBXNativeTarget "COMP345A1" */;
 			buildPhases = (
-				2D05F859220E488D0089C2B7 /* Sources */,
-				2D05F85A220E488D0089C2B7 /* Frameworks */,
-				2D05F85B220E488D0089C2B7 /* CopyFiles */,
+				2D49C7B822135C780001893D /* Sources */,
+				2D49C7B922135C780001893D /* Frameworks */,
+				2D49C7BA22135C780001893D /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = COMP345Ass1;
-			productName = COMP345Ass1;
-			productReference = 2D05F85D220E488E0089C2B7 /* COMP345Ass1 */;
+			name = COMP345A1;
+			productName = COMP345A1;
+			productReference = 2D49C7BC22135C780001893D /* COMP345A1 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2D05F855220E488D0089C2B7 /* Project object */ = {
+		2D49C7B422135C780001893D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Adelekan Faruq Aliu";
 				TargetAttributes = {
-					2D05F85C220E488D0089C2B7 = {
+					2D49C7BB22135C780001893D = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = 2D05F858220E488D0089C2B7 /* Build configuration list for PBXProject "COMP345Ass1" */;
+			buildConfigurationList = 2D49C7B722135C780001893D /* Build configuration list for PBXProject "COMP345A1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 2D05F854220E488D0089C2B7;
-			productRefGroup = 2D05F85E220E488E0089C2B7 /* Products */;
+			mainGroup = 2D49C7B322135C780001893D;
+			productRefGroup = 2D49C7BD22135C780001893D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D05F85C220E488D0089C2B7 /* COMP345Ass1 */,
+				2D49C7BB22135C780001893D /* COMP345A1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2D05F859220E488D0089C2B7 /* Sources */ = {
+		2D49C7B822135C780001893D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D05F86C220E49520089C2B7 /* PowerPlantCards.cpp in Sources */,
-				2D05F869220E48D40089C2B7 /* SummaryCards.cpp in Sources */,
-				2D05F861220E488E0089C2B7 /* main.cpp in Sources */,
-				2D05F86F220E49F70089C2B7 /* Step3Card.cpp in Sources */,
-				2D05F872220E4B6D0089C2B7 /* Cards.cpp in Sources */,
+				2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */,
+				2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */,
+				2D49C7DD221368B80001893D /* main.cpp in Sources */,
+				2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */,
+				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2D05F862220E488E0089C2B7 /* Debug */ = {
+		2D49C7C122135C780001893D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		2D05F863220E488E0089C2B7 /* Release */ = {
+		2D49C7C222135C780001893D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -260,7 +260,7 @@
 			};
 			name = Release;
 		};
-		2D05F865220E488E0089C2B7 /* Debug */ = {
+		2D49C7C422135C780001893D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -268,7 +268,7 @@
 			};
 			name = Debug;
 		};
-		2D05F866220E488E0089C2B7 /* Release */ = {
+		2D49C7C522135C780001893D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -279,25 +279,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D05F858220E488D0089C2B7 /* Build configuration list for PBXProject "COMP345Ass1" */ = {
+		2D49C7B722135C780001893D /* Build configuration list for PBXProject "COMP345A1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D05F862220E488E0089C2B7 /* Debug */,
-				2D05F863220E488E0089C2B7 /* Release */,
+				2D49C7C122135C780001893D /* Debug */,
+				2D49C7C222135C780001893D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D05F864220E488E0089C2B7 /* Build configuration list for PBXNativeTarget "COMP345Ass1" */ = {
+		2D49C7C322135C780001893D /* Build configuration list for PBXNativeTarget "COMP345A1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D05F865220E488E0089C2B7 /* Debug */,
-				2D05F866220E488E0089C2B7 /* Release */,
+				2D49C7C422135C780001893D /* Debug */,
+				2D49C7C522135C780001893D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2D05F855220E488D0089C2B7 /* Project object */;
+	rootObject = 2D49C7B422135C780001893D /* Project object */;
 }
