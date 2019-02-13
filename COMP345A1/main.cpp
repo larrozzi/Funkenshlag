@@ -17,14 +17,15 @@ using std::vector;
 // method prototypes
 // void Shuffle(); // prototype of shuffle method
 vector<PowerPlantCards>createPowerPlantCards();
-void printCards(vector<PowerPlantCards>cards);
+// void printCards(vector<PowerPlantCards>cards);
 
 
 int main()
 {
     vector<PowerPlantCards>myV;
     myV = createPowerPlantCards();
-    printCards(myV);
+    
+    PowerPlantCards::printCards(myV);
     
     return 0;
 }
@@ -37,6 +38,7 @@ int main()
  }
  */
 
+/*
 // method to prints the PowerPlantCards
 void printCards(vector<PowerPlantCards>cards)
 {
@@ -44,6 +46,7 @@ void printCards(vector<PowerPlantCards>cards)
         std::cout << cards[i] << std::endl;
     }
 }
+*/
 
 // method to create the PowerPlantCards
 vector<PowerPlantCards>createPowerPlantCards()

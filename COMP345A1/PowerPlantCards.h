@@ -44,8 +44,8 @@ public:
     int getCapacity() const;
     int getPowerHouse() const;
     
-    //static vector<PowerPlantCards> createCards();
-    //static void printCards(vector<PowerPlantCards>vector);
+    //static vector<PowerPlantCards>createPowerPlantCards();
+    static void printCards(vector<PowerPlantCards>vector);
     
     // overloading the output operator
     friend std::ostream& operator << (std::ostream& outs, const PowerPlantCards& card);

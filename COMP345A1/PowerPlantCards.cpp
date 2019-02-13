@@ -43,11 +43,11 @@ std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card)
     return outs;
 }
 
-/*
-// method to create the PowerPlantCards
-vector<PowerPlantCards>createCards()
+
+/*// method to create the PowerPlantCards
+vector<PowerPlantCards>createPowerPlantCards()
 {
-    vector<PowerPlantCards>myCards(43);
+    vector<PowerPlantCards>myCards;
     
     // lowest card value
     myCards.push_back(PowerPlantCards(3,2,4,1));
@@ -102,14 +102,13 @@ vector<PowerPlantCards>createCards()
     return myCards;
 }*/
 
-/*
 // method to prints the PowerPlantCards
 void PowerPlantCards::printCards(vector<PowerPlantCards>vector)
 {
     for (int i =0; i < vector.size(); i++) {
          std::cout << vector[i] << std::endl;
     }
-}*/
+}
 
 
 
