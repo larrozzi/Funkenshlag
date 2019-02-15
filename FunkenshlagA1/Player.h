@@ -3,7 +3,7 @@
 // included dependencies
 #include "House.h"
 
-#include "PowerPlantCard.h"
+#include "PowerPlantCards.h"
 #include "Resource.h"
 
 #include "ResourceMarket.h"
@@ -17,17 +17,17 @@ using std::vector;
 
 class Player
 {
- private:
+private:
 	string name;
 	int elektro = 50;
-	vector<Resource> resources;
+	//vector<Resource> resources;
 	vector <shared_ptr<House>> houses;
 	shared_ptr<HouseColor> color;
 	vector<shared_ptr<PowerPlant>> powerplants;
 
- public:
+public:
 	Player();
-	Player(string name, shared_ptr<HouseColor> color,int electro);
+	Player(string name, shared_ptr<HouseColor> color, int electro);
 	~Player();
 
 	string getName() const;
@@ -49,8 +49,10 @@ class Player
 
 	bool BuyResources(ResourceMarket&, shared_ptr<PowerPlant>, Resource, int);
 
+	bool BuildHouse(shared_ptr<House> house);
+
 	void ShowGameStatus() const;
 
 	inline std::ostream& operator<<(std::ostream& stream, const Player& player);
-		
+
 };
