@@ -13,8 +13,8 @@ using std::to_string;
  Player :: Player()
 {}
 
- Player::Player(string name, shared_ptr<HouseColor> color, int elektro) :
-	 name{ name }, elektro{ elektro }, color{ color }
+ Player::Player(string name, shared_ptr<HouseColor> color, int elektro) 
+	 : name{ name }, elektro{ elektro }, color{ color }
  {}
 
  Player ::~Player()
@@ -27,7 +27,6 @@ using std::to_string;
  void setName(string name) {
 	 this->name = name;
  }
-
 
  int getElektro() const {
 	 return elektro;
