@@ -1,4 +1,4 @@
-#include CityNode.h
+#include "CityNode.h"
 #include <iostream>
 #include <cctype>
 #include <cstdlib>
@@ -6,7 +6,7 @@
 
 using namespace std;
 
-CityNode::CityNode();
+CityNode::CityNode() {}
 
 CityNode::CityNode()
 {}
