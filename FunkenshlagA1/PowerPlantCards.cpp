@@ -8,15 +8,16 @@
 
 #include <iostream>
 #include <vector>
-#include <array>
 #include "PowerPlantCards.h"
+
 using std::vector;
 
-enum ResourceType { COAL, OIL, GARBAGE, URANIUM, ECOFUSION };
+//enum ResourceType { COAL, OIL, GARBAGE, URANIUM, ECOFUSION };
 
 // constructors
 PowerPlantCards::PowerPlantCards() {}
 PowerPlantCards::PowerPlantCards(int cardValue, int numbResource, int capacity, int powerHouse) : cardValue(cardValue), numbResource(numbResource), capacity(2*numbResource), powerHouse(powerHouse) {/*NOTHING*/}
+// destructor
 PowerPlantCards::~PowerPlantCards() {}
 
 // setters
@@ -31,21 +32,8 @@ inline int PowerPlantCards::getNumbResource() const { return numbResource; }
 inline int PowerPlantCards::getCapacity() const { return 2*numbResource; }
 inline int PowerPlantCards::getPowerHouse() const { return powerHouse; }
 
-// overloading output stream operator
-std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card)
-{
-    outs << "Card Value: " << card.getCardValue() << "\t\t Number of Resources: " << card.getNumbResource()
-    << "\t\t Max Resource Capacity: " << card.getCapacity() << "\t\t PowerHouse: " << card.getPowerHouse();
-    
-    // if the resource size > 0
-    // print out the resource name and its cost
-    
-    return outs;
-}
-
-
-/*// method to create the PowerPlantCards
-vector<PowerPlantCards>createPowerPlantCards()
+// method to create the PowerPlantCards
+vector<PowerPlantCards>PowerPlantCards::createPowerPlantCards()
 {
     vector<PowerPlantCards>myCards;
     
@@ -100,16 +88,23 @@ vector<PowerPlantCards>createPowerPlantCards()
     // highest card value
     
     return myCards;
-}*/
+}
 
 // method to prints the PowerPlantCards
-void PowerPlantCards::printCards(vector<PowerPlantCards>vector)
+void PowerPlantCards::printPPCards(vector<PowerPlantCards>vector)
 {
-    for (int i =0; i < vector.size(); i++) {
+    for (int i = 0; i < vector.size(); i++) {
          std::cout << vector[i] << std::endl;
     }
 }
 
-
-
-
+// overloading output stream operator
+std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card)
+{
+    outs << "Card Value: " << card.getCardValue() << "\t\t Number of Resources: " << card.getNumbResource()
+    << "\t\t Max Resource Capacity: " << card.getCapacity() << "\t\t PowerHouse: " << card.getPowerHouse();
+    
+    // if the resource size > 0
+    // print out the resource name and its cost
+    return outs;
+}

@@ -27,7 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D49C7BC22135C780001893D /* COMP345A1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = COMP345A1; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D49C7BC22135C780001893D /* FunkenshlagA1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunkenshlagA1; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D49C7D22213688A0001893D /* SummaryCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCards.h; sourceTree = "<group>"; };
 		2D49C7D42213688A0001893D /* Step3Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step3Card.h; sourceTree = "<group>"; };
 		2D49C7D52213688A0001893D /* SummaryCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SummaryCards.cpp; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		2D49C7B322135C780001893D = {
 			isa = PBXGroup;
 			children = (
-				2D49C7BE22135C780001893D /* COMP345A1 */,
+				2D49C7BE22135C780001893D /* FunkenshlagA1 */,
 				2D49C7BD22135C780001893D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,12 +61,12 @@
 		2D49C7BD22135C780001893D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D49C7BC22135C780001893D /* COMP345A1 */,
+				2D49C7BC22135C780001893D /* FunkenshlagA1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2D49C7BE22135C780001893D /* COMP345A1 */ = {
+		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
 				2D49C7DC221368B80001893D /* main.cpp */,
@@ -79,15 +79,15 @@
 				2D49C7D62213688A0001893D /* PowerPlantCards.h */,
 				2D49C7D72213688A0001893D /* PowerPlantCards.cpp */,
 			);
-			path = COMP345A1;
+			path = FunkenshlagA1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2D49C7BB22135C780001893D /* COMP345A1 */ = {
+		2D49C7BB22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D49C7C322135C780001893D /* Build configuration list for PBXNativeTarget "COMP345A1" */;
+			buildConfigurationList = 2D49C7C322135C780001893D /* Build configuration list for PBXNativeTarget "FunkenshlagA1" */;
 			buildPhases = (
 				2D49C7B822135C780001893D /* Sources */,
 				2D49C7B922135C780001893D /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = COMP345A1;
+			name = FunkenshlagA1;
 			productName = COMP345A1;
-			productReference = 2D49C7BC22135C780001893D /* COMP345A1 */;
+			productReference = 2D49C7BC22135C780001893D /* FunkenshlagA1 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2D49C7B722135C780001893D /* Build configuration list for PBXProject "COMP345A1" */;
+			buildConfigurationList = 2D49C7B722135C780001893D /* Build configuration list for PBXProject "FunkenshlagA1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D49C7BB22135C780001893D /* COMP345A1 */,
+				2D49C7BB22135C780001893D /* FunkenshlagA1 */,
 			);
 		};
 /* End PBXProject section */
@@ -279,7 +279,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D49C7B722135C780001893D /* Build configuration list for PBXProject "COMP345A1" */ = {
+		2D49C7B722135C780001893D /* Build configuration list for PBXProject "FunkenshlagA1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D49C7C122135C780001893D /* Debug */,
@@ -288,7 +288,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D49C7C322135C780001893D /* Build configuration list for PBXNativeTarget "COMP345A1" */ = {
+		2D49C7C322135C780001893D /* Build configuration list for PBXNativeTarget "FunkenshlagA1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D49C7C422135C780001893D /* Debug */,

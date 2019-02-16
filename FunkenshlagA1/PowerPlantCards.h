@@ -10,8 +10,8 @@
 
 #include <iostream>
 #include <stdio.h>
-#include "Cards.h"
 #include <vector>
+#include "Cards.h"
 
 using std::vector;
 
@@ -44,10 +44,9 @@ public:
     int getCapacity() const;
     int getPowerHouse() const;
     
-    //static vector<PowerPlantCards>createPowerPlantCards();
-    static void printCards(vector<PowerPlantCards>vector);
+    static vector<PowerPlantCards>createPowerPlantCards();
+    static void printPPCards(vector<PowerPlantCards>vector);
     
     // overloading the output operator
     friend std::ostream& operator << (std::ostream& outs, const PowerPlantCards& card);
-    
 };
