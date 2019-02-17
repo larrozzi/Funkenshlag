@@ -1,33 +1,32 @@
 #pragma once
 
 // included dependencies
+#include "CityNode.h"
 #include "House.h"
-
 #include "PowerPlantCards.h"
 #include "Resource.h"
-
 #include "ResourceMarket.h"
 #include <memory>
 #include <vector>
+#include <iostream>
 
-using std::shared_ptr;
+using std::auto_ptr;
 using std::string;
 using std::vector;
-
 
 class Player
 {
 private:
 	string name;
 	int elektro = 50;
-	//vector<Resource> resources;
-	vector <shared_ptr<House>> houses;
-	shared_ptr<HouseColor> color;
-	vector<shared_ptr<PowerPlant>> powerplants;
+	vector<Resource> resources;
+	vector <House> houses;
+	//HouseColor color;
+	vector<PowerPlantCards> myPowerPlants;
 
 public:
 	Player();
-	Player(string name, shared_ptr<HouseColor> color, int electro);
+	Player(string name,  int electro);
 	~Player();
 
 	string getName() const;
@@ -36,23 +35,24 @@ public:
 	int getElektro() const;
 	void setElektro(int elektro);
 
-	vector <shared_ptr<House>> getHouses();
-	vector <shared_ptr<PowerPlant>> getPowerplant();
+	void printHouses();
+	vector <PowerPlantCards> getPowerplant();
 	vector <Resource> getRecources();
 
-	bool bidonPowerPlant(cardDeck&);
-	bool AddPowerPlant(<shared_ptr<PowerPlant>> powerplants);
-	void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
+	bool bidonPowerPlant(cardDeck& cardDeck, int position, int price);
+
+	bool AddPowerPlant(PowerPlantCards powerplant);
+	void ReplacePowerPlant(PowerPlantCards, int);
 	int getHighestPowerPlant();
 
-	shared_ptr<HouseColor> const& getColor() const;
+	//auto_ptr<HouseColor> const& getColor() const;
 
-	bool BuyResources(ResourceMarket&, shared_ptr<PowerPlant>, Resource, int);
-
-	bool BuildHouse(shared_ptr<House> house);
-
-	void ShowGameStatus() const;
-
-	inline std::ostream& operator<<(std::ostream& stream, const Player& player);
+	bool BuyResources(ResourceMarket&, PowerPlantCards&, Resource, int);
+	
+	bool BuildHouse(CityNode& city, House& house);
+	//bool BuildHouse(CityNode& city, auto_ptr <House> house);
+	void OutputPlayerStatus() const;
 
 };
+
+inline std::ostream& operator <<(std::ostream& stream, const Player& player);

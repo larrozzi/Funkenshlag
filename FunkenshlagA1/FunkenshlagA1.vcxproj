@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cards.cpp" />
     <ClCompile Include="CityNode.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -124,6 +125,7 @@
     <ClCompile Include="ResourceMarket.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cards.h" />
     <ClInclude Include="CityNode.h" />
     <ClInclude Include="House.h" />
     <ClInclude Include="Player.h" />
