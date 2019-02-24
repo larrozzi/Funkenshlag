@@ -12,7 +12,6 @@
 
 using std::vector;
 
-
 // constructors
 PowerPlantCards::PowerPlantCards() {}
 PowerPlantCards::PowerPlantCards(int cardValue, int numbResource, ResourceType resourceType, int capacity, int powerHouse) : cardValue(cardValue), numbResource(numbResource), resourceType(resourceType), capacity(2*numbResource), powerHouse(powerHouse) {/*NOTHING*/}
@@ -92,10 +91,11 @@ vector<PowerPlantCards>PowerPlantCards::createPowerPlantCards()
 }
 
 // method to prints the PowerPlantCards
-void PowerPlantCards::printPPCards(vector<PowerPlantCards>vector)
+void PowerPlantCards::printPPCards(vector<PowerPlantCards>ppCards)
 {
-    for (int i = 0; i < vector.size(); i++) {
-         std::cout << vector[i] << std::endl;
+    std::vector<PowerPlantCards>::iterator show; // create a vector iterator
+    for (show = ppCards.begin(); show != ppCards.end(); show++) {
+        std::cout << *show << std::endl;
     }
 }
 
@@ -113,7 +113,6 @@ std::ostream& operator<<(std::ostream& outs, const ResourceType& resource)
             PROCESS_VAL(ECOFUSION);
     }
 #undef PROCESS_VAL
-    
     return outs << s;
 }
 

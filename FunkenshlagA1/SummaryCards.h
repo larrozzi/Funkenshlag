@@ -18,22 +18,23 @@ using std::vector;
 class SummaryCards : public Cards
 {
     private:
-        std::string name;
+        std::string owner;
         std::string cardInfo;
     
     public:
         SummaryCards();
-        SummaryCards(std::string name, std::string cardInfo);
+        SummaryCards(std::string owner);
+        SummaryCards(std::string owner, std::string cardInfo);
         ~SummaryCards();
     
     // setters
-    void setName(std::string name);
+    void setOwner(std::string owner);
     void setCardInfo(std::string cardInfo);
     // getters
-    std::string getName() const;
+    std::string getOwner() const;
     std::string getCardInfo() const;
 
-    // methods
+    // methods declaration
     static vector<SummaryCards>createSummaryCards();
     static void printSummaryCards(vector<SummaryCards>vector);
     

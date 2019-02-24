@@ -46,6 +46,7 @@ public:
     int getCapacity() const;
     int getPowerHouse() const;
     
+    // methods declaration
     static vector<PowerPlantCards>createPowerPlantCards();
     static void printPPCards(vector<PowerPlantCards>vector);
     

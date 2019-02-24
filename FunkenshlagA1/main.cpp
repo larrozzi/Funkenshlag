@@ -22,33 +22,35 @@ void Shuffle(vector<PowerPlantCards>&cards); // prototype of shuffle method
 
 int main()
 {
-    // Testing methods
-    vector<PowerPlantCards>myV;
-    // holds the card vector
-    std::cout << "UnShuffled PowerPlantCards:" << std::endl;
-    myV = PowerPlantCards::createPowerPlantCards();
-    // prints the card info
-    PowerPlantCards::printPPCards(myV);
+    /*** Testing methods ***/
     
-    // shuffles the cards
+    // Creating the PowerPlantCards
+    vector<PowerPlantCards> myV;
+    std::cout << "\nUnShuffled PowerPlantCards:" << std::endl;
+    myV = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
+    PowerPlantCards::printPPCards(myV);    // prints the PowerPlantCards info
+
+    // Shuffles the PowerPlantCards
     Shuffle(myV);
     std::cout << "\nShuffled PowerPlantCards:" << std::endl;
     PowerPlantCards::printPPCards(myV);
     
-    /*
+    // Creating the SummaryCards
+    std::cout << "\nSummaryCards: " << std::endl;
     vector<SummaryCards> sum;
-    sum = SummaryCards::createSummaryCards();
-    SummaryCards::printSummaryCards(sum);
-    */
+    sum = SummaryCards::createSummaryCards(); // holds the create SummaryCards
+    SummaryCards::printSummaryCards(sum); // print the SummaryCards info
+    
+    // Creating Step3Card
+    Step3Card step3;
+    std::cout << step3 << std::endl;
+    
     return 0;
 }
 
- // method that shuffles the cards
+ // This method shuffles the PowerPlantCards
  void Shuffle(vector<PowerPlantCards>&cards)
  {
-     std::srand((unsigned)std::time(0));
+     std::srand(unsigned (std::time(0)));
      std::random_shuffle(cards.begin(), cards.end());
  }
-
-
-

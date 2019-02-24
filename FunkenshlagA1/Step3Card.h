@@ -9,18 +9,23 @@
 #pragma once
 
 #include <stdio.h>
+#include <string>
 #include "Cards.h"
+
 
 class Step3Card : public Cards
 {
 private:
-    int step;
+    std::string step;
     
 public:
     Step3Card();
     ~Step3Card();
     
     // setter/getter
-    void setStep3Card(int step);
-    int getStep3Card() const;
+    void setStep3Card(std::string step);
+    std::string getStep3Card() const;
+    
+    // overloading output stream operator for Step3Card
+    friend std::ostream& operator<<(std::ostream& outs, const Step3Card& card);
 };
