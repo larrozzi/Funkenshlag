@@ -17,8 +17,10 @@
 
 using std::vector;
 
-// method prototypes
-void Shuffle(vector<PowerPlantCards>&cards); // prototype of shuffle method
+// function prototypes
+int myrandom (int i); // random generator function
+void Shuffle(vector<PowerPlantCards>&cards); // shuffle method
+
 
 int main()
 {
@@ -48,9 +50,12 @@ int main()
     return 0;
 }
 
+// random generator function
+int myrandom (int i) {
+    return std::rand()%i;
+}
  // This method shuffles the PowerPlantCards
- void Shuffle(vector<PowerPlantCards>&cards)
- {
+void Shuffle(vector<PowerPlantCards>&cards) {
      std::srand(unsigned (std::time(0)));
-     std::random_shuffle(cards.begin(), cards.end());
- }
+     std::random_shuffle(cards.begin(), cards.end(), myrandom);
+}
