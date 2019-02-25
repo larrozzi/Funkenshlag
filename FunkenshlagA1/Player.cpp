@@ -156,11 +156,11 @@ int main()
 
 		//cout << player1;
 	
-	cout << "Hello and Welcome";
+	cout << "Hello and Welcome\n";
 
 	/*Player PL1 = new Player("Yassine", 50, "blue");
 
-	OutputPlayerStatus();*/
+	PL1.OutputPlayerStatus();*/
 
 	system("pause");
 	return 0;
