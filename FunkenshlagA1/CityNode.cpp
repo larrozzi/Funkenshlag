@@ -25,6 +25,7 @@ map<string, bool> CityNode::getOwners()
 }
 bool CityNode::getUsed()
 {
+	bool activated=false;// error prev
 	return activated;
 }
 

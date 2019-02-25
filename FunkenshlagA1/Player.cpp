@@ -8,7 +8,7 @@ using std::string;
 using std::cout;
 using std::endl;
 using std::cin;
-
+using std::to_string;
 
 Player::Player()
 {
@@ -40,14 +40,17 @@ inline void Player::setElektro(int elektro) {
 void Player::OutputPlayerStatus() const {
 	string separator = "---------------------------------------------------------------------------------\n";
 	string PlayerStatus;
-	string msg = separator + name + " has" + to_string(getElektro()) + "Elektros" + "\n";
+	string msg = separator + name + " has the following items \n" + "\t"+ to_string(getElektro()) + "Elektros" + "\n";
 
 	//print houses 
-	PlayerStatus += "Here are the cities he controls: ";
-	for (int i = 0; i < houses.size(); i++)
-		PlayerStatus += houses[i].getName() + ",";
-	PlayerStatus += "\n";
+	PlayerStatus += "He owns "+ houses.size();
+	PlayerStatus += " of color " +_color;
+
 	cout << PlayerStatus;
+	
+	//for (int i = 0; i < houses.size(); i++)
+		//PlayerStatus += houses[it].getColor() + ",";
+	
 
 	//	//print powerplants 
 	//PlayerStatus += msg + " and owns the following Power plants: ";
@@ -143,16 +146,21 @@ void Player::OutputPlayerStatus() const {
 
 
 
-inline std::ostream& operator<<(std::ostream& stream, const Player& player) {
-	stream << player.OutputPlayerStatus();
-}
+//inline std::ostream& operator<<(std::ostream& stream, const Player& player) {
+//	stream << player.OutputPlayerStatus();
+//}
 
 int main()
 {
 	//Player player1= new Player(YL, "White", 50);
 
 		//cout << player1;
-	cout << "Hello";
+	
+	cout << "Hello and Welcome";
+
+	/*Player PL1 = new Player("Yassine", 50, "blue");
+
+	OutputPlayerStatus();*/
 
 	system("pause");
 	return 0;

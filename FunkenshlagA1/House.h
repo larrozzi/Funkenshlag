@@ -8,5 +8,5 @@ public:
 	House();
 	House(std::string color);
 	std::string getColor();
-
+	~House();
 };
