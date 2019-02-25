@@ -1,0 +1,16 @@
+#include CityNode.cpp
+#include Map.h
+#include <iostream>
+#include <cctype>
+#include <cstdlib>
+#include "CityNode.h"
+
+using namespace std;
+
+Map::Map();
+
+Map::Map()
+{}
+Map::Map(vector<cityNode> m)
+	: map{ m }
+{}
