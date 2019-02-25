@@ -1,8 +1,12 @@
 #pragma once
-class House
-{
+#include <string>
+
+class House {
+private:
+	std::string color;
 public:
 	House();
-	~House();
-};
+	House(std::string color);
+	std::string getColor();
 
+};
