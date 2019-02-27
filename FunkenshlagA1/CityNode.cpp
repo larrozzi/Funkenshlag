@@ -11,49 +11,63 @@ using namespace std;
 CityNode::CityNode()
 {}
 
+CityNode::CityNode(string n, bool u, vector<int> e, Resource c[])
+	: name{ n }, used{ u }, edges{ e }, cost{c}
+{}
+
 CityNode::CityNode(string n, map<string, bool> o, bool u, vector<int> e) 
-	: name{ n }, ownedBy{ o }, used{ u },edges{ e }
+    : name{ n }, ownedBy{ o }, used{ u },edges{ e }
 {}
 
 string CityNode::getName()
 {
-	return name;
+    return name;
 }
 map<string, bool> CityNode::getOwners()
 {
-	return ownedBy;
+    return ownedBy;
 }
 bool CityNode::getUsed()
 {
-	bool activated=false;// error prev
-	return activated;
+    bool activated=false;// error prev
+    return activated;
 }
 
-vector<int> CityNode::getEdges()
+vector<string> CityNode::getEdges()
 {
-	return edges;
+    return edges;
+}
+
+vector<Resource> CityNode::getCost()
+{
+	return cost;
 }
 
 void CityNode::setName(string n)
 {
-	name = n;
+    name = n;
 }
 
 void CityNode::setOwners(map<string, bool> o)
 {
-	ownedBy = o;
+    ownedBy = o;
 }
 
 void CityNode::use()
 {
-	used = true;
+    used = true;
 }
 void CityNode::unUse()
 {
-	used = false;
+    used = false;
 }
-void CityNode::setEdges(vector<int> e)
+void CityNode::setEdges(vector<string> e)
 {
-	edges = e;
+    edges = e;
+}
+
+void CityNode::setCost(vector<Resource> c)
+{
+	cost = c;
 }
 

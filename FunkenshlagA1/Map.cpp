@@ -7,5 +7,18 @@
 
 using namespace std;
 
-Map::Map() {}
-Map::Map(vector<CityNode> m): map{ m } {}
+Map::Map();
+
+Map::Map()
+{}
+Map::Map(vector<cityNode> m)
+	: map{ m }
+{}
+Map::getMap()
+{
+	return map;
+}
+Map::setMap(vector<CityNode> cities)
+{
+	map = cities;
+}

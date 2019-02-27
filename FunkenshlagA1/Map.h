@@ -26,6 +26,7 @@ public:
 	//getters
 
 	vector<CityNode> getMap();
+	void setMap(vector<CityNode> cities);
 
 
 };
