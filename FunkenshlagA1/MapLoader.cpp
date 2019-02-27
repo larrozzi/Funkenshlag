@@ -26,6 +26,7 @@ void MapLoader::readMap(string f)
 	exec();
 }
 
+// where all the magic happens
 void MapLoader::exec()
 {
 	string cityString;
