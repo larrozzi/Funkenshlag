@@ -1,10 +1,6 @@
 #pragma once
 
-#include "House.h"
 #include <map> 
-#include "PowerPlantCards.h"
-#include "Resource.h"
-#include "ResourceMarket.h"
 #include <memory>
 #include <vector>
 
