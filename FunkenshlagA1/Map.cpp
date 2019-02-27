@@ -1,5 +1,5 @@
-#include CityNode.cpp
-#include Map.h
+#include "CityNode.h"
+#include "Map.h"
 #include <iostream>
 #include <cctype>
 #include <cstdlib>
@@ -7,10 +7,5 @@
 
 using namespace std;
 
-Map::Map();
-
-Map::Map()
-{}
-Map::Map(vector<cityNode> m)
-	: map{ m }
-{}
+Map::Map() {}
+Map::Map(vector<CityNode> m): map{ m } {}

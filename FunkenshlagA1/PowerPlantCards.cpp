@@ -14,21 +14,21 @@ using std::vector;
 
 // constructors
 PowerPlantCards::PowerPlantCards() {}
-PowerPlantCards::PowerPlantCards(int cardValue, int numbResource, ResourceType resourceType, int capacity, int powerHouse) : cardValue(cardValue), numbResource(numbResource), resourceType(resourceType), capacity(2*numbResource), powerHouse(powerHouse) {/*NOTHING*/}
+PowerPlantCards::PowerPlantCards(int cardValue, int numbResource, Resource resourceType, int capacity, int powerHouse) : cardValue(cardValue), numbResource(numbResource), resourceType(resourceType), capacity(2*numbResource), powerHouse(powerHouse) {/*NOTHING*/}
 // destructor
 PowerPlantCards::~PowerPlantCards() {}
 
 // setters
 void PowerPlantCards::setCardValue(int cardValue) { this->cardValue = cardValue; }
 void PowerPlantCards::setResource(int numbResource) { this->numbResource = numbResource; }
-void PowerPlantCards::setResourceType(ResourceType resourceType) { this->resourceType = resourceType; }
+void PowerPlantCards::setResourceType(Resource resourceType) { this->resourceType = resourceType; }
 void PowerPlantCards::setCapacity(int capacity) { this->capacity = capacity; }
 void PowerPlantCards::setPowerHouse(int powerHouse) { this->powerHouse = powerHouse; }
 
 // getters
 inline int PowerPlantCards::getCardValue() const { return cardValue; }
 inline int PowerPlantCards::getNumbResource() const { return numbResource; }
-inline ResourceType PowerPlantCards::getResourceType() const { return resourceType; }
+inline Resource PowerPlantCards::getResourceType() const { return resourceType; }
 inline int PowerPlantCards::getCapacity() const { return 2*numbResource; }
 inline int PowerPlantCards::getPowerHouse() const { return powerHouse; }
 

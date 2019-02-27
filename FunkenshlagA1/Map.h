@@ -2,9 +2,10 @@
 
 #include "House.h"
 #include <map> 
-#include "PowerPlantCard.h"
+#include "PowerPlantCards.h"
 #include "Resource.h"
 #include "ResourceMarket.h"
+#include "CityNode.h"
 #include <memory>
 #include <vector>
 
