@@ -23,10 +23,7 @@ public:
 	Map();
 	Map(vector<CityNode> m);
 
-	//getters
-
-	vector<CityNode> getMap();
+	//getter/ setter
+	vector<CityNode> getMap() const;
 	void setMap(vector<CityNode> cities);
-
-
 };

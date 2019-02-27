@@ -39,12 +39,15 @@ vector<SummaryCards>SummaryCards::createSummaryCards()
     Player owner;
     
     mySumCards.push_back(SummaryCards(owner));
-    /*mySumCards.push_back(SummaryCards("Player 1"));
+    
+    /*
+    mySumCards.push_back(SummaryCards("Player 1"));
     mySumCards.push_back(SummaryCards("Player 2"));
     mySumCards.push_back(SummaryCards("Player 3"));
     mySumCards.push_back(SummaryCards("Player 4"));
     mySumCards.push_back(SummaryCards("Player 5"));
-    mySumCards.push_back(SummaryCards("Player 6"));*/
+    mySumCards.push_back(SummaryCards("Player 6"));
+     */
     
     return mySumCards;
 }

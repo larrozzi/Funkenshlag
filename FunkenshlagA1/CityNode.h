@@ -3,6 +3,7 @@
 #include <map> 
 #include <memory>
 #include <vector>
+#include <string>
 #include "Resource.h"
 using namespace std;
 
@@ -14,7 +15,7 @@ class CityNode
 		map<string,bool> ownedBy;
 		bool used;
 		vector<int> edges;
-		Resource cost[] = new Resource[5];
+        Resource cost[];// = new Resource[5];
 	public:
 		//constructors
 		CityNode();
@@ -22,11 +23,11 @@ class CityNode
 		CityNode(string n, map<string, bool> o, bool u, vector<int> e);
 		
 		//getters
-		string getName();
-		map<string,bool> getOwners();
-		bool getUsed();
-		vector<string> getEdges();
-		vector<Resource> getCost();
+		string getName() const;
+		map<string,bool> getOwners() const;
+		bool getUsed() const;
+		vector<string> getEdges() const;
+		vector<Resource> getCost() const;
 		
 		//setters
 		void setName(string n);
@@ -35,4 +36,7 @@ class CityNode
 		void unUse();
 		void setEdges(vector<string> e);
 		void setCost(vector<Resource> c);
+    
+        CityNode& operator=(const CityNode& obj);
+
 };

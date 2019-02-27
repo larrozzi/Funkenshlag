@@ -3,6 +3,9 @@
 #include <cctype>
 #include <cstdlib>
 #include "CityNode.h"
+#include <string>
+#include "Resource.h"
+
 
 using namespace std;
 
@@ -12,33 +15,32 @@ CityNode::CityNode()
 {}
 
 CityNode::CityNode(string n, bool u, vector<int> e, Resource c[])
-	: name{ n }, used{ u }, edges{ e }, cost{c}
+    : name{ n }, used{ u }, edges{ e }, cost{ *c }
 {}
 
 CityNode::CityNode(string n, map<string, bool> o, bool u, vector<int> e) 
-    : name{ n }, ownedBy{ o }, used{ u },edges{ e }
+    : name{ n }, ownedBy{ o }, used{ u }, edges{ e }
 {}
 
-string CityNode::getName()
+string CityNode::getName() const
 {
     return name;
 }
-map<string, bool> CityNode::getOwners()
+map<string, bool> CityNode::getOwners() const
 {
     return ownedBy;
 }
-bool CityNode::getUsed()
+bool CityNode::getUsed() const
 {
     bool activated=false;// error prev
     return activated;
 }
-
-vector<string> CityNode::getEdges()
+vector<string> CityNode::getEdges() const
 {
     return edges;
 }
 
-vector<Resource> CityNode::getCost()
+vector<Resource> CityNode::getCost() const
 {
 	return cost;
 }
@@ -70,4 +72,3 @@ void CityNode::setCost(vector<Resource> c)
 {
 	cost = c;
 }
-

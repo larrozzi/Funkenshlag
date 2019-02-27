@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Slot.h"
+
 template <class T>
 class Market {
 private:

@@ -1,8 +1,9 @@
 #pragma once
 
+//Type of the resource
+enum Type { NONE, COAL, OIL, HYBRID, GARBAGE, URANIUM };
+
 class Resource{
-    //Type of the resource
-    enum Type { NONE, COAL, OIL, HYBRID, GARBAGE, URANIUM };
 private:
 	int price;
 	Type type;

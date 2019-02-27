@@ -4,21 +4,20 @@
 #include <cctype>
 #include <cstdlib>
 #include "CityNode.h"
+#include <vector>
 
 using namespace std;
 
-Map::Map();
+// constructor
+Map::Map() {}
+Map::Map(vector<CityNode> m) : map(m) {}
 
-Map::Map()
-{}
-Map::Map(vector<cityNode> m)
-	: map{ m }
-{}
-Map::getMap()
+// getter/setter
+vector<CityNode> Map::getMap() const
 {
-	return map;
+    return map;
 }
-Map::setMap(vector<CityNode> cities)
+void Map::setMap(vector<CityNode> cities)
 {
 	map = cities;
 }

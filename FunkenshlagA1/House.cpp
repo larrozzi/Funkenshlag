@@ -1,12 +1,6 @@
 #include "House.h"
 
-
-
-House::House()
-{
-}
-
-
-House::~House()
-{
-}
+// constructor
+House::House() {}
+// destructor
+House::~House() {}

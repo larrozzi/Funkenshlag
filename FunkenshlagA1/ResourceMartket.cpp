@@ -10,7 +10,7 @@ ResourceMarket::ResourceMarket(){
 ResourceMarket::Slot::Slot(){
 }
 
-ResourceMarket::Slot::Slot(int price){
+ResourceMarket::Slot::Slot(int price) {
 }
 
 int ResourceMarket::Slot::getPrice(){
