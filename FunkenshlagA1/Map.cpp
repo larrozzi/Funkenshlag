@@ -14,3 +14,11 @@ Map::Map()
 Map::Map(vector<cityNode> m)
 	: map{ m }
 {}
+Map::getMap()
+{
+	return map;
+}
+Map::setMap(vector<CityNode> cities)
+{
+	map = cities;
+}

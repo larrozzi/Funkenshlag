@@ -8,9 +8,13 @@
 class MapLoader 
 {
 	private:
-		bool valid;
-
+		bool valid;		//checks for map validity
+		string fileName;	//name of the map file
+		Map map;	//map object that needs to be filled with a vector<cityNode>
+		void exec();	//creates and reads a map with fileName
 	public:
-		MapLoader();
-		MapLoader(string fileName);
+		MapLoader();	//default constructor
+		MapLoader(string f);	//constructor takes fileName
+
+		void readMap(string f);	// sets fileName
 };
