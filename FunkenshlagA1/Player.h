@@ -63,4 +63,4 @@ public:
 
 };
 
-inline std::ostream& operator <<(std::ostream& stream, const Player& player);
+//inline std::ostream& operator <<(std::ostream& stream, const Player& player);
