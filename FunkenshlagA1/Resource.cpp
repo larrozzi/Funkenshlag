@@ -13,14 +13,14 @@ Resource::Resource(int price, Type type){
 
 }
 
-inline Resource::Type Resource::getType() {
+inline Type Resource::getType() const {
     return type;
 }
 
-void Resource::setType(Resource::Type type) {
+void Resource::setType(Type type) {
     this->type = type;
 }
-inline int Resource::getPrice(){
+inline int Resource::getPrice() const {
     return price;
 }
 

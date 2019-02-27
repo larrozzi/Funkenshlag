@@ -10,12 +10,8 @@ private:
 public:
     Resource();
     Resource(int price, Type type);
-	inline Type getType();
+	inline Type getType() const;
 	void setType(Type type);
-	inline int getPrice();
+	inline int getPrice() const;
     void setPrice(int price);
-private:
-	int price;
-	//Type of the resource
-	Type type;
 };

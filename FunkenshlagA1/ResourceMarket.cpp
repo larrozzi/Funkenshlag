@@ -3,7 +3,7 @@
 ResourceMarket::ResourceMarket(){
 
 	for (int i = 0; i < MARKET_SIZE; i++) {
-		slots[i] = Slot(i+3,)
+        slots[i] = Slot(i+3);
 	}
 }
 //SLOT METHODS
