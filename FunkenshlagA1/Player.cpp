@@ -14,8 +14,7 @@ Player::Player()
 {
 }
 
-Player::Player(string name,  int elektro,  HouseColor _color) : name{name}, elektro{elektro}, _color{_color}
-{
+Player::Player(string name, int elektro, HouseColor _color) : name{ name }, elektro{ elektro }, _color{ _color }{
 }
 
 Player ::~Player()
@@ -25,26 +24,41 @@ Player ::~Player()
 inline string Player::getName() const {
 	return name;
 }
-
-inline void Player::setName(string name) {
+inline void Player::setName( string name) {
 	this->name = name;
 }
 
 inline int Player::getElektro() const {
 	return elektro;
 }
-inline void Player::setElektro(int elektro) {
+inline void Player::setElektro( int elektro) {
 	this->elektro = elektro;
+}
+
+inline void Player::setColor( HouseColor _color) {
+	this->_color = _color;
+}
+inline Player::HouseColor Player::getColor()const {
+	return _color;
+}
+
+vector<House>Player::grabhouses()
+{
+	vector<House>houses;
+
+	for (int i; i < 22; i++) {
+		houses.push_back(HouseColor(_color));
+	}
 }
 
 void Player::OutputPlayerStatus() const {
 	string separator = "---------------------------------------------------------------------------------\n";
-	string PlayerStatus;
-	string msg = separator + name + " has the following items \n" + "\t"+ to_string(getElektro()) + "Elektros" + "\n";
-
+	string msg = separator + getName() + " has the following items \n" + "\t"+ to_string(getElektro()) + " Elektros" + "\n";
+	string PlayerStatus = msg;
 	//print houses 
-	PlayerStatus += "He owns "+ houses.size();
-	PlayerStatus += " of color " +_color;
+
+	PlayerStatus += "\tHe owns "+ houses.size();
+	PlayerStatus += "houses of color " + getColor();
 
 	cout << PlayerStatus;
 	
@@ -156,10 +170,10 @@ int main()
 
 		//cout << player1;
 	
-	cout << "Hello and Welcome\n";
+	cout << "Hello and Welcome to Powergrid\n\n";
 
-	Player* PL1 = new Player("Yassine", 50, "blue");
-
+	Player* PL1 = new Player("Yassine", 50, Player::Blue);
+	
 	PL1->OutputPlayerStatus();
 
 	system("pause");

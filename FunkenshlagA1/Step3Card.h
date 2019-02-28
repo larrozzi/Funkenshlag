@@ -16,16 +16,16 @@
 class Step3Card : public Cards
 {
 private:
-    std::string step;
-    
+	std::string step;
+
 public:
-    Step3Card();
-    ~Step3Card();
-    
-    // setter/getter
-    void setStep3Card(std::string step);
-    std::string getStep3Card() const;
-    
-    // overloading output stream operator for Step3Card
-    friend std::ostream& operator<<(std::ostream& outs, const Step3Card& card);
+	Step3Card();
+	~Step3Card();
+
+	// setter/getter
+	void setStep3Card(std::string step);
+	std::string getStep3Card() const;
+
+	// overloading output stream operator for Step3Card
+	friend std::ostream& operator<<(std::ostream& outs, const Step3Card& card);
 };

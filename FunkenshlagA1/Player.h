@@ -11,26 +11,19 @@
 #include <vector>
 #include <iostream>
 
-using std::auto_ptr;
+using std::shared_ptr;
 using std::string;
 using std::vector;
 
 
 class Player
 {
-private:
-	string name;
-	int elektro = 50;
-	vector <House> houses;
-	enum HouseColor { Blue, Red, Green, Yellow, Black };
-	HouseColor _color;
-//	vector<Resource> resources;
-	//HouseColor color;
-	//vector<PowerPlantCards> myPowerPlants;
 
 public:
+	enum HouseColor { Blue, Red, Green, Yellow, Black };
+	
 	Player();
-	Player(string name,  int electro, enum HouseColor color);
+	Player(string name,  int electro, HouseColor _color);
 	~Player();
 
 	string getName() const;
@@ -38,6 +31,11 @@ public:
 
 	int getElektro() const;
 	void setElektro(int elektro);
+
+	HouseColor getColor()const;
+	inline void setColor( HouseColor _color);
+
+	vector<House>grabhouses();
 
 	//void printHouses();
 	void OutputPlayerStatus() const;
@@ -60,6 +58,14 @@ public:
 	
 	//bool BuildHouse(CityNode& city, auto_ptr <House> house);
 	
+ private:
+	string name;
+	int elektro = 50;
+	vector <House> houses;
+	HouseColor _color;
+	//	vector<Resource> resources;
+		//HouseColor color;
+		//vector<PowerPlantCards> myPowerPlants;
 
 };
 

@@ -11,7 +11,7 @@
 
 // constuctor
 Step3Card::Step3Card() {
-    step = "Step 3";
+	step = "Step 3";
 }
 // destructor
 Step3Card::~Step3Card() {}
@@ -23,6 +23,6 @@ inline std::string Step3Card::getStep3Card() const { return step; }
 // overloading output stream operator for Step3Card
 std::ostream& operator<<(std::ostream& outs, const Step3Card& card)
 {
-    outs << "Card: " << card.step << std::endl;
-    return outs;
+	outs << "Card: " << card.step << std::endl;
+	return outs;
 }
