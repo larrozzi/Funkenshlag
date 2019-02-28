@@ -29,8 +29,9 @@ int main()
     /*** Testing methods ***/
     
     // Creating the PowerPlantCards
+    std::cout << "Creating PowerPlantCards:\n";
     vector<PowerPlantCards> myV;
-    std::cout << "\nUnShuffled PowerPlantCards:" << std::endl;
+    std::cout << "UnShuffled PowerPlantCards:" << std::endl;
     myV = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
     PowerPlantCards::printPPCards(myV);    // prints the PowerPlantCards info
 
@@ -39,20 +40,27 @@ int main()
     std::cout << "\nShuffled PowerPlantCards:" << std::endl;
     PowerPlantCards::printPPCards(myV);
     
+    std::cout << "==============================================================================================================================================" << std::endl;
+    
     // Creating Step3Card
+    std::cout << "Creating Step3Card:\n";
     Step3Card step3;
     std::cout << step3 << std::endl;
     
+    std::cout << "==============================================================================================================================================" << std::endl;
+
     // Testing Player class
-    std::cout << "Hello and Welcome\n";
+    std::cout << "Creating new Player:\n";
     Player* p1 = new Player("Yassine", 50, BLUE);
-    //std::cout << *p1;
-    
+    std::cout << "==============================================================================================================================================" << std::endl;
+
     // Creating the SummaryCards
-    std::cout << "\nSummaryCards: " << std::endl;
+    std::cout << "\nCreating SummaryCards for the Player: " << std::endl;
     vector<SummaryCards> sum;
     sum = SummaryCards::createSummaryCards(*p1); // holds the create SummaryCards
     SummaryCards::printSummaryCards(sum); // print the SummaryCards info
+    
+    
     return 0;
 }
 
