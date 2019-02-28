@@ -150,6 +150,7 @@ void Player::OutputPlayerStatus() const {
 //    stream << player.OutputPlayerStatus();
 //}
 
+/*
 int main()
 {
     //Player player1= new Player(YL, "White", 50);
@@ -165,3 +166,4 @@ int main()
     system("pause");
     return 0;
 }
+*/

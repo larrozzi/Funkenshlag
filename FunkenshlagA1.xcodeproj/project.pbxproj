@@ -59,7 +59,6 @@
 		2DA3461B22252A0700FA003A /* ResourceMartket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceMartket.h; sourceTree = "<group>"; };
 		2DA3461C22252A0800FA003A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
 		2DA3461D22252A0800FA003A /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		2DA3461F22252A0800FA003A /* Market.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Market.h; sourceTree = "<group>"; };
 		2DA3462022252A0800FA003A /* ResourceMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceMarket.h; sourceTree = "<group>"; };
 		2DA3462122252A0800FA003A /* CityNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNode.h; sourceTree = "<group>"; };
 		2DA3462222252A0800FA003A /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
@@ -101,7 +100,6 @@
 				2DA3461222252A0700FA003A /* House.h */,
 				2DA3461722252A0700FA003A /* Map.cpp */,
 				2DA3462222252A0800FA003A /* Map.h */,
-				2DA3461F22252A0800FA003A /* Market.h */,
 				2DA3461622252A0700FA003A /* Player.cpp */,
 				2DA3461D22252A0800FA003A /* Player.h */,
 				2DA3461122252A0700FA003A /* PlayerMain.cpp */,
