@@ -12,6 +12,7 @@ private:
 		Resource uranium[1];
 	public:
 		Slot();
+        Slot(int price);
 		Slot(int price,Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
 		int getPrice();
 		void setPrice(int price);

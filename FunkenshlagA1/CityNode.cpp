@@ -14,8 +14,8 @@ using namespace std;
 CityNode::CityNode()
 {}
 
-CityNode::CityNode(string n, bool u, vector<int> e, Resource c[])
-    : name{ n }, used{ u }, edges{ e }, cost{ *c }
+CityNode::CityNode(string n, bool u, vector<int> e, array<Resource,5> c)
+    : name{ n }, used{ u }, edges{ e }, cost{ c }
 {}
 
 CityNode::CityNode(string n, map<string, bool> o, bool u, vector<int> e) 
@@ -35,12 +35,12 @@ bool CityNode::getUsed() const
     bool activated=false;// error prev
     return activated;
 }
-vector<string> CityNode::getEdges() const
+vector<int> CityNode::getEdges() const
 {
     return edges;
 }
 
-vector<Resource> CityNode::getCost() const
+array<Resource,5> CityNode::getCost() const
 {
 	return cost;
 }
@@ -63,12 +63,13 @@ void CityNode::unUse()
 {
     used = false;
 }
-void CityNode::setEdges(vector<string> e)
+void CityNode::setEdges(vector<int> e)
 {
     edges = e;
 }
 
-void CityNode::setCost(vector<Resource> c)
+void CityNode::setCost(array<Resource,5> c)
 {
 	cost = c;
 }
+

@@ -15,6 +15,7 @@ using std::auto_ptr;
 using std::string;
 using std::vector;
 
+enum HouseColor { BLUE, RED, GREEN, YELLOW, BLACK };
 
 class Player
 {
@@ -22,7 +23,6 @@ private:
     string name;
     int elektro = 50;
     vector <House> houses;
-    enum HouseColor { Blue, Red, Green, Yellow, Black };
     HouseColor _color;
 //    vector<Resource> resources;
     //HouseColor color;
@@ -30,7 +30,7 @@ private:
 
 public:
     Player();
-    Player(string name,  int electro, enum HouseColor color);
+    Player(string name, int electro, enum HouseColor color);
     ~Player();
 
     string getName() const;
@@ -40,7 +40,7 @@ public:
     void setElektro(int elektro);
 
     //void printHouses();
-    void OutputPlayerStatus() const;
+    void OutputPlayerStatus();
 
     //bool BuildHouse(CityNode& city, House& house);
     //vector <PowerPlantCards> getPowerplant();
@@ -60,6 +60,9 @@ public:
     
     //bool BuildHouse(CityNode& city, auto_ptr <House> house);
     
+    // overloading output operator
+    friend std::ostream& operator<<(std::ostream& outs, const HouseColor& colour);
+    friend std::ostream& operator<<(std::ostream& outs, const Player& player);
 
 };
 

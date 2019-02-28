@@ -15,7 +15,7 @@ using std::vector;
 // constructors
 PowerPlantCards::PowerPlantCards() {}
 PowerPlantCards::PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse)
-    : Resource(cardValue,resourceType), numbResource(numbResource), capacity(2*numbResource), powerHouse(powerHouse)
+    : cardValue(cardValue), resourceType(resourceType), numbResource(numbResource), capacity(2*numbResource), powerHouse(powerHouse)
 {/*NOTHING*/}
 
 // destructor
@@ -41,7 +41,7 @@ vector<PowerPlantCards>PowerPlantCards::createPowerPlantCards()
     vector<PowerPlantCards>myCards;
     
     // lowest card value
-    myCards.push_back(PowerPlantCards(3,OIL,2,4,1));
+    myCards.push_back(PowerPlantCards(3,Type::OIL,2,4,1));
     myCards.push_back(PowerPlantCards(4,COAL,2,4,1));
     myCards.push_back(PowerPlantCards(5,HYBRID,2,4,1));
     myCards.push_back(PowerPlantCards(6,GARBAGE,1,2,1));
@@ -102,7 +102,7 @@ void PowerPlantCards::printPPCards(vector<PowerPlantCards>ppCards)
     }
 }
 
-// overloading output operator for the enum ResourceType class
+// overloading output operator for the enum Type class
 std::ostream& operator<<(std::ostream& outs, const Type& resource)
 {
     const char* s = 0;
@@ -122,14 +122,14 @@ std::ostream& operator<<(std::ostream& outs, const Type& resource)
 // overloading output stream operator for PowerPlantCards
 std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card)
 {
-    outs << "Number of Resources: " << card.getNumbResource()
-    << "\t\t Max Resource Capacity: " << card.getCapacity() << "\t\t PowerHouse: " << card.getPowerHouse();
+    outs << "Card Value: " << card.cardValue << "\t\t Number of Resources: " << card.numbResource
+    << "\t\t Max Resource Capacity: " << card.capacity << "\t\t Power Number of Houses: " << card.powerHouse;
     
     if(card.numbResource > 0)
     {
-        outs << "Card Value: " << card.getCardValue() << "\t\t Type of Resources: " << card.getResourceType() ;
+        outs << "\t\t Type of Resources: " << card.resourceType;
     }
     // if the resource size > 0
-    // print out the resource name and its cost
+    // print out the resource name
     return outs;
 }

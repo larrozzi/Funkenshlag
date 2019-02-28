@@ -64,6 +64,6 @@ void SummaryCards::printSummaryCards(vector<SummaryCards>sCards)
 // overloading output stream operator
 std::ostream& operator<<(std::ostream& outs, const SummaryCards& card)
 {
-    outs << "Card Owner: " << card.owner << "\nCard Information: \n" << card.cardInfo << std::endl;
+    outs << "Card Owner Name: "  << "\nCard Information: \n" << card.cardInfo << std::endl;
     return outs;
 }

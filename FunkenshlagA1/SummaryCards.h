@@ -33,8 +33,8 @@ class SummaryCards : public Cards
     void setOwner(Player owner);
     void setCardInfo(std::string cardInfo);
     // getters
-    Player getOwner() const;
-    std::string getCardInfo() const;
+    inline Player getOwner() const;
+    inline std::string getCardInfo() const;
 
     // methods declaration
     static vector<SummaryCards>createSummaryCards();

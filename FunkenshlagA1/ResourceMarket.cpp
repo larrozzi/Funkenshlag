@@ -1,6 +1,6 @@
-#include "ResourceMartket.h"
+#include "ResourceMarket.h"
 
-ResourceMarket::ResourceMarket(){
+ResourceMarket::ResourceMarket() {
 
 	for (int i = 0; i < MARKET_SIZE; i++) {
         slots[i] = Slot(i+3);

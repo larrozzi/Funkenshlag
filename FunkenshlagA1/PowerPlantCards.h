@@ -17,7 +17,7 @@ using std::vector;
 
 //enum ResourceType { COAL, OIL, HYBRID, GARBAGE, URANIUM, ECOFUSION };
 
-class PowerPlantCards : public Cards, public Resource
+class PowerPlantCards : public Cards
 {
 private:
     int cardValue;  // the min bid of the power plant
@@ -43,11 +43,11 @@ public:
     void setPowerHouse(int powerHouse);
     
     // getters
-    int getCardValue() const;
-    Type getResourceType() const;
-    int getNumbResource() const;
-    int getCapacity() const;
-    int getPowerHouse() const;
+    inline int getCardValue() const;
+    inline Type getResourceType() const;
+    inline int getNumbResource() const;
+    inline int getCapacity() const;
+    inline int getPowerHouse() const;
     
     // methods declaration
     static vector<PowerPlantCards>createPowerPlantCards();

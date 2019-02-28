@@ -37,7 +37,34 @@ inline void Player::setElektro(int elektro) {
     this->elektro = elektro;
 }
 
-void Player::OutputPlayerStatus() const {
+// overloading output operator for the enum HouseColour
+std::ostream& operator<<(std::ostream& outs, const HouseColor& colour)
+{
+    const char* c = 0;
+#define PROCESS_VAL(p) case(p): c = #p; break;
+    switch(colour) {
+            PROCESS_VAL(BLUE);
+            PROCESS_VAL(RED);
+            PROCESS_VAL(GREEN);
+            PROCESS_VAL(YELLOW);
+            PROCESS_VAL(BLACK);
+    }
+#undef PROCESS_VAL
+    return outs << c;
+}
+// overloading output stream operator
+std::ostream& operator<<(std::ostream& outs, const Player& player)
+{
+    string separator = "---------------------------------------------------------------------------------\n";
+    outs << separator << player.name + " has the following items: \n"
+    << player.elektro << " Elektros \n"
+    << player.houses.size() << " " << player._color << " coloured Houses \n";
+    
+    return outs;
+}
+
+/*
+void Player::OutputPlayerStatus() {
     string separator = "---------------------------------------------------------------------------------\n";
     string PlayerStatus;
     string msg = separator + name + " has the following items \n" + "\t"+ to_string(getElektro()) + "Elektros" + "\n";
@@ -47,7 +74,7 @@ void Player::OutputPlayerStatus() const {
     PlayerStatus += " of color " +_color;
 
     cout << PlayerStatus;
-    
+*/
     //for (int i = 0; i < houses.size(); i++)
         //PlayerStatus += houses[it].getColor() + ",";
     
@@ -66,7 +93,7 @@ void Player::OutputPlayerStatus() const {
 
     // printing each PLayer**
     
-}
+//}
 
 //************** build houses in cities if possible *****************
 //bool Player::BuildHouse(CityNode& city, House& house) {

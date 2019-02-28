@@ -14,6 +14,8 @@
 #include "SummaryCards.h"
 #include "PowerPlantCards.h"
 #include "Step3Card.h"
+#include "Player.h"
+
 
 using std::vector;
 
@@ -46,6 +48,13 @@ int main()
     // Creating Step3Card
     Step3Card step3;
     std::cout << step3 << std::endl;
+    
+    // Testing Player class
+    std::cout << "Hello and Welcome\n";
+    Player* p1 = new Player("Yassine", 50, BLUE);
+    
+    std::cout << *p1;
+    //p1.OutputPlayerStatus();
     
     return 0;
 }
