@@ -39,12 +39,6 @@ int main()
     std::cout << "\nShuffled PowerPlantCards:" << std::endl;
     PowerPlantCards::printPPCards(myV);
     
-    // Creating the SummaryCards
-    std::cout << "\nSummaryCards: " << std::endl;
-    vector<SummaryCards> sum;
-    sum = SummaryCards::createSummaryCards(); // holds the create SummaryCards
-    SummaryCards::printSummaryCards(sum); // print the SummaryCards info
-    
     // Creating Step3Card
     Step3Card step3;
     std::cout << step3 << std::endl;
@@ -52,10 +46,13 @@ int main()
     // Testing Player class
     std::cout << "Hello and Welcome\n";
     Player* p1 = new Player("Yassine", 50, BLUE);
+    //std::cout << *p1;
     
-    std::cout << *p1;
-    //p1.OutputPlayerStatus();
-    
+    // Creating the SummaryCards
+    std::cout << "\nSummaryCards: " << std::endl;
+    vector<SummaryCards> sum;
+    sum = SummaryCards::createSummaryCards(*p1); // holds the create SummaryCards
+    SummaryCards::printSummaryCards(sum); // print the SummaryCards info
     return 0;
 }
 

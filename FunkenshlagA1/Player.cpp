@@ -58,7 +58,7 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
     string separator = "---------------------------------------------------------------------------------\n";
     outs << separator << player.name + " has the following items: \n"
     << player.elektro << " Elektros \n"
-    << player.houses.size() << " " << player._color << " coloured Houses \n";
+    << player.houses.size() << " " << player._color << " coloured Houses\n";
     
     return outs;
 }

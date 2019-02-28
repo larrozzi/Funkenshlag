@@ -37,7 +37,7 @@ class SummaryCards : public Cards
     inline std::string getCardInfo() const;
 
     // methods declaration
-    static vector<SummaryCards>createSummaryCards();
+    static vector<SummaryCards> createSummaryCards(Player owner);
     static void printSummaryCards(vector<SummaryCards>vector);
     
     // overloading the output operator

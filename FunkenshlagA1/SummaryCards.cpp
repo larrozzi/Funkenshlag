@@ -33,11 +33,9 @@ inline Player SummaryCards::getOwner() const { return owner; }
 inline std::string SummaryCards::getCardInfo() const { return cardInfo; }
 
 // method to create the SummaryCards
-vector<SummaryCards>SummaryCards::createSummaryCards()
+vector<SummaryCards>SummaryCards::createSummaryCards(Player owner)
 {
     vector<SummaryCards>mySumCards;
-    Player owner;
-    
     mySumCards.push_back(SummaryCards(owner));
     
     /*
@@ -64,6 +62,6 @@ void SummaryCards::printSummaryCards(vector<SummaryCards>sCards)
 // overloading output stream operator
 std::ostream& operator<<(std::ostream& outs, const SummaryCards& card)
 {
-    outs << "Card Owner Name: "  << "\nCard Information: \n" << card.cardInfo << std::endl;
+    outs << card.owner << "\n\nSummaryCard Information: \n" << card.cardInfo << std::endl;
     return outs;
 }
