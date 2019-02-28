@@ -41,7 +41,7 @@ vector<PowerPlantCards>PowerPlantCards::createPowerPlantCards()
     vector<PowerPlantCards>myCards;
     
     // lowest card value
-    myCards.push_back(PowerPlantCards(3,Type::OIL,2,4,1));
+    myCards.push_back(PowerPlantCards(3,OIL,2,4,1));
     myCards.push_back(PowerPlantCards(4,COAL,2,4,1));
     myCards.push_back(PowerPlantCards(5,HYBRID,2,4,1));
     myCards.push_back(PowerPlantCards(6,GARBAGE,1,2,1));

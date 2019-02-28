@@ -52,6 +52,7 @@ int main()
     // Testing Player class
     std::cout << "Creating new Player:\n";
     Player* p1 = new Player("Yassine", 50, BLUE);
+    std::cout << *p1;
     std::cout << "==============================================================================================================================================" << std::endl;
 
     // Creating the SummaryCards
