@@ -1,3 +1,4 @@
+#include <bits/stdc++.h>
 #include <boost/algorithm/string.hpp>    //library to split strings
 #include "Map.h"
 #include "MapLoader.h"
