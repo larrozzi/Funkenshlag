@@ -1,23 +1,22 @@
-#include "ResourceMartket.h"
+#include "ResourceMarket.h"
 
-ResourceMarket::ResourceMarket(){
+ResourceMarket::ResourceMarket() {
 
 	for (int i = 0; i < MARKET_SIZE; i++) {
-		slots[i] = Slot(i+3,)
+		slots[i] = Slot(i + 3);
 	}
 }
 //SLOT METHODS
-ResourceMarket::Slot::Slot(){
+ResourceMarket::Slot::Slot() {
 }
 
-ResourceMarket::Slot::Slot(int price){
+ResourceMarket::Slot::Slot(int price) {
 }
 
-int ResourceMarket::Slot::getPrice(){
+int ResourceMarket::Slot::getPrice() {
 	return 0;
 }
 
-void ResourceMarket::Slot::setPrice(int price){
+void ResourceMarket::Slot::setPrice(int price) {
 
 }
-

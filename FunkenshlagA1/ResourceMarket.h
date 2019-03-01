@@ -1,9 +1,9 @@
 #pragma once
 #include "Resource.h"
 
-class ResourceMarket{
+class ResourceMarket {
 private:
-	class Slot{
+	class Slot {
 	private:
 		int price;
 		Resource coal[3];
@@ -12,7 +12,8 @@ private:
 		Resource uranium[1];
 	public:
 		Slot();
-		Slot(int price,Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
+		Slot(int price);
+		Slot(int price, Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
 		int getPrice();
 		void setPrice(int price);
 	};

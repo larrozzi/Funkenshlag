@@ -1,7 +1,7 @@
 #pragma once
 #include "Resource.h"
 #include "Market.h"
-#include "PowerPlantsCard.h"
+#include "PowerPlantCards.h"
 
 
 class ResourceManager {
@@ -21,5 +21,5 @@ public:
 	//Fills the Resource Market based on the rules.
 	bool fillResourceMarket(int numOfPlayers, int step, Market<Resource>& market);
 	//Fills the PowerPlants Market based on the rules.
-	bool fillPowerMarket(int numOfPlayers, int step, Market<PowerPlantsCards>& market);
+	bool fillPowerMarket(int numOfPlayers, int step, Market<PowerPlantCards>& market);
 };
