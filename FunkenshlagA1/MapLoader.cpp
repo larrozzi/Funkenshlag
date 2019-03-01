@@ -32,9 +32,9 @@ void MapLoader::exec()
     string cityString;
     string edgesString;
     string costString;
-    std::vector<std::string> edgesVector;
-    std::vector<std::string> costVector;
-    std::vector<CityNode> cities;
+    vector<string> edgesVector;
+    vector<string> costVector;
+    vector<CityNode> cities;
     int i = 0;
     bool used = true;
 
