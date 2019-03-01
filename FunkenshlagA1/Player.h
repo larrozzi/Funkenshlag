@@ -15,12 +15,19 @@ using std::shared_ptr;
 using std::string;
 using std::vector;
 
+//enum HouseColor { Blue, Red, Green, Yellow, Black };
 
 class Player
 {
 
+private:
+	string name;
+	int elektro = 50;
+	vector <House> houses;
+	HouseColor _color;
+
 public:
-	enum HouseColor { Blue, Red, Green, Yellow, Black };
+	
 	
 	Player();
 	Player(string name,  int electro, HouseColor _color);
@@ -38,35 +45,11 @@ public:
 	vector<House>grabhouses();
 
 	//void printHouses();
-	void OutputPlayerStatus() const;
+	//void OutputPlayerStatus() const;
 
-	//bool BuildHouse(CityNode& city, House& house);
-	//vector <PowerPlantCards> getPowerplant();
-	//vector <Resource> getRecources();
 
-	
-	//bool bidonPowerPlant(cardDeck& cardDeck, int position, int price);
-
-	//bool AddPowerPlant(PowerPlantCards powerplant);
-	//void ReplacePowerPlant(PowerPlantCards, int);
-	//int getHighestPowerPlant();
-
-	//auto_ptr<HouseColor> const& getColor() const;
-
-	//bool BuyResources(ResourceMarket&, PowerPlantCards&, Resource, int);
-	
-	
-	//bool BuildHouse(CityNode& city, auto_ptr <House> house);
-	
- private:
-	string name;
-	int elektro = 50;
-	vector <House> houses;
-	HouseColor _color;
-	//	vector<Resource> resources;
-		//HouseColor color;
-		//vector<PowerPlantCards> myPowerPlants;
-
+	// overloading output operator
+	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& colour);
+	friend std::ostream& operator<<(std::ostream& outs, const Player& player);
 };
 
-//inline std::ostream& operator <<(std::ostream& stream, const Player& player);
