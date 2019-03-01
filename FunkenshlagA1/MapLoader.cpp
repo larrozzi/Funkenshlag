@@ -39,7 +39,7 @@ void MapLoader::exec()
     int i = 0;
     bool used = true;
 
-    ifstream myfile(this.fileName);
+    ifstream myfile(this->fileName); 
 
     if (myfile.is_open())
     {
@@ -57,5 +57,4 @@ void MapLoader::exec()
         myfile.close();
     }
     else cout << "Unable to open file";
-    return 0;
 }
