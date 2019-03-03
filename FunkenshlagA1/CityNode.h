@@ -15,25 +15,28 @@ private:
 	string name;
 	map<string, bool> ownedBy;
 	bool used;
-	map<string, int> edges;
+	vector<string> edges;
+	vector<int> cost;
 
 public:
 	//constructors
 	CityNode();
-	CityNode(string n, bool u, map<string, int> e);
-	CityNode(string n, map<string, bool> o, bool u, map<string, int> e);
+	CityNode(string n, bool u, vector<string> e, vector<int> c);
+	CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<int> c);
 
 	//getters
 	string getName() const;
 	map<string, bool> getOwners() const;
 	bool getUsed() const;
-	map<string, int> getEdges() const;
+	vector<string> getEdges() const;
 
 	//setters
 	void setName(string n);
 	void setOwners(map<string, bool> o);
 	void use();
 	void unUse();
-	void setEdges(map<string, int> e);
+	void setEdges(vector<string> e);
+	void setCosts(vector<int> c);
+	void setValues(string n, vector<string> e, vector<int> c);
 
 };
