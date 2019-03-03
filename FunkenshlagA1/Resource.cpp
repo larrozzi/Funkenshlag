@@ -20,7 +20,7 @@ inline Type Resource::getType() const {
 void Resource::setType(Type type) {
 	this->type = type;
 }
-inline int Resource::getPrice() const {
+int Resource::getPrice() const {
 	return price;
 }
 

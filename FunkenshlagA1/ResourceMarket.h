@@ -1,24 +1,36 @@
 #pragma once
 #include "Resource.h"
 
-class ResourceMarket {
+class ResourceMarket{
 private:
-	class Slot {
+	class Slot{
 	private:
 		int price;
-		Resource coal[3];
-		Resource oil[3];
-		Resource garbage[3];
-		Resource uranium[1];
+		Resource* coal;
+		Resource* oil;
+		Resource* garbage;
+		Resource* uranium;
 	public:
 		Slot();
-		Slot(int price);
-		Slot(int price, Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
-		int getPrice();
-		void setPrice(int price);
+		Slot(int price,Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
+		Slot(int price, Resource uranium[]);
+		int getPrice() const;
+		void setPrice(const int price);
+		Resource* getCoal();
+		Resource* getOil();
+		Resource* getGarbage();
+		Resource* getUranium();
+		void setCoal(Resource* coal);
+		void setOil(Resource* oil);
+		void setGarbage(Resource* garbage);
+		void setUranium(Resource* uranium);
 	};
+
 	static const int MARKET_SIZE = 12;
-	Slot slots[MARKET_SIZE];
+	static const int URANIUM_SLOTS = 4;
+	Slot* slots[MARKET_SIZE];
 public:
 	ResourceMarket();
+	ResourceMarket(Resource* coal, Resource* oil, Resource* garbage, Resource* uranium);
+
 };

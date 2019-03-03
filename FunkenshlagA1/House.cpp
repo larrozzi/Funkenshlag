@@ -2,7 +2,7 @@
 #include <string>
 
 House::House() {
-	color = NONE;
+	color = NO_COLOR;
 }
 
 House::House(HouseColor color) {

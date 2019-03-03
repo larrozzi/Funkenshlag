@@ -1,3 +1,4 @@
+
 #pragma once
 
 //Type of the resource
@@ -12,6 +13,6 @@ public:
 	Resource(int price, Type type);
 	inline Type getType() const;
 	void setType(Type type);
-	inline int getPrice() const;
+	int getPrice() const;
 	void setPrice(int price);
 };
