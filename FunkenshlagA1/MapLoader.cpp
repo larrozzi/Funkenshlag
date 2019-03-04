@@ -1,3 +1,4 @@
+//#include <bits/stdc++.h>
 #include <boost/algorithm/string.hpp>    //library to split strings
 #include "Map.h"
 #include "MapLoader.h"
@@ -37,8 +38,9 @@ void MapLoader::exec()
 	vector<CityNode> cities;
 	int i = 0;
 	bool used = true;
-
-	ifstream myfile(this.fileName);
+	string line;
+	ifstream myfile(this->fileName);
+	vector<int> temp;
 
 	if (myfile.is_open())
 	{
@@ -49,12 +51,17 @@ void MapLoader::exec()
 			boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesString into vector delimiter: ','
 			boost::split(costVector, costString, [](char c) {return c == ','; });    // split costString into vector delimiter: ','
 
+			for (string i :costVector)
+			{
+				int t = stoi(i);
+				temp.push_back(t);
+			}
+
 			//ALGORITHM TO ASSIGN VARIABLES
-			cities[i].(cityString, used, edgesVector, costVector);
+			cities[i].setValues(cityString, edgesVector, temp);
 			i++;
 		}
 		myfile.close();
 	}
 	else cout << "Unable to open file";
-	return 0;
 }

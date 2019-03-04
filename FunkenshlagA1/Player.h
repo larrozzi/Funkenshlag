@@ -15,7 +15,7 @@ using std::shared_ptr;
 using std::string;
 using std::vector;
 
-//enum HouseColor { Blue, Red, Green, Yellow, Black };
+
 
 class Player
 {

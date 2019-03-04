@@ -91,12 +91,8 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 	}
 	
 
-
 int main()
 {
-	//Player player1= new Player(YL, "White", 50);
-
-		//cout << player1;
 	
 	cout << "Hello and Welcome to Powergrid\n\n";
 

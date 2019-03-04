@@ -15,13 +15,13 @@ using namespace std;
 CityNode::CityNode()
 {}
 
-CityNode::CityNode(string n, bool u, map<string, int> e)
-	: name{ n }, used{ u }, edges{ e }
+CityNode::CityNode(string n, bool u, vector<string> e, vector<int> c)
+	: name{ n }, used{ u }, edges{ e }, cost{ c }
 {
 }
 
-CityNode::CityNode(string n, map<string, bool> o, bool u, map<string, int> e)
-	: name{ n }, ownedBy{ o }, used{ u }, edges{ e }
+CityNode::CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<int> c)
+	: name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
 {}
 
 string CityNode::getName() const
@@ -37,7 +37,7 @@ bool CityNode::getUsed() const
 	bool activated = false;// error prev
 	return activated;
 }
-map<string, int> CityNode::getEdges() const
+vector<string> CityNode::getEdges() const
 {
 	return edges;
 }
@@ -60,7 +60,18 @@ void CityNode::unUse()
 {
 	used = false;
 }
-void CityNode::setEdges(map<string, int> e)
+void CityNode::setEdges(vector<string> e)
 {
 	edges = e;
+}
+
+void CityNode::setCosts(vector<int> c)
+{
+	cost = c;
+}
+void CityNode::setValues(string n, vector<string> e, vector<int> c)
+{
+	name = n;
+	edges = e;
+	cost = c;
 }
