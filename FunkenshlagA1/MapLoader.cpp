@@ -1,6 +1,5 @@
 //#include <bits/stdc++.h>
-#include <boost/algorithm/string.hpp>    //library to split strings
-#include "Map.h"
+//#include <boost/algorithm/string.hpp>    //library to split strings
 #include "MapLoader.h"
 #include "CityNode.h"
 #include <iostream>

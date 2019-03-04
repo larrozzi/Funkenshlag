@@ -6,6 +6,7 @@
 
 class ResourceManager {
 private:
+	ResourceMarket rMarket;
 	const int MAX_RESOURCES = 24;
 	const int MAX_URANIUM = 12;
 	//Current number of the resource left available in stock.

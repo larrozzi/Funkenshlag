@@ -25,9 +25,17 @@ int ResourceMarket::getMARKET_SIZE()
 {
 	return MARKET_SIZE;
 }
-int ResourceMarket::getURANIUM_SLOTS()
+int ResourceMarket::getOIL_SLOT_START()
 {
-	return URANIUM_SLOTS;
+	return OIL_SLOT_START;
+}
+int ResourceMarket::getGARBAGE_SLOT_START()
+{
+	return GARBAGE_SLOT_START;
+}
+int ResourceMarket::getURANIUM_SLOT_START()
+{
+	return URANIUM_SLOT_START;
 }
 
 ResourceMarket::Slot* ResourceMarket::getSlots(){
@@ -46,12 +54,12 @@ ResourceMarket::Slot::Slot(int price, Resource coal[], Resource oil[], Resource 
 	this->slotUranium = uranium;
 }
 
-int ResourceMarket::Slot::getPrice() const{
-	return 0;
+int ResourceMarket::Slot::getSlotPrice() const{
+	return price;
 }
 
 void ResourceMarket::Slot::setPrice(const int price){
-
+	this->price = price;
 }
 
 Resource* ResourceMarket::Slot::getSlotCoal() {
