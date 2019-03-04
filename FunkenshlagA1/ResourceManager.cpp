@@ -11,6 +11,8 @@ ResourceManager::ResourceManager(ResourceMarket rMarket) {
 	//Get each Slot of the ResourceMarket(which in turn has pointers to arrays of Resources.
 	//The actual array is stored within the Resource Manager) and set the pointer in
 	//the Resource Market to the array in the Resource Manager.
+	//This basically links the pointers in the Market to the arrays in the 
+	//Manager.
 	for (int i = 0; i < rMarket.getMARKET_SIZE(); i++) {
 		rMarket.getSlots()[i].setCoal(marketCoal[i]);
 		rMarket.getSlots()[i].setOil(marketOil[i]);
@@ -19,9 +21,10 @@ ResourceManager::ResourceManager(ResourceMarket rMarket) {
 	}
 }
 
-void ResourceManager::setupMarket(){
+void ResourceManager::setupMarket(ResourceMarket rMarket){
+	for (int i = 0; i < rMarket.getMARKET_SIZE - rMarket.getURANIUM_SLOTS; i++) {
 
-	return false;
+	}
 }
 
 int ResourceManager::getNumOfCoal() {
