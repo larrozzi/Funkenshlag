@@ -6,6 +6,7 @@
 #include <string>
 #include "Resource.h"
 #include <map>
+#include "Player.h"
 
 
 using namespace std;
@@ -20,7 +21,7 @@ CityNode::CityNode(string n, bool u, vector<string> e, vector<int> c)
 {
 }
 
-CityNode::CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<int> c)
+CityNode::CityNode(string n, map<Player*, bool>  o, bool u, vector<string> e, vector<int> c)
 	: name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
 {}
 
@@ -28,14 +29,13 @@ string CityNode::getName() const
 {
 	return name;
 }
-map<string, bool> CityNode::getOwners() const
+map<Player*, bool> CityNode::getOwners() const
 {
 	return ownedBy;
 }
 bool CityNode::getUsed() const
 {
-	bool activated = false;// error prev
-	return activated;
+	return used;
 }
 vector<string> CityNode::getEdges() const
 {
@@ -47,7 +47,7 @@ void CityNode::setName(string n)
 	name = n;
 }
 
-void CityNode::setOwners(map<string, bool> o)
+void CityNode::setOwners(map<Player*, bool> o)
 {
 	ownedBy = o;
 }
