@@ -21,7 +21,7 @@ private:
 public:
 	ResourceManager();
 	ResourceManager(ResourceMarket rMarket);
-	bool setupMarket();
+	void setupMarket();
 	int getNumOfCoal();
 	int getNumOfOil();
 	int getNumOfGarbage();

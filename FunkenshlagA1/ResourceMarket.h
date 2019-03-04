@@ -6,20 +6,20 @@ private:
 	class Slot {
 	private:
 		int price;
-		Resource* coal;
-		Resource* oil;
-		Resource* garbage;
-		Resource* uranium;
+		Resource* slotCoal;
+		Resource* slotOil;
+		Resource* slotGarbage;
+		Resource* slotUranium;
 	public:
 		Slot();
 		Slot(int price, Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
 		Slot(int price, Resource uranium[]);
 		int getPrice() const;
 		void setPrice(const int price);
-		Resource* getCoal();
-		Resource* getOil();
-		Resource* getGarbage();
-		Resource* getUranium();
+		Resource* getSlotCoal();
+		Resource* getSlotOil();
+		Resource* getSlotGarbage();
+		Resource* getSlotUranium();
 		void setCoal(Resource* coal);
 		void setOil(Resource* oil);
 		void setGarbage(Resource* garbage);
