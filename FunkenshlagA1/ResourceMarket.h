@@ -3,7 +3,7 @@
 
 class ResourceMarket{
 private:
-	class Slot{
+	class Slot {
 	private:
 		int price;
 		Resource* coal;
@@ -12,7 +12,7 @@ private:
 		Resource* uranium;
 	public:
 		Slot();
-		Slot(int price,Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
+		Slot(int price, Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]);
 		Slot(int price, Resource uranium[]);
 		int getPrice() const;
 		void setPrice(const int price);
@@ -25,12 +25,15 @@ private:
 		void setGarbage(Resource* garbage);
 		void setUranium(Resource* uranium);
 	};
-
 	static const int MARKET_SIZE = 12;
 	static const int URANIUM_SLOTS = 4;
-	Slot* slots[MARKET_SIZE];
+	Slot slots[MARKET_SIZE];
 public:
 	ResourceMarket();
+	int getMARKET_SIZE();
+	int getURANIUM_SLOTS();
+	Slot* getSlots();
 	ResourceMarket(Resource* coal, Resource* oil, Resource* garbage, Resource* uranium);
+
 
 };

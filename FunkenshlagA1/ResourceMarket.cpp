@@ -5,19 +5,33 @@
 ResourceMarket::ResourceMarket() {
 
 }
+
 ResourceMarket::ResourceMarket(Resource* coal, Resource* oil, Resource* garbage,Resource* uranium){
 
 	for (int i = 0, j = 2; i < MARKET_SIZE; i++) {
 		if (i < 8)
 			//First 8 slots have different pricing than the
-			slots[i] = new Slot(i + 1, coal, oil, garbage, uranium);
+			slots[i] = Slot(i + 1, coal, oil, garbage, uranium);
 		else {
 			//last four
-			slots[i] = new Slot(i + j, coal, oil, garbage, uranium);
+			slots[i] = Slot(i + j, coal, oil, garbage, uranium);
 			j++;
 		}
 
 	}
+}
+
+int ResourceMarket::getMARKET_SIZE()
+{
+	return MARKET_SIZE;
+}
+int ResourceMarket::getURANIUM_SLOTS()
+{
+	return URANIUM_SLOTS;
+}
+
+ResourceMarket::Slot* ResourceMarket::getSlots(){
+	return slots;
 }
 
 //SLOT METHODS
