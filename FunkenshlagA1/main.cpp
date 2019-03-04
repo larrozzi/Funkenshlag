@@ -15,6 +15,8 @@
 #include "PowerPlantCards.h"
 #include "Step3Card.h"
 #include "Player.h"
+#include "Resource.h"
+
 
 
 using std::vector;
@@ -61,6 +63,10 @@ int main()
     sum = SummaryCards::createSummaryCards(*p1); // holds the create SummaryCards
     SummaryCards::printSummaryCards(sum); // print the SummaryCards info
     
+    
+    // Testing Resource class
+    Resource one = Resource(3, OIL);
+    std::cout << one.printType(one.getType()) << std::endl;
     
     return 0;
 }

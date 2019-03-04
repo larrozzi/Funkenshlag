@@ -10,10 +10,9 @@ Resource::Resource(){
 Resource::Resource(int price, Type type){
     this->price = price;
     this->type = type;
-
 }
 
-inline Type Resource::getType() const {
+Type Resource::getType() const {
     return type;
 }
 
@@ -26,4 +25,26 @@ inline int Resource::getPrice() const {
 
 void Resource::setPrice(int price){
     this->price = price;
+}
+
+// method to convert enum Type to string
+std::string Resource::printType(Type resource)
+{
+    switch(resource) {
+        case COAL       : return "COAL";
+        case OIL        : return "OIL";
+        case HYBRID     : return "HYBRID";
+        case GARBAGE    : return "GARBAGE";
+        case URANIUM    : return "URANIUM";
+        case ECOFUSION  : return "ECOFUSION";
+        case NONE       : return "NONE";
+    }
+}
+
+// overloading output stream operator for Resource
+std::ostream& operator<<(std::ostream& outs, const Resource& resource)
+{
+    outs << resource.price << "\t" << resource.type;
+    
+    return outs;
 }
