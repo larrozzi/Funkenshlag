@@ -55,17 +55,32 @@ vector<House>Player::grabhouses()
 	return houses;
 }
 
+//
+////************** build houses in cities if possible *****************
+//bool Player::BuildHouse(CityNode& city, House& house) {
+//	int houseCost = city.getPrice();
+//	if (!city.unUse() ) //err :this should return bool
+//		return false;
+//	else {
+//		//elektro -= houseCost;
+//		setElektro(getElektro() - houseCost);
+//		houses.push_back(house); // add house on vector houses
+//		return true;
+//	}
+
 // overloading output operator for the enum HouseColor
 std::ostream& operator<<(std::ostream& outs, const HouseColor& color)
 {
 	const char* c = 0;
 #define PROCESS_VAL(p) case(p): c = #p; break;
 	switch (color) {
+		PROCESS_VAL(NO_COLOR);
 		PROCESS_VAL(RED);
 		PROCESS_VAL(BLUE);
 		PROCESS_VAL(GREEN);
 		PROCESS_VAL(YELLOW);
 		PROCESS_VAL(BLACK);
+		PROCESS_VAL(PINK);
 	}
 #undef PROCESS_VAL
 	return outs << c;
@@ -97,14 +112,14 @@ int main()
 	SummaryCards overviewCard = SummaryCards(PL1);
 	cout << overviewCard;
 
-	fstream outfile;
-	outfile.open("players.txt");
+	std::ofstream outfile("players.txt", std::ios_base::app);
+	if (outfile.is_open()) {
+		outfile << PL1;
+		outfile << overviewCard;//test
 
-	//write text into file
-	outfile << "ABCD.";//test
-	
-	//closing the file
-	outfile.close();
+		outfile.close();
+	}
+	else cout << "cannot open the file ";
 
 	system("pause");
 	return 0;
