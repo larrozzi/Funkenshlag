@@ -24,7 +24,7 @@ private:
 	string name;
 	int elektro = 50;
 	vector <House> houses;
-	vector <CityNode> mycities;
+	//vector <CityNode> mycities;
 	HouseColor color;
 
 public:
@@ -41,11 +41,11 @@ public:
 	int getElektro() const;
 	void setElektro(int elektro);
 
-	HouseColor getColor()const;
-	inline void setColor( HouseColor color);
+	HouseColor getColor() const;
+	void setColor( HouseColor color);
 
 	vector<House>grabhouses();
-	bool BuildHouse(CityNode& city, House& house);
+	//bool BuildHouse(CityNode& city, House& house);
 
 	//void printHouses();
 	//void OutputPlayerStatus() const;

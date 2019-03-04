@@ -26,24 +26,24 @@ Player ::~Player()
 {
 }
 
-inline string Player::getName() const {
+string Player::getName() const {
 	return name;
 }
-inline void Player::setName( string name) {
+void Player::setName( string name) {
 	this->name = name;
 }
 
-inline int Player::getElektro() const {
+int Player::getElektro() const {
 	return elektro;
 }
-inline void Player::setElektro( int elektro) {
+void Player::setElektro( int elektro) {
 	this->elektro = elektro;
 }
 
-inline void Player::setColor( HouseColor color) {
+void Player::setColor( HouseColor color) {
 	this->color = color;
 }
-inline HouseColor Player::getColor()const {
+HouseColor Player::getColor()const {
 	return color;
 }
 
@@ -98,10 +98,33 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 }
 
 
-int main()
-{
+//int main()
+//{
+//
+//	cout << "Hello and Welcome to Powergrid\n\n";
+//
+//	Player PL1 =  Player("Yassine", 50, RED);
+//
+//	PL1.grabhouses();
+//
+//	cout << PL1 << endl;
+//
+//	SummaryCards overviewCard = SummaryCards(PL1);
+//	cout << overviewCard;
+//
+//	fstream outfile;
+//	outfile.open("players.txt");
+//
+//	//write text into file
+//	outfile << "ABCD.";//test
+//	
+//	//closing the file
+//	outfile.close();
+//
+//	system("pause");
+//	return 0;
+//}
 
-	cout << "Hello and Welcome to Powergrid\n\n";
 
 	Player PL1 =  Player("Yassine", 50, RED);
 

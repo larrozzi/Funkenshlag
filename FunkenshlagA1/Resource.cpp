@@ -1,4 +1,5 @@
 #include "Resource.h"
+#include <iostream>
 
 Resource::Resource() {
 	//price of the resource
@@ -13,7 +14,7 @@ Resource::Resource(int price, Type type) {
 
 }
 
-inline Type Resource::getType() const {
+Type Resource::getType() const {
 	return type;
 }
 
@@ -27,3 +28,4 @@ int Resource::getPrice() const {
 void Resource::setPrice(int price) {
 	this->price = price;
 }
+
