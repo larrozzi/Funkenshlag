@@ -1,8 +1,11 @@
-#include "Player.h"
+#include <fstream>
 #include <iostream>
 #include <string>
+#include "Player.h"
+#include "SummaryCards.h"
 
-using std::auto_ptr;
+
+//using std::auto_ptr;
 
 using std::string;
 using std::cout;
@@ -14,7 +17,9 @@ Player::Player()
 {
 }
 
-Player::Player(string name, int elektro, HouseColor _color) : name{ name }, elektro{ elektro }, _color{ _color }{
+Player::Player(string name, int elektro, HouseColor color) : name{ name }, elektro{ elektro }, color{ color }{
+
+	cout << "player created" << endl;
 }
 
 Player ::~Player()
@@ -35,21 +40,35 @@ inline void Player::setElektro( int elektro) {
 	this->elektro = elektro;
 }
 
-inline void Player::setColor( HouseColor _color) {
-	this->_color = _color;
+inline void Player::setColor( HouseColor color) {
+	this->color = color;
 }
 inline HouseColor Player::getColor()const {
-	return _color;
+	return color;
 }
 
 vector<House>Player::grabhouses()
 {
-	vector<House>houses;
-
 	for (int i=0; i < 22; i++) {
-		houses.push_back(HouseColor(_color));
+		houses.push_back(House(color));
 	}
 	return houses;
+}
+
+// overloading output operator for the enum HouseColor
+std::ostream& operator<<(std::ostream& outs, const HouseColor& color)
+{
+	const char* c = 0;
+#define PROCESS_VAL(p) case(p): c = #p; break;
+	switch (color) {
+		PROCESS_VAL(RED);
+		PROCESS_VAL(BLUE);
+		PROCESS_VAL(GREEN);
+		PROCESS_VAL(YELLOW);
+		PROCESS_VAL(BLACK);
+	}
+#undef PROCESS_VAL
+	return outs << c;
 }
 
 // overloading output stream operator
@@ -58,50 +77,36 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 	string separator = "---------------------------------------------------------------------------------\n";
 	outs << separator << player.name + " has the following items: \n"
 		<< player.elektro << " Elektros \n"
-		<< player.houses.size() << " " << player._color << " colored Houses\n";
+		<< player.houses.size() << " " << player.color << " colored Houses\n";
 
 	return outs;
 }
-//void Player::OutputPlayerStatus() const {
-//	string separator = "---------------------------------------------------------------------------------\n";
-//	string msg = separator + getName() + " has the following items \n" + "\t"+ to_string(getElektro()) + " Elektros" + "\n";
-//	string PlayerStatus = msg;
-//	//print houses 
-//
-//	PlayerStatus += "\tHe owns "+ houses.size();
-//	PlayerStatus += "houses of color " + getColor();
-//
-//	cout << PlayerStatus;
-	
 
-	// overloading output operator for the enum HouseColour
-	std::ostream& operator<<(std::ostream& outs, const HouseColor& colour)
-	{
-		const char* c = 0;
-#define PROCESS_VAL(p) case(p): c = #p; break;
-		switch (colour) {
-			PROCESS_VAL(BLUE);
-			PROCESS_VAL(RED);
-			PROCESS_VAL(GREEN);
-			PROCESS_VAL(YELLOW);
-			PROCESS_VAL(BLACK);
-		}
-#undef PROCESS_VAL
-		return outs << c;
-	}
-	
 
 int main()
 {
-	
+
 	cout << "Hello and Welcome to Powergrid\n\n";
 
-	Player* PL1 = new Player("Yassine", 50, BLUE);
-	
-	//PL1->OutputPlayerStatus();
+	Player PL1 =  Player("Yassine", 50, RED);
 
-	cout << PL1;
+	PL1.grabhouses();
+
+	cout << PL1 << endl;
+
+	SummaryCards overviewCard = SummaryCards(PL1);
+	cout << overviewCard;
+
+	fstream outfile;
+	outfile.open("players.txt");
+
+	//write text into file
+	outfile << "ABCD.";//test
+	
+	//closing the file
+	outfile.close();
 
 	system("pause");
 	return 0;
 }
+

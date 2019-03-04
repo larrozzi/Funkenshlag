@@ -24,15 +24,16 @@ private:
 	string name;
 	int elektro = 50;
 	vector <House> houses;
-	HouseColor _color;
+	HouseColor color;
 
 public:
 	
 	
 	Player();
-	Player(string name,  int electro, HouseColor _color);
+	Player(string name,  int electro, HouseColor color);
 	~Player();
 
+	
 	string getName() const;
 	void setName(string name);
 
@@ -40,7 +41,7 @@ public:
 	void setElektro(int elektro);
 
 	HouseColor getColor()const;
-	inline void setColor( HouseColor _color);
+	inline void setColor( HouseColor color);
 
 	vector<House>grabhouses();
 
@@ -49,7 +50,7 @@ public:
 
 
 	// overloading output operator
-	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& colour);
+	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
 	friend std::ostream& operator<<(std::ostream& outs, const Player& player);
 };
 
