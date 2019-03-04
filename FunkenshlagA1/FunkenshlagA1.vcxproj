@@ -121,7 +121,6 @@
     <ClCompile Include="House.cpp" />
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PlayerMain.cpp" />
     <ClCompile Include="PowerPlantCards.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceMarket.cpp" />
