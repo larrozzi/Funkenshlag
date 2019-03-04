@@ -4,7 +4,7 @@
 #include <map> 
 #include <memory>
 #include <vector>
-#include "Map.h"
+#include "GameMap.h"
 using std::string;
 
 class MapLoader
