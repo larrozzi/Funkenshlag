@@ -39,7 +39,6 @@
     <ClCompile Include="MapLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="GameMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -50,12 +49,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SummaryCards.cpp">
-=======
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Part3_Driver.cpp">
->>>>>>> Part_3
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,26 +83,5 @@
     <ClInclude Include="MapLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="GameMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Slot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Step3Card.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SummaryCards.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-=======
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
->>>>>>> Part_3
   </ItemGroup>
 </Project>
