@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK };
+enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK, PINK};
 
 class House {
 private:
