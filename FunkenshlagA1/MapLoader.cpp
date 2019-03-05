@@ -3,6 +3,7 @@
 #include "GameMap.h"
 #include "MapLoader.h"
 #include "CityNode.h"
+#include "GameMap.h"
 #include <iostream>
 #include <fstream>
 #include <map> 
@@ -21,14 +22,15 @@ MapLoader::MapLoader(string f)
 	exec();
 }
 
-void MapLoader::readMap(string f)
+vector<CityNode> MapLoader::readMap(string f)
 {
 	fileName = f;
-	exec();
+	vector<CityNode> result = exec();
+	return result;
 }
 
 // where all the magic happens
-void MapLoader::exec()
+vector<CityNode> MapLoader::exec()
 {
 	string cityString;
 	string edgesString;
@@ -40,7 +42,7 @@ void MapLoader::exec()
 	bool used = true;
 	string line;
 	ifstream myfile(this->fileName);
-	vector<int> temp;
+	vector<int> costVectorInt;
 
 	if (myfile.is_open())
 	{
@@ -51,17 +53,20 @@ void MapLoader::exec()
 			boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesString into vector delimiter: ','
 			boost::split(costVector, costString, [](char c) {return c == ','; });    // split costString into vector delimiter: ','
 
-			for (string i :costVector)
+
+			for (std::size_t j = 0; j < costVector.size(); j++)
 			{
-				int t = stoi(i);
-				temp.push_back(t);
+				int t = stoi(costVector[j]);
+				costVectorInt.push_back(t);
 			}
 
 			//ALGORITHM TO ASSIGN VARIABLES
-			cities[i].setValues(cityString, edgesVector, temp);
+			cities[i].setValues(cityString, edgesVector, costVectorInt);
 			i++;
 		}
+
 		myfile.close();
 	}
-	else cout << "Unable to open file";
+	else cout << "Incorrect file format";
+	return cities;
 }

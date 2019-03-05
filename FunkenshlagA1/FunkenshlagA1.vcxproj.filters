@@ -60,6 +60,9 @@
     <ClCompile Include="Part4_Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Part2_Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
