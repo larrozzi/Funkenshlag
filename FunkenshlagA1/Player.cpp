@@ -71,15 +71,6 @@ void  Player::printOwnedCities( ){
 		
 }
 
-//// method to prints the PowerPlantCards
-//void PowerPlantCards::printPPCards(vector<PowerPlantCards>ppCards)
-//{
-//	std::vector<PowerPlantCards>::iterator show; // create a vector iterator
-//	for (show = ppCards.begin(); show != ppCards.end(); show++) {
-//		std::cout << *show << std::endl;
-//	}
-//}
-
 //bool Player::buildinCity(vector <CityNode>& city) {
 //
 //	mycities.push_back(CityNode("montreal",false, vector<string>& e, vector<int>& c));
