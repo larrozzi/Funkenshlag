@@ -47,6 +47,8 @@ public:
 	vector<House>grabhouses();
 	//bool BuildHouse(CityNode& city, House& house);
 
+	//bool BuildHouse(CityNode& city, House& house);
+
 	//void printHouses();
 	//void OutputPlayerStatus() const;
 
