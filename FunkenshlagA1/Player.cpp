@@ -4,7 +4,6 @@
 #include "Player.h"
 #include "SummaryCards.h"
 
-
 //using std::auto_ptr;
 
 using std::string;
@@ -12,6 +11,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 using std::to_string;
+using std::vector;
 
 Player::Player()
 {
@@ -55,28 +55,37 @@ vector<House>Player::grabhouses()
 	return houses;
 }
 
-//bool Player::buildinCity(CityNode city) {
+bool Player::buildinCity(string city) {
+	mycities.push_back(city);
+	return true;
+	//if CityNode.getName() == city{
+	//mycities.push_back("montreal");
+
+	//return true;
+	//}
+	//else return false;
+}
+void  Player::printOwnedCities( ){
+	for (vector<string>::const_iterator i = mycities.begin(); i != mycities.end(); ++i)
+		cout << *i << ' ';
+		
+}
+
+//// method to prints the PowerPlantCards
+//void PowerPlantCards::printPPCards(vector<PowerPlantCards>ppCards)
+//{
+//	std::vector<PowerPlantCards>::iterator show; // create a vector iterator
+//	for (show = ppCards.begin(); show != ppCards.end(); show++) {
+//		std::cout << *show << std::endl;
+//	}
+//}
+
+//bool Player::buildinCity(vector <CityNode>& city) {
 //
-//	mycities.push_back(CityNode("montreal", ));
+//	mycities.push_back(CityNode("montreal",false, vector<string>& e, vector<int>& c));
 //	return true;
 //
 //}
-//vector<CityNode> buildinCity(CityNode city) {
-//	return city;
-//
-//}
-//
-////************** build houses in cities if possible *****************  1009
-//bool Player::BuildHouse(CityNode& city, House& house) {
-//	int houseCost = city.getPrice();
-//	if (!city.unUse() ) //err :this should return bool
-//		return false;
-//	else {
-//		//elektro -= houseCost;
-//		setElektro(getElektro() - houseCost);
-//		houses.push_back(house); // add house on vector houses
-//		return true;
-//	}
 
 // overloading output operator for the enum HouseColor
 std::ostream& operator<<(std::ostream& outs, const HouseColor& color)
@@ -103,7 +112,7 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 	outs << separator << player.name + " has the following items: \n"
 		<< player.elektro << " Elektros \n"
 		<< player.houses.size() << " " << player.color << " colored Houses\n";
-
+		//<< player.printOwnedCities();
 	return outs;
 }
 
