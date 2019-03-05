@@ -24,7 +24,9 @@ private:
 	string name;
 	int elektro = 50;
 	vector <House> houses;
-	//vector <CityNode> mycities;  1009
+	//vector <CityNode> mycities;  
+	vector <string> mycities;
+
 	HouseColor color;
 
 public:
@@ -45,13 +47,12 @@ public:
 	void setColor( HouseColor color);
 
 	vector<House>grabhouses();
-//	bool buildinCity(CityNode city);
-	//vector<CityNode> buildinCity(CityNode city);
+
+	bool buildinCity(string city);
+	void printOwnedCities();
+	//bool  buildinCity(vector <CityNode>& city);
 
 	//bool BuildHouse(CityNode& city, House& house);
-
-	//void printHouses();
-	//void OutputPlayerStatus() const;
 
 
 	// overloading output operator
