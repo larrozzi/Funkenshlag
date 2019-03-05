@@ -16,5 +16,6 @@ int main()
 	MapLoader mapLoader = MapLoader();
 
 	GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
+	gameMap.readMap;
 
 }

@@ -67,4 +67,5 @@ vector<CityNode> MapLoader::exec()
 		myfile.close();
 	}
 	else cout << "Incorrect file format";
+	return cities;
 }
