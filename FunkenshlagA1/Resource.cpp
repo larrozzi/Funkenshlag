@@ -39,6 +39,7 @@ std::string Resource::printType(Type resource) const
 	case URANIUM:	return "URANIUM";
 	case ECOFUSION: return "ECOFUSION";
 	case NONE:		return "NONE";
+	default:        return "ERROR";
 	}
 }
 
