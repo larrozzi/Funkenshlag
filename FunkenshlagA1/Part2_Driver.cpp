@@ -19,5 +19,5 @@ int main()
 	//gameMap.readMap;
 
 	cout << gameMap.getMap()[0].getName();
-
+	system("pause");
 }
