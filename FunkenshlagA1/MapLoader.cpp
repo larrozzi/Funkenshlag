@@ -42,6 +42,7 @@ vector<CityNode> MapLoader::exec()
 	int i = 0;
 	bool used = true;
 	string line;
+	string segment;
 	ifstream myfile(this->fileName);
 	vector<int> costVectorInt;
 	vector<string> lineVariables(3);
@@ -49,46 +50,23 @@ vector<CityNode> MapLoader::exec()
 	if (myfile.is_open())
 	{
 	
-		// -------------segment added by yassine. still need improvment
-		for (unsigned n = 0; n <= 2; n++) {
-			for (unsigned i = 0; i < lineVariables.size(); i++) {
-
-				(getline(myfile, line, '|'));
-				lineVariables.at(i) = line;
-				cityString = lineVariables.at(0);
-				edgesString = lineVariables.at(1);
-				costString = lineVariables.at(2);
-
+		while (getline(myfile, line))	//takes a whole line
+		{
+			std::istringstream input;
+			input.str(line);
+			while (getline(input, segment,'|'))	//seperates line into segments divided by '|'
+			{
+				lineVariables.push_back(segment);
 			}
-			cout << cityString << "|" << edgesString << "|" << costString << "\n";    // read line of file
+			cityString = lineVariables.at(0);
+			edgesString = lineVariables.at(1);
+			costString = lineVariables.at(2);
+
+			boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesstring into vector delimiter: ','
+			boost::split(costVector, costString, [](char c) {return c == ','; });    // split coststring into vector delimiter: ','
+			cities[i].setValues(cityString, edgesVector, costVector);
 		}
-			/*for (vector<string>::const_iterator i = lineVariables.begin(); i != lineVariables.end(); ++i)
-						cout << *i << ' ';*/
-		
 		myfile.close();
-		//----------------------------
-
-
-
-		//while (getline(myfile, line))
-		//{
-		//	cout << cityString << "|" << edgesString << "|" << costString << "\n";    // read line of file
-
-		//	boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesString into vector delimiter: ','
-		//	boost::split(costVector, costString, [](char c) {return c == ','; });    // split costString into vector delimiter: ','
-
-		//	//for (int j = 0; j < costVector.size(); j++)
-		//	//{
-		//	//	int t = stoi(costVector[j]);
-		//	//	costVectorInt.push_back(t);
-		//	//}
-
-		//	//ALGORITHM TO ASSIGN VARIABLES
-		//	cities.push_back.setValues(cityString, edgesVector, costVector);
-		//	i++;
-		//}
-
-		//myfile.close();
 	}
 		else cout << "Incorrect file format";
 		return cities;
