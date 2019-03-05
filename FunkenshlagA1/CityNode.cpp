@@ -15,12 +15,12 @@ using namespace std;
 CityNode::CityNode()
 {}
 
-CityNode::CityNode(string n, bool u, vector<string> e, vector<int> c)
+CityNode::CityNode(string n, bool u, vector<string> e, vector<string> c)
 	: name{ n }, used{ u }, edges{ e }, cost{ c }
 {
 }
 
-CityNode::CityNode(string n, map<string, bool>  o, bool u, vector<string> e, vector<int> c)
+CityNode::CityNode(string n, map<string, bool>  o, bool u, vector<string> e, vector<string> c)
 	: name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
 {}
 
@@ -64,11 +64,11 @@ void CityNode::setEdges(vector<string> e)
 	edges = e;
 }
 
-void CityNode::setCosts(vector<int> c)
+void CityNode::setCosts(vector<string> c)
 {
 	cost = c;
 }
-void CityNode::setValues(string n, vector<string> e, vector<int> c)
+void CityNode::setValues(string n, vector<string> e, vector<string> c)
 {
 	name = n;
 	edges = e;

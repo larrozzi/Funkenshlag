@@ -17,13 +17,13 @@ private:
 	map<string,bool> ownedBy;
 	bool used;
 	vector<string> edges;
-	vector<int> cost;
+	vector<string> cost;
 
 public:
 	//constructors
 	CityNode();
-	CityNode(string n, bool u, vector<string> e, vector<int> c);
-	CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<int> c);
+	CityNode(string n, bool u, vector<string> e, vector<string> c);
+	CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<string> c);
 
 	//getters
 	string getName() const;
@@ -37,7 +37,7 @@ public:
 	void use();
 	void unUse();
 	void setEdges(vector<string> e);
-	void setCosts(vector<int> c);
-	void setValues(string n, vector<string> e, vector<int> c);
+	void setCosts(vector<string> c);
+	void setValues(string n, vector<string> e, vector<string> c);
 
 };
