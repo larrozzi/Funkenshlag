@@ -1,5 +1,5 @@
 #include "Resource.h"
-#include <iostream>
+
 
 Resource::Resource() {
 	//price of the resource

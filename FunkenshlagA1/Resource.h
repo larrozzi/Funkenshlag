@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <string>
+
 //Type of the resource
 enum Type { NONE, COAL, OIL, HYBRID, GARBAGE, URANIUM, ECOFUSION };
 
