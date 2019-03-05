@@ -103,7 +103,7 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 	outs << separator << player.name + " has the following items: \n"
 		<< player.elektro << " Elektros \n"
 		<< player.houses.size() << " " << player.color << " colored Houses\n";
-		//<< player.printOwnedCities();
+		// << player.printOwnedCities();
 	return outs;
 }
 

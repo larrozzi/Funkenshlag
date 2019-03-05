@@ -322,9 +322,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib;
+				HEADER_SEARCH_PATHS = (
+					/Users/Lekside/Downloads/Concordia/Winter,
+					19/COMP,
+					345/Assignments/boost_1_69_0/boost/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Lekside/Downloads/Concordia/Winter,
+					19/COMP,
+					345/Assignments/boost_1_69_0/libs/,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
@@ -332,9 +341,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib;
+				HEADER_SEARCH_PATHS = (
+					/Users/Lekside/Downloads/Concordia/Winter,
+					19/COMP,
+					345/Assignments/boost_1_69_0/boost/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Lekside/Downloads/Concordia/Winter,
+					19/COMP,
+					345/Assignments/boost_1_69_0/libs/,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
