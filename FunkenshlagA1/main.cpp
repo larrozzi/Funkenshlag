@@ -67,6 +67,7 @@ int main()
     // Testing Resource class
     Resource one = Resource(3, OIL);
     std::cout << one.printType(one.getType()) << std::endl;
+    std::cout << one << std::endl;
     
     return 0;
 }

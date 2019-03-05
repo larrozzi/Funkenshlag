@@ -28,7 +28,7 @@ void Resource::setPrice(int price){
 }
 
 // method to convert enum Type to string
-std::string Resource::printType(Type resource)
+std::string Resource::printType(Type resource) const
 {
     switch(resource) {
         case COAL       : return "COAL";
@@ -44,7 +44,7 @@ std::string Resource::printType(Type resource)
 // overloading output stream operator for Resource
 std::ostream& operator<<(std::ostream& outs, const Resource& resource)
 {
-    outs << resource.price << "\t" << resource.type;
+    outs << resource.price << "\t" << resource.printType(resource.type);
     
     return outs;
 }

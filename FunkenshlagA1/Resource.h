@@ -15,7 +15,7 @@ public:
 	inline int getPrice() const;
     void setPrice(int price);
     
-    std::string printType(Type resource);
+    std::string printType(Type resource) const;
     friend std::ostream& operator<<(std::ostream& outs, const Resource& resource);
 
 };
