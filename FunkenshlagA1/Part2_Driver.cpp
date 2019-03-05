@@ -17,7 +17,7 @@ int main()
 
 	GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
 	//gameMap.readMap;
-
-	cout << gameMap.getMap()[0].getName();
+	
+	//cout << gameMap.getMap()[0].getName();
 	system("pause");
 }

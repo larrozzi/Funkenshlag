@@ -20,7 +20,7 @@ MapLoader::MapLoader()
 MapLoader::MapLoader(string f)
 {
 	fileName = f;
-	exec();
+	vector<CityNode> result = exec();
 }
 
 vector<CityNode> MapLoader::readMap(string f)
@@ -33,7 +33,7 @@ vector<CityNode> MapLoader::readMap(string f)
 // where all the magic happens
 vector<CityNode> MapLoader::exec()
 {
-	string cityString;	// city name
+	string cityString = "hi";	// city name
 	string edgesString;	//whole string with multiple edges
 	string costString;	//whole string with multiple costs
 	string line;	// individual line
@@ -54,20 +54,25 @@ vector<CityNode> MapLoader::exec()
 	
 		while (getline(myfile, line))	//takes a whole line
 		{
-			istringstream linestream;
-			istringstream edgestream;
-			istringstream coststream;
-
+			stringstream linestream;
+			stringstream edgestream;
+			stringstream coststream;
+			
 
 			linestream.str(line);
+
+
 			while (getline(linestream, segment,'|'))	//seperates line into segments divided by '|'
 			{
 				lineVariables.push_back(segment);	//pushes the segments into vector
+				cout << segment << endl;
+				cout << lineVariables[0];
+				
 			}
 
 
 			cityString = lineVariables.at(0);		//assign the vector variables to corresponding Strings
-
+			
 			edgesString = lineVariables.at(1);
 			edgestream.str(edgesString);			//convert edgesString to edgesstream to allow getline() use
 			while (getline(edgestream, edge, ','))
@@ -84,10 +89,12 @@ vector<CityNode> MapLoader::exec()
 
 			cities[i].setValues(cityString, edgesVector, costVector);
 			i++;
+
 		}
 		myfile.close();
 	}
 		else cout << "Incorrect file format";
+
 		return cities;
 }
 
