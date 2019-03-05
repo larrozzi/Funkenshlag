@@ -21,7 +21,7 @@ CityNode::CityNode(string n, bool u, vector<string> e, vector<int> c)
 {
 }
 
-CityNode::CityNode(string n, map<Player*, bool>  o, bool u, vector<string> e, vector<int> c)
+CityNode::CityNode(string n, map<Player, bool>  o, bool u, vector<string> e, vector<int> c)
 	: name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
 {}
 
@@ -29,7 +29,7 @@ string CityNode::getName() const
 {
 	return name;
 }
-map<Player*, bool> CityNode::getOwners() const
+map<Player, bool> CityNode::getOwners() const
 {
 	return ownedBy;
 }
@@ -47,7 +47,7 @@ void CityNode::setName(string n)
 	name = n;
 }
 
-void CityNode::setOwners(map<Player*, bool> o)
+void CityNode::setOwners(map<Player, bool> o)
 {
 	ownedBy = o;
 }
