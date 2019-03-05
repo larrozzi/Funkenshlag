@@ -1,7 +1,9 @@
 #pragma once
+#include <iostream>
+#include <string>
 
 //Type of the resource
-enum Type { NONE, COAL, OIL, HYBRID, GARBAGE, URANIUM };
+enum Type { NONE, COAL, OIL, HYBRID, GARBAGE, URANIUM, ECOFUSION };
 
 class Resource {
 private:
@@ -12,8 +14,10 @@ public:
 	Resource(int price, Type type);
 	Type getType() const;
 	void setType(Type type);
-	int getPrice() const;
+	inline int getPrice() const;
 	void setPrice(int price);
 
+	std::string printType(Type resource) const;
+	friend std::ostream& operator<<(std::ostream& outs, const Resource& resource);
 
 };
