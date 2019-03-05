@@ -66,7 +66,7 @@ vector<House>Player::grabhouses()
 //
 //}
 //
-////************** build houses in cities if possible *****************
+////************** build houses in cities if possible *****************  1009
 //bool Player::BuildHouse(CityNode& city, House& house) {
 //	int houseCost = city.getPrice();
 //	if (!city.unUse() ) //err :this should return bool

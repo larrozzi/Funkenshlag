@@ -24,7 +24,7 @@ private:
 	string name;
 	int elektro = 50;
 	vector <House> houses;
-	//vector <CityNode> mycities;
+	//vector <CityNode> mycities;  1009
 	HouseColor color;
 
 public:
