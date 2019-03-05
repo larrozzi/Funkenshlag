@@ -26,4 +26,5 @@ public:
 	//getter/ setter
 	vector<CityNode> getMap() const;
 	void setMap(vector<CityNode> cities);
+	//void readMap();
 };

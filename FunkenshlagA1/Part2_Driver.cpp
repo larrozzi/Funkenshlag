@@ -9,12 +9,15 @@
 #include "GameMap.h"
 #include "MapLoader.h"
 #include "SummaryCards.h"
-
+#include <boost/algorithm/string.hpp>
 
 int main()
 {
 	MapLoader mapLoader = MapLoader();
 
 	GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
+	//gameMap.readMap;
+
+	cout << gameMap.getMap()[0].getName();
 
 }

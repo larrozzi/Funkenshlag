@@ -53,9 +53,9 @@ vector<CityNode> MapLoader::exec()
 			boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesString into vector delimiter: ','
 			boost::split(costVector, costString, [](char c) {return c == ','; });    // split costString into vector delimiter: ','
 
-			for (string i :costVector)
+			for (int j = 0; j < costVector.size(); j++)
 			{
-				int t = stoi(i);
+				int t = stoi(costVector[j]);
 				costVectorInt.push_back(t);
 			}
 
@@ -67,4 +67,5 @@ vector<CityNode> MapLoader::exec()
 		myfile.close();
 	}
 	else cout << "Incorrect file format";
+	return cities;
 }
