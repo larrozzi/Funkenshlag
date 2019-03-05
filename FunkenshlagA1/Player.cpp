@@ -18,8 +18,6 @@ Player::Player()
 }
 
 Player::Player(string name, int elektro, HouseColor color) : name{ name }, elektro{ elektro }, color{ color }{
-
-	cout << "player created" << endl;
 }
 
 Player ::~Player()
@@ -68,7 +66,6 @@ bool Player::buildinCity(string city) {
 void  Player::printOwnedCities( ){
 	for (vector<string>::const_iterator i = mycities.begin(); i != mycities.end(); ++i)
 		cout << *i << ' ';
-		
 }
 
 //bool Player::buildinCity(vector <CityNode>& city) {
