@@ -21,11 +21,11 @@ void GameMap::setMap(vector<CityNode> cities)
 {
 	gameMap = cities;
 }
-void GameMap::readMap()
-{
-	for (CityNode i: gameMap)
-	{
-		string name = i.getName;
-		cout << name + "|";
-	}
-}
+//void GameMap::readMap()
+//{
+	//for (CityNode i: gameMap)
+	//{
+	//	string name = i.getName;
+	//	cout << name + "|";
+	//}
+//}
