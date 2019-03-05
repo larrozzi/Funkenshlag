@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cctype>
 #include <cstdlib>
-#include "CityNode.h"
 #include <string>
 #include "Resource.h"
 #include <map>

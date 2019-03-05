@@ -26,24 +26,24 @@ Player ::~Player()
 {
 }
 
-inline string Player::getName() const {
+string Player::getName() const {
 	return name;
 }
-inline void Player::setName( string name) {
+void Player::setName( string name) {
 	this->name = name;
 }
 
-inline int Player::getElektro() const {
+int Player::getElektro() const {
 	return elektro;
 }
-inline void Player::setElektro( int elektro) {
+void Player::setElektro( int elektro) {
 	this->elektro = elektro;
 }
 
-inline void Player::setColor( HouseColor color) {
+void Player::setColor( HouseColor color) {
 	this->color = color;
 }
-inline HouseColor Player::getColor()const {
+HouseColor Player::getColor()const {
 	return color;
 }
 
@@ -55,17 +55,42 @@ vector<House>Player::grabhouses()
 	return houses;
 }
 
+//bool Player::buildinCity(CityNode city) {
+//
+//	mycities.push_back(CityNode("montreal", ));
+//	return true;
+//
+//}
+//vector<CityNode> buildinCity(CityNode city) {
+//	return city;
+//
+//}
+//
+////************** build houses in cities if possible *****************  1009
+//bool Player::BuildHouse(CityNode& city, House& house) {
+//	int houseCost = city.getPrice();
+//	if (!city.unUse() ) //err :this should return bool
+//		return false;
+//	else {
+//		//elektro -= houseCost;
+//		setElektro(getElektro() - houseCost);
+//		houses.push_back(house); // add house on vector houses
+//		return true;
+//	}
+
 // overloading output operator for the enum HouseColor
 std::ostream& operator<<(std::ostream& outs, const HouseColor& color)
 {
 	const char* c = 0;
 #define PROCESS_VAL(p) case(p): c = #p; break;
 	switch (color) {
+		PROCESS_VAL(NO_COLOR);
 		PROCESS_VAL(RED);
 		PROCESS_VAL(BLUE);
 		PROCESS_VAL(GREEN);
 		PROCESS_VAL(YELLOW);
 		PROCESS_VAL(BLACK);
+		PROCESS_VAL(PINK);
 	}
 #undef PROCESS_VAL
 	return outs << c;
@@ -82,31 +107,4 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 	return outs;
 }
 
-
-int main()
-{
-
-	cout << "Hello and Welcome to Powergrid\n\n";
-
-	Player PL1 =  Player("Yassine", 50, RED);
-
-	PL1.grabhouses();
-
-	cout << PL1 << endl;
-
-	SummaryCards overviewCard = SummaryCards(PL1);
-	cout << overviewCard;
-
-	fstream outfile;
-	outfile.open("players.txt");
-
-	//write text into file
-	outfile << "ABCD.";//test
-	
-	//closing the file
-	outfile.close();
-
-	system("pause");
-	return 0;
-}
 

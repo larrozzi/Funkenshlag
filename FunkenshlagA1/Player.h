@@ -5,7 +5,7 @@
 //#include "PowerPlantCards.h"
 //#include "Resource.h"
 //#include "ResourceMarket.h"
-//#include "CityNode.h"
+#include "CityNode.h"
 #include "House.h"
 #include <memory>
 #include <vector>
@@ -24,6 +24,7 @@ private:
 	string name;
 	int elektro = 50;
 	vector <House> houses;
+	//vector <CityNode> mycities;  1009
 	HouseColor color;
 
 public:
@@ -40,10 +41,14 @@ public:
 	int getElektro() const;
 	void setElektro(int elektro);
 
-	HouseColor getColor()const;
-	inline void setColor( HouseColor color);
+	HouseColor getColor() const;
+	void setColor( HouseColor color);
 
 	vector<House>grabhouses();
+//	bool buildinCity(CityNode city);
+	//vector<CityNode> buildinCity(CityNode city);
+
+	//bool BuildHouse(CityNode& city, House& house);
 
 	//void printHouses();
 	//void OutputPlayerStatus() const;
