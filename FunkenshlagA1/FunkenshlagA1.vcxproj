@@ -85,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Anthony\Downloads\boost_1_69_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -122,6 +123,7 @@
     <ClCompile Include="House.cpp" />
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Part3_Driver.cpp" />
+    <ClCompile Include="Part4_Driver.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PowerPlantCards.cpp" />
     <ClCompile Include="Resource.cpp" />

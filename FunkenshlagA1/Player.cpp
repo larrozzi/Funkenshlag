@@ -26,24 +26,24 @@ Player ::~Player()
 {
 }
 
-inline string Player::getName() const {
+string Player::getName() const {
 	return name;
 }
-inline void Player::setName( string name) {
+void Player::setName( string name) {
 	this->name = name;
 }
 
-inline int Player::getElektro() const {
+int Player::getElektro() const {
 	return elektro;
 }
-inline void Player::setElektro( int elektro) {
+void Player::setElektro( int elektro) {
 	this->elektro = elektro;
 }
 
-inline void Player::setColor( HouseColor color) {
+void Player::setColor( HouseColor color) {
 	this->color = color;
 }
-inline HouseColor Player::getColor()const {
+HouseColor Player::getColor()const {
 	return color;
 }
 
@@ -57,7 +57,7 @@ vector<House>Player::grabhouses()
 
 //bool Player::buildinCity(CityNode city) {
 //
-//	mycities.push_back(CityNode("montreal",));
+//	mycities.push_back(CityNode("montreal", ));
 //	return true;
 //
 //}
@@ -107,30 +107,4 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 	return outs;
 }
 
-//int main()
-//{
-//
-//	cout << "Hello and Welcome to Powergrid\n\n";
-//
-//	Player PL1 =  Player("Yassine", 50, RED);
-//
-//	PL1.grabhouses();
-//
-//	cout << PL1 << endl;
-//
-//	SummaryCards overviewCard = SummaryCards(PL1);
-//	cout << overviewCard;
-//
-//	std::ofstream outfile("players.txt", std::ios_base::app);
-//	if (outfile.is_open()) {
-//		outfile << PL1;
-//		outfile << overviewCard;//test
-//
-//		outfile.close();
-//	}
-//	else cout << "cannot open the file ";
-//
-//	system("pause");
-//	return 0;
-//}
 

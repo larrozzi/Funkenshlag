@@ -1,3 +1,9 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include "Player.h"
+#include "SummaryCards.h"
+
 int main()
 {
 

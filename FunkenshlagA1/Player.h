@@ -41,11 +41,11 @@ public:
 	int getElektro() const;
 	void setElektro(int elektro);
 
-	HouseColor getColor()const;
-	inline void setColor( HouseColor color);
+	HouseColor getColor() const;
+	void setColor( HouseColor color);
 
 	vector<House>grabhouses();
-	//bool buildinCity(CityNode city);
+//	bool buildinCity(CityNode city);
 	//vector<CityNode> buildinCity(CityNode city);
 
 	//bool BuildHouse(CityNode& city, House& house);
