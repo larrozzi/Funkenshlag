@@ -3,6 +3,7 @@
 #include "GameMap.h"
 #include "MapLoader.h"
 #include "CityNode.h"
+#include "GameMap.h"
 #include <iostream>
 #include <fstream>
 #include <map> 
@@ -21,14 +22,15 @@ MapLoader::MapLoader(string f)
 	exec();
 }
 
-void MapLoader::readMap(string f)
+vector<CityNode> MapLoader::readMap(string f)
 {
 	fileName = f;
-	exec();
+	vector<CityNode> result = exec();
+	return result;
 }
 
 // where all the magic happens
-void MapLoader::exec()
+vector<CityNode> MapLoader::exec()
 {
 	string cityString;
 	string edgesString;
@@ -40,7 +42,7 @@ void MapLoader::exec()
 	bool used = true;
 	string line;
 	ifstream myfile(this->fileName);
-	vector<int> temp;
+	vector<int> costVectorInt;
 
 	if (myfile.is_open())
 	{
@@ -54,14 +56,15 @@ void MapLoader::exec()
 			for (string i :costVector)
 			{
 				int t = stoi(i);
-				temp.push_back(t);
+				costVectorInt.push_back(t);
 			}
 
 			//ALGORITHM TO ASSIGN VARIABLES
-			cities[i].setValues(cityString, edgesVector, temp);
+			cities[i].setValues(cityString, edgesVector, costVectorInt);
 			i++;
 		}
+
 		myfile.close();
 	}
-	else cout << "Unable to open file";
+	else cout << "Incorrect file format";
 }

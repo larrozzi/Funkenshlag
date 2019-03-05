@@ -9,15 +9,15 @@
 using namespace std;
 
 // constructor
-Map::Map() {}
-Map::Map(vector<CityNode> m) : map(m) {}
+GameMap::GameMap() {}
+GameMap::GameMap(vector<CityNode> m) : gameMap(m) {}
 
 // getter/setter
-vector<CityNode> Map::getMap() const
+vector<CityNode> GameMap::getMap() const
 {
-	return map;
+	return gameMap;
 }
-void Map::setMap(vector<CityNode> cities)
+void GameMap::setMap(vector<CityNode> cities)
 {
-	map = cities;
+	gameMap = cities;
 }

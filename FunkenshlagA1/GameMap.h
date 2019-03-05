@@ -12,16 +12,16 @@
 using namespace std;
 
 
-class Map
+class GameMap
 {
 private:
 
-	vector<CityNode> map;
+	vector<CityNode> gameMap;
 
 public:
 	//constructors
-	Map();
-	Map(vector<CityNode> m);
+	GameMap();
+	GameMap(vector<CityNode> m);
 
 	//getter/ setter
 	vector<CityNode> getMap() const;
