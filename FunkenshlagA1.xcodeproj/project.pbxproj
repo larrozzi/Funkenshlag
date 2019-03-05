@@ -10,8 +10,18 @@
 		2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D52213688A0001893D /* SummaryCards.cpp */; };
 		2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D72213688A0001893D /* PowerPlantCards.cpp */; };
 		2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D82213688A0001893D /* Step3Card.cpp */; };
-		2D49C7DD221368B80001893D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7DC221368B80001893D /* main.cpp */; };
+		2D49C7DD221368B80001893D /* part5_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7DC221368B80001893D /* part5_Driver.cpp */; };
 		2D49C7E3221381620001893D /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7E1221381620001893D /* Cards.cpp */; };
+		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
+		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
+		2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF5D222E2F9C00025912 /* CityNode.cpp */; };
+		2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */; };
+		2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF61222E2F9C00025912 /* GameMap.cpp */; };
+		2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF62222E2F9D00025912 /* Resource.cpp */; };
+		2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */; };
+		2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF64222E2F9D00025912 /* Player.cpp */; };
+		2DFFEF70222E2F9D00025912 /* Part4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */; };
+		2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF67222E2F9D00025912 /* MapLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,9 +44,28 @@
 		2D49C7D62213688A0001893D /* PowerPlantCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerPlantCards.h; sourceTree = "<group>"; };
 		2D49C7D72213688A0001893D /* PowerPlantCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerPlantCards.cpp; sourceTree = "<group>"; };
 		2D49C7D82213688A0001893D /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
-		2D49C7DC221368B80001893D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		2D49C7DC221368B80001893D /* part5_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = part5_Driver.cpp; sourceTree = "<group>"; usesTabs = 0; };
 		2D49C7E1221381620001893D /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
 		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		2DFFEF54222E2F9C00025912 /* CityNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNode.h; sourceTree = "<group>"; };
+		2DFFEF55222E2F9C00025912 /* MapLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoader.h; sourceTree = "<group>"; };
+		2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part3_Driver.cpp; sourceTree = "<group>"; };
+		2DFFEF57222E2F9C00025912 /* ResourceMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceMarket.h; sourceTree = "<group>"; };
+		2DFFEF58222E2F9C00025912 /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = "<group>"; };
+		2DFFEF5A222E2F9C00025912 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		2DFFEF5C222E2F9C00025912 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
+		2DFFEF5D222E2F9C00025912 /* CityNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CityNode.cpp; sourceTree = "<group>"; };
+		2DFFEF5E222E2F9C00025912 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
+		2DFFEF5F222E2F9C00025912 /* GameMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMap.h; sourceTree = "<group>"; };
+		2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		2DFFEF61222E2F9C00025912 /* GameMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMap.cpp; sourceTree = "<group>"; };
+		2DFFEF62222E2F9D00025912 /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
+		2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceMarket.cpp; sourceTree = "<group>"; };
+		2DFFEF64222E2F9D00025912 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part4_Driver.cpp; sourceTree = "<group>"; };
+		2DFFEF66222E2F9D00025912 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
+		2DFFEF67222E2F9D00025912 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +98,26 @@
 		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
-				2D49C7DC221368B80001893D /* main.cpp */,
+				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
+				2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */,
+				2D49C7DC221368B80001893D /* part5_Driver.cpp */,
+				2DFFEF5D222E2F9C00025912 /* CityNode.cpp */,
+				2DFFEF54222E2F9C00025912 /* CityNode.h */,
+				2DFFEF61222E2F9C00025912 /* GameMap.cpp */,
+				2DFFEF5F222E2F9C00025912 /* GameMap.h */,
+				2DFFEF58222E2F9C00025912 /* House.cpp */,
+				2DFFEF66222E2F9D00025912 /* House.h */,
+				2DFFEF67222E2F9D00025912 /* MapLoader.cpp */,
+				2DFFEF55222E2F9C00025912 /* MapLoader.h */,
+				2DFFEF64222E2F9D00025912 /* Player.cpp */,
+				2DFFEF53222E2F9C00025912 /* Player.h */,
+				2DFFEF62222E2F9D00025912 /* Resource.cpp */,
+				2DFFEF5C222E2F9C00025912 /* Resource.h */,
+				2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */,
+				2DFFEF5A222E2F9C00025912 /* ResourceManager.h */,
+				2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */,
+				2DFFEF57222E2F9C00025912 /* ResourceMarket.h */,
+				2DFFEF5E222E2F9C00025912 /* Slot.h */,
 				2D49C7E2221381620001893D /* Cards.h */,
 				2D49C7E1221381620001893D /* Cards.cpp */,
 				2D49C7D22213688A0001893D /* SummaryCards.h */,
@@ -139,10 +187,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */,
+				2DFFEF69222E2F9D00025912 /* House.cpp in Sources */,
 				2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */,
-				2D49C7DD221368B80001893D /* main.cpp in Sources */,
+				2DFFEF70222E2F9D00025912 /* Part4_Driver.cpp in Sources */,
+				2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */,
+				2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */,
+				2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */,
+				2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */,
+				2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */,
+				2D49C7DD221368B80001893D /* part5_Driver.cpp in Sources */,
+				2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */,
 				2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */,
 				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
+				2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */,
+				2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +322,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -272,6 +332,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
