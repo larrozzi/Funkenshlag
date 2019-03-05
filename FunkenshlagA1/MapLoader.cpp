@@ -53,14 +53,14 @@ vector<CityNode> MapLoader::exec()
 			boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesString into vector delimiter: ','
 			boost::split(costVector, costString, [](char c) {return c == ','; });    // split costString into vector delimiter: ','
 
-			for (int j = 0; j < costVector.size(); j++)
-			{
-				int t = stoi(costVector[j]);
-				costVectorInt.push_back(t);
-			}
+			//for (int j = 0; j < costVector.size(); j++)
+			//{
+			//	int t = stoi(costVector[j]);
+			//	costVectorInt.push_back(t);
+			//}
 
 			//ALGORITHM TO ASSIGN VARIABLES
-			cities[i].setValues(cityString, edgesVector, costVectorInt);
+			cities.push_back.setValues(cityString, edgesVector, costVector);
 			i++;
 		}
 
