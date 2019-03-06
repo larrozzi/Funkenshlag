@@ -10,7 +10,7 @@
 		2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D52213688A0001893D /* SummaryCards.cpp */; };
 		2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D72213688A0001893D /* PowerPlantCards.cpp */; };
 		2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D82213688A0001893D /* Step3Card.cpp */; };
-		2D49C7DD221368B80001893D /* part5_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7DC221368B80001893D /* part5_Driver.cpp */; };
+		2D49C7DD221368B80001893D /* Part5_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7DC221368B80001893D /* Part5_Driver.cpp */; };
 		2D49C7E3221381620001893D /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7E1221381620001893D /* Cards.cpp */; };
 		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
 		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
@@ -45,7 +45,7 @@
 		2D49C7D62213688A0001893D /* PowerPlantCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerPlantCards.h; sourceTree = "<group>"; };
 		2D49C7D72213688A0001893D /* PowerPlantCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerPlantCards.cpp; sourceTree = "<group>"; };
 		2D49C7D82213688A0001893D /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
-		2D49C7DC221368B80001893D /* part5_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = part5_Driver.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		2D49C7DC221368B80001893D /* Part5_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part5_Driver.cpp; sourceTree = "<group>"; usesTabs = 0; };
 		2D49C7E1221381620001893D /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
 		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -70,6 +70,7 @@
 		2DFFEF76222F298B00025912 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		2DFFEF77222F298B00025912 /* players.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = players.txt; sourceTree = "<group>"; };
 		2DFFEF78222F298B00025912 /* Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part2_Driver.cpp; sourceTree = "<group>"; };
+		2DFFEF7C223082AF00025912 /* FunkenshlagA1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FunkenshlagA1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +103,11 @@
 		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
+				2DFFEF7C223082AF00025912 /* FunkenshlagA1 */,
 				2DFFEF78222F298B00025912 /* Part2_Driver.cpp */,
 				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
 				2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */,
-				2D49C7DC221368B80001893D /* part5_Driver.cpp */,
+				2D49C7DC221368B80001893D /* Part5_Driver.cpp */,
 				2DFFEF54222E2F9C00025912 /* CityNode.h */,
 				2DFFEF5D222E2F9C00025912 /* CityNode.cpp */,
 				2DFFEF5F222E2F9C00025912 /* GameMap.h */,
@@ -203,7 +205,7 @@
 				2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */,
 				2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */,
 				2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */,
-				2D49C7DD221368B80001893D /* part5_Driver.cpp in Sources */,
+				2D49C7DD221368B80001893D /* Part5_Driver.cpp in Sources */,
 				2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */,
 				2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */,
 				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
