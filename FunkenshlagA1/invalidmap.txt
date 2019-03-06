@@ -1,4 +1,4 @@
-Montreal|Toronto,Quebec|40,30
+Montreal|Toronto,Quebec,Nicaragua|40,30
 New York|Boston,Phoenix|20,50
 Sydney|Melbourne,Perth,Brisbane|15,25,35
 A|a1,a2,a3,a4,a5,a6,a7|ac1,ac2,ac3,ac4,ac5,ac6,ac7

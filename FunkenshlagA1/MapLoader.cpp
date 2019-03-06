@@ -40,10 +40,10 @@ vector<CityNode> MapLoader::exec()
     string segment;
     string edge;    //individual edge
     string cost;    //individual cost
-    string edgesVector[10];
-    string costVector[10];
+    string edgesVector[100];
+    string costVector[100];
     
-    
+    int count = 0;
     int i = 0;
     int j = 0;
     int k = 0;
@@ -52,12 +52,13 @@ vector<CityNode> MapLoader::exec()
     ifstream myfile(this->fileName);
     vector<int> costVectorInt;
     string lineVariables[3];
-    vector<CityNode> cities(4);
+    vector<CityNode> cities(60);
     if (myfile.is_open())
     {
         
         while (getline(myfile, line))    //takes a whole line
         {
+            count++;
             stringstream linestream;
             stringstream edgestream;
             stringstream coststream;
@@ -100,8 +101,16 @@ vector<CityNode> MapLoader::exec()
             std::vector<string> cV(costVector, costVector + sizeof costVector / sizeof costVector[0]);
             eV.resize(k);
             cV.resize(l);
+            
+            // if some elements are empty, or # of edges != # of costs
+            if (cityString == "" || eV.empty() || cV.empty() || eV.size() != cV.size())
+            {
+                cout << "Incorrect Map File" << endl;
+                system("pause");
+            }
             cities[i].setValues(cityString, eV, cV);
             i++;
+            cities.resize(count+1);
             j = 0;
             k = 0;
             l = 0;

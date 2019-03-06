@@ -70,7 +70,7 @@
 		2DFFEF76222F298B00025912 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		2DFFEF77222F298B00025912 /* players.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = players.txt; sourceTree = "<group>"; };
 		2DFFEF78222F298B00025912 /* Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part2_Driver.cpp; sourceTree = "<group>"; };
-		2DFFEF7C223082AF00025912 /* FunkenshlagA1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FunkenshlagA1; sourceTree = "<group>"; };
+		2DFFEF7D22308A8600025912 /* invalidmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalidmap.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,6 @@
 		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
-				2DFFEF7C223082AF00025912 /* FunkenshlagA1 */,
 				2DFFEF78222F298B00025912 /* Part2_Driver.cpp */,
 				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
 				2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */,
@@ -114,6 +113,7 @@
 				2DFFEF61222E2F9C00025912 /* GameMap.cpp */,
 				2DFFEF55222E2F9C00025912 /* MapLoader.h */,
 				2DFFEF67222E2F9D00025912 /* MapLoader.cpp */,
+				2DFFEF7D22308A8600025912 /* invalidmap.txt */,
 				2DFFEF76222F298B00025912 /* map.txt */,
 				2DFFEF77222F298B00025912 /* players.txt */,
 				2DFFEF53222E2F9C00025912 /* Player.h */,
