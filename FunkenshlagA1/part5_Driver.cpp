@@ -55,7 +55,7 @@
 //    sum = SummaryCards::createSummaryCards(*p1); // holds the create SummaryCards
 //    SummaryCards::printSummaryCards(sum); // print the SummaryCards info
 //    
-//    //system("pause");
+//    system("pause");
 //    return 0;
 //}
 //

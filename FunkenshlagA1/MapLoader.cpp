@@ -33,63 +33,85 @@ vector<CityNode> MapLoader::readMap(string f)
 // where all the magic happens
 vector<CityNode> MapLoader::exec()
 {
-	string cityString;
-	string edgesString;
-	string costString;
-	vector<string> edgesVector;
-	vector<string> costVector;
-	vector<CityNode> cities(100);
-	int i = 0;
-	bool used = true;
-	string line;
-	ifstream myfile(this->fileName);
-	vector<int> costVectorInt;
-	vector<string> lineVariables(3);
-
-	if (myfile.is_open())
-	{
-	
-		// -------------segment added by yassine. still need improvment
-		for (unsigned n = 0; n <= 2; n++) {
-			for (unsigned i = 0; i < lineVariables.size(); i++) {
-
-				(getline(myfile, line, '|'));
-				lineVariables.at(i) = line;
-				cityString = lineVariables.at(0);
-				edgesString = lineVariables.at(1);
-				costString = lineVariables.at(2);
-
-			}
-			cout << cityString << "|" << edgesString << "|" << costString << "\n";    // read line of file
-		}
-			/*for (vector<string>::const_iterator i = lineVariables.begin(); i != lineVariables.end(); ++i)
-						cout << *i << ' ';*/
-		
-		myfile.close();
-		//----------------------------
-
-
-
-		//while (getline(myfile, line))
-		//{
-		//	cout << cityString << "|" << edgesString << "|" << costString << "\n";    // read line of file
-
-		//	boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesString into vector delimiter: ','
-		//	boost::split(costVector, costString, [](char c) {return c == ','; });    // split costString into vector delimiter: ','
-
-		//	//for (int j = 0; j < costVector.size(); j++)
-		//	//{
-		//	//	int t = stoi(costVector[j]);
-		//	//	costVectorInt.push_back(t);
-		//	//}
-
-		//	//ALGORITHM TO ASSIGN VARIABLES
-		//	cities.push_back.setValues(cityString, edgesVector, costVector);
-		//	i++;
-		//}
-
-		//myfile.close();
-	}
-		else cout << "Incorrect file format";
-		return cities;
+    string cityString = "hi";    // city name
+    string edgesString;    //whole string with multiple edges
+    string costString;    //whole string with multiple costs
+    string line;    // individual line
+    string segment;
+    string edge;    //individual edge
+    string cost;    //individual cost
+    string edgesVector[10];
+    string costVector[10];
+    
+    
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int l = 0;
+    bool used = true;
+    ifstream myfile(this->fileName);
+    vector<int> costVectorInt;
+    string lineVariables[3];
+    vector<CityNode> cities(4);
+    if (myfile.is_open())
+    {
+        
+        while (getline(myfile, line))    //takes a whole line
+        {
+            stringstream linestream;
+            stringstream edgestream;
+            stringstream coststream;
+            
+            
+            linestream.str(line);
+            
+            //NO ERRORS
+            while (getline(linestream, segment,'|'))    //seperates line into segments divided by '|'
+            {
+                lineVariables[j] = segment;    //pushes the segments into vector
+                j++;
+            }
+            
+            
+            cityString = lineVariables[0];        //assign the vector variables to corresponding Strings
+            edgesString = lineVariables[1];
+            costString = lineVariables[2];
+            
+            //cout << cityString + '|'<< edgesString + '|' << costString << endl; //WORKS FINE
+            edgestream.str(edgesString);            //convert edgesString to edgesstream to allow getline() use
+            while (getline(edgestream, edge, ','))
+            {
+                edgesVector[k] = edge;    // each object in edgestream seperated by ',' is pushed into edgesVector
+                //cout << edgesVector[k] + " ";
+                k++;
+            }
+            
+            //same stuff, but for cost
+            coststream.str(costString);
+            while (getline(coststream, cost, ','))
+            {
+                costVector[l] = cost;
+                //cout << costVector[l] + " ";
+                l++;
+            }
+            
+            //cout << cityString + '|' << edgesVector[0] + ',' +  edgesVector[1] + ',' + edgesVector[2] + '|' << costVector[0] + ',' + costVector[1] + ',' + costVector[2] << endl;
+            std::vector<string> eV(edgesVector, edgesVector + sizeof edgesVector / sizeof edgesVector[0]);
+            std::vector<string> cV(costVector, costVector + sizeof costVector / sizeof costVector[0]);
+            eV.resize(k);
+            cV.resize(l);
+            cities[i].setValues(cityString, eV, cV);
+            i++;
+            j = 0;
+            k = 0;
+            l = 0;
+        }
+        myfile.close();
+    }
+    else cout << "Incorrect file format";
+    
+    return cities;
 }
+
+//boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesstring into vector delimiter: ','
+//boost::split(costVector, costString, [](char c) {return c == ','; });    // split coststring into vector delimiter: ','

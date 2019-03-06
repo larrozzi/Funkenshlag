@@ -1,6 +1,7 @@
 
 #include "House.h"
 #include <string>
+#include <iostream>
 
 House::House() {
 	color = NO_COLOR;
