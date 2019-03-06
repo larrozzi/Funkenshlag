@@ -2,7 +2,6 @@
 #include <string>
 
 enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK, PINK};
-
 class House {
 private:
 	//color of the house
@@ -13,7 +12,8 @@ public:
 	House();
 	House(HouseColor color);
 	~House();
-	inline HouseColor getColor() const;
-	inline void setColor(HouseColor color);
+	HouseColor getColor() const;
+	void setColor(HouseColor color);
 
+	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
 };
