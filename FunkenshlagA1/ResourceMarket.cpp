@@ -2,19 +2,16 @@
 #include <iostream>
 #include <cstring>
 
-ResourceMarket::ResourceMarket() {
 
-}
-
-ResourceMarket::ResourceMarket(Resource* coal, Resource* oil, Resource* garbage,Resource* uranium){
+ResourceMarket::ResourceMarket(){
 
 	for (int i = 0, j = 2; i < MARKET_SIZE; i++) {
 		if (i < 8)
 			//First 8 slots have different pricing than the
-			slots[i] = Slot(i + 1, coal, oil, garbage, uranium);
+			slots[i] = Slot(i + 1);
 		else {
 			//last four
-			slots[i] = Slot(i + j, coal, oil, garbage, uranium);
+			slots[i] = Slot(i + j);
 			j++;
 		}
 
@@ -46,12 +43,8 @@ ResourceMarket::Slot* ResourceMarket::getSlots(){
 ResourceMarket::Slot::Slot(){
 }
 
-ResourceMarket::Slot::Slot(int price, Resource coal[], Resource oil[], Resource garbage[], Resource uranium[]){
+ResourceMarket::Slot::Slot(int price){
 	this->price = price;
-	this->slotCoal = coal;
-	this->slotOil = oil;
-	this->slotGarbage = garbage;
-	this->slotUranium = uranium;
 }
 
 int ResourceMarket::Slot::getSlotPrice() const{
