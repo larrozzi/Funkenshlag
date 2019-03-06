@@ -19,15 +19,15 @@ MapLoader::MapLoader()
 
 MapLoader::MapLoader(string f)
 {
-	fileName = f;
-	exec();
+    fileName = f;
+    vector<CityNode> result = exec();
 }
 
 vector<CityNode> MapLoader::readMap(string f)
 {
-	fileName = f;
-	vector<CityNode> result = exec();
-	return result;
+    fileName = f;
+    vector<CityNode> result = exec();
+    return result;
 }
 
 // where all the magic happens

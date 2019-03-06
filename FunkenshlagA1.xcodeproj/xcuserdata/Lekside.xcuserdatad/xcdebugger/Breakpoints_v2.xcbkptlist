@@ -25,12 +25,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FunkenshlagA1/Part4_Driver.cpp"
-            timestampString = "573521364.575929"
+            filePath = "FunkenshlagA1/House.h"
+            timestampString = "573603264.588778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34">
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "House"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

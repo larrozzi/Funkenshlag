@@ -1,12 +1,12 @@
 ---------------------------------------------------------------------------------
-Anthony has the following items: 
-	50 Elektros 
+Anthony has the following items:
+	50 Elektros
 	22 NO_COLOR colored Houses
 And owns the following cities: ---------------------------------------------------------------------------------
 Anthony has the following items: 
 	50 Elektros 
 	22 NO_COLOR colored Houses
-And owns the following cities: 
+And owns the following cities:
 
 SummaryCard Information: 
 1. DETERMINE TURN ORDER 
