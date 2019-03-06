@@ -22,9 +22,9 @@ int main()
 		vector<string> eT = x.getEdges();
 		vector<string> cT = x.getCosts();
 		cout << x.getName() + '|';
-		for (int i = 0; i < eT.size(); i++)
+		for (string i : x.getEdges())
 		{
-			cout << eT[i] + ',';
+			cout << i + ',';
 		}
 		cout << '|';
 		for (int i = 0; i < eT.size(); i++)
