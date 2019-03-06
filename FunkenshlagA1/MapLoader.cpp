@@ -40,10 +40,10 @@ vector<CityNode> MapLoader::exec()
 	string segment;
 	string edge;	//individual edge
 	string cost;	//individual cost
-	string edgesVector[20];
-	string costVector[20];
+	string edgesVector[10];
+	string costVector[10];
 
-	vector<CityNode> cities(60);
+	vector<CityNode> cities(5);
 	int i = 0;
 	int j = 0;
 	int k = 0;
@@ -95,7 +95,7 @@ vector<CityNode> MapLoader::exec()
 				//cout << costVector[l] + " ";
 				l++;
 			}
-			cout << cityString + '|' << edgesVector[0] + ',' +  edgesVector[1] + ',' + edgesVector[2] + '|' << costVector[0] + ',' + costVector[1] + ',' + costVector[2] << endl;
+			//cout << cityString + '|' << edgesVector[0] + ',' +  edgesVector[1] + ',' + edgesVector[2] + '|' << costVector[0] + ',' + costVector[1] + ',' + costVector[2] << endl;
 			std::vector<string> eV(edgesVector, edgesVector + sizeof edgesVector / sizeof edgesVector[0]);
 			std::vector<string> cV(costVector, costVector + sizeof costVector / sizeof costVector[0]);
 			cities[i].setValues(cityString, eV, cV);

@@ -17,6 +17,21 @@ int main()
 
 	GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
 	
-	cout << gameMap.getMap()[0].getName();
+	for (CityNode x : gameMap.getMap())
+	{
+		vector<string> eT = x.getEdges();
+		vector<string> cT = x.getCosts();
+		cout << x.getName() + '|';
+		for (int i = 0; i < eT.size(); i++)
+		{
+			cout << eT[i] + ',';
+		}
+		cout << '|';
+		for (int i = 0; i < eT.size(); i++)
+		{
+			cout << cT[i] + ',';
+		}
+		cout << endl;
+	}
 	system("pause");
 }

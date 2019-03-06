@@ -30,6 +30,7 @@ public:
 	map<string, bool> getOwners() const;
 	bool getUsed() const;
 	vector<string> getEdges() const;
+	vector<string> getCosts() const;
 
 	//setters
 	void setName(string n);
