@@ -40,10 +40,10 @@ vector<CityNode> MapLoader::exec()
 	string segment;
 	string edge;	//individual edge
 	string cost;	//individual cost
-	vector<string> edgesVector(100);
-	vector<string> costVector(100);
+	string edgesVector[10];
+	string costVector[10];
 
-	vector<CityNode> cities(5);
+
 	int i = 0;
 	int j = 0;
 	int k = 0;
@@ -52,7 +52,7 @@ vector<CityNode> MapLoader::exec()
 	ifstream myfile(this->fileName);
 	vector<int> costVectorInt;
 	string lineVariables[3];
-
+	vector<CityNode> cities(4);
 	if (myfile.is_open())
 	{
 	
@@ -85,7 +85,7 @@ vector<CityNode> MapLoader::exec()
 				//cout << edgesVector[k] + " ";
 				k++;
 			}
-			edgesVector.resize(k+1);
+
 			//same stuff, but for cost
 			coststream.str(costString);
 			while (getline(coststream, cost, ','))
@@ -94,11 +94,13 @@ vector<CityNode> MapLoader::exec()
 				//cout << costVector[l] + " ";
 				l++;
 			}
-			edgesVector.resize(l+1);
+
 			//cout << cityString + '|' << edgesVector[0] + ',' +  edgesVector[1] + ',' + edgesVector[2] + '|' << costVector[0] + ',' + costVector[1] + ',' + costVector[2] << endl;
-			//std::vector<string> eV(edgesVector, edgesVector + sizeof edgesVector / sizeof edgesVector[0]);
-			//std::vector<string> cV(costVector, costVector + sizeof costVector / sizeof costVector[0]);
-			cities[i].setValues(cityString, edgesVector, costVector);
+			std::vector<string> eV(edgesVector, edgesVector + sizeof edgesVector / sizeof edgesVector[0]);
+			std::vector<string> cV(costVector, costVector + sizeof costVector / sizeof costVector[0]);
+			eV.resize(k);
+			cV.resize(l);
+			cities[i].setValues(cityString, eV, cV);
 			i++;
 			j = 0;
 			k = 0;
