@@ -47,7 +47,7 @@
 //        cout << uranium[i] << endl;
 //    }
 //    cout << "--------------------------------------------------------------" << endl;
-//     
+//
 //    cout << "These arrays can then be placed within a Resource Market." << endl;
 //    cout << "This is where the Resources will be kept on the map." << endl;
 //    cout << "For this example they are being manually put in." << endl;
@@ -83,7 +83,7 @@
 //        cout << rMarket.getSlots()[9].getSlotUranium()[i] << endl;
 //    }
 //    cout << "--------------------------------------------------------------" << endl << endl;
-//    cout << "Houses will be kept within Player objects. Actually placing House Objects on the map is not needed." << endl;    
+//    cout << "Houses will be kept within Player objects. Actually placing House Objects on the map is not needed." << endl;
 //    House h1 = House(RED);
 //    cout << h1.getColor() << endl;
 //
@@ -93,6 +93,6 @@
 //    Player p1 = Player("Anthony", 50, RED);
 //    cout << p1 << endl;
 //    system("pause");
-//    
+//
 //    return 0;
 //}
