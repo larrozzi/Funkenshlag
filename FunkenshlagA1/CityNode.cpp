@@ -41,6 +41,11 @@ vector<string> CityNode::getEdges() const
 	return edges;
 }
 
+vector<string> CityNode::getCosts() const
+{
+	return cost;
+}
+
 void CityNode::setName(string n)
 {
 	name = n;
