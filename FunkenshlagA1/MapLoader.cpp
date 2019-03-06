@@ -44,10 +44,11 @@ vector<CityNode> MapLoader::exec()
 	vector<string> costVector;
 	vector<CityNode> cities(100);
 	int i = 0;
+	int j = 0;
 	bool used = true;
 	ifstream myfile(this->fileName);
 	vector<int> costVectorInt;
-	vector<string> lineVariables(3);
+	string lineVariables[3];
 
 	if (myfile.is_open())
 	{
@@ -61,35 +62,35 @@ vector<CityNode> MapLoader::exec()
 
 			linestream.str(line);
 
-
+			//NO ERRORS
 			while (getline(linestream, segment,'|'))	//seperates line into segments divided by '|'
 			{
-				lineVariables.push_back(segment);	//pushes the segments into vector
-				cout << segment << endl;
-				cout << lineVariables[0];
-				
+				lineVariables[j] = segment;	//pushes the segments into vector
+				j++;
 			}
 
 
-			cityString = lineVariables.at(0);		//assign the vector variables to corresponding Strings
-			
-			edgesString = lineVariables.at(1);
+			cityString = lineVariables[0];		//assign the vector variables to corresponding Strings
+			edgesString = lineVariables[1];
+			costString = lineVariables[2];
+
+			cout << cityString + '|'<< edgesString + '|' << costString << endl; //WORKS FINE
 			edgestream.str(edgesString);			//convert edgesString to edgesstream to allow getline() use
 			while (getline(edgestream, edge, ','))
 			{
 				edgesVector.push_back(edge);	// each object in edgestream seperated by ',' is pushed into edgesVector
 			}
 			
-			costString = lineVariables.at(2);	//same stuff, but for cost
+				//same stuff, but for cost
 			coststream.str(costString);
 			while (getline(coststream, cost, ','))
 			{
-				costVector.push_back(edge);
+				costVector.push_back(cost);
 			}
 
 			cities[i].setValues(cityString, edgesVector, costVector);
 			i++;
-
+			j = 0;
 		}
 		myfile.close();
 	}
