@@ -92,8 +92,11 @@ std::ostream& operator<<(std::ostream& outs, const Player& player)
 		<< "\t" << player.elektro << " Elektros \n"
 		<< "\t" << player.houses.size() << " " << player.color << " colored Houses\n"
 		<< "And owns the following cities: ";
+	string cities;
 	for (vector<string>::const_iterator i = player.mycities.begin(); i != player.mycities.end(); ++i)
-		cout << *i << ' ';
+		outs << *i << ' ';
+		outs << endl;
+	//	cout << *i << ' ';
 	return outs;
 }
 

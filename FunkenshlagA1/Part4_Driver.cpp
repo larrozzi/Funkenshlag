@@ -28,18 +28,19 @@ int main()
 	clr = convert(color);
 
 	//initializing a Player
-	Player PL1 = Player(name, 50, clr);
+	
+	Player* PL1 = new Player(name, 50, clr);
 
 	// taking 22 houses
-	PL1.grabhouses();
+	PL1->grabhouses();
 
 	// Owning a city
 	cout << "Please enter the city you'd like to build a house in \n";
 	cin >> cityName;
-	PL1.buildinCity(cityName);
+	PL1->buildinCity(cityName);
 
 	// taking an overview card
-	SummaryCards overviewCard = SummaryCards(PL1);
+	SummaryCards overviewCard = SummaryCards(*PL1);
 	cout << overviewCard;
 
 	//to append
@@ -47,12 +48,12 @@ int main()
 
 	ofstream outfile("players.txt");
 	if (outfile.is_open()) {
-		outfile << PL1;
+	//	outfile << *PL1;
 		outfile << overviewCard;
 		outfile.close();
 	}
 	else cout << "cannot open the file ";
-
+	delete PL1;
 	system("pause");
 	return 0;
 }
