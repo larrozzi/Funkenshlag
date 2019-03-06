@@ -1,21 +1,21 @@
+//  COMP345A1
+//
+//  Created by Yassine Laaroussi 2019-02-08.
+//  Updated 2019-03-05
+//
+
 #pragma once
 
 // included dependencies
 
-//#include "PowerPlantCards.h"
-//#include "Resource.h"
-//#include "ResourceMarket.h"
 #include "CityNode.h"
 #include "House.h"
 #include <memory>
 #include <vector>
 #include <iostream>
 
-using std::shared_ptr;
 using std::string;
 using std::vector;
-
-
 
 class Player
 {
@@ -26,34 +26,31 @@ private:
 	vector <House> houses;
 	//vector <CityNode> mycities;  
 	vector <string> mycities;
-
 	HouseColor color;
 
 public:
-	
-	
+
 	Player();
 	Player(string name,  int electro, HouseColor color);
 	~Player();
 
-	
-	string getName() const;
+	// setters
 	void setName(string name);
-
-	int getElektro() const;
 	void setElektro(int elektro);
-
+	void setColor(HouseColor color);
+	// getters
+	string getName() const;
+	int getElektro() const;
 	HouseColor getColor() const;
-	void setColor( HouseColor color);
 
+	// method to create the grab 22 houses from board
 	vector<House>grabhouses();
 
+	// method to build own a city
 	bool buildinCity(string city);
+
+	// method to print owned cities
 	void printOwnedCities();
-	//bool  buildinCity(vector <CityNode>& city);
-
-	//bool BuildHouse(CityNode& city, House& house);
-
 
 	// overloading output operator
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);

@@ -46,7 +46,7 @@ std::string Resource::printType(Type resource) const
 // overloading output stream operator for Resource
 std::ostream& operator<<(std::ostream& outs, const Resource& resource)
 {
-	outs << resource.price << "\t" << resource.printType(resource.type);
+	outs << "PRICE: "<< resource.price << "\t" << "TYPE: " <<  resource.printType(resource.type);
 
 	return outs;
 }

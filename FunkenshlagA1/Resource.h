@@ -12,10 +12,14 @@ private:
 public:
 	Resource();
 	Resource(int price, Type type);
+
+	//getters
 	Type getType() const;
-	void setType(Type type);
-	inline int getPrice() const;
+	int getPrice() const;
+
+	//setters
 	void setPrice(int price);
+	void setType(Type type);
 
 	std::string printType(Type resource) const;
 	friend std::ostream& operator<<(std::ostream& outs, const Resource& resource);
