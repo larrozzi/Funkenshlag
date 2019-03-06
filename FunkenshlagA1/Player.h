@@ -26,7 +26,6 @@ private:
 	vector <House> houses;
 	//vector <CityNode> mycities;  
 	vector <string> mycities;
-
 	HouseColor color;
 
 public:

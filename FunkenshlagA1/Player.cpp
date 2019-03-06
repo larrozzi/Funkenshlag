@@ -76,15 +76,28 @@ void  Player::printOwnedCities( ){
 //}
 
 
-// overloading output stream operator
+//// overloading output stream operator without city
+//std::ostream& operator<<(std::ostream& outs, const Player& player)
+//{
+//	string separator = "---------------------------------------------------------------------------------\n";
+//	outs << separator << player.name + " has the following items: \n"
+//		<< player.elektro << " Elektros \n"
+//		<< player.houses.size() << " " << player.color << " colored Houses\n";
+//		// << player.printOwnedCities();
+//	return outs;
+//}
+
+
+// overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player)
 {
 	string separator = "---------------------------------------------------------------------------------\n";
 	outs << separator << player.name + " has the following items: \n"
-		<< player.elektro << " Elektros \n"
-		<< player.houses.size() << " " << player.color << " colored Houses\n";
-		// << player.printOwnedCities();
+		<< "\t" << player.elektro << " Elektros \n"
+		<< "\t" << player.houses.size() << " " << player.color << " colored Houses\n"
+		<< "And owns the following cities: ";
+	for (vector<string>::const_iterator i = player.mycities.begin(); i != player.mycities.end(); ++i)
+		cout << *i << ' ';
 	return outs;
 }
-
 
