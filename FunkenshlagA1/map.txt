@@ -1,2 +1,3 @@
 Montreal|Toronto,Quebec|40,30
 New York|Boston,Phoenix|20,50
+Sydney|Melbourne,Perth,Brisbane|15,25,35
