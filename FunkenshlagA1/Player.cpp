@@ -55,10 +55,7 @@ void Player::readFile(){
 	if (file.is_open()) {
 		while (getline(file, line))
 		{
-		//	cout << line <<endl;
 		firstword = line.substr(0, line.find('|'));
-		//cout << " this is a line: " <<line << endl;
-		//cout << " this is the first word of the line " << firstword << endl;
 		mapcities.push_back(firstword);
 		}
 	}
@@ -72,8 +69,6 @@ bool Player::buildinCity(string city) {
 		if (*i == city) {
 			matchedCity = true;
 			mycities.push_back(city);
-		/*	for (vector<string>::const_iterator j = mycities.begin(); j != mycities.end(); ++j)
-				cout << *j << ' ';*/
 			return true;
 		}
 		else

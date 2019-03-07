@@ -46,10 +46,10 @@ vector<string> CityNode::getCosts() const
     return cost;
 }
 
-vector<string> CityNode::getCosts() const
-{
-	return cost;
-}
+//vector<string> CityNode::getCosts() const
+//{
+//	return cost;
+//}
 
 void CityNode::setName(string n)
 {

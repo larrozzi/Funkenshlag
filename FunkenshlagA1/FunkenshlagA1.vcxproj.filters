@@ -111,7 +111,6 @@
   <ItemGroup>
     <Text Include="map.txt" />
     <Text Include="players.txt" />
-    <Text Include="Readme_Part4.txt" />
     <Text Include="invalidmap.txt" />
   </ItemGroup>
 </Project>
