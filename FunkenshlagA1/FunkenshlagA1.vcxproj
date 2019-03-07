@@ -153,7 +153,6 @@
     <Text Include="invalidmap.txt" />
     <Text Include="map.txt" />
     <Text Include="players.txt" />
-    <Text Include="Readme_Part4.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

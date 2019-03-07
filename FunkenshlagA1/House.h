@@ -2,7 +2,8 @@
 #include <string>
 
 enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK, PINK};
-static HouseColor convert(const std::string& clr);
+
+
 
 class House {
 private:
