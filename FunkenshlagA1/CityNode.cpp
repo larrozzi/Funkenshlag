@@ -16,29 +16,34 @@ CityNode::CityNode()
 {}
 
 CityNode::CityNode(string n, bool u, vector<string> e, vector<string> c)
-	: name{ n }, used{ u }, edges{ e }, cost{ c }
+: name{ n }, used{ u }, edges{ e }, cost{ c }
 {
 }
 
 CityNode::CityNode(string n, map<string, bool>  o, bool u, vector<string> e, vector<string> c)
-	: name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
+: name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
 {}
 
 string CityNode::getName() const
 {
-	return name;
+    return name;
 }
 map<string, bool> CityNode::getOwners() const
 {
-	return ownedBy;
+    return ownedBy;
 }
 bool CityNode::getUsed() const
 {
-	return used;
+    return used;
 }
 vector<string> CityNode::getEdges() const
 {
-	return edges;
+    return edges;
+}
+
+vector<string> CityNode::getCosts() const
+{
+    return cost;
 }
 
 vector<string> CityNode::getCosts() const
@@ -48,34 +53,34 @@ vector<string> CityNode::getCosts() const
 
 void CityNode::setName(string n)
 {
-	name = n;
+    name = n;
 }
 
 void CityNode::setOwners(map<string, bool> o)
 {
-	ownedBy = o;
+    ownedBy = o;
 }
 
 void CityNode::use()
 {
-	used = true;
+    used = true;
 }
 void CityNode::unUse()
 {
-	used = false;
+    used = false;
 }
 void CityNode::setEdges(vector<string> e)
 {
-	edges = e;
+    edges = e;
 }
 
 void CityNode::setCosts(vector<string> c)
 {
-	cost = c;
+    cost = c;
 }
 void CityNode::setValues(string n, vector<string> e, vector<string> c)
 {
-	name = n;
-	edges = e;
-	cost = c;
+    name = n;
+    edges = e;
+    cost = c;
 }
