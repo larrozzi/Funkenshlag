@@ -39,19 +39,23 @@
 //    std::cout << "==============================================================================================================================================" << std::endl;
 //    
 //    // Creating Step3Card
-//    std::cout << "\nCreating Step3Card:\n";
+//    std::cout << "Creating Step3Card:\n";
 //    Step3Card step3;
 //    std::cout << step3 << std::endl;
 //    std::cout << "==============================================================================================================================================" << std::endl;
-//
+//    
+//    // Testing Player class
+//    std::cout << "Creating new Player:\n";
+//    Player* p1 = new Player("Yassine", 50, BLUE);
+//    //std::cout << *p1;
+//    
 //    // Creating the SummaryCards
 //    std::cout << "\nCreating SummaryCards for the Player: " << std::endl;
 //    vector<SummaryCards> sum;
-//    sum = SummaryCards::createSummaryCards(); // holds the created SummaryCards
-//    //sum = SummaryCards::createSummaryCards(*p1); // holds the created SummaryCards
+//    sum = SummaryCards::createSummaryCards(*p1); // holds the create SummaryCards
 //    SummaryCards::printSummaryCards(sum); // print the SummaryCards info
 //    
-//    system("pause");
+//    //system("pause");
 //    return 0;
 //}
 //
@@ -64,4 +68,3 @@
 //     std::srand(unsigned (std::time(0)));
 //     std::random_shuffle(cards.begin(), cards.end(), myrandom);
 //}
-//

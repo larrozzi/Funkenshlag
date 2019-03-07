@@ -1,18 +1,17 @@
 //  COMP345A1
 //
 //  Created by Yassine Laaroussi 2019-02-08.
-//  Updated 2019-03-05
+//  Updated 2019-03-06
 //
 
 #pragma once
 
 // included dependencies
-
-#include "CityNode.h"
 #include "House.h"
 #include <memory>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 using std::string;
 using std::vector;
@@ -26,6 +25,7 @@ private:
 	vector <House> houses;
 	//vector <CityNode> mycities;  
 	vector <string> mycities;
+	vector <string> mapcities;
 	HouseColor color;
 
 public:
@@ -45,6 +45,9 @@ public:
 
 	// method to create the grab 22 houses from board
 	vector<House>grabhouses();
+
+	//method to read cities from map file
+	void readFile();
 
 	// method to build own a city
 	bool buildinCity(string city);

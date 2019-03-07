@@ -63,6 +63,9 @@
     <ClCompile Include="Part2_Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Part5_Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -104,5 +107,11 @@
     <ClInclude Include="SummaryCards.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map.txt" />
+    <Text Include="players.txt" />
+    <Text Include="Readme_Part4.txt" />
+    <Text Include="invalidmap.txt" />
   </ItemGroup>
 </Project>

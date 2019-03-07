@@ -1,12 +1,62 @@
----------------------------------------------------------------------------------
-Anthony has the following items:
-	50 Elektros
-	22 NO_COLOR colored Houses
-And owns the following cities: ---------------------------------------------------------------------------------
-Anthony has the following items: 
+
+
+=========================================================================================
+
+h has the following items: 
 	50 Elektros 
 	22 NO_COLOR colored Houses
-And owns the following cities:
+And owns the following cities: Montreal 
+
+
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.
+
+
+=========================================================================================
+
+y has the following items: 
+	50 Elektros 
+	22 PINK colored Houses
+And owns the following cities: Montreal 
+
+
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.
+
+
+=========================================================================================
+
+Anthony has the following items: 
+	50 Elektros 
+	22 RED colored Houses
+And owns the following cities: NewYork 
+
 
 SummaryCard Information: 
 1. DETERMINE TURN ORDER 
