@@ -125,7 +125,7 @@
     <ClCompile Include="Part2_Driver.cpp" />
     <ClCompile Include="Part3_Driver.cpp" />
     <ClCompile Include="Part4_Driver.cpp" />
-    <ClCompile Include="part5_Driver.cpp" />
+    <ClCompile Include="Part5_Driver.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PowerPlantCards.cpp" />
     <ClCompile Include="Resource.cpp" />
