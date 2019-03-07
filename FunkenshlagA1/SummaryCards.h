@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 #include "Cards.h"
-//#include "Player.h"
+#include "Player.h"
 
 
 using std::vector;
@@ -20,12 +20,12 @@ using std::vector;
 class SummaryCards : public Cards
 {
 private:
-	//Player owner;
+	Player owner;
 	std::string cardInfo;
 
 public:
 	SummaryCards();
-	//SummaryCards(Player owner);
+	SummaryCards(Player owner);
 	//SummaryCards(Player owner, std::string cardInfo);
 	~SummaryCards();
 

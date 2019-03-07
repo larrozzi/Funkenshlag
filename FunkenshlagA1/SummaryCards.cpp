@@ -17,9 +17,9 @@ SummaryCards::SummaryCards() {
     cardInfo = "1. DETERMINE TURN ORDER \n2. BUY POWER PLANT \n\t The first player begins. \n\t Per round, each may buy only one power plant. \n3. BUY RAW MATERIALS \n\t The last player begins. \n\t Maximum double input per power plant. \n4. BUILDING \n\t The last player begins. \n5. BUREAUCRACY \n\t-Get money. \n\t-In phase 1 and 2: Place highest power plant under the stack. \n\t-In phase 3: Remove lowest power plant from the game. \n\t-Restock raw materials.";
 }
 
-/*SummaryCards::SummaryCards(Player owner) : owner(owner) {
+SummaryCards::SummaryCards(Player owner) : owner(owner) {
 	cardInfo = "1. DETERMINE TURN ORDER \n2. BUY POWER PLANT \n\t The first player begins. \n\t Per round, each may buy only one power plant. \n3. BUY RAW MATERIALS \n\t The last player begins. \n\t Maximum double input per power plant. \n4. BUILDING \n\t The last player begins. \n5. BUREAUCRACY \n\t-Get money. \n\t-In phase 1 and 2: Place highest power plant under the stack. \n\t-In phase 3: Remove lowest power plant from the game. \n\t-Restock raw materials.";
-}*/
+}
 
 //SummaryCards::SummaryCards(Player owner, std::string cardInfo) : owner(owner), cardInfo(cardInfo) { /*NOTHING*/ }
 
