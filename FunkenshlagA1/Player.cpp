@@ -9,6 +9,8 @@
 #include "Player.h"
 #include "SummaryCards.h"
 
+
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -16,6 +18,7 @@ using std::cin;
 using std::to_string;
 using std::vector;
 using std::ifstream;
+using std::shared_ptr;
  
 // constructors
 Player::Player(){
@@ -86,6 +89,36 @@ void  Player::printOwnedCities( ){
 		cout << *i << ' ';
 }
 
+bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
+	if (position <= 3 &  elektro >= price) {
+		setElektro(getElektro() - price);
+
+		if (myPowerPlants.size() < 3)
+		AddPowerPlant(ppMarket.GetPlant(position));
+		ppMarket.RemovePlant(position);
+		ppMarket.DrawPlant();
+		return true;
+	}
+	return false;
+}
+
+ bool Player::AddPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
+	 if (myPowerPlants.size() == 3) return false;
+	 myPowerPlants.push_back(powerplant);
+	 return true;
+ }
+
+ //void Player::ReplacePowerPlant(<shared_ptr<PowerPlant>> newplant, int toReplace) {
+ //}
+
+//int Player::getHighestPowerPlant() {
+//	int max;
+//	for (std::shared_ptr<PowerPlant> highestplant : powerplants) {
+//		if (highestplant->getPrice() > max)
+//			max = highestplant->getPrice();
+//	}
+//	return max;
+//}
 
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){

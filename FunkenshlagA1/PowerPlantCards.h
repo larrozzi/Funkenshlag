@@ -26,14 +26,18 @@ private:
 	int capacity;   // how many resources can be taken => 2* #resource
 	int powerHouse; // how many houses can be powered
 
+	
 
 	//ResourceType resourceType;
 	//std::vector<ResourceType> activeResource; // what is the active resource
 
 public:
+	//vector<PowerPlantCards>myCards;
+
 	PowerPlantCards();
 	PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse);
 	~PowerPlantCards();
+
 
 	// setters
 	void setCardValue(int cardValue);
