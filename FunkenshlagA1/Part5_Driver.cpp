@@ -16,7 +16,7 @@
 //#include "Step3Card.h"
 //using std::vector;
 //
-//// function prototypes
+// function prototypes
 //int myrandom (int i); // random generator function
 //void Shuffle(vector<PowerPlantCards>&cards); // shuffle method
 //
@@ -24,20 +24,20 @@
 //int main()
 //{
 //    /*** Testing methods ***/
-//    
+//
 //    // Creating the PowerPlantCards
 //    std::cout << "Creating PowerPlantCards:\n";
 //    vector<PowerPlantCards> myV;
 //    std::cout << "UnShuffled PowerPlantCards:" << std::endl;
 //    myV = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 //    PowerPlantCards::printPPCards(myV);    // prints the PowerPlantCards info
-//    
+//
 //    // Shuffles the PowerPlantCards
 //    Shuffle(myV);
 //    std::cout << "\nShuffled PowerPlantCards:" << std::endl;
 //    PowerPlantCards::printPPCards(myV);
 //    std::cout << "==============================================================================================================================================" << std::endl;
-//    
+//
 //    // Creating Step3Card
 //    std::cout << "\nCreating Step3Card:\n";
 //    Step3Card step3;
@@ -50,7 +50,7 @@
 //    //sum = SummaryCards::createSummaryCards(*p1); // holds the create SummaryCards
 //    sum = SummaryCards::createSummaryCards(); // holds the create SummaryCards
 //    SummaryCards::printSummaryCards(sum); // print the SummaryCards info
-//    
+//
 //    system("pause");
 //    return 0;
 //}
