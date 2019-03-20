@@ -9,8 +9,6 @@
 #include "Player.h"
 #include "SummaryCards.h"
 
-
-
 using std::string;
 using std::cout;
 using std::endl;
@@ -93,7 +91,7 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	if (position <= 3 &  elektro >= price) {
 		setElektro(getElektro() - price);
 
-		if (myPowerPlants.size() < 3)
+		if (myPowerPlants.size() <= 1)
 		AddPowerPlant(ppMarket.GetPlant(position));
 		ppMarket.RemovePlant(position);
 		ppMarket.DrawPlant();
@@ -106,6 +104,24 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	 if (myPowerPlants.size() == 3) return false;
 	 myPowerPlants.push_back(powerplant);
 	 return true;
+ }
+
+ bool Player::Pass() {
+	 if (myPowerPlants.size() == 0) {
+		 cout << "you can't pass your turn if you don't own any powerplants";
+		 return false;
+	 }
+	 return true;
+ }
+
+ bool Player::Auction(PPmarket& ppMarket, int position, int mybid) {
+	 if (position <= 3 & elektro >= mybid & mybid>highestBid) {
+		 highestBid = mybid;
+		 return true;
+		 // other players hear mybid
+	 }
+	 else cout << "please try again";
+	 return false;
  }
 
  //void Player::ReplacePowerPlant(<shared_ptr<PowerPlant>> newplant, int toReplace) {
