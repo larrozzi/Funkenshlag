@@ -8,6 +8,8 @@
 
 // included dependencies
 #include "House.h"
+#include "PowerPlantCards.h"
+#include "PPmarket.h"
 #include <memory>
 #include <vector>
 #include <iostream>
@@ -15,6 +17,7 @@
 
 using std::string;
 using std::vector;
+using std::shared_ptr;
 
 class Player
 {
@@ -26,6 +29,8 @@ private:
 	//vector <CityNode> mycities;  
 	vector <string> mycities;
 	vector <string> mapcities;
+	vector<shared_ptr<PowerPlantCards>> myPowerPlants;
+
 	HouseColor color;
 
 public:
@@ -54,6 +59,15 @@ public:
 
 	// method to print owned cities
 	void printOwnedCities();
+
+	//buypowerplant
+	bool buyPowerPlant(PPmarket&, int ,int);
+
+	bool AddPowerPlant(shared_ptr<PowerPlantCards> powerplant);
+	
+	/*void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
+	
+	int getHighestPowerPlant();*/
 
 	// overloading output operator
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);

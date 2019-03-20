@@ -57,13 +57,16 @@
     <ClCompile Include="Part3_Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Part4_Driver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Part2_Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Part5_Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A2_Part2_Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PPmarket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SummaryCards.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PPmarket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
