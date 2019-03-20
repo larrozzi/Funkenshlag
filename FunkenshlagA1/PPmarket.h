@@ -12,10 +12,7 @@ class PPmarket
 
 private:
 	vector<shared_ptr<PowerPlantCards>> PPlants; 
-
 	//vector<PowerPlantCards> *PPlants; 
-
-	//vector<PowerPlantCards> PPlants; //no error
 	vector<shared_ptr<PowerPlantCards>> visiblePPlants;
 public:
 	int visibleCards = 8;
@@ -25,11 +22,13 @@ public:
 	~PPmarket();
 
 	shared_ptr<PowerPlantCards> const GetPlant(int index);
+	
+	//void SetMPlants(vector<PowerPlantCards> *PPlants) { this->PPlants = PPlants; };
 
-	void SetMPlants(vector<PowerPlantCards> *PPlants) { this->PPlants = PPlants; };
-	//void SetMPlants(vector<PowerPlantCards> PPlants) { this->PPlants = PPlants; }; //no error
+	void SetMPlants(vector<shared_ptr<PowerPlantCards>> PPlants) { this->PPlants = PPlants; }; 
 
-//	std::vector<std::shared_ptr<Card>>& GetCards() { return cards; }
+	//	std::vector<std::shared_ptr<Card>>& GetCards() { return cards; }
+
 	vector<shared_ptr<PowerPlantCards>>& GetvisiblePPlants() { return visiblePPlants; }
 
 	void RemovePlant(int index) { visiblePPlants.erase(visiblePPlants.begin() + index); };

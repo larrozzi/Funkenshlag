@@ -83,19 +83,14 @@ int main()
 
 	//Auction time
 	Player highestbidder;
-	
-
-	vector<PowerPlantCards> PPdeck = PowerPlantCards::createPowerPlantCards();// holds the created PowerPlantCards
-	vector<PowerPlantCards> *ptrPPdeck = &PPdeck; // creating a pointer to point to the plants in the vector
-
 	PPmarket *ppmarket = new PPmarket(); //creating a PP market to show the visible first 8 plants to players
 
-	ppmarket->SetMPlants(&PPdeck); // initializing the PPmarket vector pointer PPlants to point to the powerplants created by createPowerPlantCards() method
-	
-	
+	vector<PowerPlantCards> PPplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 
+	vector<shared_ptr<PowerPlantCards>> PPplantsSptr; //this needs to point to PPplant
 
-	//ppmarket->SetMPlants(make_shared<vector<PowerPlantCards>>(PPdeck));
+	ppmarket->SetMPlants(PPplantsSptr);
+
 
 	// printing the PPmarket
 
