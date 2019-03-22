@@ -66,7 +66,7 @@ public:
 
 	bool AddPowerPlant(shared_ptr<PowerPlantCards> powerplant);
 	
-	bool Auction(PPmarket& ppMarket, int position, int mybid);
+	bool Auction(const PPmarket& ppMarket, int position, int mybid);
 
 	bool Pass();
 	

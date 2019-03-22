@@ -92,7 +92,7 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 		setElektro(getElektro() - price);
 
 		if (myPowerPlants.size() <= 1)
-		AddPowerPlant(ppMarket.GetPlant(position));
+		AddPowerPlant(ppMarket.getPlant(position));
 		ppMarket.RemovePlant(position);
 		ppMarket.DrawPlant();
 		return true;
@@ -111,14 +111,15 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 		 cout << "you can't pass your turn if you don't own any powerplants";
 		 return false;
 	 }
+
 	 return true;
  }
 
- bool Player::Auction(PPmarket& ppMarket, int position, int mybid) {
-	 if (position <= 3 & elektro >= mybid & mybid>highestBid) {
+ bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
+	 if (position <= 3 && elektro >= mybid && mybid>highestBid) {
 		 highestBid = mybid;
 		 return true;
-		 // other players hear mybid
+		 // other players will see highest bid and try to outbid it
 	 }
 	 else cout << "please try again";
 	 return false;
@@ -135,6 +136,11 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 //	}
 //	return max;
 //}
+
+
+ // assignment operator
+
+
 
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
