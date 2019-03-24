@@ -11,6 +11,8 @@
 		2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D72213688A0001893D /* PowerPlantCards.cpp */; };
 		2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D82213688A0001893D /* Step3Card.cpp */; };
 		2D49C7E3221381620001893D /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7E1221381620001893D /* Cards.cpp */; };
+		2DC827162242B2D50031F948 /* A2_Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */; };
+		2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827152242B2D50031F948 /* PPmarket.cpp */; };
 		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
 		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
 		2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF5D222E2F9C00025912 /* CityNode.cpp */; };
@@ -19,7 +21,6 @@
 		2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF62222E2F9D00025912 /* Resource.cpp */; };
 		2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */; };
 		2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF64222E2F9D00025912 /* Player.cpp */; };
-		2DFFEF70222E2F9D00025912 /* Part4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */; };
 		2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF67222E2F9D00025912 /* MapLoader.cpp */; };
 		2DFFEF79222F298B00025912 /* Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF78222F298B00025912 /* Part2_Driver.cpp */; };
 		2DFFEF8A2230D96700025912 /* Part5_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF892230D96700025912 /* Part5_Driver.cpp */; };
@@ -47,6 +48,9 @@
 		2D49C7D82213688A0001893D /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
 		2D49C7E1221381620001893D /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
 		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A2_Part2_Driver.cpp; sourceTree = "<group>"; };
+		2DC827142242B2D50031F948 /* PPmarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPmarket.h; sourceTree = "<group>"; };
+		2DC827152242B2D50031F948 /* PPmarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPmarket.cpp; sourceTree = "<group>"; };
 		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		2DFFEF54222E2F9C00025912 /* CityNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNode.h; sourceTree = "<group>"; };
 		2DFFEF55222E2F9C00025912 /* MapLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoader.h; sourceTree = "<group>"; };
@@ -63,7 +67,6 @@
 		2DFFEF62222E2F9D00025912 /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
 		2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceMarket.cpp; sourceTree = "<group>"; };
 		2DFFEF64222E2F9D00025912 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part4_Driver.cpp; sourceTree = "<group>"; };
 		2DFFEF66222E2F9D00025912 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
 		2DFFEF67222E2F9D00025912 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapLoader.cpp; sourceTree = "<group>"; };
 		2DFFEF76222F298B00025912 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
@@ -103,9 +106,11 @@
 		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
+				2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */,
+				2DC827152242B2D50031F948 /* PPmarket.cpp */,
+				2DC827142242B2D50031F948 /* PPmarket.h */,
 				2DFFEF78222F298B00025912 /* Part2_Driver.cpp */,
 				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
-				2DFFEF65222E2F9D00025912 /* Part4_Driver.cpp */,
 				2DFFEF892230D96700025912 /* Part5_Driver.cpp */,
 				2DFFEF54222E2F9C00025912 /* CityNode.h */,
 				2DFFEF5D222E2F9C00025912 /* CityNode.cpp */,
@@ -198,11 +203,12 @@
 				2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */,
 				2DFFEF69222E2F9D00025912 /* House.cpp in Sources */,
 				2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */,
-				2DFFEF70222E2F9D00025912 /* Part4_Driver.cpp in Sources */,
+				2DC827162242B2D50031F948 /* A2_Part2_Driver.cpp in Sources */,
 				2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */,
 				2DFFEF79222F298B00025912 /* Part2_Driver.cpp in Sources */,
 				2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */,
 				2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */,
+				2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */,
 				2DFFEF8A2230D96700025912 /* Part5_Driver.cpp in Sources */,
 				2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */,
 				2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */,
