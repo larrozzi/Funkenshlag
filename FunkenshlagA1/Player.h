@@ -30,8 +30,9 @@ private:
 	vector <string> mycities;
 	vector <string> mapcities;
 	vector<shared_ptr<PowerPlantCards>> myPowerPlants;
-
 	HouseColor color;
+	int mybid;
+	int static highestBid;
 
 public:
 
@@ -64,6 +65,10 @@ public:
 	bool buyPowerPlant(PPmarket&, int ,int);
 
 	bool AddPowerPlant(shared_ptr<PowerPlantCards> powerplant);
+	
+	bool Auction(const PPmarket& ppMarket, int position, int mybid);
+
+	bool Pass();
 	
 	/*void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
 	

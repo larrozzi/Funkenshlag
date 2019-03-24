@@ -9,8 +9,6 @@
 #include "Player.h"
 #include "SummaryCards.h"
 
-
-
 using std::string;
 using std::cout;
 using std::endl;
@@ -93,8 +91,8 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	if (position <= 3 &  elektro >= price) {
 		setElektro(getElektro() - price);
 
-		if (myPowerPlants.size() < 3)
-		AddPowerPlant(ppMarket.GetPlant(position));
+		if (myPowerPlants.size() <= 1)
+		AddPowerPlant(ppMarket.getPlant(position));
 		ppMarket.RemovePlant(position);
 		ppMarket.DrawPlant();
 		return true;
@@ -108,6 +106,25 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	 return true;
  }
 
+ bool Player::Pass() {
+	 if (myPowerPlants.size() == 0) {
+		 cout << "you can't pass your turn if you don't own any powerplants";
+		 return false;
+	 }
+
+	 return true;
+ }
+
+ bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
+	 if (position <= 3 && elektro >= mybid && mybid>highestBid) {
+		 highestBid = mybid;
+		 return true;
+		 // other players will see highest bid and try to outbid it
+	 }
+	 else cout << "please try again";
+	 return false;
+ }
+
  //void Player::ReplacePowerPlant(<shared_ptr<PowerPlant>> newplant, int toReplace) {
  //}
 
@@ -119,6 +136,11 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 //	}
 //	return max;
 //}
+
+
+ // assignment operator
+
+
 
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
