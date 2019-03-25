@@ -60,12 +60,13 @@ int main()
 
 
 	cout << "Hello and Welcome to Powergrid\n\n";
-	cout<< "Enter the Number of Players\n\n";
+	cout<< "Enter the Number of Players\n";
 	cin >> NumofPlayers;
-
+	cout << "" << endl;
 			///configuring the players one by one
 	for (int i = 0; i < NumofPlayers; ++i) {
 			///creating a Player
+		
 		cout << "Please enter your name  \n"; //<<++i why need this
 		cin >> name;
 		cout << "Now please pick a HOUSE COLOR among the following: RED, BLUE, GREEN, YELLOW, BLACK, PINK.\n";
@@ -96,14 +97,6 @@ int main()
 	}
 
 		///Auction time
-
-	cout << "Phase I" << endl;
-	cout << "Random Player order on first Auction" << endl;
-	cout << "----------------------------------------------------------------------------" << endl;
-	cout << "Phase II" << endl;
-	cout << "Let's the Auction begin" << endl;
-	cout << "----------------------------------------------------------------------------" << endl;
-
 	vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 
 	PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
@@ -127,26 +120,38 @@ int main()
 	ppmarket->Setup();
 	 
 	// printing the PPmarket
+	cout << "" << endl;
 	ppmarket->printPPmarket();  // test needed
 
-		/// random Player Order before first Auction
-	
-		vector<int> rvec(NumofPlayers);
-		for (int i = 0; i < NumofPlayers; ++i)
-			rvec[i] = i;
-		auto rng = std::default_random_engine{};
-		shuffle(begin(rvec), end(rvec),rng);
-		for (int i = 0; i < NumofPlayers; ++i) {
-			playerOrder.push_back(players[rvec[i]]);
-		}
-	
+	cout << "Phase I" << endl;
+	cout << "Random Player order on first Auction as follows" << endl;
+
+	/// random Player Order before first Auction
+	vector<int> rvec(NumofPlayers);
+	for (int i = 0; i < NumofPlayers; ++i)
+		rvec[i] = i;
+	auto rng = std::default_random_engine{};
+	shuffle(begin(rvec), end(rvec), rng);
+	for (int i = 0; i < NumofPlayers; ++i) {
+		playerOrder.push_back(players[rvec[i]]);
+		cout << playerOrder[i]->getName() << ' ';
+	}
+
+	cout << "" << endl;
+	cout << "----------------------------------------------------------------------------" << endl;
+	cout << "" << endl;
+	cout << "Phase II" << endl;
+	cout << "Let's the Auction begin" << endl;
+	cout << "----------------------------------------------------------------------------" << endl;
+	cout << "" << endl;
+
 	int nextPlayerTurn = turn+1;
 
 	for (int round = 0; round < NumofPlayers; ++round) {  //  rounds necessary for each player to win a powerplant
 		initialbid = true;
 		//for (int turn = 0; turn < NumofPlayers; turn++) { // number of turns to purchase one pp
 
-			while (playerOrder[nextPlayerTurn] != currentPlayer){
+			while (playerOrder[nextPlayerTurn] != currentPlayer){ //end loop after only one player is remaining
 				// Set current player by order
 				currentPlayer = playerOrder[turn]; //player order inside a round
 				
@@ -198,6 +203,7 @@ int main()
 			//next turn
 			turn = (turn + 1) % NumofPlayers;
 			nextPlayerTurn = (nextPlayerTurn + 1) % playerOrder.size();
+			cout << "" << endl;
 			}
 	//}
 		cout << "winner is " << highestbidder->getName() << endl;
