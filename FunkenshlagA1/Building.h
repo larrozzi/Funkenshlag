@@ -29,11 +29,9 @@ using std::vector;
 class Building
 {
 private:
-    static const int MAX_HOUSES = 3;
     vector<House*> houses;
     vector<shared_ptr<CityNode>> cities;
     shared_ptr<Player> currentPlayer; // current player
-    //Player currentPlayer;
     vector<shared_ptr<Player>> playerOrder; // player order
     shared_ptr<CityNode> pickedCity = nullptr; // picked City
     shared_ptr<PowerPlantCards> highestPowerPlant;
@@ -44,11 +42,6 @@ public:
     Building();
     Building(Player cPlayer);
     ~Building();
-    
-    //int getHousePrice() const;
-    bool isFull() const;
-    bool isConnected(CityNode cityNames);
-    bool addHouse(House* house);
     
     void updatePlayOrder(bool reverse);
     int getNextPlayer();

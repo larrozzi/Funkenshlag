@@ -12,31 +12,11 @@ using std::cout;
 using std::cerr;
 
 Building::Building() {}
-Building::Building(Player cPlayer) : currentPlayer(cPlayer) {}
+//Building::Building(Player cPlayer) : currentPlayer(cPlayer) {}
 
 Building::~Building() {}
 
-bool Building::addHouse(House* house)
-{
-    if(houses.size() == MAX_HOUSES)
-        return false;
-    houses.push_back(house);
-    return true;
-}
 
-bool Building::isFull() const
-{
-    return houses.size() == MAX_HOUSES;
-}
-
-bool Building::isConnected(CityNode cityNames)
-{
-    for(auto connection = cityNames.getEdges().begin(); connection != cityNames.getEdges().end(); connection++)
-    {
-        //if((*connection))
-    }
-    return true;
-}
 
 // to determine the player turn order
 bool playerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {

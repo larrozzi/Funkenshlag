@@ -8,6 +8,8 @@
 #include "Resource.h"
 #include "Player.h"
 #include "House.h"
+#include "Edges.h"
+
 using namespace std;
 
 
@@ -19,10 +21,13 @@ private:
     bool used;
     vector<string> edges;
     vector<string> cost;
+    
+    static const int MAX_HOUSES = 3;
     vector<House*> houses;
     int firstHousePrice = 10;
     int secondHousePrice = 15;
     int thirdHousePrice = 20;
+    vector<Edges> connections;
     
 public:
     //constructors
@@ -36,9 +41,6 @@ public:
     bool getUsed() const;
     vector<string> getEdges() const;
     vector<string> getCosts() const;
-    vector<House*> getHouses();
-    int getNumberOfHouses() const;
-    int getHousePrice() const;
     
     //setters
     void setName(string n);
@@ -49,4 +51,19 @@ public:
     void setCosts(vector<string> c);
     void setValues(string n, vector<string> e, vector<string> c);
     
+    // methods
+    vector<House*> getHouses();
+    unsigned long getNumberOfHouses() const;
+    int getHousePrice() const;
+    bool isFull() const;
+    bool isConnected(string cityNames);
+    bool addHouse(House* house);
+    
+    // operator overlaoding
+    bool operator==(const CityNode& city);
+    bool operator==(const string& cityName);
+    friend bool operator==(const shared_ptr<CityNode>& first, const shared_ptr<CityNode>&sec);
+    friend bool operator==(const shared_ptr<CityNode>& first, const CityNode& city);
+    friend bool operator==(const shared_ptr<CityNode>& city, const string & cityName);
+
 };
