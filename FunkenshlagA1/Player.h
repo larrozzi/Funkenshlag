@@ -32,7 +32,7 @@ private:
 	vector<shared_ptr<PowerPlantCards>> myPowerPlants;
 	HouseColor color;
 	int mybid;
-	int static highestBid;
+	
 
 public:
 
@@ -48,7 +48,7 @@ public:
 	string getName() const;
 	int getElektro() const;
 	HouseColor getColor() const;
-
+	vector <string> getBuiltHouses() const;
 	// method to create the grab 22 houses from board
 	vector<House>grabhouses();
 
@@ -70,11 +70,15 @@ public:
 
 	bool Pass();
 	
-	/*void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
+	//void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
 	
-	int getHighestPowerPlant();*/
+	//int getHighestPowerPlant();
+
+	// overloading assignment operator
+	//Player& operator = (const Player &player);
 
 	// overloading output operator
+	 
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
 	friend std::ostream& operator<<(std::ostream& outs, const Player& player);
 };

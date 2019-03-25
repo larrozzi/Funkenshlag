@@ -25,7 +25,8 @@ bool PPmarket::DrawPlant() {
 
 		PPlants.erase(PPlants.begin());
 
-		std::sort(visiblePPlants.begin(), visiblePPlants.end(), [](shared_ptr<PowerPlantCards> pp1, std::shared_ptr<PowerPlantCards> pp2) { return  (pp1)->getCardValue() < (pp2)->getCardValue(); });
+		// next line generates error
+	//	std::sort(visiblePPlants.begin(), visiblePPlants.end(), [](shared_ptr<PowerPlantCards> pp1, std::shared_ptr<PowerPlantCards> pp2) { return  (pp1)->getCardValue() < (pp2)->getCardValue(); });
 		return true;
 	}
 	return false;
@@ -35,13 +36,13 @@ bool PPmarket::DrawPlant() {
 void PPmarket::printPPmarket(vector<shared_ptr<PowerPlantCards>> visiblePPlants)
 {
 	// Place the cards in the visible
-	for (int i = 0; i < visibleCards && i < PPlants.size(); i++) {
+	for (int i = 0; i < visibleCards && i < PPlants.size(); ++i) {
 		visiblePPlants.push_back(PPlants[0]);
 		PPlants.erase(PPlants.begin());
 	}
 
 	std::vector<shared_ptr<PowerPlantCards>>::iterator show; // create a vector iterator
-	for (show = visiblePPlants.begin(); show != visiblePPlants.end(); show++) {
+	for (show = visiblePPlants.begin(); show != visiblePPlants.end(); ++show) {
 		std::cout << *show << std::endl;
 	}
 }
@@ -49,7 +50,7 @@ void PPmarket::printPPmarket(vector<shared_ptr<PowerPlantCards>> visiblePPlants)
 
 void PPmarket::Setup() {
 	// fill visiblePPlants vector
-	for (int i = 0; i < visibleCards && i < PPlants.size(); i++) {
+	for (int i = 0; i < visibleCards && i < PPlants.size(); ++i) {
 		visiblePPlants.push_back(PPlants[0]);
 		PPlants.erase(PPlants.begin());
 	}
@@ -58,13 +59,13 @@ void PPmarket::Setup() {
 // print the visible PowerPlantCards
 void PPmarket::printPPmarket() {
 	cout << "PowerPlants on Auction: " << endl;
-	for (int i = 0; i < futureMarketPosition; i++)
+	for (int i = 0; i < futureMarketPosition; ++i)
 		cout << "[" << i << "] " << *getPlant(i) << endl;
 
 	cout << endl;
 
 	cout << "Coming PowerPlants: " << endl;
-	for (int i = futureMarketPosition; i < visibleCards; i++)
+	for (int i = futureMarketPosition; i < visibleCards; ++i)
 		cout << "[" << i << "] " << *getPlant(i) << endl;
 	cout << endl;
 }
