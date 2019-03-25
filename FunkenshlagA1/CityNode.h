@@ -7,6 +7,7 @@
 #include <array>
 #include "Resource.h"
 #include "Player.h"
+#include "House.h"
 using namespace std;
 
 
@@ -18,6 +19,10 @@ private:
     bool used;
     vector<string> edges;
     vector<string> cost;
+    vector<House*> houses;
+    int firstHousePrice = 10;
+    int secondHousePrice = 15;
+    int thirdHousePrice = 20;
     
 public:
     //constructors
@@ -31,6 +36,9 @@ public:
     bool getUsed() const;
     vector<string> getEdges() const;
     vector<string> getCosts() const;
+    vector<House*> getHouses();
+    int getNumberOfHouses() const;
+    int getHousePrice() const;
     
     //setters
     void setName(string n);

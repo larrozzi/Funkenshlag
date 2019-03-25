@@ -115,27 +115,33 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	 return true;
  }
 
- bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
-	 if (position <= 3 && elektro >= mybid && mybid>highestBid) {
-		 highestBid = mybid;
-		 return true;
-		 // other players will see highest bid and try to outbid it
-	 }
-	 else cout << "please try again";
-	 return false;
- }
+// bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
+//     if (position <= 3 && elektro >= mybid && mybid>highestBid) {
+//         highestBid = mybid;
+//         return true;
+//         // other players will see highest bid and try to outbid it
+//     }
+//     else cout << "please try again";
+//     return false;
+// }
 
  //void Player::ReplacePowerPlant(<shared_ptr<PowerPlant>> newplant, int toReplace) {
  //}
 
-//int Player::getHighestPowerPlant() {
-//	int max;
-//	for (std::shared_ptr<PowerPlant> highestplant : powerplants) {
-//		if (highestplant->getPrice() > max)
-//			max = highestplant->getPrice();
-//	}
-//	return max;
-//}
+int Player::getHighestPowerPlant() {
+    int max = 0;
+    for (std::shared_ptr<PowerPlantCards> highestplant : myPowerPlants) {
+        if (highestplant->getCardValue() > max)
+            max = highestplant->getCardValue();
+    }
+    return max;
+}
+
+bool Player::HasElektro(int elektro)
+{
+    return this->elektro >= elektro;
+}
+
 
 
  // assignment operator

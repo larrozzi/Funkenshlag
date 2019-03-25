@@ -46,6 +46,28 @@ vector<string> CityNode::getCosts() const
     return cost;
 }
 
+vector<House*>CityNode::getHouses()
+{
+    return houses;
+}
+
+int CityNode::getNumberOfHouses() const {
+    return houses.size();
+}
+int CityNode::getHousePrice() const
+{
+    switch (houses.size()) {
+        case 0:
+            return firstHousePrice;
+        case 1:
+            return secondHousePrice;
+        case 2:
+            return thirdHousePrice;
+        default:
+            return 0;
+    }
+}
+
 void CityNode::setName(string n)
 {
     name = n;

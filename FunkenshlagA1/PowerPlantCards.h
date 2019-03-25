@@ -47,7 +47,7 @@ public:
 	void setPowerHouse(int powerHouse);
 
 	// getters
-	inline int getCardValue() const;
+    int getCardValue() const;
 	inline Type getResourceType() const;
 	inline int getNumbResource() const;
 	inline int getCapacity() const;

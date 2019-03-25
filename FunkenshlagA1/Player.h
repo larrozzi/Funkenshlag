@@ -70,9 +70,10 @@ public:
 
 	bool Pass();
 	
-	/*void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
+	//void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
 	
-	int getHighestPowerPlant();*/
+	int getHighestPowerPlant();
+    bool HasElektro(int elektro);
 
 	// overloading output operator
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);

@@ -29,7 +29,7 @@ void PowerPlantCards::setCapacity(int capacity) { this->capacity = capacity; }
 void PowerPlantCards::setPowerHouse(int powerHouse) { this->powerHouse = powerHouse; }
 
 // getters
-inline int PowerPlantCards::getCardValue() const { return cardValue; }
+int PowerPlantCards::getCardValue() const { return cardValue; }
 inline Type PowerPlantCards::getResourceType() const { return resourceType; }
 inline int PowerPlantCards::getNumbResource() const { return numbResource; }
 inline int PowerPlantCards::getCapacity() const { return 2 * numbResource; }
