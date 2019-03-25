@@ -62,11 +62,11 @@ int main()
 	cout << "Hello and Welcome to Powergrid\n\n";
 	cout<< "Enter the Number of Players\n";
 	cin >> NumofPlayers;
-	cout << "" << endl;
+	
 			///configuring the players one by one
 	for (int i = 0; i < NumofPlayers; ++i) {
 			///creating a Player
-		
+		cout << "" << endl;
 		cout << "Please enter your name  \n"; //<<++i why need this
 		cin >> name;
 		cout << "Now please pick a HOUSE COLOR among the following: RED, BLUE, GREEN, YELLOW, BLACK, PINK.\n";
@@ -153,22 +153,25 @@ int main()
 
 			while (playerOrder[nextPlayerTurn] != currentPlayer){ //end loop after only one player is remaining
 				// Set current player by order
-				currentPlayer = playerOrder[turn]; //player order inside a round
 				
+				currentPlayer = playerOrder[turn]; //player order inside a round
+				cout << playerOrder.size()<< " players are still in this round of auction"<<endl;
+			//	cout << playerOrder[turn]->getName() << endl;
+
 				//current player auction
 			cout << currentPlayer->getName() << "'s turn" << endl;
-			cout << "Bid or Pass" << endl;
+			cout << "BID or PASS" << endl;
 			//cout << "Please note that you can't pass your turn if you're the first to bid on a power plant" << endl;
 			cin >> BidOrPass;
-			if (BidOrPass == "Pass" && currentPlayer == playerOrder[0])
+			if (BidOrPass == "PASS" && currentPlayer == playerOrder[0])
 				cout << "You cannot pass your turn since you're the first to bid on this power plant ";
-			else if (BidOrPass == "Pass") {
+			else if (BidOrPass == "PASS") {
 				currentPlayer->Pass();
 				playerOrder.erase(playerOrder.begin() + turn);
 
 				//break;
 			}
-			else if (BidOrPass == "Bid" && initialbid) {
+			else if (BidOrPass == "BID" && initialbid) {
 				cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid" << endl;
 				//cout << "Please note that your bid must be at least the same value of the powerplant and higher than other bids" << endl;
 				cin >> PPindex >> playerbid;
@@ -180,19 +183,19 @@ int main()
 						//*highestbidder = *currentPlayer;
 						highestbidder = currentPlayer;
 						highestBid = playerbid;
-						cout << "The highest bid is now " << highestBid << endl;
+						cout << "The initial bid is " << highestBid << endl;
 						initialbid = false;
 					}
 				}
 				else
 					cout << "Your bid is not high enough to purchase this powerplant" << endl;
 			}
-			else if (BidOrPass == "Bid") {
-				cout << "Please enter by your bid" << endl;
+			else if (BidOrPass == "BID") {
+				cout << "Please enter your bid" << endl;
 				cin >> playerbid;
 				if (playerbid > highestBid) {
 					if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
-						*highestbidder = *currentPlayer;
+						highestbidder = currentPlayer;
 						highestBid = playerbid;
 						cout << "The highest bid is now " << highestBid << endl;
 					}
@@ -206,7 +209,7 @@ int main()
 			cout << "" << endl;
 			}
 	//}
-		cout << "winner is " << highestbidder->getName() << endl;
+		cout << "The winner of this auction round is " << highestbidder->getName() << endl;
 		highestbidder->buyPowerPlant(*ppmarket, PPindex, playerbid);
 		for (int i = 0; i < playerOrder.size(); ++i)
 			if (playerOrder[i] == highestbidder)
