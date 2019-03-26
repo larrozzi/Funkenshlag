@@ -82,6 +82,7 @@
 		2D4F0B35224AB89800343913 /* PowerPlantCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerPlantCards.h; path = FunkenshlagA1/PowerPlantCards.h; sourceTree = "<group>"; };
 		2D4F0B36224AB89800343913 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = map.txt; path = FunkenshlagA1/map.txt; sourceTree = "<group>"; };
 		2D4F0B37224AB89800343913 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapLoader.cpp; path = FunkenshlagA1/MapLoader.cpp; sourceTree = "<group>"; };
+		2D4F0B4D224AC29400343913 /* FunkenshlagA1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunkenshlagA1; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				2D4F0B34224AB89800343913 /* A2_Part2_Driver.cpp */,
+				2D4F0B28224AB89600343913 /* Part2_Driver.cpp */,
+				2D4F0B29224AB89700343913 /* Part3_Driver.cpp */,
+				2D4F0B1E224AB89600343913 /* Part5_Driver.cpp */,
 				2D4F0B1B224AB89600343913 /* Cards.cpp */,
 				2D4F0B13224AB89500343913 /* Cards.h */,
 				2D4F0B11224AB89500343913 /* CityNode.cpp */,
@@ -113,9 +117,6 @@
 				2D4F0B36224AB89800343913 /* map.txt */,
 				2D4F0B37224AB89800343913 /* MapLoader.cpp */,
 				2D4F0B33224AB89800343913 /* MapLoader.h */,
-				2D4F0B28224AB89600343913 /* Part2_Driver.cpp */,
-				2D4F0B29224AB89700343913 /* Part3_Driver.cpp */,
-				2D4F0B1E224AB89600343913 /* Part5_Driver.cpp */,
 				2D4F0B2E224AB89700343913 /* Player.cpp */,
 				2D4F0B2B224AB89700343913 /* Player.h */,
 				2D4F0B2F224AB89700343913 /* players.txt */,
@@ -137,6 +138,7 @@
 				2D4F0B19224AB89500343913 /* A2_Part3_Phase4_Driver.cpp */,
 				2D4F0B1C224AB89600343913 /* Building.cpp */,
 				2D4F0B16224AB89500343913 /* Building.h */,
+				2D4F0B4D224AC29400343913 /* FunkenshlagA1 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +159,7 @@
 			);
 			name = FunkenshlagA1;
 			productName = COMP345A1;
-			productReference = 2D49C7BC22135C780001893D /* FunkenshlagA1 */;
+			productReference = 2D4F0B4D224AC29400343913 /* FunkenshlagA1 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -337,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include/;
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include/;
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
