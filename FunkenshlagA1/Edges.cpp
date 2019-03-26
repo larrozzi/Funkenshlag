@@ -22,7 +22,7 @@ void Edges::setCost(int cost) { this->cost = cost; }
 shared_ptr<CityNode> Edges::setFirst(shared_ptr<CityNode> fCity) { this->first = fCity; }
 shared_ptr<CityNode> Edges::setSec(shared_ptr<CityNode> sCity) { this->sec = sCity; }
 
-// operator overloading
+// operator assignment overloading
 bool Edges::operator==(const Edges& e) const {
     return ((this->first == e.first && this->sec == e.sec) ||
             (this->sec == e.first && this->first == e.sec)) &&

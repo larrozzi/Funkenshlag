@@ -23,6 +23,8 @@ MapLoader::MapLoader(string f)
     vector<CityNode> result = exec();
 }
 
+string MapLoader::getFileName() const { return fileName; }
+
 vector<CityNode> MapLoader::readMap(string f)
 {
     fileName = f;

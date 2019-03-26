@@ -53,7 +53,7 @@ public:
     
     // methods
     vector<House*> getHouses();
-    unsigned long getNumberOfHouses() const;
+    int getNumberOfHouses() const;
     int getHousePrice() const;
     bool isFull() const;
     bool isConnected(string cityNames);

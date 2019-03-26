@@ -17,5 +17,6 @@ public:
 	MapLoader();	//default constructor
 	MapLoader(string f);	//constructor takes fileName
 
+    string getFileName() const;
 	vector<CityNode> readMap(string f);	// sets fileName
 };

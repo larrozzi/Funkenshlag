@@ -11,9 +11,12 @@ House::House(HouseColor color) {
 	this->color = color;
 }
 
-House::~House() {
-
+House::House(std::shared_ptr<CityNode> city, HouseColor color) : city(city), color(color)
+{
+    price = city->getHousePrice();
 }
+
+House::~House() {}
 
 HouseColor House::getColor() const {
 	return color;
@@ -21,6 +24,22 @@ HouseColor House::getColor() const {
 
 void House::setColor(HouseColor color) {
 	this->color = color;
+}
+
+int House::getPrice() const {
+    return price;
+}
+
+void House::setPrice(int price) {
+    this->price = price;
+}
+
+std::shared_ptr<CityNode> House::getCity() const {
+    return city;
+}
+
+void House::setCity(std::shared_ptr<CityNode> city) {
+    this->city = city;
 }
 
 // overloading output operator for the enum HouseColor

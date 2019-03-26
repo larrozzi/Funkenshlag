@@ -29,26 +29,42 @@ using std::vector;
 class Building
 {
 private:
+    shared_ptr<Player> players;
     vector<House*> houses;
     vector<shared_ptr<CityNode>> cities;
     shared_ptr<Player> currentPlayer; // current player
-    vector<shared_ptr<Player>> playerOrder; // player order
-    shared_ptr<CityNode> pickedCity = nullptr; // picked City
-    shared_ptr<PowerPlantCards> highestPowerPlant;
-    int playPhase = 0;
-    int playStep = 0;
+    vector<shared_ptr<Player>> playerOrder; // player in current order
+    shared_ptr<PowerPlantCards> highestPowerPlant; // used for player order
+    shared_ptr<GameMap> map;
+    int playPhase = 0; // current phase | initial = 0
+    int playStep; // current step of the game (step 1, 2, 3)
     
 public:
     Building();
-    Building(Player cPlayer);
+    //Building(Player cPlayer);
     ~Building();
     
+    // getters
+    shared_ptr<GameMap>& getMap();
+    int getPlayPhase() const;
+    int getPlayStep() const;
+    vector<shared_ptr<Player>>& getPlayerOrder();
+    
+    // setters
+    void setMap(shared_ptr<GameMap>& map);
+    void setPlayPhase(int phase);
+    void setPlayStep(int step);
     void updatePlayOrder(bool reverse);
+    
+    void NewGame(MapLoader map, int numbPlayer);
+    
+    // Phase 4 Buying Cities
+    shared_ptr<CityNode> pickedCity = nullptr; // picked City
     int getNextPlayer();
     void BeginPhase4();
+    void Phase4Intro()
     void Phase4BuyingCities();
     void EndPhase4();
-    
 };
 
 

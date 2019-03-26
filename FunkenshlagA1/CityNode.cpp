@@ -87,7 +87,7 @@ vector<House*>CityNode::getHouses()
 }
 
 // returns the number of houses
-unsigned long CityNode::getNumberOfHouses() const {
+int CityNode::getNumberOfHouses() const {
     return houses.size();
 }
 
@@ -116,6 +116,7 @@ bool CityNode::isConnected(string cityName)
     for(auto connected = cityName.begin(); connected != connections.end(); ++connected)
         if ((*connected)->getFirst()->getName() == cityName || (*connected)->getSec()->getName() == cityName)
             return true;
+    
     return false;
 }
 
@@ -128,7 +129,7 @@ bool CityNode::addHouse(House* house)
     return true;
 }
 
-// operator overlaoding
+// operator assignment overlaoding
 // members
 bool CityNode::operator==(const CityNode& city) { return this->name == city.name; }
 

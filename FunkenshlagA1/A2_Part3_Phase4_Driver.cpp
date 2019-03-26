@@ -16,27 +16,18 @@
 
 int main ()
 {
+    int numberPlayers = 2;
     MapLoader mapLoader = MapLoader();
     GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
-    for (CityNode x : gameMap.getMap())
-    {
-        vector<string> eT = x.getEdges();
-        vector<string> cT = x.getCosts();
-        cout << x.getName() + '|';
-        for (string i : x.getEdges())
-        {
-            cout << i + ',';
-        }
-        cout << '|';
-        for (int i = 0; i < eT.size(); i++)
-        {
-            cout << cT[i] + ',';
-        }
-        cout << endl;
-    }
+    gameMap.showMap(); // display map
+    
     
     Player p1 = Player("Faruq", 50, BLUE);
-    Building phase4 = Building(p1);
+    
+    Building phase4 = Building();
+    
+    phase4.NewGame(mapLoader, numberPlayers);
+    
     phase4.BeginPhase4();
     phase4.EndPhase4();
     
