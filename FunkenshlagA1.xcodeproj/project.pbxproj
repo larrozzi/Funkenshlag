@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D4F0B38224AB89800343913 /* CityNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B11224AB89500343913 /* CityNode.cpp */; };
-		2D4F0B39224AB89800343913 /* PPmarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B15224AB89500343913 /* PPmarket.cpp */; };
-		2D4F0B3A224AB89800343913 /* GameMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B17224AB89500343913 /* GameMap.cpp */; };
-		2D4F0B3B224AB89800343913 /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B18224AB89500343913 /* PowerPlantCards.cpp */; };
-		2D4F0B3C224AB89800343913 /* A2_Part3_Phase4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B19224AB89500343913 /* A2_Part3_Phase4_Driver.cpp */; };
-		2D4F0B3D224AB89800343913 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B1A224AB89600343913 /* House.cpp */; };
-		2D4F0B3E224AB89800343913 /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B1B224AB89600343913 /* Cards.cpp */; };
-		2D4F0B3F224AB89800343913 /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B1C224AB89600343913 /* Building.cpp */; };
-		2D4F0B40224AB89800343913 /* Part5_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B1E224AB89600343913 /* Part5_Driver.cpp */; };
-		2D4F0B41224AB89800343913 /* SummaryCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B26224AB89600343913 /* SummaryCards.cpp */; };
-		2D4F0B42224AB89800343913 /* Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B28224AB89600343913 /* Part2_Driver.cpp */; };
-		2D4F0B43224AB89800343913 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B29224AB89700343913 /* Part3_Driver.cpp */; };
-		2D4F0B44224AB89800343913 /* Edges.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B2C224AB89700343913 /* Edges.cpp */; };
-		2D4F0B45224AB89800343913 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B2D224AB89700343913 /* ResourceManager.cpp */; };
-		2D4F0B46224AB89800343913 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B2E224AB89700343913 /* Player.cpp */; };
-		2D4F0B47224AB89800343913 /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B30224AB89700343913 /* Resource.cpp */; };
-		2D4F0B48224AB89800343913 /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B31224AB89700343913 /* Step3Card.cpp */; };
-		2D4F0B49224AB89800343913 /* ResourceMarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B32224AB89800343913 /* ResourceMarket.cpp */; };
-		2D4F0B4A224AB89800343913 /* A2_Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B34224AB89800343913 /* A2_Part2_Driver.cpp */; };
-		2D4F0B4B224AB89800343913 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0B37224AB89800343913 /* MapLoader.cpp */; };
+		2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D52213688A0001893D /* SummaryCards.cpp */; };
+		2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D72213688A0001893D /* PowerPlantCards.cpp */; };
+		2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D82213688A0001893D /* Step3Card.cpp */; };
+		2D49C7E3221381620001893D /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7E1221381620001893D /* Cards.cpp */; };
+		2DC827162242B2D50031F948 /* A2_Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */; };
+		2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827152242B2D50031F948 /* PPmarket.cpp */; };
+		2DC8272D224845130031F948 /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8272B224845130031F948 /* Building.cpp */; };
+		2DC8272F22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */; };
+		2DF1AF9E224AE86E0075BE6F /* Edges.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1AF9B224AE86E0075BE6F /* Edges.cpp */; };
+		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
+		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
+		2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF5D222E2F9C00025912 /* CityNode.cpp */; };
+		2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */; };
+		2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF61222E2F9C00025912 /* GameMap.cpp */; };
+		2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF62222E2F9D00025912 /* Resource.cpp */; };
+		2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */; };
+		2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF64222E2F9D00025912 /* Player.cpp */; };
+		2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF67222E2F9D00025912 /* MapLoader.cpp */; };
+		2DFFEF79222F298B00025912 /* Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF78222F298B00025912 /* Part2_Driver.cpp */; };
+		2DFFEF8A2230D96700025912 /* Part5_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF892230D96700025912 /* Part5_Driver.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,47 +42,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D49C7BC22135C780001893D /* FunkenshlagA1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = FunkenshlagA1; path = /Users/Lekside/Downloads/Concordia/Winter19/COMP345/Assignments/Funkenshlag/build/Debug/FunkenshlagA1; sourceTree = "<absolute>"; };
-		2D4F0B11224AB89500343913 /* CityNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CityNode.cpp; path = FunkenshlagA1/CityNode.cpp; sourceTree = "<group>"; };
-		2D4F0B12224AB89500343913 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = House.h; path = FunkenshlagA1/House.h; sourceTree = "<group>"; };
-		2D4F0B13224AB89500343913 /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cards.h; path = FunkenshlagA1/Cards.h; sourceTree = "<group>"; };
-		2D4F0B14224AB89500343913 /* CityNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityNode.h; path = FunkenshlagA1/CityNode.h; sourceTree = "<group>"; };
-		2D4F0B15224AB89500343913 /* PPmarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PPmarket.cpp; path = FunkenshlagA1/PPmarket.cpp; sourceTree = "<group>"; };
-		2D4F0B16224AB89500343913 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Building.h; path = FunkenshlagA1/Building.h; sourceTree = "<group>"; };
-		2D4F0B17224AB89500343913 /* GameMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameMap.cpp; path = FunkenshlagA1/GameMap.cpp; sourceTree = "<group>"; };
-		2D4F0B18224AB89500343913 /* PowerPlantCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PowerPlantCards.cpp; path = FunkenshlagA1/PowerPlantCards.cpp; sourceTree = "<group>"; };
-		2D4F0B19224AB89500343913 /* A2_Part3_Phase4_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = A2_Part3_Phase4_Driver.cpp; path = FunkenshlagA1/A2_Part3_Phase4_Driver.cpp; sourceTree = "<group>"; };
-		2D4F0B1A224AB89600343913 /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = House.cpp; path = FunkenshlagA1/House.cpp; sourceTree = "<group>"; };
-		2D4F0B1B224AB89600343913 /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cards.cpp; path = FunkenshlagA1/Cards.cpp; sourceTree = "<group>"; };
-		2D4F0B1C224AB89600343913 /* Building.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Building.cpp; path = FunkenshlagA1/Building.cpp; sourceTree = "<group>"; };
-		2D4F0B1D224AB89600343913 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = FunkenshlagA1/Resource.h; sourceTree = "<group>"; };
-		2D4F0B1E224AB89600343913 /* Part5_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Part5_Driver.cpp; path = FunkenshlagA1/Part5_Driver.cpp; sourceTree = "<group>"; };
-		2D4F0B1F224AB89600343913 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slot.h; path = FunkenshlagA1/Slot.h; sourceTree = "<group>"; };
-		2D4F0B20224AB89600343913 /* PPmarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPmarket.h; path = FunkenshlagA1/PPmarket.h; sourceTree = "<group>"; };
-		2D4F0B21224AB89600343913 /* invalidmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = invalidmap.txt; path = FunkenshlagA1/invalidmap.txt; sourceTree = "<group>"; };
-		2D4F0B22224AB89600343913 /* Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Edges.h; path = FunkenshlagA1/Edges.h; sourceTree = "<group>"; };
-		2D4F0B23224AB89600343913 /* GameMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameMap.h; path = FunkenshlagA1/GameMap.h; sourceTree = "<group>"; };
-		2D4F0B24224AB89600343913 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceManager.h; path = FunkenshlagA1/ResourceManager.h; sourceTree = "<group>"; };
-		2D4F0B25224AB89600343913 /* Step3Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Step3Card.h; path = FunkenshlagA1/Step3Card.h; sourceTree = "<group>"; };
-		2D4F0B26224AB89600343913 /* SummaryCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SummaryCards.cpp; path = FunkenshlagA1/SummaryCards.cpp; sourceTree = "<group>"; };
-		2D4F0B27224AB89600343913 /* ResourceMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceMarket.h; path = FunkenshlagA1/ResourceMarket.h; sourceTree = "<group>"; };
-		2D4F0B28224AB89600343913 /* Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Part2_Driver.cpp; path = FunkenshlagA1/Part2_Driver.cpp; sourceTree = "<group>"; };
-		2D4F0B29224AB89700343913 /* Part3_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Part3_Driver.cpp; path = FunkenshlagA1/Part3_Driver.cpp; sourceTree = "<group>"; };
-		2D4F0B2A224AB89700343913 /* SummaryCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryCards.h; path = FunkenshlagA1/SummaryCards.h; sourceTree = "<group>"; };
-		2D4F0B2B224AB89700343913 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = FunkenshlagA1/Player.h; sourceTree = "<group>"; };
-		2D4F0B2C224AB89700343913 /* Edges.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Edges.cpp; path = FunkenshlagA1/Edges.cpp; sourceTree = "<group>"; };
-		2D4F0B2D224AB89700343913 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResourceManager.cpp; path = FunkenshlagA1/ResourceManager.cpp; sourceTree = "<group>"; };
-		2D4F0B2E224AB89700343913 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = FunkenshlagA1/Player.cpp; sourceTree = "<group>"; };
-		2D4F0B2F224AB89700343913 /* players.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = players.txt; path = FunkenshlagA1/players.txt; sourceTree = "<group>"; };
-		2D4F0B30224AB89700343913 /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Resource.cpp; path = FunkenshlagA1/Resource.cpp; sourceTree = "<group>"; };
-		2D4F0B31224AB89700343913 /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Step3Card.cpp; path = FunkenshlagA1/Step3Card.cpp; sourceTree = "<group>"; };
-		2D4F0B32224AB89800343913 /* ResourceMarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResourceMarket.cpp; path = FunkenshlagA1/ResourceMarket.cpp; sourceTree = "<group>"; };
-		2D4F0B33224AB89800343913 /* MapLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLoader.h; path = FunkenshlagA1/MapLoader.h; sourceTree = "<group>"; };
-		2D4F0B34224AB89800343913 /* A2_Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = A2_Part2_Driver.cpp; path = FunkenshlagA1/A2_Part2_Driver.cpp; sourceTree = "<group>"; };
-		2D4F0B35224AB89800343913 /* PowerPlantCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerPlantCards.h; path = FunkenshlagA1/PowerPlantCards.h; sourceTree = "<group>"; };
-		2D4F0B36224AB89800343913 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = map.txt; path = FunkenshlagA1/map.txt; sourceTree = "<group>"; };
-		2D4F0B37224AB89800343913 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapLoader.cpp; path = FunkenshlagA1/MapLoader.cpp; sourceTree = "<group>"; };
-		2D4F0B4D224AC29400343913 /* FunkenshlagA1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunkenshlagA1; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D49C7BC22135C780001893D /* FunkenshlagA1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunkenshlagA1; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D49C7D22213688A0001893D /* SummaryCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCards.h; sourceTree = "<group>"; };
+		2D49C7D42213688A0001893D /* Step3Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step3Card.h; sourceTree = "<group>"; };
+		2D49C7D52213688A0001893D /* SummaryCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SummaryCards.cpp; sourceTree = "<group>"; };
+		2D49C7D62213688A0001893D /* PowerPlantCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerPlantCards.h; sourceTree = "<group>"; };
+		2D49C7D72213688A0001893D /* PowerPlantCards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerPlantCards.cpp; sourceTree = "<group>"; };
+		2D49C7D82213688A0001893D /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
+		2D49C7E1221381620001893D /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
+		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A2_Part2_Driver.cpp; sourceTree = "<group>"; };
+		2DC827142242B2D50031F948 /* PPmarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPmarket.h; sourceTree = "<group>"; };
+		2DC827152242B2D50031F948 /* PPmarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPmarket.cpp; sourceTree = "<group>"; };
+		2DC8272B224845130031F948 /* Building.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
+		2DC8272C224845130031F948 /* Building.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
+		2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = A2_Part3_Phase4_Driver.cpp; sourceTree = "<group>"; };
+		2DF1AF9A224AE86E0075BE6F /* Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edges.h; sourceTree = "<group>"; };
+		2DF1AF9B224AE86E0075BE6F /* Edges.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edges.cpp; sourceTree = "<group>"; };
+		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		2DFFEF54222E2F9C00025912 /* CityNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNode.h; sourceTree = "<group>"; };
+		2DFFEF55222E2F9C00025912 /* MapLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoader.h; sourceTree = "<group>"; };
+		2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part3_Driver.cpp; sourceTree = "<group>"; };
+		2DFFEF57222E2F9C00025912 /* ResourceMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceMarket.h; sourceTree = "<group>"; };
+		2DFFEF58222E2F9C00025912 /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = "<group>"; };
+		2DFFEF5A222E2F9C00025912 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		2DFFEF5C222E2F9C00025912 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
+		2DFFEF5D222E2F9C00025912 /* CityNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CityNode.cpp; sourceTree = "<group>"; };
+		2DFFEF5E222E2F9C00025912 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
+		2DFFEF5F222E2F9C00025912 /* GameMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMap.h; sourceTree = "<group>"; };
+		2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		2DFFEF61222E2F9C00025912 /* GameMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMap.cpp; sourceTree = "<group>"; };
+		2DFFEF62222E2F9D00025912 /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
+		2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceMarket.cpp; sourceTree = "<group>"; };
+		2DFFEF64222E2F9D00025912 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		2DFFEF66222E2F9D00025912 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
+		2DFFEF67222E2F9D00025912 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapLoader.cpp; sourceTree = "<group>"; };
+		2DFFEF76222F298B00025912 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		2DFFEF77222F298B00025912 /* players.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = players.txt; sourceTree = "<group>"; };
+		2DFFEF78222F298B00025912 /* Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part2_Driver.cpp; sourceTree = "<group>"; };
+		2DFFEF7D22308A8600025912 /* invalidmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalidmap.txt; sourceTree = "<group>"; };
+		2DFFEF892230D96700025912 /* Part5_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part5_Driver.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,47 +98,63 @@
 		2D49C7B322135C780001893D = {
 			isa = PBXGroup;
 			children = (
-				2D4F0B34224AB89800343913 /* A2_Part2_Driver.cpp */,
-				2D4F0B28224AB89600343913 /* Part2_Driver.cpp */,
-				2D4F0B29224AB89700343913 /* Part3_Driver.cpp */,
-				2D4F0B1E224AB89600343913 /* Part5_Driver.cpp */,
-				2D4F0B1B224AB89600343913 /* Cards.cpp */,
-				2D4F0B13224AB89500343913 /* Cards.h */,
-				2D4F0B11224AB89500343913 /* CityNode.cpp */,
-				2D4F0B14224AB89500343913 /* CityNode.h */,
-				2D4F0B2C224AB89700343913 /* Edges.cpp */,
-				2D4F0B22224AB89600343913 /* Edges.h */,
-				2D4F0B17224AB89500343913 /* GameMap.cpp */,
-				2D4F0B23224AB89600343913 /* GameMap.h */,
-				2D4F0B1A224AB89600343913 /* House.cpp */,
-				2D4F0B12224AB89500343913 /* House.h */,
-				2D4F0B21224AB89600343913 /* invalidmap.txt */,
-				2D4F0B36224AB89800343913 /* map.txt */,
-				2D4F0B37224AB89800343913 /* MapLoader.cpp */,
-				2D4F0B33224AB89800343913 /* MapLoader.h */,
-				2D4F0B2E224AB89700343913 /* Player.cpp */,
-				2D4F0B2B224AB89700343913 /* Player.h */,
-				2D4F0B2F224AB89700343913 /* players.txt */,
-				2D4F0B18224AB89500343913 /* PowerPlantCards.cpp */,
-				2D4F0B35224AB89800343913 /* PowerPlantCards.h */,
-				2D4F0B15224AB89500343913 /* PPmarket.cpp */,
-				2D4F0B20224AB89600343913 /* PPmarket.h */,
-				2D4F0B30224AB89700343913 /* Resource.cpp */,
-				2D4F0B1D224AB89600343913 /* Resource.h */,
-				2D4F0B2D224AB89700343913 /* ResourceManager.cpp */,
-				2D4F0B24224AB89600343913 /* ResourceManager.h */,
-				2D4F0B32224AB89800343913 /* ResourceMarket.cpp */,
-				2D4F0B27224AB89600343913 /* ResourceMarket.h */,
-				2D4F0B1F224AB89600343913 /* Slot.h */,
-				2D4F0B31224AB89700343913 /* Step3Card.cpp */,
-				2D4F0B25224AB89600343913 /* Step3Card.h */,
-				2D4F0B26224AB89600343913 /* SummaryCards.cpp */,
-				2D4F0B2A224AB89700343913 /* SummaryCards.h */,
-				2D4F0B19224AB89500343913 /* A2_Part3_Phase4_Driver.cpp */,
-				2D4F0B1C224AB89600343913 /* Building.cpp */,
-				2D4F0B16224AB89500343913 /* Building.h */,
-				2D4F0B4D224AC29400343913 /* FunkenshlagA1 */,
+				2D49C7BE22135C780001893D /* FunkenshlagA1 */,
+				2D49C7BD22135C780001893D /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		2D49C7BD22135C780001893D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D49C7BC22135C780001893D /* FunkenshlagA1 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
+			isa = PBXGroup;
+			children = (
+				2DF1AF9B224AE86E0075BE6F /* Edges.cpp */,
+				2DF1AF9A224AE86E0075BE6F /* Edges.h */,
+				2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */,
+				2DC827152242B2D50031F948 /* PPmarket.cpp */,
+				2DC827142242B2D50031F948 /* PPmarket.h */,
+				2DFFEF78222F298B00025912 /* Part2_Driver.cpp */,
+				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
+				2DFFEF892230D96700025912 /* Part5_Driver.cpp */,
+				2DFFEF54222E2F9C00025912 /* CityNode.h */,
+				2DFFEF5D222E2F9C00025912 /* CityNode.cpp */,
+				2DFFEF5F222E2F9C00025912 /* GameMap.h */,
+				2DFFEF61222E2F9C00025912 /* GameMap.cpp */,
+				2DFFEF55222E2F9C00025912 /* MapLoader.h */,
+				2DFFEF67222E2F9D00025912 /* MapLoader.cpp */,
+				2DFFEF7D22308A8600025912 /* invalidmap.txt */,
+				2DFFEF76222F298B00025912 /* map.txt */,
+				2DFFEF77222F298B00025912 /* players.txt */,
+				2DFFEF53222E2F9C00025912 /* Player.h */,
+				2DFFEF64222E2F9D00025912 /* Player.cpp */,
+				2DFFEF66222E2F9D00025912 /* House.h */,
+				2DFFEF58222E2F9C00025912 /* House.cpp */,
+				2DFFEF5C222E2F9C00025912 /* Resource.h */,
+				2DFFEF62222E2F9D00025912 /* Resource.cpp */,
+				2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */,
+				2DFFEF5A222E2F9C00025912 /* ResourceManager.h */,
+				2DFFEF63222E2F9D00025912 /* ResourceMarket.cpp */,
+				2DFFEF57222E2F9C00025912 /* ResourceMarket.h */,
+				2DFFEF5E222E2F9C00025912 /* Slot.h */,
+				2D49C7E2221381620001893D /* Cards.h */,
+				2D49C7E1221381620001893D /* Cards.cpp */,
+				2D49C7D22213688A0001893D /* SummaryCards.h */,
+				2D49C7D52213688A0001893D /* SummaryCards.cpp */,
+				2D49C7D42213688A0001893D /* Step3Card.h */,
+				2D49C7D82213688A0001893D /* Step3Card.cpp */,
+				2D49C7D62213688A0001893D /* PowerPlantCards.h */,
+				2D49C7D72213688A0001893D /* PowerPlantCards.cpp */,
+				2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */,
+				2DC8272C224845130031F948 /* Building.h */,
+				2DC8272B224845130031F948 /* Building.cpp */,
+			);
+			path = FunkenshlagA1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +174,7 @@
 			);
 			name = FunkenshlagA1;
 			productName = COMP345A1;
-			productReference = 2D4F0B4D224AC29400343913 /* FunkenshlagA1 */;
+			productReference = 2D49C7BC22135C780001893D /* FunkenshlagA1 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +199,7 @@
 				en,
 			);
 			mainGroup = 2D49C7B322135C780001893D;
-			productRefGroup = 2D49C7B322135C780001893D;
+			productRefGroup = 2D49C7BD22135C780001893D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -198,26 +213,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D4F0B3C224AB89800343913 /* A2_Part3_Phase4_Driver.cpp in Sources */,
-				2D4F0B38224AB89800343913 /* CityNode.cpp in Sources */,
-				2D4F0B43224AB89800343913 /* Part3_Driver.cpp in Sources */,
-				2D4F0B4A224AB89800343913 /* A2_Part2_Driver.cpp in Sources */,
-				2D4F0B44224AB89800343913 /* Edges.cpp in Sources */,
-				2D4F0B41224AB89800343913 /* SummaryCards.cpp in Sources */,
-				2D4F0B47224AB89800343913 /* Resource.cpp in Sources */,
-				2D4F0B4B224AB89800343913 /* MapLoader.cpp in Sources */,
-				2D4F0B42224AB89800343913 /* Part2_Driver.cpp in Sources */,
-				2D4F0B3D224AB89800343913 /* House.cpp in Sources */,
-				2D4F0B45224AB89800343913 /* ResourceManager.cpp in Sources */,
-				2D4F0B49224AB89800343913 /* ResourceMarket.cpp in Sources */,
-				2D4F0B40224AB89800343913 /* Part5_Driver.cpp in Sources */,
-				2D4F0B3F224AB89800343913 /* Building.cpp in Sources */,
-				2D4F0B3B224AB89800343913 /* PowerPlantCards.cpp in Sources */,
-				2D4F0B3E224AB89800343913 /* Cards.cpp in Sources */,
-				2D4F0B3A224AB89800343913 /* GameMap.cpp in Sources */,
-				2D4F0B39224AB89800343913 /* PPmarket.cpp in Sources */,
-				2D4F0B46224AB89800343913 /* Player.cpp in Sources */,
-				2D4F0B48224AB89800343913 /* Step3Card.cpp in Sources */,
+				2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */,
+				2DFFEF69222E2F9D00025912 /* House.cpp in Sources */,
+				2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */,
+				2DC827162242B2D50031F948 /* A2_Part2_Driver.cpp in Sources */,
+				2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */,
+				2DFFEF79222F298B00025912 /* Part2_Driver.cpp in Sources */,
+				2DC8272D224845130031F948 /* Building.cpp in Sources */,
+				2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */,
+				2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */,
+				2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */,
+				2DFFEF8A2230D96700025912 /* Part5_Driver.cpp in Sources */,
+				2DFFEF71222E2F9D00025912 /* MapLoader.cpp in Sources */,
+				2DFFEF6A222E2F9D00025912 /* CityNode.cpp in Sources */,
+				2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */,
+				2DF1AF9E224AE86E0075BE6F /* Edges.cpp in Sources */,
+				2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */,
+				2DC8272F22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp in Sources */,
+				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
+				2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */,
+				2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,11 +354,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include/;
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USE_HEADERMAP = YES;
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
@@ -351,11 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/include/;
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.68.0_1/lib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USE_HEADERMAP = YES;
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};

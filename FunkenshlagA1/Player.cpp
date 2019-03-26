@@ -18,6 +18,7 @@ using std::to_string;
 using std::vector;
 using std::ifstream;
 using std::shared_ptr;
+using std::vector;
  
 // constructors
 Player::Player(){
@@ -58,7 +59,7 @@ bool Player::buyHouse(shared_ptr<House> house)
         return false;
     
     elektro -= housePrice;  // pay
-    houses.push_back(house); // save house to houses vector
+    houses.push_back(*house); // save house to houses vector
     return true;
 }
 

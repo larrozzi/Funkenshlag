@@ -1,6 +1,9 @@
 #pragma once
+
 #include <string>
 #include "CityNode.h"
+
+using std::shared_ptr;
 
 enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK, PINK};
 
@@ -10,14 +13,14 @@ private:
 	//color of the house
 	HouseColor color;
     int price = 0;
-    std::shared_ptr<CityNode> city;
+    shared_ptr<CityNode> city;
     
 public:
 
 	//default constructor
 	House();
 	House(HouseColor color);
-    House(std::shared_ptr<CityNode> city, HouseColor color);
+    House(shared_ptr<CityNode> city, HouseColor color);
 	~House();
     
     // getters/setters
@@ -27,8 +30,8 @@ public:
     int getPrice() const;
     void setPrice(int price);
     
-    std::shared_ptr<CityNode> getCity() const;
-    void setCity(std::shared_ptr<CityNode> city);
+    shared_ptr<CityNode> getCity() const;
+    void setCity(shared_ptr<CityNode> city);
 
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
 };

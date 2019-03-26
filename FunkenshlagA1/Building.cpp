@@ -150,7 +150,7 @@ void Building::Phase4BuyingCities()
     anotherHouse->setPrice(connectionCost); // set the connectionCost has price of the house
     
     // does player have enough Elektros
-    if(!currentPlayer->HasElektro(anotherHouse->getPrice())
+    if(!currentPlayer->HasElektro(anotherHouse->getPrice()))
     {
         cerr << "Error!, Not enough Elektros to buy this house\n";
         return Phase4Intro();

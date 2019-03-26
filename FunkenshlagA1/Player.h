@@ -21,12 +21,11 @@ using std::shared_ptr;
 
 class Player
 {
-
 private:
     string name;
     int elektro = 50;
-    vector <House> houses;
-    //vector <CityNode> mycities;  
+    vector<House> houses;
+    //vector <CityNode> mycities;
     vector <string> mycities;
     vector <string> mapcities;
     vector<shared_ptr<PowerPlantCards>> myPowerPlants;
