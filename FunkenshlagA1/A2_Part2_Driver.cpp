@@ -141,18 +141,19 @@ int main()
 	cout << "----------------------------------------------------------------------------" << endl;
 	cout << "" << endl;
 	cout << "Phase II" << endl;
-	cout << "Let's the Auction begin" << endl;
+	cout << "Let the Auction begin" << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
 	cout << "" << endl;
 
-	int nextPlayerTurn = turn+1;
-
-	for (int round = 0; round < NumofPlayers; ++round) {  //  rounds necessary for each player to win a powerplant
+	int turnNextPlayer = turn+1;
+	// FOR LOOP NEEDS TO RESIZE PLAYERORDER AND REMOVE ONLY THE PLAYER WHO WON ALREADY
+	for (int round = 0; round < playerOrder.size(); ++round) {  //  rounds necessary for each player to win a powerplant
 		initialbid = true;
 		//for (int turn = 0; turn < NumofPlayers; turn++) { // number of turns to purchase one pp
 
-			while (playerOrder[nextPlayerTurn] != currentPlayer){ //end loop after only one player is remaining
-				// Set current player by order
+		//while (playerOrder[turnNextPlayer] != currentPlayer){ //end loop after only one player is remaining
+		while (playerOrder.size()>1) {
+			// Set current player by order
 				
 				currentPlayer = playerOrder[turn]; //player order inside a round
 				cout << playerOrder.size()<< " players are still in this round of auction"<<endl;
@@ -163,17 +164,17 @@ int main()
 			cout << "BID or PASS" << endl;
 			//cout << "Please note that you can't pass your turn if you're the first to bid on a power plant" << endl;
 			cin >> BidOrPass;
-			if (BidOrPass == "PASS" && currentPlayer == playerOrder[0])
+			if (BidOrPass == "PASS" && initialbid)  //currentPlayer == playerOrder[0]
 				cout << "You cannot pass your turn since you're the first to bid on this power plant ";
 			else if (BidOrPass == "PASS") {
 				currentPlayer->Pass();
 				playerOrder.erase(playerOrder.begin() + turn);
+				turn--;
+				turnNextPlayer--;
 
-				//break;
 			}
 			else if (BidOrPass == "BID" && initialbid) {
 				cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid" << endl;
-				//cout << "Please note that your bid must be at least the same value of the powerplant and higher than other bids" << endl;
 				cin >> PPindex >> playerbid;
 				//next line generates link ***********error cuz of getCard  to avoid player has manually put in at least card value
 				//highestBid = ppmarket->GetvisiblePPlants().at(PPindex)->getCardValue(); // bid starts at PPcard value Value 
@@ -204,8 +205,8 @@ int main()
 					cout << "Your bid is not high enough to purchase this powerplant" << endl;
 			}
 			//next turn
-			turn = (turn + 1) % NumofPlayers;
-			nextPlayerTurn = (nextPlayerTurn + 1) % playerOrder.size();
+			turn = (turn + 1) % playerOrder.size();
+			turnNextPlayer = (turnNextPlayer + 1) % playerOrder.size();
 			cout << "" << endl;
 			}
 	//}
@@ -217,7 +218,7 @@ int main()
 
 	}
 
-	///printing the player possessions
+	///printing the player possessions    GIVES VECTOR OUT OF RANGE ERROR
 	for (int i = 0; i < NumofPlayers; ++i)
 		cout << *players.at(i) << "\n\n";
 	for (vector<shared_ptr<Player>>::const_iterator i = players.begin(); i != players.end(); ++i) {

@@ -115,8 +115,8 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 		 return false;
 	 }
 */ 
-	cout << "You passed your turn, you will no longer be able to purchase this powerplant" <<endl;
-	cout << getName() << "passed his turn, and will no longer be able to purchase this powerplant " << endl;
+	//cout << "You passed your turn, you will no longer be able to purchase this powerplant" <<endl;
+	cout << getName() << " passed his turn, and will no longer be able to purchase this powerplant " << endl;
 	 return true;
  }
 
