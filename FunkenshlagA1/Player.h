@@ -35,7 +35,6 @@ private:
     
 
 public:
-
     Player();
     Player(string name,  int electro, HouseColor color);
     ~Player();
@@ -51,6 +50,9 @@ public:
     vector <string> getBuiltHouses() const;
     // method to create the grab 22 houses from board
     vector<House>grabhouses();
+
+    // method to buy house
+    bool Player::buyHouse(shared_ptr<House> house);
 
     //method to read cities from map file
     void readFile();

@@ -170,7 +170,6 @@ void Building::EndPhase4()
 {
     // if PowerPlants in the market have a price <= the highest number of cities owned by a player,
     // replace
-    
     int maximumHouse = 0;
     for(shared_ptr<Player> p : players)
         

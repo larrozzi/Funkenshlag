@@ -48,6 +48,20 @@ vector<House>Player::grabhouses(){
     return houses;
 }
 
+// method to buy house
+bool Player::buyHouse(shared_ptr<House> house)
+{
+    int housePrice = house->getPrice();
+    
+    // if cannot add house, city full
+    if (!house->getCity()->addHouse(house.get()))
+        return false;
+    
+    elektro -= housePrice;  // pay
+    houses.push_back(house); // save house to houses vector
+    return true;
+}
+
 //method to read cities from map file
 void Player::readFile(){
     string firstword;
