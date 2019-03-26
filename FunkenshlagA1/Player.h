@@ -52,7 +52,7 @@ public:
     vector<House>grabhouses();
 
     // method to buy house
-    bool Player::buyHouse(shared_ptr<House> house);
+    bool buyHouse(shared_ptr<House> house);
 
     //method to read cities from map file
     void readFile();
