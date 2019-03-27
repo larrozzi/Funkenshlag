@@ -13,6 +13,21 @@ Resource::Resource(int price, Type type) {
 	this->type = type;
 }
 
+const int Resource::getMAX_COAL() {
+	return MAX_COAL;
+}
+
+const int Resource::getMAX_OIL() {
+	return MAX_OIL;
+}
+
+const int Resource::getMAX_GARBAGE() {
+	return MAX_GARBAGE;
+}
+
+const int Resource::getMAX_URANIUM() {
+	return MAX_URANIUM;
+}
 Type Resource::getType() const {
 	return type;
 }
@@ -29,9 +44,9 @@ void Resource::setPrice(int price) {
 }
 
 // method to convert enum Type to string
-std::string Resource::printType(Type resource) const
+std::string Resource::printType() const
 {
-	switch (resource) {
+	switch (this->type) {
 	case COAL:		return "COAL";
 	case OIL:		return "OIL";
 	case HYBRID:	return "HYBRID";
@@ -46,7 +61,7 @@ std::string Resource::printType(Type resource) const
 // overloading output stream operator for Resource
 std::ostream& operator<<(std::ostream& outs, const Resource& resource)
 {
-	outs << "PRICE: "<< resource.price << "\t" << "TYPE: " <<  resource.printType(resource.type);
+	outs << "PRICE: "<< resource.price << "\t" << "TYPE: " <<  resource.printType();
 
 	return outs;
 }

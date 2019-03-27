@@ -12,12 +12,11 @@
 //#include <time.h>
 //#include <vector>
 //#include <map>
+//#include <set>
 //#include "Player.h"
 //#include "SummaryCards.h"
 //#include "House.h"
 //#include "PPmarket.h"
-//
-//
 //
 //using namespace std;
 //using std::cout;
@@ -54,21 +53,26 @@
 //    vector<shared_ptr<Player>> players;
 //    shared_ptr<Player> currentPlayer;
 //    shared_ptr<Player>highestbidder;
-//    vector<shared_ptr<Player>> playerOrder;
+//    vector<shared_ptr<Player>> InnerplayerOrder;
+//    vector<shared_ptr<Player>> OuterplayerOrder;
 //    std::map<Player*, bool> canBid;
 //    std::map<Player*, bool> canBuy;
 //
 //
 //    cout << "Hello and Welcome to Powergrid\n\n";
-//    cout<< "Enter the Number of Players\n\n";
+//    cout<< "Enter the Number of Players\n";
+//    cout << "> ";
 //    cin >> NumofPlayers;
 //
 //            ///configuring the players one by one
 //    for (int i = 0; i < NumofPlayers; ++i) {
 //            ///creating a Player
-//        cout << "Please enter your name  \n"; //<<++i why need this
+//        cout << "" << endl;
+//        cout << "Please enter your name  \n";
+//        cout << "> ";
 //        cin >> name;
 //        cout << "Now please pick a HOUSE COLOR among the following: RED, BLUE, GREEN, YELLOW, BLACK, PINK.\n";
+//        cout << "> ";
 //        cin >> color;
 //        clr = convert(color);
 //
@@ -81,7 +85,6 @@
 //        players.at(i)->grabhouses();
 //
 //            /// taking an overview card
-//
 //        cout << overviewCard;
 //        /*for (int i = 0; i < NumofPlayers; ++i) {
 //            overviewCard = SummaryCards(*players[i]);
@@ -96,20 +99,12 @@
 //    }
 //
 //        ///Auction time
-//
-//    cout << "Phase I" << endl;
-//    cout << "Random Player order on first Auction" << endl;
-//    cout << "----------------------------------------------------------------------------" << endl;
-//    cout << "Phase II" << endl;
-//    cout << "Let's the Auction begin" << endl;
-//    cout << "----------------------------------------------------------------------------" << endl;
-//
 //    vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 //
 //    PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
 //    vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
 //
-//     Pplants.size();
+//    Pplants.size();
 //
 //    for ( int i=0; i<42; ++i)
 //    PPlantsSptr.push_back(std::make_shared<PowerPlantCards>(Pplants[i])); //the powerplant market is now linked to the created pplants
@@ -127,94 +122,116 @@
 //    ppmarket->Setup();
 //
 //    // printing the PPmarket
+//    cout << "" << endl;
 //    ppmarket->printPPmarket();  // test needed
 //
-//        /// random Player Order before first Auction
+//    cout << "Phase I" << endl;
+//    cout << "Random Player order on first Auction as follows:" << endl;
 //
-//        vector<int> rvec(NumofPlayers);
-//        for (int i = 0; i < NumofPlayers; ++i)
-//            rvec[i] = i;
-//        auto rng = std::default_random_engine{};
-//        shuffle(begin(rvec), end(rvec),rng);
-//        for (int i = 0; i < NumofPlayers; ++i) {
-//            playerOrder.push_back(players[rvec[i]]);
-//        }
+//    /// random Player Order before first Auction
+//    vector<int> rvec(NumofPlayers);
+//    for (int i = 0; i < NumofPlayers; ++i)
+//        rvec[i] = i;
+//    auto rng = std::default_random_engine{};
+//    shuffle(begin(rvec), end(rvec), rng);
+//    for (int i = 0; i < NumofPlayers; ++i) {
+//        InnerplayerOrder.push_back(players[rvec[i]]);
+//        OuterplayerOrder.push_back(players[rvec[i]]);
+//        cout << InnerplayerOrder[i]->getName() << ' ';
+//    }
 //
-//    int nextPlayerTurn = turn+1;
+//    cout << "" << endl;
+//    cout << "----------------------------------------------------------------------------" << endl;
+//    cout << "" << endl;
+//    cout << "Phase II" << endl;
+//    cout << "Let the Auctions begin" << endl;
+//    cout << "" << endl;
 //
-//    for (int round = 0; round < NumofPlayers; ++round) {  //  rounds necessary for each player to win a powerplant
+//    //  loop for auctions
+//    while (OuterplayerOrder.size()>1){ //  rounds necessary for each player to win a powerplant
 //        initialbid = true;
-//        //for (int turn = 0; turn < NumofPlayers; turn++) { // number of turns to purchase one pp
+//        int turnNextPlayer = turn + 1;
+//        InnerplayerOrder = OuterplayerOrder;
+//        cout << "----------------------------------------------------------------------------" << endl;
+//        cout << "New round of auction." << endl;
 //
-//            while (playerOrder[nextPlayerTurn] != currentPlayer){
-//                // Set current player by order
-//                currentPlayer = playerOrder[turn]; //player order inside a round
+//        //while (playerOrder[turnNextPlayer] != currentPlayer){ //
+//        while (InnerplayerOrder.size()>1) { // number of turns to purchase one pp, end loop after only one player is remaining
+//            // Set current player by order
+//
+//                currentPlayer = InnerplayerOrder[turn]; //player order inside a round
+//                cout << InnerplayerOrder.size()<< " players are still in this round of auction."<<endl;
+//            //    cout << playerOrder[turn]->getName() << endl;
 //
 //                //current player auction
 //            cout << currentPlayer->getName() << "'s turn" << endl;
-//            cout << "Bid or Pass" << endl;
-//            //cout << "Please note that you can't pass your turn if you're the first to bid on a power plant" << endl;
+//            cout << "BID or PASS" << endl;
+//            cout << "> ";
 //            cin >> BidOrPass;
-//            if (BidOrPass == "Pass" && currentPlayer == playerOrder[0])
-//                cout << "You cannot pass your turn since you're the first to bid on this power plant ";
-//            else if (BidOrPass == "Pass") {
-//                currentPlayer->Pass();
-//                playerOrder.erase(playerOrder.begin() + turn);
-//
-//                //break;
+//            if (BidOrPass == "PASS" && initialbid) {
+//                cout << "You cannot pass your turn since you're the first to bid on this power plant.";
+//                turn--;
+//                turnNextPlayer--;
 //            }
-//            else if (BidOrPass == "Bid" && initialbid) {
-//                cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid" << endl;
-//                //cout << "Please note that your bid must be at least the same value of the powerplant and higher than other bids" << endl;
+//            else if (BidOrPass == "PASS") {
+//                currentPlayer->Pass();
+//                InnerplayerOrder.erase(InnerplayerOrder.begin() + turn);
+//                turn--;
+//                turnNextPlayer--;
+//            }
+//            else if (BidOrPass == "BID" && initialbid) {
+//                cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid." << endl;
+//                cout << "> ";
 //                cin >> PPindex >> playerbid;
 //                //next line generates link ***********error cuz of getCard  to avoid player has manually put in at least card value
 //                //highestBid = ppmarket->GetvisiblePPlants().at(PPindex)->getCardValue(); // bid starts at PPcard value Value
 //
 //                if (playerbid >= highestBid) {
 //                    if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
-//                        //*highestbidder = *currentPlayer;
 //                        highestbidder = currentPlayer;
 //                        highestBid = playerbid;
-//                        cout << "The highest bid is now " << highestBid << endl;
+//                        cout << "The initial bid is " << highestBid << endl;
 //                        initialbid = false;
 //                    }
 //                }
 //                else
-//                    cout << "Your bid is not high enough to purchase this powerplant" << endl;
+//                    cout << "Your bid is not high enough to purchase this powerplant." << endl;
 //            }
-//            else if (BidOrPass == "Bid") {
-//                cout << "Please enter by your bid" << endl;
+//            else if (BidOrPass == "BID") {
+//                cout << "Please enter your bid" << endl;
+//                cout << "> ";
 //                cin >> playerbid;
 //                if (playerbid > highestBid) {
 //                    if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
-//                        *highestbidder = *currentPlayer;
+//                        highestbidder = currentPlayer;
 //                        highestBid = playerbid;
 //                        cout << "The highest bid is now " << highestBid << endl;
 //                    }
 //                }
 //                else
-//                    cout << "Your bid is not high enough to purchase this powerplant" << endl;
+//                    cout << "Your bid is not high enough to purchase this powerplant." << endl;
 //            }
 //            //next turn
-//            turn = (turn + 1) % NumofPlayers;
-//            nextPlayerTurn = (nextPlayerTurn + 1) % playerOrder.size();
+//            turn = (turn + 1) % InnerplayerOrder.size();
+//            turnNextPlayer = (turnNextPlayer + 1) % InnerplayerOrder.size();
+//            cout << "" << endl;
 //            }
-//    //}
-//        cout << "winner is " << highestbidder->getName() << endl;
+//     //}
+//        cout << "The winner of this auction round is: " << highestbidder->getName() << endl;
 //        highestbidder->buyPowerPlant(*ppmarket, PPindex, playerbid);
-//        for (int i = 0; i < playerOrder.size(); ++i)
-//            if (playerOrder[i] == highestbidder)
-//                playerOrder.erase(playerOrder.begin() + i);
-//
+//        for (int i = 0; i < OuterplayerOrder.size(); ++i)
+//            if (OuterplayerOrder[i] == highestbidder)
+//                OuterplayerOrder.erase(OuterplayerOrder.begin() + i);
 //    }
 //
 //    ///printing the player possessions
 //    for (int i = 0; i < NumofPlayers; ++i)
-//        cout << *players.at(i) << "\n\n";
-//    for (vector<shared_ptr<Player>>::const_iterator i = players.begin(); i != players.end(); ++i) {
-//        cout << *i << "\n\n";
-//        //cout << *players.at(*i) << "\n\n";
-//    }
+//        cout << *players.at(i) << "\n";
+//
+//    //for (vector<shared_ptr<Player>>::const_iterator i = players.begin(); i != players.end(); ++i) {
+//    //    cout << **i << "\n\n";
+//    //    //cout << *players.at(*i) << "\n\n";
+//    //}
 //
 //    // write info to file
 //    ofstream outfile("players.txt",ios_base::app);
@@ -224,7 +241,7 @@
 //            outfile << overviewCard;
 //            outfile.close();
 //        }
-//        else cout << "cannot open the file ";
+//        else cout << "cannot open the file." << endl;
 //    }
 //
 //    system("pause");
@@ -236,6 +253,7 @@
 //
 //
 /////// Used for determining the turn order **********error cuz of p1 and p2 ,doesnt have a class
+//
 ////bool comparePlayerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {
 ////
 ////    // Priority: 1 - Built Houses
@@ -251,3 +269,5 @@
 ////
 ////    return false;
 ////}
+//
+////use set to put players in maybe

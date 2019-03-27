@@ -5,7 +5,6 @@ Philadelphia|New York,Washington|0,3
 Detroit|Buffalo,Pittsburgh,Chicago,Cincinnati|7,6,7,4
 Pittsburgh|Buffalo,Washington,Raleigh,Cincinnati,Detroit|7,6,7,7,6,7
 Washington|Pittsburgh,Philadelphia,Norfolk|6,3,5
-
 Norfolk|Washington,Raleigh|5,3
 Raleigh|Pittsburgh,Norfolk,Savannah,Atlanta,Cincinnati|7,3,7,7,15
 Savannah|Raleigh,Jacksonville,Atlanta|7,0,7
@@ -13,7 +12,6 @@ Atlanta|Knoxville,Raleigh,Savannah,Birmingham|5,7,7,3
 Jacksonville|Savannah,Tampa,New Orleans,Birmingham|0,4,16,9
 Tampa|Jacksonville,Miami|4,4
 Miami|Tampa,4
-
 Cincinnati|Detroit,Pittsburgh,Raleigh,Knoxville,St Louis,Chicago|4,7,15,5,12,7
 Knoxville|Cincinnati,Atlanta|6,5
 St.Louis|Chicago,Cincinnati,Atlanta,Memphis,Kansas City|10,12,12,7,6
@@ -21,7 +19,6 @@ Chicago|Duluth,Detroit,Cincinnati,St.Louis,Kansas City,Omaha,Minneapolis|12,7,7,
 Minneapolis|Fargo,Duluth,Chicago,Omaha,Chevenne,Billings|6,5,8,8,18,18
 Duluth|Detroit,Chicago,Minneapolis,Fargo|15,12,5,6
 Fargo|Duluth,Minneapolis,Billings|6,6,17
-
 Kansas City|Omaha,Chicago,St.Louis,Memphis,Oklahoma City,Santa Fe,Denver|5,8,6,12,8,16
 Oklahoma City|Kansas City,Memphis,Dallas,Santa Fe|8,14,3,15
 Memphis|St.Louis,Birmingham,New Orleans,Dallas,Oklahoma City,Kansas City|7,6,7,12,14,12
@@ -29,7 +26,6 @@ Dallas|Oklahoma City,Memphis,New Orleans,Houston,Santa Fe|3,12,12,5,16
 Birmingham|Memphis,Atlanta,Jacksonville,New Orleans|6,3,9,11
 Houston|Dallas,New Orleans,Santa Fe|5,8,21
 New Orleans|Memphis,Birmingham,Jacksonville,Houston,Dallas|7,11,16,8,12
-
 Seattle|Billings,Boise,Portland|9,12,3
 Billings|Seattle,Fargo,Minneapolis,Cheyenne,Boise|9,17,18,9,12
 Portland|Seattle,Boise,San Francisco|3,13,24
@@ -37,7 +33,6 @@ Boise|Seattle,Billings,Cheyenne,Salt Lake City,San Francisco,Portland|12,12,24,8
 Cheyenne|Billings,Minneapolis,Omaha,Denver,Boise|9,18,14,0,24
 Omaha|Minneapolis,Chicago,Kansas City,Cheyenne|8,13,5,14
 Denver|Chyenne,Kansas City,Santa Fe,Salt Lake City|0,16,13,21
-
 Salt Lake City|Boise,Denver,Santa Fe,Las Vegas,San Francisco|8,21,28,18,27
 San Francisco|Portland,Boise,Salt Lake City,Las Vegas,Los Angeles|24,23,27,14,9
 Las Vegas|Salt Lake City,Santa Fe,Phoenix,San Diego,Los Angeles,San Francisco|18,27,15,9,9,14
@@ -45,6 +40,5 @@ Santa Fe|Denver,Kansas City,Oklahoma City,Dallas,Houston,Phoenix,Las Vegas,Salt 
 Los Angeles|San Francisco,Las Vegas,San Diego|9,9,3
 Phoenix|Las Vegas,Santa Fe,San Diego|15,18,14
 San Diego|Los Angeles,Phoenix|3,14
-
 
 
