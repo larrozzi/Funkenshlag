@@ -1,5 +1,5 @@
 //#include <bits/stdc++.h>
-#include <boost/algorithm/string.hpp>    //library to split strings
+//#include <boost/algorithm/string.hpp>    //library to split strings
 #include "GameMap.h"
 #include "MapLoader.h"
 #include "CityNode.h"
@@ -23,6 +23,8 @@ MapLoader::MapLoader(string f)
     vector<CityNode> result = exec();
 }
 
+string MapLoader::getFileName() const { return fileName; }
+
 vector<CityNode> MapLoader::readMap(string f)
 {
     fileName = f;
@@ -40,8 +42,8 @@ vector<CityNode> MapLoader::exec()
     string segment;
     string edge;    //individual edge
     string cost;    //individual cost
-    string edgesVector[100];
-    string costVector[100];
+    string edgesVector[50];
+    string costVector[50];
     
     int count = 0;
     int i = 0;
@@ -52,7 +54,7 @@ vector<CityNode> MapLoader::exec()
     ifstream myfile(this->fileName);
     vector<int> costVectorInt;
     string lineVariables[3];
-    vector<CityNode> cities(60);
+    vector<CityNode> cities(50);
     if (myfile.is_open())
     {
         
@@ -121,6 +123,3 @@ vector<CityNode> MapLoader::exec()
     
     return cities;
 }
-
-//boost::split(edgesVector, edgesString, [](char c) {return c == ','; });    //split edgesstring into vector delimiter: ','
-//boost::split(costVector, costString, [](char c) {return c == ','; });    // split coststring into vector delimiter: ','

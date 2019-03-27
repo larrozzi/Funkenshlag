@@ -3,6 +3,8 @@
 #include <string>
 #include <iostream>
 
+using std::shared_ptr;
+
 House::House() {
 	color = NO_COLOR;
 }
@@ -11,9 +13,12 @@ House::House(HouseColor color) {
 	this->color = color;
 }
 
-House::~House() {
-
+House::House(shared_ptr<CityNode> city, HouseColor color) : city(city), color(color)
+{
+    //price = city->getHousePrice();
 }
+
+House::~House() {}
 
 HouseColor House::getColor() const {
 	return color;
@@ -21,6 +26,22 @@ HouseColor House::getColor() const {
 
 void House::setColor(HouseColor color) {
 	this->color = color;
+}
+
+int House::getPrice() const {
+    return price;
+}
+
+void House::setPrice(int price) {
+    this->price = price;
+}
+
+shared_ptr<CityNode> House::getCity() const {
+    return city;
+}
+
+void House::setCity(shared_ptr<CityNode> city) {
+    this->city = city;
 }
 
 // overloading output operator for the enum HouseColor
@@ -39,3 +60,11 @@ std::ostream& operator<<(std::ostream& outs, const HouseColor& color) {
 #undef PROCESS_VAL
 	return outs << c;
 }
+
+//// overloading input operator
+//std::istream& operator>>(std::istream& input, House& clr)
+//{
+//    input >> clr.color;
+//
+//    return input;
+//}
