@@ -21,7 +21,7 @@ public:
 	void setPrice(int price);
 	void setType(Type type);
 
-	std::string printType(Type resource) const;
+	std::string printType() const;
 	friend std::ostream& operator<<(std::ostream& outs, const Resource& resource);
 
 };
