@@ -25,6 +25,7 @@ public:
 
 	//getter/ setter
 	vector<CityNode> getMap() const;
+	vector<CityNode> getActiveMap() const;
 	void setMap(vector<CityNode> cities);
 	//void readMap();
 	void chooseRegion();
