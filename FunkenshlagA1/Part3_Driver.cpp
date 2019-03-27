@@ -97,7 +97,7 @@
 //    return 0;
 //}
 
-int main() {
-	ResourceMarket* market = new ResourceMarket();
-	std::cout << *market << std::endl;
-}
+//int main() {
+//    ResourceMarket* market = new ResourceMarket();
+//    std::cout << *market << std::endl;
+//}

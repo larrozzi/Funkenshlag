@@ -81,15 +81,15 @@ int ResourceMarket::getURANIUM_SLOT_START() const
 const int ResourceMarket::getFirstEmptyCoal() {
 	return ((MARKET_SIZE - numOfCoal) - 1);
 }
-const int ResourceMarket::getFirstEmptyOil() {
-	((MARKET_SIZE - numOfOil) - 1);
-}
-const int ResourceMarket::getFirstEmptyGarbage() {
-	((MARKET_SIZE - numOfGarbage) - 1);
-}
-const int ResourceMarket::getFirstEmptyUranium() {
-	((MARKET_SIZE - numOfUranium) - 1);
-}
+//const int ResourceMarket::getFirstEmptyOil() {
+//    ((MARKET_SIZE - numOfOil) - 1);
+//}
+//const int ResourceMarket::getFirstEmptyGarbage() {
+//    ((MARKET_SIZE - numOfGarbage) - 1);
+//}
+//const int ResourceMarket::getFirstEmptyUranium() {
+//    ((MARKET_SIZE - numOfUranium) - 1);
+//}
 
 ResourceMarket::Slot* ResourceMarket::getSlots() {
 	return slots;
