@@ -12,12 +12,11 @@
 #include <time.h> 
 #include <vector>
 #include <map>
+#include <set>
 #include "Player.h"
 #include "SummaryCards.h"
 #include "House.h"
 #include "PPmarket.h"
-
-
 
 using namespace std;
 using std::cout;
@@ -54,7 +53,8 @@ int main()
 	vector<shared_ptr<Player>> players;
 	shared_ptr<Player> currentPlayer;
 	shared_ptr<Player>highestbidder;
-	vector<shared_ptr<Player>> playerOrder;
+	vector<shared_ptr<Player>> InnerplayerOrder;
+	vector<shared_ptr<Player>> OuterplayerOrder;
 	std::map<Player*, bool> canBid;
 	std::map<Player*, bool> canBuy;
 
@@ -133,8 +133,9 @@ int main()
 	auto rng = std::default_random_engine{};
 	shuffle(begin(rvec), end(rvec), rng);
 	for (int i = 0; i < NumofPlayers; ++i) {
-		playerOrder.push_back(players[rvec[i]]);
-		cout << playerOrder[i]->getName() << ' ';
+		InnerplayerOrder.push_back(players[rvec[i]]);
+		OuterplayerOrder.push_back(players[rvec[i]]);
+		cout << InnerplayerOrder[i]->getName() << ' ';
 	}
 
 	cout << "" << endl;
@@ -147,16 +148,16 @@ int main()
 
 	int turnNextPlayer = turn+1;
 	// FOR LOOP NEEDS TO RESIZE PLAYERORDER AND REMOVE ONLY THE PLAYER WHO WON ALREADY
-	for (int round = 0; round < playerOrder.size(); ++round) {  //  rounds necessary for each player to win a powerplant
+	for (int round = 0; round < OuterplayerOrder.size(); ++round) {  //  rounds necessary for each player to win a powerplant
 		initialbid = true;
 		//for (int turn = 0; turn < NumofPlayers; turn++) { // number of turns to purchase one pp
 
 		//while (playerOrder[turnNextPlayer] != currentPlayer){ //end loop after only one player is remaining
-		while (playerOrder.size()>1) {
+		while (InnerplayerOrder.size()>1) {
 			// Set current player by order
 				
-				currentPlayer = playerOrder[turn]; //player order inside a round
-				cout << playerOrder.size()<< " players are still in this round of auction"<<endl;
+				currentPlayer = InnerplayerOrder[turn]; //player order inside a round
+				cout << InnerplayerOrder.size()<< " players are still in this round of auction"<<endl;
 			//	cout << playerOrder[turn]->getName() << endl;
 
 				//current player auction
@@ -168,7 +169,7 @@ int main()
 				cout << "You cannot pass your turn since you're the first to bid on this power plant ";
 			else if (BidOrPass == "PASS") {
 				currentPlayer->Pass();
-				playerOrder.erase(playerOrder.begin() + turn);
+				InnerplayerOrder.erase(InnerplayerOrder.begin() + turn);
 				turn--;
 				turnNextPlayer--;
 
@@ -205,16 +206,16 @@ int main()
 					cout << "Your bid is not high enough to purchase this powerplant" << endl;
 			}
 			//next turn
-			turn = (turn + 1) % playerOrder.size();
-			turnNextPlayer = (turnNextPlayer + 1) % playerOrder.size();
+			turn = (turn + 1) % InnerplayerOrder.size();
+			turnNextPlayer = (turnNextPlayer + 1) % InnerplayerOrder.size();
 			cout << "" << endl;
 			}
 	//}
 		cout << "The winner of this auction round is " << highestbidder->getName() << endl;
 		highestbidder->buyPowerPlant(*ppmarket, PPindex, playerbid);
-		for (int i = 0; i < playerOrder.size(); ++i)
-			if (playerOrder[i] == highestbidder)
-				playerOrder.erase(playerOrder.begin() + i);
+		for (int i = 0; i < InnerplayerOrder.size(); ++i)
+			if (InnerplayerOrder[i] == highestbidder)
+				InnerplayerOrder.erase(InnerplayerOrder.begin() + i);
 
 	}
 
@@ -261,3 +262,5 @@ int main()
 //
 //	return false;
 //}
+
+//use set to put players in maybe 
