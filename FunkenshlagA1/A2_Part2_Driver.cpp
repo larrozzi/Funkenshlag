@@ -1,6 +1,6 @@
 //////  COMP345A1
 //////
-//////  Created by Yassine Laaroussi 2019-02-08.
+//////  Created by Yassine Laaroussi 2019-03-27.
 //////  Updated 2019-03-06
 
 #include <fstream>
@@ -86,10 +86,7 @@ int main()
 
 			/// taking an overview card
 		cout << overviewCard;
-		/*for (int i = 0; i < NumofPlayers; ++i) {
-			overviewCard = SummaryCards(*players[i]);
-			cout << overviewCard;
-		}*/
+
 
 		/*	 Owning a city 
 		cout << "Please enter the city you'd like to build a house in \n";
@@ -128,7 +125,7 @@ int main()
 	cout << "Phase I" << endl;
 	cout << "Random Player order on first Auction as follows:" << endl;
 
-	/// random Player Order before first Auction
+		/// random Player Order before first Auction
 	vector<int> rvec(NumofPlayers);
 	for (int i = 0; i < NumofPlayers; ++i)
 		rvec[i] = i;
@@ -219,6 +216,13 @@ int main()
 	 //}
 		cout << "The winner of this auction round is: " << highestbidder->getName() << endl;
 		highestbidder->buyPowerPlant(*ppmarket, PPindex, playerbid);
+			// printing the PPmarket
+			cout << "" << endl;
+			cout << "the new Power plant market is now: " << endl;
+			cout << "" << endl;
+			ppmarket->printPPmarket();  
+
+			//remove winner from player order
 		for (int i = 0; i < OuterplayerOrder.size(); ++i)
 			if (OuterplayerOrder[i] == highestbidder)
 				OuterplayerOrder.erase(OuterplayerOrder.begin() + i);
@@ -247,7 +251,7 @@ int main()
 	system("pause");
 	delete ppmarket;
 
-	//delete PL;// replaced by shared pointers possible because for some reason this doesnt live out of scope
+
 	return 0;
 }
 

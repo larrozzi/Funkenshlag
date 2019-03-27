@@ -23,7 +23,7 @@ bool PPmarket::DrawPlant() {
 		// Place card in the visible market
 		visiblePPlants.push_back(top);
 
-		PPlants.erase(PPlants.begin());
+		PPlants.erase(PPlants.begin()); //shouldnt it be before pushback(top)
 
 		// next line generates error
 	//	std::sort(visiblePPlants.begin(), visiblePPlants.end(), [](shared_ptr<PowerPlantCards> pp1, std::shared_ptr<PowerPlantCards> pp2) { return  (pp1)->getCardValue() < (pp2)->getCardValue(); });

@@ -75,7 +75,7 @@ public:
 	//int getHighestPowerPlant();
 
 	// overloading assignment operator
-	//Player& operator = (const Player &player);
+	/*const Player& operator = (const Player &player);*/
 
 	// overloading output operator
 	 
