@@ -55,11 +55,11 @@ bool Player::buyHouse(shared_ptr<House> house)
     int housePrice = house->getPrice();
     
     // if cannot add house, city full
-    if (!house->getCity()->addHouse(house.get()))
-        return false;
+    //if (!house->getCity()->addHouse(house.get()))
+        //return false;
     
     elektro -= housePrice;  // pay
-    houses.push_back(*house); // save house to houses vector
+    houses.push_back(*house); // save house to houses vector 
     return true;
 }
 
@@ -170,6 +170,18 @@ bool Player::HasElektro(int elektro)
     // return *this;
  //}
 
+// overloading == operator
+//bool Player::operator==(const Player& p) const
+//{
+//    return (this->name == p.name &&
+//            this->elektro == p.elektro &&
+//            this->houses == p.houses &&
+//            this->mycities == p.mycities &&
+//            this->mapcities == p.mapcities &&
+//            this->myPowerPlants == p.myPowerPlants &&
+//            this->color == p.color &&
+//            this->mybid == p.mybid);
+//}
 
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){

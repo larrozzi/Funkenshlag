@@ -15,7 +15,7 @@ House::House(HouseColor color) {
 
 House::House(shared_ptr<CityNode> city, HouseColor color) : city(city), color(color)
 {
-    price = city->getHousePrice();
+    //price = city->getHousePrice();
 }
 
 House::~House() {}
@@ -60,3 +60,11 @@ std::ostream& operator<<(std::ostream& outs, const HouseColor& color) {
 #undef PROCESS_VAL
 	return outs << c;
 }
+
+//// overloading input operator
+//std::istream& operator>>(std::istream& input, House& clr)
+//{
+//    input >> clr.color;
+//
+//    return input;
+//}

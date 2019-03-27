@@ -7,6 +7,7 @@
 //
 
 #include <algorithm>
+#include <memory>
 #include "Building.h"
 using std::cout;
 using std::cin;
@@ -15,8 +16,6 @@ using std::shared_ptr;
 
 // constructor | destructor
 Building::Building() {}
-//Building::Building(Player cPlayer) : currentPlayer(cPlayer) {}
-
 Building::~Building() {}
 
 
@@ -31,27 +30,57 @@ void Building::setMap(shared_ptr<GameMap>& map) { this->map = map; }
 void Building::setPlayPhase(int phase) { this->playPhase = phase; }
 void Building::setPlayStep(int step) { this->playStep = step; }
 
+// convert HouseColor string to enum
+HouseColor convertToEnum(const std::string clr)
+{
+    if (clr == "NO_COLOR")      return NO_COLOR;
+    else if (clr == "RED")      return RED;
+    else if (clr == "BLUE")     return BLUE;
+    else if (clr == "GREEN")    return GREEN;
+    else if (clr == "YELLOW")   return YELLOW;
+    else if (clr == "BLACK")    return BLACK;
+    else if (clr == "PINK")     return PINK;
+    else return NO_COLOR;
+}
+
 // new game
 void Building::NewGame(MapLoader map, int numbPlayer)
 {
-    cout << "Map: " << map.getFileName() << ". Number of players: " << numbPlayer << endl;
+    cout << "Map: " << map.getFileName() << ". Number of players: " << numbPlayer << " players" << endl;
     
-    // add players to player vector
-    while(numbPlayer > 0)
+    string pName;
+    string color;
+    HouseColor clr;
+    
+    for (int i = 0; i < numbPlayer; i++)
     {
-        players.push_back(std::make_shared<Player>("",nullptr,50));
+        cout << "Please Enter Player Name: ";
+        cin >> pName;
+
+        cout << "Please Enter House Color: RED, BLUE, GREEN, YELLOW, BLACK, PINK \nColor: ";
+        cin >> color;
+        clr = convertToEnum(color);
+        
+        // add players to player vector
+        while(numbPlayer > 0 && numbPlayer <= players.size())
+        {
+            players.push_back(make_shared<Player>(pName, 50, clr));
+        }
     }
-    // player initial Elektros = 50
-    for(Player player : players)
-    {
-        player->setElektro(50);
-    }
+    
+//    // player initial Elektros = 50
+//    for(auto player : players)
+//    {
+//        player->setElektro(50);
+//    }
+    
     // player order
-    for(Player player : players)
+    for(shared_ptr<Player> player : players) {
         playerOrder.push_back(player);
-    
-    random_shuffle(playerOrder.begin(), playerOrder.end());
-    currentPlayer = playerOrder[0];
+    }
+    random_shuffle(playerOrder.begin(), playerOrder.end()); // initial shuffle of order
+    currentPlayer = playerOrder[0]; // set current player turn
+    cout << "Done with NewGame" << endl;
 }
 
 // used to determine the player turn order
@@ -130,7 +159,7 @@ void Building::Phase4BuyingCities()
     
     // cost of connecting to city
     int connectionCost;
-    if (currentPlayer->getHouses().empty()) {
+    if (currentPlayer->grabhouses().empty()) {
         connectionCost = pickedCity->getHousePrice();
     }
     else {
@@ -168,10 +197,10 @@ void Building::Phase4BuyingCities()
 
 void Building::EndPhase4()
 {
+    cout << "End of Phase 4" << endl;
     // if PowerPlants in the market have a price <= the highest number of cities owned by a player,
     // replace
-    int maximumHouse = 0;
+    //int maximumHouse = 0;
     for(shared_ptr<Player> p : players)
-        
-    cout << *currentPlayer << endl;
+        cout << *p << endl;
 }

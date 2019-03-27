@@ -11,6 +11,7 @@ using std::shared_ptr;
 
 Edges::Edges() {}
 Edges::Edges(shared_ptr<CityNode> firstCity, shared_ptr<CityNode> secCity, int cost) : first(firstCity), sec(secCity), cost(cost) {}
+Edges::~Edges() {}
 
 // getters
 int Edges::getCost() const { return cost; }
@@ -19,8 +20,8 @@ shared_ptr<CityNode> Edges::getSec() const { return sec; }
 
 // setters
 void Edges::setCost(int cost) { this->cost = cost; }
-shared_ptr<CityNode> Edges::setFirst(shared_ptr<CityNode> fCity) { this->first = fCity; }
-shared_ptr<CityNode> Edges::setSec(shared_ptr<CityNode> sCity) { this->sec = sCity; }
+//shared_ptr<CityNode> Edges::setFirst(shared_ptr<CityNode> fCity) { this->first = fCity; }
+//shared_ptr<CityNode> Edges::setSec(shared_ptr<CityNode> sCity) { this->sec = sCity; }
 
 // operator assignment overloading
 bool Edges::operator==(const Edges& e) const {

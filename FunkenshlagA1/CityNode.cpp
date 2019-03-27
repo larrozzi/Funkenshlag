@@ -24,6 +24,13 @@ CityNode::CityNode(string n, map<string, bool>  o, bool u, vector<string> e, vec
 : name{ n }, ownedBy{ o }, used{ u }, edges{ e },  cost{ c }
 {}
 
+CityNode::~CityNode()
+{
+    // delete each House pointer
+    for(auto h : houses)
+    delete h;
+}
+
 string CityNode::getName() const
 {
     return name;
@@ -113,9 +120,9 @@ bool CityNode::isFull() const
 
 bool CityNode::isConnected(string cityName)
 {
-    for(auto connected = cityName.begin(); connected != connections.end(); ++connected)
-        if ((*connected)->getFirst()->getName() == cityName || (*connected)->getSec()->getName() == cityName)
-            return true;
+//    for(auto connected = cityName.begin(); connected != connections.end(); ++connected)
+//        if ((*connected)->getFirst()->getName() == cityName || (*connected)->getSec()->getName() == cityName)
+//            return true;
     
     return false;
 }

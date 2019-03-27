@@ -9,7 +9,7 @@
 //#include <memory>
 //#include <algorithm>
 //#include <random>
-//#include <time.h> 
+//#include <time.h>
 //#include <vector>
 //#include <map>
 //#include "Player.h"
@@ -81,14 +81,14 @@
 //        players.at(i)->grabhouses();
 //
 //            /// taking an overview card
-//        
+//
 //        cout << overviewCard;
 //        /*for (int i = 0; i < NumofPlayers; ++i) {
 //            overviewCard = SummaryCards(*players[i]);
 //            cout << overviewCard;
 //        }*/
 //
-//        /*     Owning a city 
+//        /*     Owning a city
 //        cout << "Please enter the city you'd like to build a house in \n";
 //        cin >> cityName;
 //        PL->readFile();
@@ -107,8 +107,8 @@
 //    vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 //
 //    PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
-//    vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created    
-//    
+//    vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
+//
 //     Pplants.size();
 //
 //    for ( int i=0; i<42; ++i)
@@ -125,12 +125,12 @@
 //
 //    //make the market ready for auction, filling the visibleplants vector
 //    ppmarket->Setup();
-//     
+//
 //    // printing the PPmarket
 //    ppmarket->printPPmarket();  // test needed
 //
 //        /// random Player Order before first Auction
-//    
+//
 //        vector<int> rvec(NumofPlayers);
 //        for (int i = 0; i < NumofPlayers; ++i)
 //            rvec[i] = i;
@@ -139,7 +139,7 @@
 //        for (int i = 0; i < NumofPlayers; ++i) {
 //            playerOrder.push_back(players[rvec[i]]);
 //        }
-//    
+//
 //    int nextPlayerTurn = turn+1;
 //
 //    for (int round = 0; round < NumofPlayers; ++round) {  //  rounds necessary for each player to win a powerplant
@@ -149,7 +149,7 @@
 //            while (playerOrder[nextPlayerTurn] != currentPlayer){
 //                // Set current player by order
 //                currentPlayer = playerOrder[turn]; //player order inside a round
-//                
+//
 //                //current player auction
 //            cout << currentPlayer->getName() << "'s turn" << endl;
 //            cout << "Bid or Pass" << endl;
@@ -168,7 +168,7 @@
 //                //cout << "Please note that your bid must be at least the same value of the powerplant and higher than other bids" << endl;
 //                cin >> PPindex >> playerbid;
 //                //next line generates link ***********error cuz of getCard  to avoid player has manually put in at least card value
-//                //highestBid = ppmarket->GetvisiblePPlants().at(PPindex)->getCardValue(); // bid starts at PPcard value Value 
+//                //highestBid = ppmarket->GetvisiblePPlants().at(PPindex)->getCardValue(); // bid starts at PPcard value Value
 //
 //                if (playerbid >= highestBid) {
 //                    if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
@@ -226,7 +226,7 @@
 //        }
 //        else cout << "cannot open the file ";
 //    }
-//    
+//
 //    system("pause");
 //    delete ppmarket;
 //

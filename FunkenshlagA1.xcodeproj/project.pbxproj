@@ -51,6 +51,8 @@
 		2D49C7D82213688A0001893D /* Step3Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step3Card.cpp; sourceTree = "<group>"; };
 		2D49C7E1221381620001893D /* Cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cards.cpp; sourceTree = "<group>"; };
 		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		2D4F6ED6224BF808002B314E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		2D54BF8A224C22F0001BB1BC /* map-A1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "map-A1.txt"; sourceTree = "<group>"; };
 		2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A2_Part2_Driver.cpp; sourceTree = "<group>"; };
 		2DC827142242B2D50031F948 /* PPmarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPmarket.h; sourceTree = "<group>"; };
 		2DC827152242B2D50031F948 /* PPmarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPmarket.cpp; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		2DFFEF64222E2F9D00025912 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		2DFFEF66222E2F9D00025912 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
 		2DFFEF67222E2F9D00025912 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapLoader.cpp; sourceTree = "<group>"; };
-		2DFFEF76222F298B00025912 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		2DFFEF77222F298B00025912 /* players.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = players.txt; sourceTree = "<group>"; };
 		2DFFEF78222F298B00025912 /* Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part2_Driver.cpp; sourceTree = "<group>"; };
 		2DFFEF7D22308A8600025912 /* invalidmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalidmap.txt; sourceTree = "<group>"; };
@@ -114,27 +115,28 @@
 		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
-				2DF1AF9B224AE86E0075BE6F /* Edges.cpp */,
-				2DF1AF9A224AE86E0075BE6F /* Edges.h */,
 				2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */,
 				2DC827152242B2D50031F948 /* PPmarket.cpp */,
 				2DC827142242B2D50031F948 /* PPmarket.h */,
 				2DFFEF78222F298B00025912 /* Part2_Driver.cpp */,
 				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
 				2DFFEF892230D96700025912 /* Part5_Driver.cpp */,
+				2DFFEF66222E2F9D00025912 /* House.h */,
+				2DFFEF58222E2F9C00025912 /* House.cpp */,
 				2DFFEF54222E2F9C00025912 /* CityNode.h */,
 				2DFFEF5D222E2F9C00025912 /* CityNode.cpp */,
+				2DF1AF9A224AE86E0075BE6F /* Edges.h */,
+				2DF1AF9B224AE86E0075BE6F /* Edges.cpp */,
 				2DFFEF5F222E2F9C00025912 /* GameMap.h */,
 				2DFFEF61222E2F9C00025912 /* GameMap.cpp */,
 				2DFFEF55222E2F9C00025912 /* MapLoader.h */,
 				2DFFEF67222E2F9D00025912 /* MapLoader.cpp */,
+				2D4F6ED6224BF808002B314E /* map.txt */,
 				2DFFEF7D22308A8600025912 /* invalidmap.txt */,
-				2DFFEF76222F298B00025912 /* map.txt */,
+				2D54BF8A224C22F0001BB1BC /* map-A1.txt */,
 				2DFFEF77222F298B00025912 /* players.txt */,
 				2DFFEF53222E2F9C00025912 /* Player.h */,
 				2DFFEF64222E2F9D00025912 /* Player.cpp */,
-				2DFFEF66222E2F9D00025912 /* House.h */,
-				2DFFEF58222E2F9C00025912 /* House.cpp */,
 				2DFFEF5C222E2F9C00025912 /* Resource.h */,
 				2DFFEF62222E2F9D00025912 /* Resource.cpp */,
 				2DFFEF60222E2F9C00025912 /* ResourceManager.cpp */,

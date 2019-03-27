@@ -21,14 +21,12 @@ int main ()
     GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
     gameMap.showMap(); // display map
     
-    
-    Player p1 = Player("Faruq", 50, BLUE);
-    
     Building phase4 = Building();
+    phase4.NewGame(mapLoader, numberPlayers); // initialize players
     
-    phase4.NewGame(mapLoader, numberPlayers);
-    
+    // memory thread problem ???
     phase4.BeginPhase4();
+    phase4.Phase4BuyingCities();
     phase4.EndPhase4();
     
     return 0 ;

@@ -29,7 +29,7 @@ using std::vector;
 class Building
 {
 private:
-    shared_ptr<Player> players;
+    vector<shared_ptr<Player>> players;
     vector<House*> houses;
     vector<shared_ptr<CityNode>> cities;
     shared_ptr<Player> currentPlayer; // current player
@@ -41,7 +41,6 @@ private:
     
 public:
     Building();
-    //Building(Player cPlayer);
     ~Building();
     
     // getters
@@ -62,7 +61,7 @@ public:
     shared_ptr<CityNode> pickedCity = nullptr; // picked City
     int getNextPlayer();
     void BeginPhase4();
-    void Phase4Intro()
+    void Phase4Intro();
     void Phase4BuyingCities();
     void EndPhase4();
 };

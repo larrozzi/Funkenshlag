@@ -39,7 +39,7 @@ map<string, shared_ptr<CityNode>> const & GameMap::getCities() const { return my
 // shortest path between two cities
 int GameMap::getShortestPath(string initCity, string destCity)
 {
-    
+    return 0;
 }
 // cost of shortest path between player city and destination city
 int GameMap::getShortestPath(shared_ptr<Player> player, string destCity)

@@ -8,7 +8,7 @@
 #include "Resource.h"
 #include "Player.h"
 #include "House.h"
-#include "Edges.h"
+//#include "Edges.h"
 
 using namespace std;
 
@@ -27,13 +27,14 @@ private:
     int firstHousePrice = 10;
     int secondHousePrice = 15;
     int thirdHousePrice = 20;
-    vector<Edges> connections;
+    //vector<Edges> connections;
     
 public:
     //constructors
     CityNode();
     CityNode(string n, bool u, vector<string> e, vector<string> c);
     CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<string> c);
+    ~CityNode();
     
     //getters
     string getName() const;

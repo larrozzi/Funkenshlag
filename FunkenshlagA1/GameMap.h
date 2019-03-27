@@ -9,6 +9,8 @@
 #include "Player.h"
 #include <memory>
 #include <vector>
+#include "Edges.h"
+
 
 using namespace std;
 

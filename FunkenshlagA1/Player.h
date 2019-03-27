@@ -35,7 +35,7 @@ private:
 
 public:
     Player();
-    Player(string name,  int electro, HouseColor color);
+    Player(string name, int electro, HouseColor color);
     ~Player();
 
     // setters
@@ -76,9 +76,11 @@ public:
 	int getHighestPowerPlant();
     bool HasElektro(int elektro);
 
+    // overloading == operator
+    //bool operator==(const Player& p) const;
     // overloading output operator
-     
-    friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
+    //friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
     friend std::ostream& operator<<(std::ostream& outs, const Player& player);
+    
 };
 

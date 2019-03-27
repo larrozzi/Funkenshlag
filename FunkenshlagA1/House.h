@@ -1,11 +1,12 @@
 #pragma once
 
 #include <string>
-#include "CityNode.h"
 
 using std::shared_ptr;
 
 enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK, PINK};
+
+class CityNode;
 
 class House
 {
@@ -34,4 +35,6 @@ public:
     void setCity(shared_ptr<CityNode> city);
 
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
+    //friend std::istream& operator>>(std::istream& input, House& clr);
+
 };
