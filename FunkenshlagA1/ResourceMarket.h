@@ -34,13 +34,13 @@ private:
 		const Resource* getSlotGarbage() const;
 		Resource* getSlotUranium();
 		const Resource* getSlotUranium() const;
+
+		//SLOT setters
+		void setPrice(const int price);
 		void setSlotCoal(Resource* coal, int index);
 		void setSlotOil(Resource* oil, int index);
 		void setSlotGarbage(Resource* garbage, int index);
 		void setSlotUranium(Resource* uranium, int index);
-
-		//SLOT setters
-		void setPrice(const int price);
 
 	};
 
@@ -69,7 +69,13 @@ public:
 	int getNumOfOil() const;
 	int getNumOfGarbage() const;
 	int getNumOfUranium() const;
+	const int getFirstEmptyCoal();
+	const int getFirstEmptyOil();
+	const int getFirstEmptyGarbage();
+	const int getFirstEmptyUranium();
 	Slot* getSlots();
 	const Slot* getSlots() const;
+
+	void bought(Type resource, int amount);
 	friend std::ostream& operator<<(std::ostream& outs, const ResourceMarket& market);
 };

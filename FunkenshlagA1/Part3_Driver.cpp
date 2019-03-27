@@ -1,9 +1,9 @@
-//#include <iostream>
-//#include "Resource.h"
-//#include "Player.h"
-//#include "ResourceManager.h"
-//#include "ResourceMarket.h"
-//#include "House.h"
+#include <iostream>
+#include "Resource.h"
+#include "Player.h"
+#include "ResourceManager.h"
+#include "ResourceMarket.h"
+#include "House.h"
 //
 //using namespace std;
 //
@@ -96,3 +96,8 @@
 //
 //    return 0;
 //}
+
+int main() {
+	ResourceMarket* market = new ResourceMarket();
+	std::cout << *market << std::endl;
+}

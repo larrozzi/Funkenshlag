@@ -21,29 +21,46 @@ ResourceMarket::ResourceMarket(){
 		if (i < URANIUM_SLOT_START) {
 			for (int j = 0; j < 3; j++) {
 				slots[i].setSlotCoal(new Resource(slots[i].getSlotPrice(), COAL), j);
+				numOfCoal++;
 			}
 		}
 		//if the slot is before the uranium and after oil price
 		if (i < URANIUM_SLOT_START && i >= OIL_SLOT_START) {
 			for (int j = 0; j < 3; j++) {
 				slots[i].setSlotOil(new Resource(slots[i].getSlotPrice(), OIL), j);
+				numOfOil++;
 			}
 		}
 		//if the slot is before the uranium and after garbage price
 		if (i < URANIUM_SLOT_START && i >= GARBAGE_SLOT_START) {
 			for (int j = 0; j < 3; j++) {
 				slots[i].setSlotGarbage(new Resource(slots[i].getSlotPrice(), GARBAGE), j);
+				numOfGarbage++;
 			}
 		}
 		//if the slot is after/at uranium price
 		if (i >= URANIUM_SETUP) {
 			for (int j = 0; j < 1; j++) {
 				slots[i].setSlotUranium(new Resource(slots[i].getSlotPrice(), URANIUM), j);
+				numOfUranium++;
 			}
 		}
 	}
 }
 
+void ResourceMarket::bought(Type resource, int amount) {
+	switch (resource) {
+	case COAL: 
+
+		break;
+	case OIL: 
+		break;
+	case GARBAGE: 
+		break;
+	case URANIUM: 
+		break;
+	}
+}
 int ResourceMarket::getMARKET_SIZE() const
 {
 	return MARKET_SIZE;
@@ -59,6 +76,19 @@ int ResourceMarket::getGARBAGE_SLOT_START() const
 int ResourceMarket::getURANIUM_SLOT_START() const
 {
 	return URANIUM_SLOT_START;
+}
+
+const int ResourceMarket::getFirstEmptyCoal() {
+	return ((MARKET_SIZE - numOfCoal) - 1);
+}
+const int ResourceMarket::getFirstEmptyOil() {
+	((MARKET_SIZE - numOfOil) - 1);
+}
+const int ResourceMarket::getFirstEmptyGarbage() {
+	((MARKET_SIZE - numOfGarbage) - 1);
+}
+const int ResourceMarket::getFirstEmptyUranium() {
+	((MARKET_SIZE - numOfUranium) - 1);
 }
 
 ResourceMarket::Slot* ResourceMarket::getSlots() {

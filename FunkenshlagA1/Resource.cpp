@@ -13,6 +13,21 @@ Resource::Resource(int price, Type type) {
 	this->type = type;
 }
 
+const int Resource::getMAX_COAL() {
+	return MAX_COAL;
+}
+
+const int Resource::getMAX_OIL() {
+	return MAX_OIL;
+}
+
+const int Resource::getMAX_GARBAGE() {
+	return MAX_GARBAGE;
+}
+
+const int Resource::getMAX_URANIUM() {
+	return MAX_URANIUM;
+}
 Type Resource::getType() const {
 	return type;
 }
