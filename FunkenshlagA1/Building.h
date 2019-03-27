@@ -32,7 +32,7 @@ private:
     vector<shared_ptr<Player>> players;
     vector<House*> houses;
     vector<shared_ptr<CityNode>> cities;
-    shared_ptr<Player> currentPlayer; // current player
+    shared_ptr<Player> currentPlayer = nullptr; // current player
     vector<shared_ptr<Player>> playerOrder; // player in current order
     shared_ptr<PowerPlantCards> highestPowerPlant; // used for player order
     shared_ptr<GameMap> map;

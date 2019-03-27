@@ -62,10 +62,10 @@ void Building::NewGame(MapLoader map, int numbPlayer)
         clr = convertToEnum(color);
         
         // add players to player vector
-        while(numbPlayer > 0 && numbPlayer <= players.size())
-        {
+        //while(numbPlayer > 0 && numbPlayer <= players.size())
+        //{
             players.push_back(make_shared<Player>(pName, 50, clr));
-        }
+        //}
     }
     
 //    // player initial Elektros = 50
@@ -79,21 +79,29 @@ void Building::NewGame(MapLoader map, int numbPlayer)
         playerOrder.push_back(player);
     }
     random_shuffle(playerOrder.begin(), playerOrder.end()); // initial shuffle of order
-    currentPlayer = playerOrder[0]; // set current player turn
+    
+    // print player order
+    cout << "Player order is: " << endl;
+    for (int i = 0; i < numbPlayer; ++i)
+    {
+         cout << players.at(i)->getName() << endl;
+    }
+    currentPlayer = players.at(0);
+    players.at(0) = playerOrder[0]; // set current player turn
     cout << "Done with NewGame" << endl;
 }
 
 // used to determine the player turn order
 bool playerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {
     
-    // Priority 1 - based on number of Houses
+    // priority 1 - based on number of Houses
     if (p1->grabhouses().size() > p2->grabhouses().size())
         return true;
     
     if (p1->grabhouses().size() < p2->grabhouses().size())
         return false;
     
-    // Priority2 - based on Highest powerplant
+    // priority2 - based on Highest powerplant
     if (p1->getHighestPowerPlant() > p2->getHighestPowerPlant())
         return true;
     
@@ -129,6 +137,7 @@ void Building::BeginPhase4()
 
 void Building::Phase4Intro()
 {
+    cout << "Would you like to ";
     cout << "Enter a city you would like to build a house in: " << endl;
     string city;
     cin >> city;
