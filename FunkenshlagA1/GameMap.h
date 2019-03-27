@@ -27,4 +27,5 @@ public:
 	vector<CityNode> getMap() const;
 	void setMap(vector<CityNode> cities);
 	//void readMap();
+	void chooseRegion();
 };

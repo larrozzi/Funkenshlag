@@ -116,7 +116,7 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	 }
 */ 
 	//cout << "You passed your turn, you will no longer be able to purchase this powerplant" <<endl;
-	cout << getName() << " passed his turn, and will no longer be able to purchase this powerplant " << endl;
+	cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
 	 return true;
  }
 
@@ -126,7 +126,7 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 		 return true;
 		 // other players will see highest bid and try to outbid it
 	 }
-	 else cout << "You don't have enough elekro" << endl;
+	 else cout << "You don't have enough elekro." << endl;
 	 return false;  //might need a way to let player go again
  }
 
@@ -149,20 +149,23 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 	// return *this;
  //}
 
-
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
 	string separator = "\n\n=========================================================================================\n\n";
 	outs << separator << player.name + " has the following items: \n"
 		<< "\t" << player.elektro << " Elektros \n"
-		<< "\t" << player.houses.size() << " " << player.color << " colored Houses\n"
-		<< "he owns the following power plants: "
+		<< "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+		<< "He owns the following power plants: ";
+	//	<< player.myPowerPlants[0]
 
-		<< "And owns the following cities: ";
-	string cities;
-	for (vector<string>::const_iterator i = player.mycities.begin(); i != player.mycities.end(); ++i)
-		outs << *i << ' ';
-		outs << endl;
+		for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
+			outs << **p << ' ';
+			outs << endl;
+			outs << "And owns the following cities: ";
+		string cities;
+		for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)
+			outs << *c << ' ';
+			outs << endl;
 	return outs;
 }
 
