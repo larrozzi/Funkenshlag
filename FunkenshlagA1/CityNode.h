@@ -7,6 +7,9 @@
 #include <array>
 #include "Resource.h"
 #include "Player.h"
+#include "House.h"
+//#include "Edges.h"
+
 using namespace std;
 
 
@@ -19,11 +22,19 @@ private:
     vector<string> edges;
     vector<string> cost;
     
+    static const int MAX_HOUSES = 3;
+    vector<House*> houses;
+    int firstHousePrice = 10;
+    int secondHousePrice = 15;
+    int thirdHousePrice = 20;
+    //vector<Edges> connections;
+    
 public:
     //constructors
     CityNode();
     CityNode(string n, bool u, vector<string> e, vector<string> c);
     CityNode(string n, map<string, bool> o, bool u, vector<string> e, vector<string> c);
+    ~CityNode();
     
     //getters
     string getName() const;
@@ -41,4 +52,19 @@ public:
     void setCosts(vector<string> c);
     void setValues(string n, vector<string> e, vector<string> c);
     
+    // methods
+    vector<House*> getHouses();
+    int getNumberOfHouses() const;
+    int getHousePrice() const;
+    bool isFull() const;
+    bool isConnected(string cityNames);
+    bool addHouse(House* house);
+    
+    // operator overlaoding
+    bool operator==(const CityNode& city);
+    bool operator==(const string& cityName);
+    friend bool operator==(const shared_ptr<CityNode>& first, const shared_ptr<CityNode>&sec);
+    friend bool operator==(const shared_ptr<CityNode>& first, const CityNode& city);
+    friend bool operator==(const shared_ptr<CityNode>& city, const string & cityName);
+
 };
