@@ -52,10 +52,16 @@ private:
 	static const int URANIUM_SETUP = 10;
 
 	//Current number of the resource left available in stock.
-	int numOfCoal;
-	int numOfOil;
-	int numOfGarbage;
-	int numOfUranium;
+	int numOfCoal = 0;
+	int numOfOil = 0;
+	int numOfGarbage = 0;
+	int numOfUranium = 0;
+	
+	//Next Empty Slot in the market
+	int currentEmptyCoalSlot = -1;
+	int currentEmptyOilSlot = 1;
+	int currentEmptyGarbageSlot = 5;
+	int currentEmptyUraniumSlot = 9;
 
 	//Array of slots in Market
 	Slot slots[MARKET_SIZE];
@@ -69,13 +75,14 @@ public:
 	int getNumOfOil() const;
 	int getNumOfGarbage() const;
 	int getNumOfUranium() const;
-	const int getFirstEmptyCoal();
-	const int getFirstEmptyOil();
-	const int getFirstEmptyGarbage();
-	const int getFirstEmptyUranium();
+	int getCurrentEmptyCoalSlot();
+	int getCurrentEmptyOilSlot();
+	int getCurrentEmptyGarbageSlot();
+	int getCurrentEmptyUraniumSlot();
+	int getEmptySpotInSlot(Type resource);
 	Slot* getSlots();
 	const Slot* getSlots() const;
 
-	void bought(Type resource, int amount);
+	bool bought(int,int);
 	friend std::ostream& operator<<(std::ostream& outs, const ResourceMarket& market);
 };

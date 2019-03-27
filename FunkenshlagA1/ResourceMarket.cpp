@@ -48,18 +48,62 @@ ResourceMarket::ResourceMarket(){
 	}
 }
 
-void ResourceMarket::bought(Type resource, int amount) {
-	switch (resource) {
-	case COAL: 
-
-		break;
-	case OIL: 
-		break;
-	case GARBAGE: 
-		break;
-	case URANIUM: 
-		break;
-	}
+bool ResourceMarket::bought(int slot, int index) {
+	int amountRemoved = 0;
+	slots[slot].setSlotCoal(new Resource(0, NONE), index);
+	return true;
+	//switch (resource) {
+	//case COAL: 
+	//	if (amount > numOfCoal)
+	//		return false;
+	//	for (int i = 0; (i < MARKET_SIZE) || (amountRemoved < amount); i++) {
+	//		for (int j = 0; (j < 3) || (amountRemoved < amount); j++) {
+	//			if (slots[i].getSlotCoal()[j].getType() == COAL) {
+	//				slots[i].setSlotCoal(new Resource(0, NONE), j);
+	//				amountRemoved++;
+	//			}
+	//		}
+	//	}
+	//	return true;
+	//case OIL:
+	//	if (amount > numOfOil)
+	//		return false;
+	//	for (int i = 0; i < MARKET_SIZE || amountRemoved != amount; i++) {
+	//		for (int j = 0; j < 3 || amountRemoved != amount; j++) {
+	//			if (slots[i].getSlotOil()[j].getType() == OIL) {
+	//				slots[i].setSlotOil(new Resource(0, NONE), j);
+	//				amountRemoved++;
+	//			}
+	//		}
+	//	}
+	//	return true;
+	//case GARBAGE: 
+	//	if (amount > numOfGarbage)
+	//		return false;
+	//	for (int i = 0; i < MARKET_SIZE || amountRemoved != amount; i++) {
+	//		for (int j = 0; j < 3 || amountRemoved != amount; j++) {
+	//			if (slots[i].getSlotGarbage()[j].getType() == GARBAGE) {
+	//				slots[i].setSlotGarbage(new Resource(0, NONE), j);
+	//				amountRemoved++;
+	//			}
+	//		}
+	//	}
+	//	return true;
+	//	break;
+	//case URANIUM: 
+	//	if (amount > numOfUranium)
+	//		return false;
+	//	for (int i = 0; i < MARKET_SIZE || amountRemoved != amount; i++) {
+	//		for (int j = 0; j < 3 || amountRemoved != amount; j++) {
+	//			if (slots[i].getSlotUranium()[j].getType() == URANIUM) {
+	//				slots[i].setSlotUranium(new Resource(0, NONE), j);
+	//				amountRemoved++;
+	//			}
+	//		}
+	//	}
+	//	return true;
+	//	break;
+	//}
 }
 int ResourceMarket::getMARKET_SIZE() const
 {
@@ -77,18 +121,47 @@ int ResourceMarket::getURANIUM_SLOT_START() const
 {
 	return URANIUM_SLOT_START;
 }
+int ResourceMarket::getCurrentEmptyCoalSlot() {
+	return currentEmptyCoalSlot;
+}
+int ResourceMarket::getCurrentEmptyOilSlot() {
+	return currentEmptyOilSlot;
+}
+int ResourceMarket::getCurrentEmptyGarbageSlot() {
+	return currentEmptyGarbageSlot;
+}
+int ResourceMarket::getCurrentEmptyUraniumSlot() {
+	return currentEmptyUraniumSlot;
+}
 
-const int ResourceMarket::getFirstEmptyCoal() {
-	return ((MARKET_SIZE - numOfCoal) - 1);
-}
-const int ResourceMarket::getFirstEmptyOil() {
-	((MARKET_SIZE - numOfOil) - 1);
-}
-const int ResourceMarket::getFirstEmptyGarbage() {
-	((MARKET_SIZE - numOfGarbage) - 1);
-}
-const int ResourceMarket::getFirstEmptyUranium() {
-	((MARKET_SIZE - numOfUranium) - 1);
+int ResourceMarket::getEmptySpotInSlot(Type resource) {
+	int i = 0;
+	switch (resource) {
+	case COAL:
+		for (int i = 0; i < 3; i++) {
+			if (this->slots[this->getCurrentEmptyCoalSlot()].getSlotCoal()[i].getType() != NONE) {
+				break;
+			}
+		}
+		return (i - 1);
+	case OIL:
+		for (int i = 0; i < 3; i++) {
+			if (this->slots[this->getCurrentEmptyOilSlot()].getSlotOil()[i].getType() != NONE) {
+				break;
+			}
+		}
+		return (i - 1);
+
+	case GARBAGE:
+		for (int i = 0; i < 3; i++) {
+			if (this->slots[this->getCurrentEmptyGarbageSlot()].getSlotGarbage()[i].getType() != NONE) {
+				break;
+			}
+		}
+		return (i - 1);
+	case URANIUM:
+		return (i);
+	}
 }
 
 ResourceMarket::Slot* ResourceMarket::getSlots() {
@@ -155,12 +228,7 @@ const Resource* ResourceMarket::Slot::getSlotUranium() const{
 }
 
 void ResourceMarket::Slot::setSlotCoal(Resource* coal,int index) {
-	if (coal->getType() != COAL) {
-		return;
-	}
-	else {
-		slotCoal[index] = *coal;
-	}
+	slotCoal[index] = *coal;
 }
 void ResourceMarket::Slot::setSlotOil(Resource* oil,int index) {
 	if (oil->getType() != OIL) {

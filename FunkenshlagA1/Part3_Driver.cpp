@@ -100,4 +100,10 @@
 int main() {
 	ResourceMarket* market = new ResourceMarket();
 	std::cout << *market << std::endl;
+
+	market->bought(0,0);
+
+	std::cout << *market << std::endl;
+	std::cout << market->getNumOfCoal() << std::endl;
+	system("pause");
 }
