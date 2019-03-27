@@ -146,14 +146,17 @@ int main()
 	cout << "----------------------------------------------------------------------------" << endl;
 	cout << "" << endl;
 
-	int turnNextPlayer = turn+1;
+	
 	// FOR LOOP NEEDS TO RESIZE PLAYERORDER AND REMOVE ONLY THE PLAYER WHO WON ALREADY
-	for (int round = 0; round < OuterplayerOrder.size(); ++round) {  //  rounds necessary for each player to win a powerplant
+	//for (int round = 0; round < OuterplayerOrder.size(); ++round) {  //  rounds necessary for each player to win a powerplant
+	while (OuterplayerOrder.size()>1){ //  rounds necessary for each player to win a powerplant
 		initialbid = true;
+		int turnNextPlayer = turn + 1;
+		InnerplayerOrder = OuterplayerOrder;
 		//for (int turn = 0; turn < NumofPlayers; turn++) { // number of turns to purchase one pp
 
 		//while (playerOrder[turnNextPlayer] != currentPlayer){ //end loop after only one player is remaining
-		while (InnerplayerOrder.size()>1) {
+		while (InnerplayerOrder.size()>1) { // number of turns to purchase one pp
 			// Set current player by order
 				
 				currentPlayer = InnerplayerOrder[turn]; //player order inside a round
@@ -165,14 +168,16 @@ int main()
 			cout << "BID or PASS" << endl;
 			//cout << "Please note that you can't pass your turn if you're the first to bid on a power plant" << endl;
 			cin >> BidOrPass;
-			if (BidOrPass == "PASS" && initialbid)  //currentPlayer == playerOrder[0]
+			if (BidOrPass == "PASS" && initialbid) { //currentPlayer == playerOrder[0]
 				cout << "You cannot pass your turn since you're the first to bid on this power plant ";
+				turn--;
+				turnNextPlayer--;
+			}
 			else if (BidOrPass == "PASS") {
 				currentPlayer->Pass();
 				InnerplayerOrder.erase(InnerplayerOrder.begin() + turn);
 				turn--;
 				turnNextPlayer--;
-
 			}
 			else if (BidOrPass == "BID" && initialbid) {
 				cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid" << endl;
@@ -210,13 +215,12 @@ int main()
 			turnNextPlayer = (turnNextPlayer + 1) % InnerplayerOrder.size();
 			cout << "" << endl;
 			}
-	//}
+	 //}
 		cout << "The winner of this auction round is " << highestbidder->getName() << endl;
 		highestbidder->buyPowerPlant(*ppmarket, PPindex, playerbid);
-		for (int i = 0; i < InnerplayerOrder.size(); ++i)
-			if (InnerplayerOrder[i] == highestbidder)
-				InnerplayerOrder.erase(InnerplayerOrder.begin() + i);
-
+		for (int i = 0; i < OuterplayerOrder.size(); ++i)
+			if (OuterplayerOrder[i] == highestbidder)
+				OuterplayerOrder.erase(OuterplayerOrder.begin() + i);
 	}
 
 	///printing the player possessions    GIVES VECTOR OUT OF RANGE ERROR
