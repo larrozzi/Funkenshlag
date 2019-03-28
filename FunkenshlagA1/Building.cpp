@@ -192,6 +192,7 @@ void Building::Phase4BuyingCities()
 			 << " for a build cost of " << connectionCost << "Elektros";
 		return Phase4Intro();
 	} 
+
 	// buy city
 	auto anotherHouse = std::make_shared<House>(pickedCity, currentPlayer->getColor());
 	anotherHouse->setPrice(connectionCost); // set the connectionCost has price of the house
