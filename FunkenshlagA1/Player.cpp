@@ -110,13 +110,13 @@ void  Player::printOwnedCities( ){
 
 bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
     if (position <= 3 &&  elektro >= price) {
-        setElektro(getElektro() - price);
-
-        if (myPowerPlants.size() < 3)
-        AddPowerPlant(ppMarket.getPlant(position));
-        ppMarket.RemovePlant(position);
-        ppMarket.DrawPlant();
-        return true;
+		if (myPowerPlants.size() < 3) {
+			AddPowerPlant(ppMarket.getPlant(position));
+			setElektro(getElektro() - price);
+			ppMarket.RemovePlant(position);
+			ppMarket.DrawPlant();
+			return true;
+		}
     }
     return false;
 }

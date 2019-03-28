@@ -15,7 +15,7 @@ using std::vector;
 // constructors
 PowerPlantCards::PowerPlantCards() {}
 PowerPlantCards::PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse)
-	: cardValue(cardValue), resourceType(resourceType), numbResource(numbResource), capacity(2 * numbResource), powerHouse(powerHouse)
+	: cardValue(cardValue), resourceType(resourceType), numbResource(numbResource), capacity(2 * numbResource), powerHouse(powerHouse), currentResources(0)
 {/*NOTHING*/}
 
 // destructor
