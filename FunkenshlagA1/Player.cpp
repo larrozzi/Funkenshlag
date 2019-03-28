@@ -56,7 +56,7 @@ vector<House>Player::getOwnedHouses()
 int Player::getCoalCapacity() const { return coalCapacity; }
 int Player::getOilCapacity() const { return oilCapacity; }
 int Player::getGarbageCapacity() const { return garbageCapacity; }
-int Player::getUraniumCapacity() const {return uraniumCapacity}
+int Player::getUraniumCapacity() const { return uraniumCapacity; }
 int Player::getCoalHeld() const { return coalHeld; }
 int Player::getOilHeld() const { return oilHeld; }
 int Player::getGarbageHeld() const { return garbageHeld; }
