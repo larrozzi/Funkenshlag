@@ -61,6 +61,8 @@ void Building::NewGame(MapLoader map, int numbPlayer)
 
         cout << "Please Enter House Color: RED, BLUE, GREEN, YELLOW, BLACK, PINK \nColor > ";
         cin >> color;
+		clr = convert(color);
+
 		for (int i = 0; i < players.size(); i++) {
 			if (players.at(i)->getColor() == clr) {
 				alreadyPicked = true;
@@ -82,6 +84,7 @@ void Building::NewGame(MapLoader map, int numbPlayer)
 				}
 			}
 		}
+		// initialize a player
 		players.push_back(make_shared<Player>(pName, 50, clr));
 	}
     
@@ -154,6 +157,7 @@ void Building::Phase4Intro()
 
 	if (BuildOrPass == "Pass")
 	{
+		pass = true;
 		return Phase4BuyingCities();
 	}
 
@@ -170,10 +174,7 @@ void Building::Phase4Intro()
 
 void Building::Phase4BuyingCities()
 {
-    // player skipped, go to next player
-    //if(pickedCity->getName() != city)
-	//if (BuildOrPass == "Pass")
-	if (!pickedCity)
+	if (!pickedCity && pass == false)
     {
          currentPlayer = playerOrder[getNextPlayer()]; // go to next player
 
@@ -194,7 +195,7 @@ void Building::Phase4BuyingCities()
         connectionCost = pickedCity->getHousePrice();
     }
     else {
-        connectionCost = pickedCity->getHousePrice() + map->getShortestPath(currentPlayer, pickedCity->getName());
+        connectionCost = pickedCity->getHousePrice() + map->getShortestPath(currentPlayer, pickedCity->getName()); // get connection cost
     }
     // does player have enough Elektros?
     if (!currentPlayer->HasElektro(connectionCost))
@@ -222,7 +223,6 @@ void Building::Phase4BuyingCities()
 
 	// buy another house
 	return Phase4Intro();
-
 }
 
 void Building::EndPhase4()
