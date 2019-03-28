@@ -101,6 +101,7 @@ int CityNode::getNumberOfHouses() const {
 // House price based on number of house
 int CityNode::getHousePrice() const
 {
+	cout << "size of houses: " << houses.size();
     switch (houses.size()) {
         case 0:
             return firstHousePrice;

@@ -28,7 +28,7 @@ void GameMap::setMap(vector<CityNode> cities)
 }
 void GameMap::chooseRegion()
 {
-	int input;
+	int input=0;
 	cout << "Please choose your region" << input;
 
 	for (int i = (input*7);i < (input +7); i++)
@@ -61,7 +61,7 @@ map<string, shared_ptr<CityNode>> const & GameMap::getCities() const { return my
 // shortest path between two cities
 int GameMap::getShortestPath(string initCity, string destCity)
 {
-    return 0;
+    return 10;
 }
 // cost of shortest path between player city and destination city
 int GameMap::getShortestPath(shared_ptr<Player> player, string destCity)

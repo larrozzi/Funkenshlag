@@ -117,8 +117,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="A2_Part3_Phase4_Driver.cpp" />
+    <ClCompile Include="Building.cpp" />
     <ClCompile Include="Cards.cpp" />
     <ClCompile Include="CityNode.cpp" />
+    <ClCompile Include="Edges.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="MapLoader.cpp" />
@@ -136,8 +139,10 @@
     <ClCompile Include="SummaryCards.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Building.h" />
     <ClInclude Include="Cards.h" />
     <ClInclude Include="CityNode.h" />
+    <ClInclude Include="Edges.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="House.h" />
     <ClInclude Include="MapLoader.h" />
