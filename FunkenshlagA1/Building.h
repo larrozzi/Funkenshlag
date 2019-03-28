@@ -40,7 +40,7 @@ private:
 	string BuildOrPass;
 	int connectionCost = 0;
     int playPhase = 0; // current phase | initial = 0
-    int playStep; // current step of the game (step 1, 2, 3)
+    int playStep = 1; // initial | step of the game (step 1, 2, 3)
     
 public:
     Building();

@@ -137,22 +137,22 @@ void Building::BeginPhase4()
 
 void Building::Phase4Intro()
 {
-	cout << "\nPlayer " << currentPlayer->getName() << currentPlayer->getElektro() << " Elektros" << endl;
+	cout << "\nPlayer " << currentPlayer->getName() << " " << currentPlayer->getElektro() << " Elektros" << endl;
 	cout << "Would you like to Build or Pass?" << endl;
 	cin >> BuildOrPass;
 
-	if (BuildOrPass._Equal("Pass")) 
+	if (BuildOrPass == "Pass")
 	{
 		return Phase4BuyingCities();
 	}
 
-	if (BuildOrPass._Equal("Build"))
+	if (BuildOrPass == "Build")
 	{
 		cout << "Enter a city you would like to build a house in: " << endl;
 		cin >> city;
 		currentPlayer->readFile(); // read map file
 		currentPlayer->buildinCity(city); // build in city
-		//pickedCity.reset();
+		pickedCity.reset();
 	}
 }
    
@@ -161,7 +161,8 @@ void Building::Phase4BuyingCities()
 {
     // player skipped, go to next player
     //if(pickedCity->getName() != city)
-	if(BuildOrPass._Equal("Pass"))
+	//if (BuildOrPass == "Pass")
+	if (!pickedCity)
     {
          currentPlayer = playerOrder[getNextPlayer()]; // go to next player
 
@@ -185,7 +186,7 @@ void Building::Phase4BuyingCities()
         connectionCost = pickedCity->getHousePrice() + map->getShortestPath(currentPlayer, pickedCity->getName());
     }
     // does player have enough Elektros?
-    if(!currentPlayer->HasElektro(connectionCost))
+    if (!currentPlayer->HasElektro(connectionCost))
     {
 		cerr << "Not enough Elektros to buy " << pickedCity->getName()
 			 << " for a build cost of " << connectionCost << "Elektros";
@@ -214,6 +215,7 @@ void Building::Phase4BuyingCities()
 
 void Building::EndPhase4()
 {
+	cout << "------------------------------------------" << endl;
 	cout << "End of Phase 4" << endl;
 	// if PowerPlants in the market have a price <= the highest number of cities owned by a player, replace
 	int maximumHouse = 0;
