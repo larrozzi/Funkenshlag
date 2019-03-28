@@ -18,7 +18,7 @@ class CityNode
 private:
     string name;
     map<string,bool> ownedBy;
-    bool used;
+	bool used = false;
     vector<string> edges;
     vector<string> cost;
     
