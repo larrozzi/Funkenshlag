@@ -1,10 +1,10 @@
-//#include <iostream>
-//#include "Resource.h"
-//#include "Player.h"
-//#include "ResourceManager.h"
-//#include "ResourceMarket.h"
-//#include "House.h"
-//
+#include <iostream>
+#include "Resource.h"
+#include "Player.h"
+#include "ResourceManager.h"
+#include "ResourceMarket.h"
+#include "House.h"
+
 //using namespace std;
 //
 //int main() {
@@ -97,13 +97,30 @@
 //    return 0;
 //}
 
-//int main() {
-//	ResourceMarket* market = new ResourceMarket();
-//	std::cout << *market << std::endl;
-//
-//	market->bought(0,0);
-//
-//	std::cout << *market << std::endl;
-//	std::cout << market->getNumOfCoal() << std::endl;
-//	system("pause");
-//}
+int main() {
+	ResourceMarket* market = new ResourceMarket();
+	std::cout << *market << std::endl;
+
+	std::cout << "COAL: " << market->getNumOfCoal() << std::endl;
+	std::cout << "OIL: " << market->getNumOfOil() << std::endl;
+	std::cout << "GARBAGE: " << market->getNumOfGarbage() << std::endl;
+	std::cout << "URANIUM: " << market->getNumOfUranium() << std::endl;
+
+	market->bought(COAL, 1);
+	market->bought(GARBAGE, 1);
+	market->bought(OIL, 1);
+	market->bought(URANIUM, 1);
+	std::cout << *market << std::endl;
+	std::cout << "COAL: " << market->getNumOfCoal() << std::endl;
+	std::cout << "OIL: " << market->getNumOfOil() << std::endl;
+	std::cout << "GARBAGE: " << market->getNumOfGarbage() << std::endl;
+	std::cout << "URANIUM: " << market->getNumOfUranium() << std::endl;
+
+	market->resupply(2, 1);
+	std::cout << *market << std::endl;
+	std::cout << "COAL: " << market->getNumOfCoal() << std::endl;
+	std::cout << "OIL: " << market->getNumOfOil() << std::endl;
+	std::cout << "GARBAGE: " << market->getNumOfGarbage() << std::endl;
+	std::cout << "URANIUM: " << market->getNumOfUranium() << std::endl;
+	system("pause");
+}
