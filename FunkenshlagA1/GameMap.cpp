@@ -29,21 +29,24 @@ void GameMap::setMap(vector<CityNode> cities)
 void GameMap::chooseRegion()
 {
 	int input = 0;
-	cout << "Please choose your region" << endl;
-	cin >> input;
-	cout << "you chose " << input << endl;
-	
-	if (gameMap.at(input*7).getUsed() == true)
-	{
-		cout << "Region already selected";
-	}
-	else
-	{ 
-		for (int i = (input * 7); i < ((input*7) + 7); i++)
+	do {
+
+		cout << "Please choose your region" << endl;
+		cin >> input;
+		cout << "you chose " << input << endl;
+
+		if (gameMap.at(input * 7).getUsed() == true)
 		{
-			gameMap.at(i).use();
+			cout << "Region already selected";
 		}
+	} while (gameMap.at(input * 7).getUsed() == true);
+
+
+	for (int i = (input * 7); i < ((input*7) + 7); i++)
+	{
+		gameMap.at(i).use();
 	}
+	
 	for (CityNode c : gameMap)
 	{
 		cout << c.getUsed() << endl;
