@@ -137,6 +137,7 @@ bool ResourceMarket::bought(Type type, int amount) {
 		numOfUranium -= amount;
 		return true;
 	}
+    return true;
 }
 
 void ResourceMarket::resupply(int step, int numOfPlayers) {
@@ -307,6 +308,7 @@ int ResourceMarket::getEmptySpotInSlot(Type resource) {
 	case URANIUM:
 		return (i);
 	}
+    return 0;
 }
 
 ResourceMarket::Slot* ResourceMarket::getSlots() {
