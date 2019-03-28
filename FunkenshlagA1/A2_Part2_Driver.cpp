@@ -92,8 +92,18 @@
 //			cout << "Please pick a HOUSE COLOR among the following: RED, BLUE, GREEN, YELLOW, BLACK, PINK.\n";
 //			cout << "> ";
 //			cin >> color;
+//			clr = convert(color);
+//
+//			for (int i = 0; i < players.size(); i++) {
+//				if (players.at(i)->getColor() == clr) {
+//					alreadyPicked = true;
+//				}
+//				else {
+//					alreadyPicked = false;
+//				}
+//			}
 //		}
-//		clr = convert(color);
+//
 //
 //			///initializing a Player
 //	//	Player* PL = new Player(name, 50, clr);

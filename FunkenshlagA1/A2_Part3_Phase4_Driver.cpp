@@ -32,3 +32,32 @@
 //	system("pause");
 //    return 0 ;
 //}
+
+#include <stdio.h>
+#include <iostream>
+#include "Building.h"
+#include "Player.h"
+#include "MapLoader.h"
+#include "GameMap.h"
+
+
+int main ()
+{
+    MapLoader mapLoader = MapLoader();
+    //GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
+    //gameMap.showMap(); // display map
+    
+    Building phase4 = Building();
+    std::cout << "Enter Number of players? \n> ";
+    int numberPlayers;
+	std::cin >> numberPlayers; 
+    phase4.NewGame(mapLoader, numberPlayers); // initialize players
+    
+    // memory thread problem ???
+    phase4.BeginPhase4();
+    phase4.Phase4BuyingCities();
+    phase4.EndPhase4();
+    
+	system("pause");
+    return 0 ;
+}

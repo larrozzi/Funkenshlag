@@ -117,6 +117,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="A2_Part2_Driver.cpp" />
     <ClCompile Include="A2_Part3_Phase4_Driver.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Cards.cpp" />
@@ -127,7 +128,6 @@
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Part2_Driver.cpp" />
     <ClCompile Include="Part3_Driver.cpp" />
-    <ClCompile Include="A2_Part2_Driver.cpp" />
     <ClCompile Include="Part5_Driver.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PowerPlantCards.cpp" />
