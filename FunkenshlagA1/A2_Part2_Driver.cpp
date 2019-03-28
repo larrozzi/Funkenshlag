@@ -9,7 +9,7 @@
 //#include <memory>
 //#include <algorithm>
 //#include <random>
-//#include <time.h>
+//#include <time.h> 
 //#include <vector>
 //#include <map>
 //#include <set>
@@ -23,14 +23,14 @@
 //
 //static HouseColor convert(const std::string& clr)
 //{
-//    if (clr == "NO_COLOR")        return NO_COLOR;
-//    else if (clr == "RED")        return RED;
-//    else if (clr == "BLUE")        return BLUE;
-//    else if (clr == "GREEN")    return GREEN;
-//    else if (clr == "YELLOW")    return YELLOW;
-//    else if (clr == "BLACK")    return BLACK;
-//    else if (clr == "PINK")        return PINK;
-//    else return NO_COLOR;
+//	if (clr == "NO_COLOR")		return NO_COLOR;
+//	else if (clr == "RED")		return RED;
+//	else if (clr == "BLUE")		return BLUE;
+//	else if (clr == "GREEN")	return GREEN;
+//	else if (clr == "YELLOW")	return YELLOW;
+//	else if (clr == "BLACK")	return BLACK;
+//	else if (clr == "PINK")		return PINK;
+//	else return NO_COLOR;
 //}
 //
 //int main()
