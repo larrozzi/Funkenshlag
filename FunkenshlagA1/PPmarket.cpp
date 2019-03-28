@@ -1,6 +1,8 @@
 #include "PPmarket.h"
 #include <algorithm>
 #include <memory>
+#include <random>
+
 
 using std::shared_ptr;
 using std::cout;
@@ -15,18 +17,18 @@ shared_ptr<PowerPlantCards> const PPmarket::getPlant(int position) {
 }
 
 bool PPmarket::DrawPlant() {
-    shared_ptr<PowerPlantCards> PPlant = nullptr;
 
-    while (visiblePPlants.size() < visibleCards && PPlants.size() > 0 && PPlant == nullptr) {
+    while (visiblePPlants.size() < visibleCards && PPlants.size() > 0 ) {
         shared_ptr<PowerPlantCards> top = PPlants[0];
 
-        // Place card in the visible market
+        // Place Pplant card in the visible market
         visiblePPlants.push_back(top);
 
-		PPlants.erase(PPlants.begin()); //shouldnt it be before pushback(top)
+		PPlants.erase(PPlants.begin());
 
         // next line generates error
-    //    std::sort(visiblePPlants.begin(), visiblePPlants.end(), [](shared_ptr<PowerPlantCards> pp1, std::shared_ptr<PowerPlantCards> pp2) { return  (pp1)->getCardValue() < (pp2)->getCardValue(); });
+       std::sort(visiblePPlants.begin(), visiblePPlants.end(), [](shared_ptr<PowerPlantCards> pp1, std::shared_ptr<PowerPlantCards> pp2) { return  (pp1)->getCardValue() < (pp2)->getCardValue(); });
+        
         return true;
     }
     return false;
@@ -54,6 +56,10 @@ void PPmarket::Setup() {
         visiblePPlants.push_back(PPlants[0]);
         PPlants.erase(PPlants.begin());
     }
+    
+    // Shuffle deck of cards
+    auto rng = std::default_random_engine {};
+    std::shuffle(std::begin(PPlants), std::end(PPlants), rng);
 }
 
 // print the visible PowerPlantCards

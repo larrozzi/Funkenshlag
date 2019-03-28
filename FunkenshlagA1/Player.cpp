@@ -42,7 +42,7 @@ HouseColor Player::getColor()const {return color;}
 vector <string> Player::getBuiltHouses()const { return mycities; }
 vector<House>Player::getOwnedHouses()
 {
-	return ownedHouses;
+    return ownedHouses;
 }
 
 // method to create the grab 22 houses from board
@@ -110,18 +110,19 @@ void  Player::printOwnedCities( ){
 
 bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
     if (position <= 3 &&  elektro >= price) {
-		if (myPowerPlants.size() < 3) {
-			AddPowerPlant(ppMarket.getPlant(position));
-			setElektro(getElektro() - price);
-			ppMarket.RemovePlant(position);
-			ppMarket.DrawPlant();
-			return true;
-		}
+        setElektro(getElektro() - price);
+        
+        if (myPowerPlants.size() < 3)
+            OwnPowerPlant(ppMarket.getPlant(position));
+        
+        ppMarket.RemovePlant(position);
+        ppMarket.DrawPlant();
+        return true;
     }
     return false;
 }
 
- bool Player::AddPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
+ bool Player::OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
      if (myPowerPlants.size() == 3) return false;
      myPowerPlants.push_back(powerplant);
      return true;
@@ -129,18 +130,18 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 
  //check rule 
  bool Player::Pass() {
-	cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
-	 return true;
+    cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
+     return true;
  }
 
  bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
-	 if (position <= 3 && elektro >= mybid  ) {
+     if (position <= 3 && elektro >= mybid  ) {
 
-		 return true;
-		 // other players will see highest bid and try to outbid it
-	 }
-	 else cout << "You don't have enough elekro." << endl;
-	 return false;  //might need a way to let player go again
+         return true;
+         // other players will see highest bid and try to outbid it
+     }
+     else cout << "You don't have enough elekro." << endl;
+     return false;  //might need a way to let player go again
  }
 
  //void Player::ReplacePowerPlant(<shared_ptr<PowerPlant>> newplant, int toReplace) {
@@ -164,8 +165,8 @@ bool Player::HasElektro(int elektro)
 
  //// assignment operator
  // const Player& Player::operator = (const Player &player) {
-	// elektro = player.elektro;
-	// return *this;
+    // elektro = player.elektro;
+    // return *this;
  //}
 
 // overloading == operator
@@ -183,21 +184,21 @@ bool Player::HasElektro(int elektro)
 
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
-	string separator = "\n\n=========================================================================================\n\n";
-	outs << separator << player.name + " has the following items: \n"
-		<< "\t" << player.elektro << " Elektros \n"
-		<< "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
-		<< "He owns the following power plants: ";
-	//	<< player.myPowerPlants[0]
+    string separator = "\n\n=========================================================================================\n\n";
+    outs << separator << player.name + " has the following items: \n"
+        << "\t" << player.elektro << " Elektros \n"
+        << "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+        << "He owns the following power plants: ";
+    //    << player.myPowerPlants[0]
 
-		for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
-			outs << **p << ' ';
-			outs << endl; 
-			outs << "And owns the following cities: ";
-		string cities;
-		for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)
-			outs << *c << ' ';
-			outs << endl;
-	return outs;
+        for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
+            outs << **p << ' ';
+            outs << endl; 
+            outs << "And owns the following cities: ";
+        string cities;
+        for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)
+            outs << *c << ' ';
+            outs << endl;
+    return outs;
 }
 

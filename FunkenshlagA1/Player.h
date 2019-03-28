@@ -76,7 +76,7 @@ public:
     //buypowerplant
     bool buyPowerPlant(PPmarket&, int ,int);
 
-    bool AddPowerPlant(shared_ptr<PowerPlantCards> powerplant);
+    bool OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant);
     
     bool Auction(const PPmarket& ppMarket, int position, int mybid);
 
