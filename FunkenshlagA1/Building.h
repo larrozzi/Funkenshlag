@@ -36,9 +36,9 @@ private:
     vector<shared_ptr<Player>> playerOrder; // player in current order
     shared_ptr<PowerPlantCards> highestPowerPlant; // used for player order
     shared_ptr<GameMap> map;
-	string city;
-	string BuildOrPass;
-	int connectionCost = 0;
+	string city; // input city to build on
+	string BuildOrPass; // during building phase
+	int connectionCost = 0; // cost of building
     int playPhase = 0; // current phase | initial = 0
     int playStep = 1; // initial | step of the game (step 1, 2, 3)
     
@@ -51,12 +51,13 @@ public:
     int getPlayPhase() const;
     int getPlayStep() const;
     vector<shared_ptr<Player>>& getPlayerOrder();
+
     
     // setters
     void setMap(shared_ptr<GameMap>& map);
     void setPlayPhase(int phase);
     void setPlayStep(int step);
-    void updatePlayOrder(bool reverse);
+    //void updatePlayOrder(bool reverse);
     
     void NewGame(MapLoader map, int numbPlayer);
     

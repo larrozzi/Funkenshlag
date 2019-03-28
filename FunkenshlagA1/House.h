@@ -21,7 +21,7 @@ public:
 	//default constructor
 	House();
 	House(HouseColor color);
-    House(shared_ptr<CityNode> city, HouseColor color);
+    //House(shared_ptr<CityNode> city, HouseColor color);
 	~House();
     
     // getters/setters
