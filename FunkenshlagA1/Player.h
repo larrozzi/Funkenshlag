@@ -32,6 +32,14 @@ private:
     HouseColor color;
     int mybid;
 	vector<House>ownedHouses;
+	int coalCapacity;
+	int oilCapacity;
+	int garbageCapacity;
+	int uraniumCapacity;
+	int coalHeld;
+	int coalHeld;
+	int coalHeld;
+	int coalHeld;
 
 public:
     Player();
