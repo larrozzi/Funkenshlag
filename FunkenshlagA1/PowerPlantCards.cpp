@@ -18,11 +18,6 @@ PowerPlantCards::PowerPlantCards(int cardValue, Type resourceType, int numbResou
 	: cardValue(cardValue), resourceType(resourceType), numbResource(numbResource), capacity(2 * numbResource), powerHouse(powerHouse), currentResources(0)
 {/*NOTHING*/}
 
-bool PowerPlantCards::addResource(Type type) {
-	if (capacity - currentResources > 0) {
-
-	}
-}
 // destructor
 PowerPlantCards::~PowerPlantCards() {}
 
@@ -39,7 +34,6 @@ inline Type PowerPlantCards::getResourceType() const { return resourceType; }
 inline int PowerPlantCards::getNumbResource() const { return numbResource; }
 inline int PowerPlantCards::getCapacity() const { return 2 * numbResource; }
 inline int PowerPlantCards::getPowerHouse() const { return powerHouse; }
-int PowerPlantCards::getCurrentResources() const { return currentResources;}
 
 // method to create the PowerPlantCards
 vector<PowerPlantCards>PowerPlantCards::createPowerPlantCards()
