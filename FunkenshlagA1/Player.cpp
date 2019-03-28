@@ -10,6 +10,7 @@
 #include "SummaryCards.h"
 #include "PPmarket.h"
 
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -25,6 +26,14 @@ Player::Player(){
 }
 
 Player::Player(string name, int elektro, HouseColor color) : name{ name }, elektro{ elektro }, color{ color }{
+	coalCapacity = 0;
+	oilCapacity = 0;
+	garbageCapacity = 0;
+	uraniumCapacity = 0;
+	coalHeld = 0;
+	oilHeld = 0;
+	garbageHeld = 0;
+	uraniumHeld = 0;
 }
 
 // destructor
@@ -44,6 +53,14 @@ vector<House>Player::getOwnedHouses()
 {
     return ownedHouses;
 }
+int Player::getCoalCapacity() const { return coalCapacity; }
+int Player::getOilCapacity() const { return oilCapacity; }
+int Player::getGarbageCapacity() const { return garbageCapacity; }
+int Player::getUraniumCapacity() const {return uraniumCapacity}
+int Player::getCoalHeld() const { return coalHeld; }
+int Player::getOilHeld() const { return oilHeld; }
+int Player::getGarbageHeld() const { return garbageHeld; }
+int Player::getUraniumHeld() const { return uraniumHeld; }
 
 // method to create the grab 22 houses from board
 vector<House>Player::grabhouses(){
@@ -110,20 +127,93 @@ void  Player::printOwnedCities( ){
 
 bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
     if (position <= 3 &&  elektro >= price) {
-        setElektro(getElektro() - price);
-        
-        if (myPowerPlants.size() < 3)
-            OwnPowerPlant(ppMarket.getPlant(position));
-        
-        ppMarket.RemovePlant(position);
-        ppMarket.DrawPlant();
-        return true;
+		if (myPowerPlants.size() < 3) {
+			setElektro(getElektro() - price);
+			OwnPowerPlant(ppMarket.getPlant(position));
+			ppMarket.RemovePlant(position);
+			ppMarket.DrawPlant();
+			return true;
+		}
     }
     return false;
 }
 
+bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
+	int price = 0;
+	switch (type) {
+	case COAL:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotCoal()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (coalCapacity - coalHeld != 0) {
+			if(market->bought(type,price))
+				return true;
+		}
+		return false;
+	case OIL:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotOil()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (oilCapacity - oilHeld != 0) {
+			if (market->bought(type, price))
+				return true;
+		}
+		return false;
+	case GARBAGE:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotGarbage()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (garbageCapacity - garbageHeld != 0) {
+			if (market->bought(type, price))
+				return true;
+		}
+		return false;
+	case URANIUM:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotUranium()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (uraniumCapacity - uraniumHeld != 0) {
+			if (market->bought(type, price))
+				return true;
+		}
+		return false;
+	default:
+		return false;
+	}
+}
+
  bool Player::OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
      if (myPowerPlants.size() == 3) return false;
+	 switch (powerplant->getResourceType()) {
+	 case COAL:
+		 coalCapacity += powerplant->getCapacity();
+		 break;
+	 case OIL:
+		 oilCapacity += powerplant->getCapacity();
+		 break;
+	 case GARBAGE:
+		 garbageCapacity += powerplant->getCapacity();
+		 break;
+	 case URANIUM:
+		 uraniumCapacity += powerplant->getCapacity();
+		 break;
+	 }
      myPowerPlants.push_back(powerplant);
      return true;
  }
