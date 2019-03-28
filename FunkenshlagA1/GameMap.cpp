@@ -28,7 +28,7 @@ void GameMap::setMap(vector<CityNode> cities)
 }
 void GameMap::chooseRegion()
 {
-	int input;
+	int input = 0;
 	cout << "Please choose your region" << input;
 
 	for (int i = (input*7);i < (input +7); i++)

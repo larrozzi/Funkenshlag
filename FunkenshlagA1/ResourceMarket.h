@@ -83,6 +83,7 @@ public:
 	Slot* getSlots();
 	const Slot* getSlots() const;
 
-	bool bought(int,int);
+	bool bought(Type,int);
+	void resupply(int step, int numOfPlayers);
 	friend std::ostream& operator<<(std::ostream& outs, const ResourceMarket& market);
 };

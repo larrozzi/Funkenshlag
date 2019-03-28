@@ -101,9 +101,13 @@ int main() {
 	ResourceMarket* market = new ResourceMarket();
 	std::cout << *market << std::endl;
 
-	market->bought(0,0);
-
+	market->bought(COAL, 6);
+	std::cout << "Next empty coal slot: " << market->getCurrentEmptyCoalSlot() << std::endl;
 	std::cout << *market << std::endl;
-	std::cout << market->getNumOfCoal() << std::endl;
+	
+	std::cout << market->getEmptySpotInSlot(COAL) << std::endl;
+
+	
+
 	system("pause");
 }
