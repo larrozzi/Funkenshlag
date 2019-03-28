@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-
+#include <memory>
 using std::shared_ptr;
 
 enum HouseColor { NO_COLOR, RED, BLUE, GREEN, YELLOW, BLACK, PINK};

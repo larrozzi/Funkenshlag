@@ -1,9 +1,9 @@
-//#include <iostream>
-//#include "Resource.h"
-//#include "Player.h"
-//#include "ResourceManager.h"
-//#include "ResourceMarket.h"
-//#include "House.h"
+#include <iostream>
+#include "Resource.h"
+#include "Player.h"
+#include "ResourceManager.h"
+#include "ResourceMarket.h"
+#include "House.h"
 //
 //using namespace std;
 //
