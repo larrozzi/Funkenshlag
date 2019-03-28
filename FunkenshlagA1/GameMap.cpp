@@ -37,7 +37,7 @@ void GameMap::chooseRegion()
 
 		if (gameMap.at(input * 7).getUsed() == true)
 		{
-			cout << "Region already selected";
+			cout << "Region already selected "<<endl;
 		}
 	} while (gameMap.at(input * 7).getUsed() == true);
 
