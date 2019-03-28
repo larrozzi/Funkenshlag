@@ -41,6 +41,7 @@ private:
 	int connectionCost = 0; // cost of building
     int playPhase = 0; // current phase | initial = 0
     int playStep = 1; // initial | step of the game (step 1, 2, 3)
+	bool pass = false;
     
 public:
     Building();
