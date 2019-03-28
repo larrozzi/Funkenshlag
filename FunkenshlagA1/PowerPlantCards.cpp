@@ -15,7 +15,7 @@ using std::vector;
 // constructors
 PowerPlantCards::PowerPlantCards() {}
 PowerPlantCards::PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse)
-	: cardValue(cardValue), resourceType(resourceType), numbResource(numbResource), capacity(2 * numbResource), powerHouse(powerHouse), currentResources(0)
+	: cardValue(cardValue), resourceType(resourceType), numbResource(numbResource), capacity(2 * numbResource), powerHouse(powerHouse)
 {/*NOTHING*/}
 
 // destructor
@@ -30,10 +30,10 @@ void PowerPlantCards::setPowerHouse(int powerHouse) { this->powerHouse = powerHo
 
 // getters
 int PowerPlantCards::getCardValue() const { return cardValue; }
-inline Type PowerPlantCards::getResourceType() const { return resourceType; }
-inline int PowerPlantCards::getNumbResource() const { return numbResource; }
-inline int PowerPlantCards::getCapacity() const { return 2 * numbResource; }
-inline int PowerPlantCards::getPowerHouse() const { return powerHouse; }
+Type PowerPlantCards::getResourceType() const { return resourceType; }
+int PowerPlantCards::getNumbResource() const { return numbResource; }
+int PowerPlantCards::getCapacity() const { return 2 * numbResource; }
+int PowerPlantCards::getPowerHouse() const { return powerHouse; }
 
 // method to create the PowerPlantCards
 vector<PowerPlantCards>PowerPlantCards::createPowerPlantCards()

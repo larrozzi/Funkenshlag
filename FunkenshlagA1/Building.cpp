@@ -215,7 +215,7 @@ void Building::Phase4BuyingCities()
 		return Phase4Intro();
 	}
 	// player has Elektros
-	currentPlayer->buyHouse(anotherHouse);
+	currentPlayer->buyHouse(newHouse);
 	cout << "Succesfull in Buying the City" << endl;
 	cout << currentPlayer->getName() + " has succesfully bought a house at "
 	+ pickedCity->getName() + " for a total cost of " << connectionCost << " Elektros" << endl;

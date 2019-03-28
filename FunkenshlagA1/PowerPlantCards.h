@@ -47,10 +47,10 @@ public:
 
 	// getters
     int getCardValue() const;
-	inline Type getResourceType() const;
-	inline int getNumbResource() const;
-	inline int getCapacity() const;
-	inline int getPowerHouse() const;
+	Type getResourceType() const;
+	int getNumbResource() const;
+	int getCapacity() const;
+	int getPowerHouse() const;
 
 	// methods declaration
 	static vector<PowerPlantCards>createPowerPlantCards();

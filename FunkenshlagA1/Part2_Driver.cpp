@@ -1,14 +1,14 @@
-#include <fstream>
-#include <iostream>
-#include <string>
-#include <map>
-#include <memory>
-#include <vector>
-#include "Player.h"
-#include "CityNode.h"
-#include "GameMap.h"
-#include "MapLoader.h"
-#include "SummaryCards.h"
+//#include <fstream>
+//#include <iostream>
+//#include <string>
+//#include <map>
+//#include <memory>
+//#include <vector>
+//#include "Player.h"
+//#include "CityNode.h"
+//#include "GameMap.h"
+//#include "MapLoader.h"
+//#include "SummaryCards.h"
 //
 //int main()
 //{
@@ -33,7 +33,7 @@
 //        cout << endl;
 //    }*/
 //
-//	gameMap.chooseRegion();
+//    gameMap.chooseRegion();
 //    system("pause");
 //    return 0;
 //}
