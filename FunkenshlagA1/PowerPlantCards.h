@@ -39,6 +39,7 @@ public:
 	PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse);
 	~PowerPlantCards();
 
+	bool addResource(Type type);
 
 	// setters
 	void setCardValue(int cardValue);
@@ -53,6 +54,7 @@ public:
 	inline int getNumbResource() const;
 	inline int getCapacity() const;
 	inline int getPowerHouse() const;
+	int getCurrentResources() const;
 
 	// methods declaration
 	static vector<PowerPlantCards>createPowerPlantCards();

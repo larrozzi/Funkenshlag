@@ -25,6 +25,14 @@ Player::Player(){
 }
 
 Player::Player(string name, int elektro, HouseColor color) : name{ name }, elektro{ elektro }, color{ color }{
+	coalCapacity = 0;
+	oilCapacity = 0;
+	garbageCapacity = 0;
+	uraniumCapacity = 0;
+	coalHeld = 0;
+	oilHeld= 0;
+	garbageHeld = 0;
+	uraniumHeld = 0;
 }
 
 // destructor
@@ -40,6 +48,15 @@ string Player::getName() const {return name;}
 int Player::getElektro() const {return elektro;}
 HouseColor Player::getColor()const {return color;}
 vector <string> Player::getBuiltHouses()const { return mycities; }
+int Player::getCoalCapacity() const { return coalCapacity; }
+int Player::getOilCapacity() const { return oilCapacity; }
+int Player::getGarbageCapacity() const { return garbageCapacity; }
+int Player::getUraniumCapacity() const { return uraniumCapacity; }
+int Player::getCoalHeld() const { return coalCapacity; }
+int Player::getOilHeld() const { return oilHeld; }
+int Player::getGarbageHeld() const { return garbageHeld; }
+int Player::getUraniumHeld() const { return uraniumHeld; }
+
 vector<House>Player::getOwnedHouses()
 {
 	return ownedHouses;
@@ -121,15 +138,97 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
     return false;
 }
 
+bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
+	int price = 0;
+	switch (type) {
+	case COAL:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotCoal()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (coalCapacity - coalHeld != 0) {
+			if (market->bought(type, amount)) {
+				coalHeld++;
+				return true;
+			}
+		}
+		return false;
+	case OIL:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotOil()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (oilCapacity - oilHeld != 0) {
+			if (market->bought(type, amount)) {
+				oilHeld++;
+				return true;
+			}
+		}
+		return false;
+	case GARBAGE:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotGarbage()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (garbageCapacity - garbageHeld != 0) {
+			if (market->bought(type, amount)) {
+				garbageHeld++;
+				return true;
+			}
+		}
+		return false;
+	case URANIUM:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotUranium()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (uraniumCapacity - uraniumHeld != 0) {
+			if (market->bought(type, amount)) {
+				uraniumHeld++;
+				return true;
+			}
+		}
+		return false;
+	default:
+		return true;
+	}
+}
+
  bool Player::AddPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
      if (myPowerPlants.size() == 3) return false;
+	 switch(powerplant->getResourceType()){
+	 case COAL:
+		 coalCapacity += powerplant->getCapacity();
+		 break;
+	 case OIL:
+		 oilCapacity += powerplant->getCapacity();
+		 break;
+	 case GARBAGE:
+		 garbageCapacity += powerplant->getCapacity();
+		 break;
+	 case URANIUM:
+		 uraniumCapacity += powerplant->getCapacity();
+		 break;
+	 }
      myPowerPlants.push_back(powerplant);
      return true;
  }
 
  //check rule 
  bool Player::Pass() {
-	cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
+	cout << name << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
 	 return true;
  }
 

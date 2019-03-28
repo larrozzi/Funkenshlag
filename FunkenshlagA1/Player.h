@@ -14,6 +14,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include "ResourceMarket.h"
 
 using std::string;
 using std::vector;
@@ -32,6 +33,14 @@ private:
     HouseColor color;
     int mybid;
 	vector<House>ownedHouses;
+	int coalCapacity;
+	int oilCapacity;
+	int garbageCapacity;
+	int uraniumCapacity;
+	int coalHeld;
+	int oilHeld;
+	int garbageHeld;
+	int uraniumHeld;
 
 public:
     Player();
@@ -48,6 +57,14 @@ public:
     HouseColor getColor() const;
     vector <string> getBuiltHouses() const;
 	vector<House>getOwnedHouses();
+	int getCoalCapacity() const;
+	int getOilCapacity() const;
+	int getGarbageCapacity() const;
+	int getUraniumCapacity() const;
+	int getCoalHeld() const;
+	int getOilHeld() const;
+	int getGarbageHeld() const;
+	int getUraniumHeld() const;
 
 
     // method to create the grab 22 houses from board
@@ -72,8 +89,10 @@ public:
     
     bool Auction(const PPmarket& ppMarket, int position, int mybid);
 
+	bool buyResource(Type type, int amount, ResourceMarket* market);
+
     bool Pass();
-    
+	   
     //void ReplacePowerPlant(<shared_ptr<PowerPlant>>, int);
     
 	int getHighestPowerPlant();
