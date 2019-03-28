@@ -42,8 +42,7 @@ vector<CityNode> MapLoader::exec()
     string segment;
     string edge;    //individual edge
     string cost;    //individual cost
-    string edgesVector[50];
-    string costVector[50];
+
     
     int count = 0;
     int i = 0;
@@ -52,7 +51,6 @@ vector<CityNode> MapLoader::exec()
     int l = 0;
     bool used = true;
     ifstream myfile(this->fileName);
-    vector<int> costVectorInt;
     string lineVariables[3];
     vector<CityNode> cities(50);
     if (myfile.is_open())
@@ -64,7 +62,8 @@ vector<CityNode> MapLoader::exec()
             stringstream linestream;
             stringstream edgestream;
             stringstream coststream;
-            
+			string edgesVector[8];
+			string costVector[8];
             
             linestream.str(line);
             
@@ -85,7 +84,6 @@ vector<CityNode> MapLoader::exec()
             while (getline(edgestream, edge, ','))
             {
                 edgesVector[k] = edge;    // each object in edgestream seperated by ',' is pushed into edgesVector
-                //cout << edgesVector[k] + " ";
                 k++;
             }
             
@@ -94,18 +92,17 @@ vector<CityNode> MapLoader::exec()
             while (getline(coststream, cost, ','))
             {
                 costVector[l] = cost;
-                //cout << costVector[l] + " ";
                 l++;
             }
             
-            //cout << cityString + '|' << edgesVector[0] + ',' +  edgesVector[1] + ',' + edgesVector[2] + '|' << costVector[0] + ',' + costVector[1] + ',' + costVector[2] << endl;
+           
             std::vector<string> eV(edgesVector, edgesVector + sizeof edgesVector / sizeof edgesVector[0]);
             std::vector<string> cV(costVector, costVector + sizeof costVector / sizeof costVector[0]);
             eV.resize(k);
-            cV.resize(l);
+            //cV.resize(l);
             
             // if some elements are empty, or # of edges != # of costs
-            if (cityString == "" || eV.empty() || cV.empty() || eV.size() != cV.size())
+            if (cityString == "" || eV.empty() || cV.empty())
             {
                 cout << "Incorrect Map File" << endl;
                 system("pause");
