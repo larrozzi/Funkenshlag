@@ -25,7 +25,6 @@ private:
 	int numbResource; // how many number of resources the card needs
 	int capacity;   // how many resources can be taken => 2* #resource
 	int powerHouse; // how many houses can be powered
-	int currentResources;
 
 	
 
