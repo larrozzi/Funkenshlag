@@ -1,5 +1,8 @@
 #include "Resource.h"
-
+int Resource::coalInStock = 24;
+int Resource::oilInStock = 24;
+int Resource::garbageInStock = 24;	
+int Resource::uraniumInStock = 12;
 
 Resource::Resource() {
 	//price of the resource
@@ -32,6 +35,19 @@ Type Resource::getType() const {
 	return type;
 }
 
+int Resource::getCoalInStock() {
+	return coalInStock;
+}
+int Resource::getOilInStock() {
+	return oilInStock;
+}
+int Resource::getGarbageInStock() {
+	return garbageInStock;
+}
+int Resource::getUraniumInStock() {
+	return uraniumInStock;
+}
+
 void Resource::setType(Type type) {
 	this->type = type;
 }
@@ -41,6 +57,19 @@ inline int Resource::getPrice() const {
 
 void Resource::setPrice(int price) {
 	this->price = price;
+}
+
+void Resource::decreCoalInStock() {
+	coalInStock--;
+}
+void Resource::decreOilInStock() {
+	oilInStock--;
+}
+void Resource::decreGarbageInStock() {
+	garbageInStock--;
+}
+void Resource::decreUraniumInStock() {
+	uraniumInStock--;
 }
 
 // method to convert enum Type to string

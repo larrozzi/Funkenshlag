@@ -13,6 +13,10 @@ private:
 	const static int MAX_OIL = 24;
 	const static int MAX_GARBAGE = 24;
 	const static int MAX_URANIUM = 12;
+	static int coalInStock;
+	static int oilInStock;
+	static int garbageInStock;
+	static int uraniumInStock;
 public:
 	Resource();
 	Resource(int price, Type type);
@@ -20,14 +24,22 @@ public:
 	//getters
 	Type getType() const;
 	int getPrice() const;
-	const int getMAX_COAL();
-	const int getMAX_OIL();
-	const int getMAX_GARBAGE();
-	const int getMAX_URANIUM();
+	static const int getMAX_COAL();
+	static const int getMAX_OIL();
+	static const int getMAX_GARBAGE();
+	static const int getMAX_URANIUM();
+	static int getCoalInStock();
+	static int getOilInStock();
+	static int getGarbageInStock();
+	static int getUraniumInStock();
 
 	//setters
 	void setPrice(int price);
 	void setType(Type type);
+	static void decreCoalInStock();
+	static void decreOilInStock();
+	static void decreGarbageInStock();
+	static void decreUraniumInStock();
 
 	std::string printType() const;
 	friend std::ostream& operator<<(std::ostream& outs, const Resource& resource);
