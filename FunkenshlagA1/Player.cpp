@@ -40,6 +40,10 @@ string Player::getName() const {return name;}
 int Player::getElektro() const {return elektro;}
 HouseColor Player::getColor()const {return color;}
 vector <string> Player::getBuiltHouses()const { return mycities; }
+vector<House>Player::getOwnedHouses()
+{
+	return ownedHouses;
+}
 
 // method to create the grab 22 houses from board
 vector<House>Player::grabhouses(){

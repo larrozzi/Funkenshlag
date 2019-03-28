@@ -25,13 +25,14 @@ int Building::getPlayPhase() const { return playPhase; }
 int Building::getPlayStep() const { return playStep; }
 vector<shared_ptr<Player>>& Building::getPlayerOrder() { return playerOrder; }
 
+
 // setters
 void Building::setMap(shared_ptr<GameMap>& map) { this->map = map; }
 void Building::setPlayPhase(int phase) { this->playPhase = phase; }
 void Building::setPlayStep(int step) { this->playStep = step; }
 
 // convert HouseColor string to enum
-HouseColor convertToEnum(const std::string clr)
+HouseColor convert(const std::string clr)
 {
     if (clr == "NO_COLOR")      return NO_COLOR;
     else if (clr == "RED")      return RED;
@@ -43,7 +44,7 @@ HouseColor convertToEnum(const std::string clr)
     else return NO_COLOR;
 }
 
-// new game
+// new game - configure players
 void Building::NewGame(MapLoader map, int numbPlayer)
 {
     cout << "Map: " << map.getFileName() << ". Number of players: " << numbPlayer << " players" << endl;
@@ -51,28 +52,38 @@ void Building::NewGame(MapLoader map, int numbPlayer)
     string pName;
     string color;
     HouseColor clr;
+	bool alreadyPicked = false;
     
     for (int i = 0; i < numbPlayer; i++)
     {
-        cout << "Please Enter Player Name: ";
+        cout << "Please Enter Player Name\n> ";
         cin >> pName;
 
-        cout << "Please Enter House Color: RED, BLUE, GREEN, YELLOW, BLACK, PINK \nColor: ";
+        cout << "Please Enter House Color: RED, BLUE, GREEN, YELLOW, BLACK, PINK \nColor > ";
         cin >> color;
-        clr = convertToEnum(color);
-        
-        // add players to player vector
-        //while(numbPlayer > 0 && numbPlayer <= players.size())
-        //{
-            players.push_back(make_shared<Player>(pName, 50, clr));
-        //}
-    }
-    
-//    // player initial Elektros = 50
-//    for(auto player : players)
-//    {
-//        player->setElektro(50);
-//    }
+		for (int i = 0; i < players.size(); i++) {
+			if (players.at(i)->getColor() == clr) {
+				alreadyPicked = true;
+			}
+		}
+		while ((color != "RED" && color != "BLUE" && color != "GREEN" && color != "YELLOW" && color != "BLACK" && color != "PINK") || alreadyPicked) {
+			cout << "Please pick a valid color (either you entered an invalid color or the color was already picked by another player)." << endl;
+			cout << "Please pick a HOUSE COLOR among the following: RED, BLUE, GREEN, YELLOW, BLACK, PINK.\n";
+			cout << "> ";
+			cin >> color;
+			clr = convert(color);
+
+			for (int i = 0; i < players.size(); i++) {
+				if (players.at(i)->getColor() == clr) {
+					alreadyPicked = true;
+				}
+				else {
+					alreadyPicked = false;
+				}
+			}
+		}
+		players.push_back(make_shared<Player>(pName, 50, clr));
+	}
     
     // player order
     for(shared_ptr<Player> player : players) {
@@ -94,14 +105,14 @@ void Building::NewGame(MapLoader map, int numbPlayer)
 // used to determine the player turn order
 bool playerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {
     
-    // priority 1 - based on number of Houses
-    if (p1->grabhouses().size() > p2->grabhouses().size())
+    // priority1 - based on number of Houses owned
+    if (p1->getOwnedHouses().size() > p2->getOwnedHouses().size())
         return true;
     
-    if (p1->grabhouses().size() < p2->grabhouses().size())
+    if (p1->getOwnedHouses().size() < p2->getOwnedHouses().size())
         return false;
     
-    // priority2 - based on Highest powerplant
+    // priority2 - based on Highest powerplant owned
     if (p1->getHighestPowerPlant() > p2->getHighestPowerPlant())
         return true;
     
@@ -109,7 +120,7 @@ bool playerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {
 }
 
 // updating player order
-void Building::updatePlayOrder(bool reverse) {
+void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
     sort(playerOrder.begin(), playerOrder.end(), playerPriority);
     
     if (reverse) // if reverse is true= reverses the player order
@@ -129,7 +140,7 @@ void Building::BeginPhase4()
     playPhase = 4; // set the phase to 4
 
     // player order - reverse
-    updatePlayOrder(true);
+    updatePlayOrder(true, playerOrder);
     currentPlayer = playerOrder[0];
 
     Phase4Intro();
@@ -174,12 +185,12 @@ void Building::Phase4BuyingCities()
     
     // if city is full
     if (pickedCity->getNumberOfHouses() == playStep) {
-        cerr << "Cannot buy house " << pickedCity->getName() << " .City is full!";
+        cerr << "Cannot buy house " << pickedCity->getName() << ". City is full!";
         return Phase4Intro();
     }
     
     // cost of connecting to city
-    if (currentPlayer->grabhouses().empty()) {
+    if (currentPlayer->getOwnedHouses().empty()) {
         connectionCost = pickedCity->getHousePrice();
     }
     else {
@@ -194,11 +205,11 @@ void Building::Phase4BuyingCities()
 	} 
 
 	// buy city
-	auto anotherHouse = std::make_shared<House>(pickedCity, currentPlayer->getColor());
-	anotherHouse->setPrice(connectionCost); // set the connectionCost has price of the house
+	auto newHouse = std::make_shared<House>(currentPlayer->getColor());
+	newHouse->setPrice(connectionCost); // set the connectionCost has price of the house
 
 	// does player have enough Elektros
-	if (!currentPlayer->HasElektro(anotherHouse->getPrice()))
+	if (!currentPlayer->HasElektro(newHouse->getPrice()))
 	{
 		cerr << "Error!, Not enough Elektros to buy this house\n";
 		return Phase4Intro();
@@ -216,13 +227,14 @@ void Building::Phase4BuyingCities()
 
 void Building::EndPhase4()
 {
-	cout << "------------------------------------------" << endl;
 	cout << "End of Phase 4" << endl;
+	cout << "------------------------------------------" << endl;
+
 	// if PowerPlants in the market have a price <= the highest number of cities owned by a player, replace
 	int maximumHouse = 0;
 	for (shared_ptr<Player> p : players) {
-		if (p->grabhouses().size() > maximumHouse)
-			maximumHouse = p->grabhouses().size();
+		if (p->getOwnedHouses().size() > maximumHouse)
+			maximumHouse = p->getOwnedHouses().size();
 	}
 
 	/*

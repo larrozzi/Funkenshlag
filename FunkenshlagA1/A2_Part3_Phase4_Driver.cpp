@@ -16,12 +16,14 @@
 
 int main ()
 {
-    int numberPlayers = 2;
     MapLoader mapLoader = MapLoader();
     //GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
     //gameMap.showMap(); // display map
     
     Building phase4 = Building();
+    std::cout << "Enter Number of players? \n> ";
+    int numberPlayers;
+	std::cin >> numberPlayers; 
     phase4.NewGame(mapLoader, numberPlayers); // initialize players
     
     // memory thread problem ???

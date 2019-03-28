@@ -2,6 +2,7 @@
 #include "House.h"
 #include <string>
 #include <iostream>
+#include <memory>
 
 using std::shared_ptr;
 
@@ -13,10 +14,10 @@ House::House(HouseColor color) {
 	this->color = color;
 }
 
-House::House(shared_ptr<CityNode> city, HouseColor color) : city(city), color(color)
-{
-    //price = city->getHousePrice();
-}
+//House::House(shared_ptr<CityNode> city, HouseColor color) : city(city), color(color)
+//{
+//    //price = city->getHousePrice();
+//}
 
 House::~House() {}
 

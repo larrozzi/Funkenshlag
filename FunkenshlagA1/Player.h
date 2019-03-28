@@ -31,7 +31,7 @@ private:
     vector<shared_ptr<PowerPlantCards>> myPowerPlants;
     HouseColor color;
     int mybid;
-    
+	vector<House>ownedHouses;
 
 public:
     Player();
@@ -47,6 +47,9 @@ public:
     int getElektro() const;
     HouseColor getColor() const;
     vector <string> getBuiltHouses() const;
+	vector<House>getOwnedHouses();
+
+
     // method to create the grab 22 houses from board
     vector<House>grabhouses();
 
