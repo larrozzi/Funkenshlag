@@ -84,11 +84,11 @@ void Building::NewGame(MapLoader map, int numbPlayer)
     cout << "Player order is: " << endl;
     for (int i = 0; i < numbPlayer; ++i)
     {
-         cout << players.at(i)->getName() << endl;
+         cout << "[" << (i+1) << "] " << players.at(i)->getName() << endl;
     }
-    currentPlayer = players.at(0);
-    players.at(0) = playerOrder[0]; // set current player turn
-    cout << "Done with NewGame" << endl;
+    currentPlayer = playerOrder[0]; // set current player turn
+    //cout << "Done with NewGame" << endl;
+	cout << "------------------------------------------" << endl;
 }
 
 // used to determine the player turn order
@@ -137,23 +137,34 @@ void Building::BeginPhase4()
 
 void Building::Phase4Intro()
 {
-    cout << "Would you like to ";
-    cout << "Enter a city you would like to build a house in: " << endl;
-    string city;
-    cin >> city;
-    pickedCity->setName(city);
-    currentPlayer->readFile();
-    currentPlayer->buildinCity(city);
-    pickedCity.reset();
+	cout << "\nPlayer " << currentPlayer->getName() << currentPlayer->getElektro() << " Elektros" << endl;
+	cout << "Would you like to Build or Pass?" << endl;
+	cin >> BuildOrPass;
+
+	if (BuildOrPass._Equal("Pass")) 
+	{
+		return Phase4BuyingCities();
+	}
+
+	if (BuildOrPass._Equal("Build"))
+	{
+		cout << "Enter a city you would like to build a house in: " << endl;
+		cin >> city;
+		currentPlayer->readFile(); // read map file
+		currentPlayer->buildinCity(city); // build in city
+		//pickedCity.reset();
+	}
 }
+   
 
 void Building::Phase4BuyingCities()
 {
     // player skipped, go to next player
-    if(!pickedCity)
+    //if(pickedCity->getName() != city)
+	if(BuildOrPass._Equal("Pass"))
     {
          currentPlayer = playerOrder[getNextPlayer()]; // go to next player
-         
+
          if(currentPlayer.get() == playerOrder[0].get())
              return EndPhase4();
          
@@ -162,54 +173,74 @@ void Building::Phase4BuyingCities()
     
     // if city is full
     if (pickedCity->getNumberOfHouses() == playStep) {
-        cerr << "Cannot buy house " + pickedCity->getName() + " .City is full!";
+        cerr << "Cannot buy house " << pickedCity->getName() << " .City is full!";
         return Phase4Intro();
     }
     
     // cost of connecting to city
-    int connectionCost;
     if (currentPlayer->grabhouses().empty()) {
         connectionCost = pickedCity->getHousePrice();
     }
     else {
         connectionCost = pickedCity->getHousePrice() + map->getShortestPath(currentPlayer, pickedCity->getName());
     }
-    
     // does player have enough Elektros?
     if(!currentPlayer->HasElektro(connectionCost))
     {
-        cerr << "Not enough Elektros to buy " + pickedCity->getName()
-        + " for a build cost of " + std::to_string(connectionCost) + "Elektros";
-        return Phase4Intro();
-    }
-    
-    // buy city
-    auto anotherHouse = std::make_shared<House>(pickedCity, currentPlayer->getColor());
-    anotherHouse->setPrice(connectionCost); // set the connectionCost has price of the house
-    
-    // does player have enough Elektros
-    if(!currentPlayer->HasElektro(anotherHouse->getPrice()))
-    {
-        cerr << "Error!, Not enough Elektros to buy this house\n";
-        return Phase4Intro();
-    }
-    
-    // player has Elektros
-    currentPlayer->buyHouse(anotherHouse);
-       cout << "Succesfull in Buying the City" << endl;
-       cout << currentPlayer->getName() + " has succesfully bought a house at "
-       + pickedCity->getName() + " for a total cost of " << connectionCost << " Elektros" << endl;
-       
-    // buy another house
-    return Phase4Intro();
+		cerr << "Not enough Elektros to buy " << pickedCity->getName()
+			 << " for a build cost of " << connectionCost << "Elektros";
+		return Phase4Intro();
+	} 
+	// buy city
+	auto anotherHouse = std::make_shared<House>(pickedCity, currentPlayer->getColor());
+	anotherHouse->setPrice(connectionCost); // set the connectionCost has price of the house
+
+	// does player have enough Elektros
+	if (!currentPlayer->HasElektro(anotherHouse->getPrice()))
+	{
+		cerr << "Error!, Not enough Elektros to buy this house\n";
+		return Phase4Intro();
+	}
+	// player has Elektros
+	currentPlayer->buyHouse(anotherHouse);
+	cout << "Succesfull in Buying the City" << endl;
+	cout << currentPlayer->getName() + " has succesfully bought a house at "
+	+ pickedCity->getName() + " for a total cost of " << connectionCost << " Elektros" << endl;
+
+	// buy another house
+	return Phase4Intro();
+
 }
 
 void Building::EndPhase4()
 {
-    cout << "End of Phase 4" << endl;
-    // if PowerPlants in the market have a price <= the highest number of cities owned by a player,
-    // replace
-    //int maximumHouse = 0;
-    for(shared_ptr<Player> p : players)
-        cout << *p << endl;
+	cout << "End of Phase 4" << endl;
+	// if PowerPlants in the market have a price <= the highest number of cities owned by a player, replace
+	int maximumHouse = 0;
+	for (shared_ptr<Player> p : players) {
+		if (p->grabhouses().size() > maximumHouse)
+			maximumHouse = p->grabhouses().size();
+	}
+
+	/*
+	vector<PowerPlantCards> PPcards = PowerPlantCards::createPowerPlantCards();
+	while (PPcards[0].getCardValue() <= maximumHouse) {
+		PPcards.RemoveLowestVisible();
+		PPcards.DrawPlant();
+	}
+	// Check if we drew the step 3 card
+	if (PPcards.GetJustDrewStep() == 3) {
+		PPcards.AdjustForStep3();
+		PPcards.ShuffleStack();
+		playStep = 3;
+		cout << "Entering Step 3." << endl;
+	}
+	// Go to Phase 5
+	*/
+
+	// Print Player info
+	cout << "Player possession: " << endl;
+	for (shared_ptr<Player> p : players) {
+		cout << *p << endl;
+	}
 }

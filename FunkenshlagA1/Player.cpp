@@ -125,15 +125,9 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 
  //check rule 
  bool Player::Pass() {
-    /*if (myPowerPlants.size() == 0) {
-     cout << "you can't pass your turn if you don't own any powerplants";
-     return false;
-     }
-     */
-    //cout << "You passed your turn, you will no longer be able to purchase this powerplant" <<endl;
-    cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
-    return true;
-}
+	cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
+	 return true;
+ }
 
  bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
 	 if (position <= 3 && elektro >= mybid  ) {
@@ -165,9 +159,9 @@ bool Player::HasElektro(int elektro)
 
 
  //// assignment operator
- // Player& Player::operator = (const Player &player) {
-    // elektro = player.elektro;
-    // return *this;
+ // const Player& Player::operator = (const Player &player) {
+	// elektro = player.elektro;
+	// return *this;
  //}
 
 // overloading == operator
@@ -194,7 +188,7 @@ std::ostream& operator<<(std::ostream& outs, const Player& player){
 
 		for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
 			outs << **p << ' ';
-			outs << endl;
+			outs << endl; 
 			outs << "And owns the following cities: ";
 		string cities;
 		for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)

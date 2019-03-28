@@ -1,5 +1,5 @@
 Boston|New York|3
-New York|Buffalo,Philadelphia|8,0
+New York|Boston,Buffalo,Philadelphia|3,8,0
 Buffalo|New York,Detroit,Pittsburgh|8,7,7
 Philadelphia|New York,Washington|0,3
 Detroit|Buffalo,Pittsburgh,Chicago,Cincinnati|7,6,7,4
@@ -11,7 +11,7 @@ Savannah|Raleigh,Jacksonville,Atlanta|7,0,7
 Atlanta|Knoxville,Raleigh,Savannah,Birmingham|5,7,7,3
 Jacksonville|Savannah,Tampa,New Orleans,Birmingham|0,4,16,9
 Tampa|Jacksonville,Miami|4,4
-Miami|Tampa,4
+Miami|Tampa|4
 Cincinnati|Detroit,Pittsburgh,Raleigh,Knoxville,St Louis,Chicago|4,7,15,5,12,7
 Knoxville|Cincinnati,Atlanta|6,5
 St.Louis|Chicago,Cincinnati,Atlanta,Memphis,Kansas City|10,12,12,7,6
@@ -40,5 +40,3 @@ Santa Fe|Denver,Kansas City,Oklahoma City,Dallas,Houston,Phoenix,Las Vegas,Salt 
 Los Angeles|San Francisco,Las Vegas,San Diego|9,9,3
 Phoenix|Las Vegas,Santa Fe,San Diego|15,18,14
 San Diego|Los Angeles,Phoenix|3,14
-
-

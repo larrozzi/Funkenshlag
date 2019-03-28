@@ -76,11 +76,12 @@ public:
 	int getHighestPowerPlant();
     bool HasElektro(int elektro);
 
-    // overloading == operator
-    //bool operator==(const Player& p) const;
-    // overloading output operator
-    //friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
-    friend std::ostream& operator<<(std::ostream& outs, const Player& player);
-    
+	// overloading assignment operator
+	/*const Player& operator = (const Player &player);*/
+
+	// overloading output operator
+	 
+	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
+	friend std::ostream& operator<<(std::ostream& outs, const Player& player);
 };
 
