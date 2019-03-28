@@ -10,6 +10,7 @@
 #include "SummaryCards.h"
 #include "PPmarket.h"
 
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -25,6 +26,14 @@ Player::Player(){
 }
 
 Player::Player(string name, int elektro, HouseColor color) : name{ name }, elektro{ elektro }, color{ color }{
+	coalCapacity = 0;
+	oilCapacity = 0;
+	garbageCapacity = 0;
+	uraniumCapacity = 0;
+	coalHeld = 0;
+	oilHeld = 0;
+	garbageHeld = 0;
+	uraniumHeld = 0;
 }
 
 // destructor
@@ -42,8 +51,16 @@ HouseColor Player::getColor()const {return color;}
 vector <string> Player::getBuiltHouses()const { return mycities; }
 vector<House>Player::getOwnedHouses()
 {
-	return ownedHouses;
+    return ownedHouses;
 }
+int Player::getCoalCapacity() const { return coalCapacity; }
+int Player::getOilCapacity() const { return oilCapacity; }
+int Player::getGarbageCapacity() const { return garbageCapacity; }
+int Player::getUraniumCapacity() const {return uraniumCapacity}
+int Player::getCoalHeld() const { return coalHeld; }
+int Player::getOilHeld() const { return oilHeld; }
+int Player::getGarbageHeld() const { return garbageHeld; }
+int Player::getUraniumHeld() const { return uraniumHeld; }
 
 // method to create the grab 22 houses from board
 vector<House>Player::grabhouses(){
@@ -110,37 +127,111 @@ void  Player::printOwnedCities( ){
 
 bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
     if (position <= 3 &&  elektro >= price) {
-        setElektro(getElektro() - price);
-
-        if (myPowerPlants.size() < 3)
-        AddPowerPlant(ppMarket.getPlant(position));
-        ppMarket.RemovePlant(position);
-        ppMarket.DrawPlant();
-        return true;
+		if (myPowerPlants.size() < 3) {
+			setElektro(getElektro() - price);
+			OwnPowerPlant(ppMarket.getPlant(position));
+			ppMarket.RemovePlant(position);
+			ppMarket.DrawPlant();
+			return true;
+		}
     }
     return false;
 }
 
- bool Player::AddPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
+bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
+	int price = 0;
+	switch (type) {
+	case COAL:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotCoal()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (coalCapacity - coalHeld != 0) {
+			if(market->bought(type,price))
+				return true;
+		}
+		return false;
+	case OIL:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotOil()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (oilCapacity - oilHeld != 0) {
+			if (market->bought(type, price))
+				return true;
+		}
+		return false;
+	case GARBAGE:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotGarbage()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (garbageCapacity - garbageHeld != 0) {
+			if (market->bought(type, price))
+				return true;
+		}
+		return false;
+	case URANIUM:
+		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (market->getSlots()[i].getSlotUranium()[j].getType() != NONE) {
+					price = market->getSlots()[i].getSlotPrice();
+				}
+			}
+		}
+		if (uraniumCapacity - uraniumHeld != 0) {
+			if (market->bought(type, price))
+				return true;
+		}
+		return false;
+	default:
+		return false;
+	}
+}
+
+ bool Player::OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
      if (myPowerPlants.size() == 3) return false;
+	 switch (powerplant->getResourceType()) {
+	 case COAL:
+		 coalCapacity += powerplant->getCapacity();
+		 break;
+	 case OIL:
+		 oilCapacity += powerplant->getCapacity();
+		 break;
+	 case GARBAGE:
+		 garbageCapacity += powerplant->getCapacity();
+		 break;
+	 case URANIUM:
+		 uraniumCapacity += powerplant->getCapacity();
+		 break;
+	 }
      myPowerPlants.push_back(powerplant);
      return true;
  }
 
  //check rule 
  bool Player::Pass() {
-	cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
-	 return true;
+    cout << getName() << " passed their turn, and will no longer be able to purchase this powerplant." << endl;
+     return true;
  }
 
  bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
-	 if (position <= 3 && elektro >= mybid  ) {
+     if (position <= 3 && elektro >= mybid  ) {
 
-		 return true;
-		 // other players will see highest bid and try to outbid it
-	 }
-	 else cout << "You don't have enough elekro." << endl;
-	 return false;  //might need a way to let player go again
+         return true;
+         // other players will see highest bid and try to outbid it
+     }
+     else cout << "You don't have enough elekro." << endl;
+     return false;  //might need a way to let player go again
  }
 
  //void Player::ReplacePowerPlant(<shared_ptr<PowerPlant>> newplant, int toReplace) {
@@ -164,8 +255,8 @@ bool Player::HasElektro(int elektro)
 
  //// assignment operator
  // const Player& Player::operator = (const Player &player) {
-	// elektro = player.elektro;
-	// return *this;
+    // elektro = player.elektro;
+    // return *this;
  //}
 
 // overloading == operator
@@ -183,21 +274,21 @@ bool Player::HasElektro(int elektro)
 
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
-	string separator = "\n\n=========================================================================================\n\n";
-	outs << separator << player.name + " has the following items: \n"
-		<< "\t" << player.elektro << " Elektros \n"
-		<< "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
-		<< "He owns the following power plants: ";
-	//	<< player.myPowerPlants[0]
+    string separator = "\n\n=========================================================================================\n\n";
+    outs << separator << player.name + " has the following items: \n"
+        << "\t" << player.elektro << " Elektros \n"
+        << "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+        << "He owns the following power plants: ";
+    //    << player.myPowerPlants[0]
 
-		for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
-			outs << **p << ' ';
-			outs << endl; 
-			outs << "And owns the following cities: ";
-		string cities;
-		for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)
-			outs << *c << ' ';
-			outs << endl;
-	return outs;
+        for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
+            outs << **p << ' ';
+            outs << endl; 
+            outs << "And owns the following cities: ";
+        string cities;
+        for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)
+            outs << *c << ' ';
+            outs << endl;
+    return outs;
 }
 

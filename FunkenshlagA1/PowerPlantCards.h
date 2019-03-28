@@ -38,7 +38,6 @@ public:
 	PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse);
 	~PowerPlantCards();
 
-
 	// setters
 	void setCardValue(int cardValue);
 	void setResourceType(Type resourceType);
