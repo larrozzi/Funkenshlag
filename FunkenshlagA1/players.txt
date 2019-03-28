@@ -116,3 +116,123 @@ SummaryCard Information:
 	-In phase 1 and 2: Place highest power plant under the stack. 
 	-In phase 3: Remove lowest power plant from the game. 
 	-Restock raw materials.
+
+
+=========================================================================================
+
+YAS has the following items: 
+	47 Elektros 
+	22 3 colored Houses.
+He owns the following power plants: Card Value: 3		 Number of Resources: 2		 Max Resource Capacity: 4		 Power Number of Houses: 1		 Type of Resources: OIL 
+And owns the following cities: 
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.
+
+
+=========================================================================================
+
+a has the following items: 
+	47 Elektros 
+	22 6 colored Houses.
+He owns the following power plants: Card Value: 3		 Number of Resources: 2		 Max Resource Capacity: 4		 Power Number of Houses: 1		 Type of Resources: OIL 
+And owns the following cities: 
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.
+
+
+=========================================================================================
+
+hanna has the following items: 
+	46 Elektros 
+	22 6 colored Houses.
+He owns the following power plants: Card Value: 4		 Number of Resources: 2		 Max Resource Capacity: 4		 Power Number of Houses: 1		 Type of Resources: COAL 
+And owns the following cities: 
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.
+
+
+=========================================================================================
+
+YASS has the following items: 
+	46 Elektros 
+	22 6 colored Houses.
+He owns the following power plants: Card Value: 4		 Number of Resources: 2		 Max Resource Capacity: 4		 Power Number of Houses: 1		 Type of Resources: COAL 
+And owns the following cities: 
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.
+
+
+=========================================================================================
+
+hann has the following items: 
+	46 Elektros 
+	22 6 colored Houses.
+He owns the following power plants: Card Value: 4		 Number of Resources: 2		 Max Resource Capacity: 4		 Power Number of Houses: 1		 Type of Resources: COAL 
+And owns the following cities: 
+SummaryCard Information: 
+1. DETERMINE TURN ORDER 
+2. BUY POWER PLANT 
+	 The first player begins. 
+	 Per round, each may buy only one power plant. 
+3. BUY RAW MATERIALS 
+	 The last player begins. 
+	 Maximum double input per power plant. 
+4. BUILDING 
+	 The last player begins. 
+5. BUREAUCRACY 
+	-Get money. 
+	-In phase 1 and 2: Place highest power plant under the stack. 
+	-In phase 3: Remove lowest power plant from the game. 
+	-Restock raw materials.

@@ -19,7 +19,7 @@
 #include "PPmarket.h"
 
 using namespace std;
-using std::cout;
+//using std::cout;
 
 static HouseColor convert(const std::string& clr)
 {
@@ -43,21 +43,17 @@ int main()
 	int NumofPlayers;
 
 	int turn = 0;
-//	int fullturn; // after any player buying a pp
-	int phase = 1;
 	int PPindex;
 	int playerbid;
 	bool initialbid;
-	int highestBid=3;
-	bool alreadyPicked = false;
+	int highestBid;
+	bool alreadyPickedClr = false;
 	string BidOrPass;
 	vector<shared_ptr<Player>> players;
 	shared_ptr<Player> currentPlayer;
 	shared_ptr<Player>highestbidder;
 	vector<shared_ptr<Player>> InnerplayerOrder;
 	vector<shared_ptr<Player>> OuterplayerOrder;
-	std::map<Player*, bool> canBid;
-	std::map<Player*, bool> canBuy;
 
 
 	cout << "Hello and Welcome to Powergrid\n\n";
@@ -84,28 +80,30 @@ int main()
 
 		for (int i = 0; i < players.size(); i++) {
 			if (players.at(i)->getColor() == clr) {
-				alreadyPicked = true;
+				alreadyPickedClr = true;
 			}
 		}
-		while ((color != "RED" && color != "BLUE" && color != "GREEN" && color != "YELLOW" && color != "BLACK" && color != "PINK")|| alreadyPicked) {
+		while ((color != "RED" && color != "BLUE" && color != "GREEN" && color != "YELLOW" && color != "BLACK" && color != "PINK")|| alreadyPickedClr) {
 			cout << "Please pick a valid color (either you entered an invalid color or the color was already picked by another player)." << endl;
 			cout << "Please pick a HOUSE COLOR among the following: RED, BLUE, GREEN, YELLOW, BLACK, PINK.\n";
 			cout << "> ";
 			cin >> color;
+            clr = convert(color);
+            for (int i = 0; i < players.size(); i++) {
+                if (players.at(i)->getColor() == clr) {
+                    alreadyPickedClr = true;
+                }
+                else
+                    alreadyPickedClr = false;
+            }
 		}
-		clr = convert(color);
 
 			///initializing a Player
-	//	Player* PL = new Player(name, 50, clr);
-	//	players.push_back(PL);
 		players.push_back(std::make_shared<Player>(name, 50, clr));
 			/// taking 22 house items
-		//PL->grabhouses();
 		players.at(i)->grabhouses();
-
 			/// taking an overview card
 		cout << overviewCard;
-
 
 		/*	 Owning a city 
 		cout << "Please enter the city you'd like to build a house in \n";
@@ -125,12 +123,6 @@ int main()
 	for ( int i=0; i<42; ++i)
 	PPlantsSptr.push_back(std::make_shared<PowerPlantCards>(Pplants[i])); //the powerplant market is now linked to the created pplants
 
-	//shared_ptr<PowerPlantCards> sharedptr(new PowerPlantCards); //same as next two lines ?
-	/*PowerPlantCards* pp = new PowerPlantCards;  each pp inside the Pplants
-	std::vector<std::shared_ptr<PowerPlantCards>> PPlantsSptr;
-	PPlantsSptr.emplace_back(pp);
-	*/
-
 	//fill a vector of pointers to the powerplants created already
 	ppmarket->SetMPlants(PPlantsSptr);
 
@@ -143,6 +135,13 @@ int main()
 
 	cout << "Phase I" << endl;
 	cout << "Random Player order on first Auction as follows:" << endl;
+    
+//    DeterminePlayerOrder(bool initialOrder){
+//        if (initialOrder){
+//
+//        }
+//        else
+//    }
 
 		/// random Player Order before first Auction
 	vector<int> rvec(NumofPlayers);
@@ -167,17 +166,19 @@ int main()
 	while (OuterplayerOrder.size()>1){ //  rounds necessary for each player to win a powerplant
 		initialbid = true;
 		int turnNextPlayer = turn + 1;
+        
+        //next line generates link ***********error cuz of getCard  to avoid player has manually put in at least card value
+        
+        highestBid = ppmarket->GetvisiblePPlants().at(0)->getCardValue(); // bid starts at PPcard value Value
+        
 		InnerplayerOrder = OuterplayerOrder;
 		cout << "----------------------------------------------------------------------------" << endl;
 		cout << "New round of auction." << endl;
 
-		//while (playerOrder[turnNextPlayer] != currentPlayer){ //
 		while (InnerplayerOrder.size()>1) { // number of turns to purchase one pp, end loop after only one player is remaining
 			// Set current player by order
-				
 				currentPlayer = InnerplayerOrder[turn]; //player order inside a round
 				cout << InnerplayerOrder.size()<< " players are still in this round of auction."<<endl;
-			//	cout << playerOrder[turn]->getName() << endl;
 
 				//current player auction
 			cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro()<< endl;
@@ -200,9 +201,7 @@ int main()
 				cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid." << endl;
 				cout << "> ";
 				cin >> PPindex >> playerbid;
-				//next line generates link ***********error cuz of getCard  to avoid player has manually put in at least card value
-				//highestBid = ppmarket->GetvisiblePPlants().at(PPindex)->getCardValue(); // bid starts at PPcard value Value 
-
+				
 				if (playerbid >= highestBid) {
 					if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
 						highestbidder = currentPlayer;
@@ -217,7 +216,6 @@ int main()
 					turn--;
 					turnNextPlayer--;
 				}
-
 			}
 			else if (BidOrPass == "BID") {
 				cout << "Please enter your bid" << endl;
@@ -230,11 +228,12 @@ int main()
 						cout << "The highest bid is now " << highestBid << endl;
 					}
 				}
-				else
-					cout << "Your bid is not high enough to purchase this powerplant." << endl;
+                else{
+                    cout << "Your bid is not high enough to purchase this powerplant." << endl;
 					cout << "Please try again" << endl;
 					turn--;
-					turnNextPlayer--;
+                    turnNextPlayer--;
+                    }
 			}
 			//next turn
 			turn = (turn + 1) % InnerplayerOrder.size();
@@ -551,8 +550,8 @@ int main()
 ////    // Priority: 2 - Highest power plant
 ////    if (p1->getHighestPowerPlant() > p2->getHighestPowerPlant())
 ////        return true;
-////
-////    return false;
-////}
 //
+//    return false;
+//}
+
 ////use set to put players in maybe
