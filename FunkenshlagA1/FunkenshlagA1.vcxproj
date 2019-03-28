@@ -137,6 +137,7 @@
     <ClCompile Include="ResourceMarket.cpp" />
     <ClCompile Include="Step3Card.cpp" />
     <ClCompile Include="SummaryCards.cpp" />
+    <ClCompile Include="TempDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />

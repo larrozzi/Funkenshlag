@@ -75,21 +75,21 @@ map<string, shared_ptr<CityNode>> const & GameMap::getCities() const { return my
 // shortest path between two cities
 int GameMap::getShortestPath(string initCity, string destCity)
 {
-    return 10;
+    return 10; // for now
 }
 // cost of shortest path between player city and destination city
 int GameMap::getShortestPath(shared_ptr<Player> player, string destCity)
 {
     // no houses
-    if (player->grabhouses().size() == 0)
+    if (player->getOwnedHouses().size() == 0)
         return 0;
     
     // default: from initial house to destination
-    int minCost = getShortestPath(player->grabhouses()[0].getCity()->getName(), destCity);
+    int minCost = getShortestPath(player->getOwnedHouses()[0].getCity()->getName(), destCity);
     
     // loop over the player houses
     for (int i = 1; i < player->grabhouses().size(); i++) {
-        int pathCost = getShortestPath(player->grabhouses()[0].getCity()->getName(), destCity);
+        int pathCost = getShortestPath(player->getOwnedHouses()[0].getCity()->getName(), destCity);
         if (pathCost > minCost) {
             minCost = pathCost;
         }

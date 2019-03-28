@@ -25,7 +25,6 @@ private:
 	int numbResource; // how many number of resources the card needs
 	int capacity;   // how many resources can be taken => 2* #resource
 	int powerHouse; // how many houses can be powered
-	int currentResources;
 
 	
 
@@ -39,7 +38,6 @@ public:
 	PowerPlantCards(int cardValue, Type resourceType, int numbResource, int capacity, int powerHouse);
 	~PowerPlantCards();
 
-
 	// setters
 	void setCardValue(int cardValue);
 	void setResourceType(Type resourceType);
@@ -49,10 +47,10 @@ public:
 
 	// getters
     int getCardValue() const;
-	inline Type getResourceType() const;
-	inline int getNumbResource() const;
-	inline int getCapacity() const;
-	inline int getPowerHouse() const;
+	Type getResourceType() const;
+	int getNumbResource() const;
+	int getCapacity() const;
+	int getPowerHouse() const;
 
 	// methods declaration
 	static vector<PowerPlantCards>createPowerPlantCards();
