@@ -43,5 +43,7 @@ public:
 
 	std::string printType() const;
 	friend std::ostream& operator<<(std::ostream& outs, const Resource& resource);
-
 };
+
+std::ostream& operator<<(std::ostream& outs, const Type& resource);
+Type stringToType(std::string s);

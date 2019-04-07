@@ -57,6 +57,8 @@ public:
 	static void printPPCards(vector<PowerPlantCards>vector);
 
 	// overloading the output operator
-	friend std::ostream& operator<<(std::ostream& outs, const Type& resource);
+	
 	friend std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card);
 };
+
+

@@ -55,17 +55,19 @@ ResourceMarket::ResourceMarket(){
 bool ResourceMarket::bought(Type type, int amount) {
 	
 	int removed = 0;
-
 	if (type == COAL) {
 		if (amount > numOfCoal)
 			return false;
 		for (int i = 0; i < MARKET_SIZE; i++) {
 			if (removed == amount) {
+				numOfCoal -= amount;
 				return true;
 			}
 			for (int j = 0; j < 3; j++) {
-				if (removed == amount)
+				if (removed == amount) {
+					numOfCoal -= amount;
 					return true;
+				}
 				if (slots[i].getSlotCoal()[j].getType() != COAL)
 					continue;
 				if (currentEmptyCoalSlot != i)
@@ -74,7 +76,6 @@ bool ResourceMarket::bought(Type type, int amount) {
 				removed++;
 			}
 		}
-		numOfCoal -= amount;
 		return true;
 	}
 	else if (type == OIL) {
@@ -82,11 +83,14 @@ bool ResourceMarket::bought(Type type, int amount) {
 			return false;
 		for (int i = 0; i < MARKET_SIZE; i++) {
 			if (removed == amount) {
+				numOfOil -= amount;
 				break;
 			}
 			for (int j = 0; j < 3; j++) {
-				if (removed == amount)
+				if (removed == amount) {
+					numOfOil -= amount;
 					break;
+				}
 				if (slots[i].getSlotOil()[j].getType() != OIL)
 					continue;
 				if (currentEmptyOilSlot != i)
@@ -95,7 +99,6 @@ bool ResourceMarket::bought(Type type, int amount) {
 				removed++;
 			}
 		}
-		numOfOil -= amount;
 		return true;
 	}
 	else if (type == GARBAGE) {
@@ -103,11 +106,14 @@ bool ResourceMarket::bought(Type type, int amount) {
 			return false;
 		for (int i = 0; i < MARKET_SIZE; i++) {
 			if (removed == amount) {
+				numOfGarbage -= amount;
 				break;
 			}
 			for (int j = 0; j < 3; j++) {
-				if (removed == amount)
+				if (removed == amount) {
+					numOfGarbage -= amount;
 					break;
+				}
 				if (slots[i].getSlotGarbage()[j].getType() != GARBAGE)
 					continue;
 				if (currentEmptyGarbageSlot != i)
@@ -116,7 +122,6 @@ bool ResourceMarket::bought(Type type, int amount) {
 				removed++;
 			}
 		}
-		numOfGarbage -= amount;
 		return true;
 
 	}
@@ -125,11 +130,14 @@ bool ResourceMarket::bought(Type type, int amount) {
 			return false;
 		for (int i = 0; i < MARKET_SIZE; i++) {
 			if (removed == amount) {
+				numOfUranium -= amount;
 				break;
 			}
 			for (int j = 0; j < 1; j++) {
-				if (removed == amount)
+				if (removed == amount) {
+					numOfUranium -= amount;
 					break;
+				}
 				if (slots[i].getSlotUranium()[j].getType() != URANIUM)
 					continue;
 				if (currentEmptyUraniumSlot != i)
@@ -138,7 +146,6 @@ bool ResourceMarket::bought(Type type, int amount) {
 				removed++;
 			}
 		}
-		numOfUranium -= amount;
 		return true;
 	}
     return true;
@@ -463,6 +470,17 @@ std::ostream& operator<<(std::ostream& out, const ResourceMarket& market) {
 		}
 		out << std::endl;
 	}
+	
+	out << "Market Totals:" << std::endl;
+	out << "Coal: " << market.getNumOfCoal() << std::endl;
+	out << "Oil: " << market.getNumOfOil() << std::endl;
+	out << "Garbage: " << market.getNumOfGarbage() << std::endl;
+	out << "Uranium: " << market.getNumOfUranium() << std::endl << std::endl;
+	out << "Resources left to fill the Market:" << std::endl;
+	out << "Coal: " << Resource::getCoalInStock() << std::endl;
+	out << "Oil: " << Resource::getOilInStock() << std::endl;
+	out << "Garbage: " << Resource::getGarbageInStock() << std::endl;
+	out << "Uranium: " << Resource::getUraniumInStock() << std::endl;
 	return out;
 }
 

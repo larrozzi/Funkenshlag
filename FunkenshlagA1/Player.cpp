@@ -140,18 +140,35 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
 
 bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
 	int price = 0;
+	int resourceCounter = 0;
 	switch (type) {
 	case COAL:
 		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
 			for (int j = 0; j < 3; j++) {
 				if (market->getSlots()[i].getSlotCoal()[j].getType() != NONE) {
-					price = market->getSlots()[i].getSlotPrice();
+					if (resourceCounter != amount) {
+						price += market->getSlots()[i].getSlotPrice();
+						resourceCounter++;
+					}	
+					else
+						break;
 				}
 			}
+			if (resourceCounter == amount)
+				break;
 		}
-		if (coalCapacity - coalHeld != 0) {
-			if(market->bought(type,price))
+		if (elektro < price) {
+			cout << name << " does not have enough elektro!" << std::endl;
+			return false;
+		}
+		if ((coalCapacity - coalHeld) > amount) {
+			if (market->bought(type, amount)) {
+				elektro -= price;
 				return true;
+			}
+		}
+		else {
+			cout << name << " does not have enough room." << endl;
 		}
 		return false;
 	case OIL:
@@ -163,7 +180,7 @@ bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
 			}
 		}
 		if (oilCapacity - oilHeld != 0) {
-			if (market->bought(type, price))
+			if (market->bought(type, amount))
 				return true;
 		}
 		return false;
@@ -176,7 +193,7 @@ bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
 			}
 		}
 		if (garbageCapacity - garbageHeld != 0) {
-			if (market->bought(type, price))
+			if (market->bought(type, amount	))
 				return true;
 		}
 		return false;
@@ -189,7 +206,7 @@ bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
 			}
 		}
 		if (uraniumCapacity - uraniumHeld != 0) {
-			if (market->bought(type, price))
+			if (market->bought(type, amount))
 				return true;
 		}
 		return false;
@@ -275,11 +292,14 @@ bool Player::HasElektro(int elektro)
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
     string separator = "\n\n=========================================================================================\n\n";
-    outs << separator << player.name + " has the following items: \n"
-        << "\t" << player.elektro << " Elektros \n"
-        << "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+	outs << separator << player.name + " has the following items: \n"
+		<< "\t" << player.elektro << " Elektros \n"
+		<< "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+		<< "\t" << "Coal: " << player.coalHeld << std::endl
+		<< "\t" << "Oil: " << player.oilHeld << std::endl
+		<< "\t" << "Garbage: " << player.garbageHeld << std::endl
+		<< "\t" << "Uranium: " << player.uraniumHeld << std::endl
         << "He owns the following power plants: ";
-    //    << player.myPowerPlants[0]
 
         for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
             outs << **p << ' ';
