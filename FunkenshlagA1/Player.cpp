@@ -339,8 +339,9 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 		uraniumHeld += amount;
 		break;
 	default:
-		return;
+		break;
 	}
+	cin.ignore();
 }
 
  bool Player::OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant) {

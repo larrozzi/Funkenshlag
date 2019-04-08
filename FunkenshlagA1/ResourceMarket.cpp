@@ -137,6 +137,7 @@ void ResourceMarket::bought(Type type, int amount) {
 				removed++;
 			}
 		}
+		numOfUranium -= amount;
 		return;
 	}
     return;
@@ -196,7 +197,7 @@ int ResourceMarket::determinePriceOfPurchase(int amount, Type type) {
 		break;
 	case URANIUM:
 		for (int i = 0; i < this->getMARKET_SIZE(); i++) {
-			for (int j = 0; j < 3; j++) {
+			for (int j = 0; j < 1; j++) {
 				if (this->getSlots()[i].getSlotUranium()[j].getType() != NONE) {
 					if (resourceCounter != amount) {
 						price += this->getSlots()[i].getSlotPrice();
