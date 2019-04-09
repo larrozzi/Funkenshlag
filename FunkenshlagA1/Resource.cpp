@@ -94,4 +94,55 @@ std::ostream& operator<<(std::ostream& outs, const Resource& resource)
 
 	return outs;
 }
+// overloading output operator for the enum Type class
+std::ostream& operator<<(std::ostream& outs, const Type& resource)
+{
+	const char* s = 0;
+#define PROCESS_VAL(p) case(p): s = #p; break;
+	switch (resource) {
+		PROCESS_VAL(COAL);
+		PROCESS_VAL(OIL);
+		PROCESS_VAL(HYBRID);
+		PROCESS_VAL(GARBAGE);
+		PROCESS_VAL(URANIUM);
+		PROCESS_VAL(ECOFUSION);
+		PROCESS_VAL(NONE);
+	}
+#undef PROCESS_VAL
+	return outs << s;
+}
+
+
+/*
+ // OR
+ std::ostream& operator<<(std::ostream& outs, const Type& resource)
+ {
+ switch(resource) {
+ case COAL       : outs << "COAL";       break;
+ case OIL        : outs << "OIL";        break;
+ case HYBRID     : outs << "HYBRID";     break;
+ case GARBAGE    : outs << "GARBAGE";    break;
+ case URANIUM    : outs << "URANIUM";    break;
+ case ECOFUSION  : outs << "ECOFUSION";  break;
+ case NONE       : outs << "NONE";       break;
+ }
+ return outs;
+ }
+ */
+
+Type stringToType(std::string s) {
+	if (s == "COAL") {
+		return COAL;
+	}
+	else if (s == "OIL") {
+		return OIL;
+	}
+	else if (s == "GARBAGE") {
+		return GARBAGE;
+	}
+	else if (s == "URANIUM") {
+		return URANIUM;
+	}
+	return NONE;
+}
 

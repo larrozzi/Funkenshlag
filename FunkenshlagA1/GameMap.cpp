@@ -9,6 +9,8 @@
 using namespace std;
 
 vector<CityNode> activeMap(28);
+bool first = true;
+int input = 0;
 // constructor
 GameMap::GameMap() {}
 GameMap::GameMap(vector<CityNode> m) : gameMap(m) {}
@@ -28,7 +30,8 @@ void GameMap::setMap(vector<CityNode> cities)
 }
 void GameMap::chooseRegion()
 {
-	int input = 0;
+	
+
 	do {
 
 		cout << "Please choose your region" << endl;
@@ -37,10 +40,20 @@ void GameMap::chooseRegion()
 
 		if (gameMap.at(input * 7).getUsed() == true)
 		{
-			cout << "Region already selected "<<endl;
+			cout << "Region already selected " << endl;
 		}
-	} while (gameMap.at(input * 7).getUsed() == true);
-
+		if (first == false && gameMap.at((input * 7) + 7).getUsed() == false && gameMap.at((input * 7) - 7).getUsed() == false)
+		{
+			cout << "You must choose an adjacent region" << endl;
+		}
+		
+		else
+		{
+			cout << "Please enter a number from 1 to 7" << endl;
+		}
+		
+	} while (gameMap.at(input * 7).getUsed() == true || (input < 0) || (input > 7));
+	first = false;
 
 	for (int i = (input * 7); i < ((input*7) + 7); i++)
 	{
