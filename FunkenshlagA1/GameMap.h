@@ -10,12 +10,12 @@
 #include <memory>
 #include <vector>
 #include "Edges.h"
-
+#include "Subject.h"
 
 using namespace std;
 
 
-class GameMap
+class GameMap : public Subject
 {
 private:
 

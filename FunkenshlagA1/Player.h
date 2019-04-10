@@ -15,12 +15,13 @@
 #include <iostream>
 #include <fstream>
 #include "ResourceMarket.h"
+#include "Subject.h"
 
 using std::string;
 using std::vector;
 using std::shared_ptr;
 
-class Player
+class Player : public Subject
 {
 private:
     string name;

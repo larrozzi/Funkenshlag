@@ -127,6 +127,7 @@
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Part3_Driver.cpp" />
     <ClCompile Include="Part5_Driver.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourceMarket.cpp" />
     <ClCompile Include="Step3Card.cpp" />
+    <ClCompile Include="Subject.cpp" />
     <ClCompile Include="SummaryCards.cpp" />
     <ClCompile Include="TempDriver.cpp" />
   </ItemGroup>
@@ -147,6 +149,7 @@
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="House.h" />
     <ClInclude Include="MapLoader.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PowerPlantCards.h" />
     <ClInclude Include="PPmarket.h" />
@@ -155,6 +158,7 @@
     <ClInclude Include="ResourceMarket.h" />
     <ClInclude Include="Slot.h" />
     <ClInclude Include="Step3Card.h" />
+    <ClInclude Include="Subject.h" />
     <ClInclude Include="SummaryCards.h" />
   </ItemGroup>
   <ItemGroup>

@@ -35,8 +35,12 @@ int main()
      vector<shared_ptr<Player>> players;
     
     MapLoader mapLoader = MapLoader();
-    
-    GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
+	string input;
+	cout << "select map" << endl;
+	cin >> input;
+	GameMap gameMap = GameMap(mapLoader.readMap(input));
+
+   // GameMap gameMap = GameMap(mapLoader.readMap("map.txt"));
 
     cout << "Hello and Welcome to Powergrid\n\n";
     gameMap.showMap();
