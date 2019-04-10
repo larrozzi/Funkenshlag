@@ -6,9 +6,11 @@
 //  Copyright © 2019 Adelekan Faruq Aliu. All rights reserved.
 //
 
+#include <iostream>
 #include <algorithm>
 #include <memory>
 #include "Building.h"
+
 using std::cout;
 using std::cin;
 using std::cerr;
@@ -49,15 +51,16 @@ void Building::NewGame(MapLoader map, int numbPlayer)
 {
     cout << "Map: " << map.getFileName() << ". Number of players: " << numbPlayer << " players" << endl;
     
-    string pName;
-    string color;
-    HouseColor clr;
+    string pName = "";
+    string color = "";
+    HouseColor clr = NO_COLOR;
 	bool alreadyPicked = false;
     
     for (int i = 0; i < numbPlayer; i++)
     {
         cout << "Please Enter Player Name\n> ";
-        cin >> pName;
+        cin.ignore();
+        getline(cin, pName);
 
         cout << "Please Enter House Color: RED, BLUE, GREEN, YELLOW, BLACK, PINK \nColor > ";
         cin >> color;
@@ -152,19 +155,24 @@ void Building::BeginPhase4()
 void Building::Phase4Intro()
 {
 	cout << "\nPlayer " << currentPlayer->getName() << " " << currentPlayer->getElektro() << " Elektros" << endl;
-	cout << "Would you like to Build or Pass?" << endl;
-	cin >> BuildOrPass;
+	cout << "Would you like to Build? (Y, N)" << endl;
+	getline(cin, BuildOrPass);
+    
+    while (BuildOrPass != "Y" && BuildOrPass != "N") {
+        cout << "Please enter a valid input (Y or N): ";
+        getline(cin, BuildOrPass);
+    }
 
-	if (BuildOrPass == "Pass")
+	if (BuildOrPass == "N")
 	{
 		pass = true;
 		return Phase4BuyingCities();
 	}
 
-	if (BuildOrPass == "Build")
+	if (BuildOrPass == "Y")
 	{
 		cout << "Enter a city you would like to build a house in: " << endl;
-		cin >> city;
+        getline(cin, city);
 		currentPlayer->readFile(); // read map file
 		currentPlayer->buildinCity(city); // build in city
 		pickedCity.reset();
@@ -200,8 +208,7 @@ void Building::Phase4BuyingCities()
     // does player have enough Elektros?
     if (!currentPlayer->HasElektro(connectionCost))
     {
-		cerr << "Not enough Elektros to buy " << pickedCity->getName()
-			 << " for a build cost of " << connectionCost << "Elektros";
+		cerr << "Not enough Elektros to buy " << pickedCity->getName() << " for a build cost of " << connectionCost << "Elektros";
 		return Phase4Intro();
 	} 
 
@@ -210,19 +217,22 @@ void Building::Phase4BuyingCities()
 	newHouse->setPrice(connectionCost); // set the connectionCost has price of the house
 
 	// does player have enough Elektros
-	if (!currentPlayer->HasElektro(newHouse->getPrice()))
+    //if (!currentPlayer->HasElektro(newHouse->getPrice()))
+    if (!currentPlayer->HasElektro(connectionCost))
 	{
 		cerr << "Error!, Not enough Elektros to buy this house\n";
 		return Phase4Intro();
 	}
-	// player has Elektros
-	currentPlayer->buyHouse(newHouse);
-	cout << "Succesfull in Buying the City" << endl;
-	cout << currentPlayer->getName() + " has succesfully bought a house at "
-	+ pickedCity->getName() + " for a total cost of " << connectionCost << " Elektros" << endl;
+    else
+    {
+        // player has enough Elektros
+        currentPlayer->buyHouse(newHouse);
+        cout << "Succesfull in Buying the City" << endl;
+        cout << currentPlayer->getName() + " has succesfully bought a house at " + pickedCity->getName() + " for a total cost of " << connectionCost << " Elektros" << endl;
 
-	// buy another house
-	return Phase4Intro();
+        // buy another house
+        return Phase4Intro();
+    }
 }
 
 void Building::EndPhase4()
@@ -231,7 +241,7 @@ void Building::EndPhase4()
 	cout << "------------------------------------------" << endl;
 
 	// if PowerPlants in the market have a price <= the highest number of cities owned by a player, replace
-	int maximumHouse = 0;
+	unsigned long maximumHouse = 0;
 	for (shared_ptr<Player> p : players) {
 		if (p->getOwnedHouses().size() > maximumHouse)
 			maximumHouse = p->getOwnedHouses().size();

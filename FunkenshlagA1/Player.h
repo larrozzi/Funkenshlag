@@ -49,7 +49,7 @@ public:
     ~Player();
 
 
-	bool buyResource(Type, int, ResourceMarket*);
+	
     // setters
     void setName(string name);
     void setElektro(int elektro);
@@ -87,6 +87,8 @@ public:
 
     //buypowerplant
     bool buyPowerPlant(PPmarket&, int ,int);
+
+	void buyResource(Type,ResourceMarket*);
 
     bool OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant);
     

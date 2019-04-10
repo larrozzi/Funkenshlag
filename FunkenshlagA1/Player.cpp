@@ -138,64 +138,210 @@ bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
     return false;
 }
 
-bool Player::buyResource(Type type, int amount, ResourceMarket* market) {
+void Player::buyResource(Type type, ResourceMarket* market) {
 	int price = 0;
+	int amount = 0;
+	int resourceInMarket = 0;
 	switch (type) {
 	case COAL:
-		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
-			for (int j = 0; j < 3; j++) {
-				if (market->getSlots()[i].getSlotCoal()[j].getType() != NONE) {
-					price = market->getSlots()[i].getSlotPrice();
-				}
+		resourceInMarket = market->getNumOfCoal();
+		if (resourceInMarket == 0) {
+			cout << "The market does not have any of that resource." << endl;
+			break;
+		}
+		cout << "How much coal would you like to buy?: ";
+		cin >> amount;
+		
+		while (resourceInMarket < amount) {
+			cout << "The market does not have that much coal." << endl;
+			cout << "How much coal would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
 			}
 		}
-		if (coalCapacity - coalHeld != 0) {
-			if(market->bought(type,price))
-				return true;
+		if (amount == -1) {
+			break;
 		}
-		return false;
+
+		//Checks if the player has enough room to store the resourses they want to buy
+		while(coalCapacity - coalHeld < amount) {
+			cout << name << " does not have enough room." << endl;
+			cout << "How much coal would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
+			}
+		}
+		if (amount == -1) {
+			break;
+		}
+
+		//Determines the price of buying the asked number of resources
+		price = market->determinePriceOfPurchase(amount, COAL);
+
+		//Checks if the player has enough elektro
+		while(elektro < price) {
+			cout << name << " does not have enough elektro!" << std::endl;
+			cout << "How much coal would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
+			}
+			price = market->determinePriceOfPurchase(amount, COAL);
+		}
+		if (amount == -1) {
+			break;
+		}
+
+		market->bought(type, amount);
+		elektro -= price;
+		coalHeld += amount;
+		break;
 	case OIL:
-		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
-			for (int j = 0; j < 3; j++) {
-				if (market->getSlots()[i].getSlotOil()[j].getType() != NONE) {
-					price = market->getSlots()[i].getSlotPrice();
-				}
+		resourceInMarket = market->getNumOfOil();
+		if (resourceInMarket == 0) {
+			cout << "The market does not have any of that resource." << endl;
+			break;
+		}
+		cout << "How much oil would you like to buy?: ";
+		cin >> amount;
+
+		while (resourceInMarket < amount) {
+			cout << "The market does not have that much oil." << endl;
+			cout << "How much oil would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
 			}
 		}
-		if (oilCapacity - oilHeld != 0) {
-			if (market->bought(type, price))
-				return true;
+		if (amount == -1) {
+			break;
 		}
-		return false;
+
+		//Checks if the player has enough room to store the resourses they want to buy
+		while (oilCapacity - oilHeld < amount) {
+			cout << name << " does not have enough room." << endl;
+			cout << "How much oil would you like to buy?: ";
+			cin >> amount;
+		}
+		//Determines the price of buying the asked number of resources
+		price = market->determinePriceOfPurchase(amount, OIL);
+
+		//Checks if the player has enough elektro
+		while (elektro < price) {
+			cout << name << " does not have enough elektro!" << std::endl;
+			cout << "How much oil would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
+			}
+			price = market->determinePriceOfPurchase(amount,OIL);
+		}
+		if (amount == -1) {
+			break;
+		}
+		market->bought(type, amount);
+		elektro -= price;
+		oilHeld += amount;
+		break;
 	case GARBAGE:
-		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
-			for (int j = 0; j < 3; j++) {
-				if (market->getSlots()[i].getSlotGarbage()[j].getType() != NONE) {
-					price = market->getSlots()[i].getSlotPrice();
-				}
+		resourceInMarket = market->getNumOfGarbage();
+		if (resourceInMarket == 0) {
+			cout << "The market does not have any of that resource." << endl;
+			break;
+		}
+		cout << "How much garbage would you like to buy?: ";
+		cin >> amount;
+
+		while (resourceInMarket < amount) {
+			cout << "The market does not have that much garbage." << endl;
+			cout << "How much garbage would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
 			}
 		}
-		if (garbageCapacity - garbageHeld != 0) {
-			if (market->bought(type, price))
-				return true;
+		if (amount == -1) {
+			break;
 		}
-		return false;
+		//Checks if the player has enough room to store the resourses they want to buy
+		while (garbageCapacity - garbageHeld < amount) {
+			cout << name << " does not have enough room." << endl;
+			cout << "How much garbage would you like to buy?: ";
+			cin >> amount;
+		}
+		//Determines the price of buying the asked number of resources
+		price = market->determinePriceOfPurchase(amount, GARBAGE);
+
+		//Checks if the player has enough elektro
+		while (elektro < price) {
+			cout << name << " does not have enough elektro!" << std::endl;
+			cout << "How much garbage would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
+			}
+			price = market->determinePriceOfPurchase(amount, GARBAGE);
+		}
+		if (amount == -1) {
+			break;
+		}
+
+		market->bought(type, amount);
+		elektro -= price;
+		garbageHeld += amount;
+		break;
 	case URANIUM:
-		for (int i = 0; i < market->getMARKET_SIZE(); i++) {
-			for (int j = 0; j < 3; j++) {
-				if (market->getSlots()[i].getSlotUranium()[j].getType() != NONE) {
-					price = market->getSlots()[i].getSlotPrice();
-				}
+		resourceInMarket = market->getNumOfUranium();
+		if (resourceInMarket == 0) {
+			cout << "The market does not have any of that resource." << endl;
+			break;
+		}
+		cout << "How much uranium would you like to buy?: ";
+		cin >> amount;
+
+		while (resourceInMarket < amount) {
+			cout << "The market does not have that much uranium." << endl;
+			cout << "How much uranium would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
 			}
 		}
-		if (uraniumCapacity - uraniumHeld != 0) {
-			if (market->bought(type, price))
-				return true;
+		if (amount == -1) {
+			break;
 		}
-		return false;
+		//Checks if the player has enough room to store the resourses they want to buy
+		while (uraniumCapacity - uraniumHeld < amount) {
+			cout << name << " does not have enough room." << endl;
+			cout << "How much uranium would you like to buy?: ";
+			cin >> amount;
+		}
+		//Determines the price of buying the asked number of resources
+		price = market->determinePriceOfPurchase(amount, URANIUM);
+
+		//Checks if the player has enough elektro
+		while (elektro < price) {
+			cout << name << " does not have enough elektro!" << std::endl;
+			cout << "How much uranium would you like to buy?(Enter -1 to quit): ";
+			cin >> amount;
+			if (amount == -1) {
+				break;
+			}
+			price = market->determinePriceOfPurchase(amount, URANIUM);
+		}
+		if (amount == -1) {
+			break;
+		}
+		market->bought(type, amount);
+		elektro -= price;
+		uraniumHeld += amount;
+		break;
 	default:
-		return false;
+		break;
 	}
+	cin.ignore();
 }
 
  bool Player::OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant) {
@@ -275,11 +421,14 @@ bool Player::HasElektro(int elektro)
 // overloading output stream operator with cities
 std::ostream& operator<<(std::ostream& outs, const Player& player){
     string separator = "\n\n=========================================================================================\n\n";
-    outs << separator << player.name + " has the following items: \n"
-        << "\t" << player.elektro << " Elektros \n"
-        << "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+	outs << separator << player.name + " has the following items: \n"
+		<< "\t" << player.elektro << " Elektros \n"
+		<< "\t" << player.houses.size() << " " << player.color << " colored Houses.\n"
+		<< "\t" << "Coal: " << player.coalHeld << std::endl
+		<< "\t" << "Oil: " << player.oilHeld << std::endl
+		<< "\t" << "Garbage: " << player.garbageHeld << std::endl
+		<< "\t" << "Uranium: " << player.uraniumHeld << std::endl
         << "He owns the following power plants: ";
-    //    << player.myPowerPlants[0]
 
         for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
             outs << **p << ' ';

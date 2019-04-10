@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include "PowerPlantCards.h"
 
@@ -102,39 +103,7 @@ void PowerPlantCards::printPPCards(vector<PowerPlantCards>ppCards)
     }
 }
 
-// overloading output operator for the enum Type class
-std::ostream& operator<<(std::ostream& outs, const Type& resource)
-{
-    const char* s = 0;
-#define PROCESS_VAL(p) case(p): s = #p; break;
-    switch(resource) {
-            PROCESS_VAL(COAL);
-            PROCESS_VAL(OIL);
-            PROCESS_VAL(HYBRID);
-            PROCESS_VAL(GARBAGE);
-            PROCESS_VAL(URANIUM);
-            PROCESS_VAL(ECOFUSION);
-            PROCESS_VAL(NONE);
-    }
-#undef PROCESS_VAL
-    return outs << s;
-}
-/*
- // OR
- std::ostream& operator<<(std::ostream& outs, const Type& resource)
- {
- switch(resource) {
- case COAL       : outs << "COAL";       break;
- case OIL        : outs << "OIL";        break;
- case HYBRID     : outs << "HYBRID";     break;
- case GARBAGE    : outs << "GARBAGE";    break;
- case URANIUM    : outs << "URANIUM";    break;
- case ECOFUSION  : outs << "ECOFUSION";  break;
- case NONE       : outs << "NONE";       break;
- }
- return outs;
- }
- */
+
 
 // overloading output stream operator for PowerPlantCards
 std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card)
@@ -149,3 +118,4 @@ std::ostream& operator<<(std::ostream& outs, const PowerPlantCards& card)
     
     return outs;
 }
+
