@@ -15,6 +15,8 @@
 		2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827152242B2D50031F948 /* PPmarket.cpp */; };
 		2DC8272D224845130031F948 /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8272B224845130031F948 /* Building.cpp */; };
 		2DC8272F22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */; };
+		2DD09168225C5B3F00446F56 /* TempDriver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09167225C5B3F00446F56 /* TempDriver.cpp */; };
+		2DD0916A225C61A100446F56 /* A3_Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09169225C61A100446F56 /* A3_Part3_Driver.cpp */; };
 		2DF1AF9E224AE86E0075BE6F /* Edges.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1AF9B224AE86E0075BE6F /* Edges.cpp */; };
 		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
 		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
@@ -59,6 +61,9 @@
 		2DC8272B224845130031F948 /* Building.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
 		2DC8272C224845130031F948 /* Building.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
 		2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = A2_Part3_Phase4_Driver.cpp; sourceTree = "<group>"; };
+		2DD09167225C5B3F00446F56 /* TempDriver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TempDriver.cpp; sourceTree = "<group>"; };
+		2DD09169225C61A100446F56 /* A3_Part3_Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = A3_Part3_Driver.cpp; sourceTree = "<group>"; };
+		2DD0916B225E545700446F56 /* PlayerBehaviour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerBehaviour.h; sourceTree = "<group>"; };
 		2DF1AF9A224AE86E0075BE6F /* Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edges.h; sourceTree = "<group>"; };
 		2DF1AF9B224AE86E0075BE6F /* Edges.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edges.cpp; sourceTree = "<group>"; };
 		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -115,10 +120,14 @@
 		2D49C7BE22135C780001893D /* FunkenshlagA1 */ = {
 			isa = PBXGroup;
 			children = (
+				2DD09169225C61A100446F56 /* A3_Part3_Driver.cpp */,
+				2DD0916B225E545700446F56 /* PlayerBehaviour.h */,
+				2DFFEF78222F298B00025912 /* A2_Part1_Driver.cpp */,
 				2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */,
+				2DD09167225C5B3F00446F56 /* TempDriver.cpp */,
+				2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */,
 				2DC827152242B2D50031F948 /* PPmarket.cpp */,
 				2DC827142242B2D50031F948 /* PPmarket.h */,
-				2DFFEF78222F298B00025912 /* A2_Part1_Driver.cpp */,
 				2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */,
 				2DFFEF892230D96700025912 /* Part5_Driver.cpp */,
 				2DFFEF66222E2F9D00025912 /* House.h */,
@@ -152,7 +161,6 @@
 				2D49C7D82213688A0001893D /* Step3Card.cpp */,
 				2D49C7D62213688A0001893D /* PowerPlantCards.h */,
 				2D49C7D72213688A0001893D /* PowerPlantCards.cpp */,
-				2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */,
 				2DC8272C224845130031F948 /* Building.h */,
 				2DC8272B224845130031F948 /* Building.cpp */,
 			);
@@ -231,7 +239,9 @@
 				2DFFEF6F222E2F9D00025912 /* Player.cpp in Sources */,
 				2DF1AF9E224AE86E0075BE6F /* Edges.cpp in Sources */,
 				2D49C7D92213688B0001893D /* SummaryCards.cpp in Sources */,
+				2DD09168225C5B3F00446F56 /* TempDriver.cpp in Sources */,
 				2DC8272F22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp in Sources */,
+				2DD0916A225C61A100446F56 /* A3_Part3_Driver.cpp in Sources */,
 				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
 				2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */,
 				2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */,
