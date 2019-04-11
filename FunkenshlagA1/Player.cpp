@@ -171,10 +171,12 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 			cout << "How much coal would you like to buy?(Enter -1 to quit): ";
 			cin >> amount;
 			if (amount == -1) {
+				cin.ignore();
 				break;
 			}
 		}
 		if (amount == -1) {
+
 			break;
 		}
 
