@@ -441,3 +441,29 @@ std::ostream& operator<<(std::ostream& outs, const Player& player){
     return outs;
 }
 
+/** Strategy Design Pattern for PlayerBehaviour **/
+
+// Plugs in a specific Behaviour to be used
+Player::Player(PlayerBehaviour* iniBehaviour) {
+    playB = iniBehaviour;
+}
+
+Player::Player(PlayerBehaviour* iniBehaviour, string name, int elektro, HouseColor color) : name(name), elektro(elektro), color(color)
+{
+       coalCapacity = 0;
+       oilCapacity = 0;
+       garbageCapacity = 0;
+       uraniumCapacity = 0;
+       coalHeld = 0;
+       oilHeld = 0;
+       garbageHeld = 0;
+       uraniumHeld = 0;
+}
+
+void Player::setPlayerBehaviour(PlayerBehaviour* newBehaviour) {
+    playB = newBehaviour;
+}
+// This method executes a different depending on what behaviour was * inserted
+void Player::executePlayerBehaviour() {
+    playB->executeBehaviour();
+}

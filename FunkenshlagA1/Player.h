@@ -15,6 +15,7 @@
 #include <iostream>
 #include <fstream>
 #include "ResourceMarket.h"
+#include "PlayerBehaviour.h"
 
 using std::string;
 using std::vector;
@@ -23,6 +24,7 @@ using std::shared_ptr;
 class Player
 {
 private:
+    PlayerBehaviour* playB;
     string name;
     int elektro = 50;
     vector<House> houses;
@@ -107,5 +109,11 @@ public:
 	 
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
 	friend std::ostream& operator<<(std::ostream& outs, const Player& player);
+    
+    /** Strategy Design Pattern for PlayerBehaviour **/
+    Player(PlayerBehaviour* iniBehaviour);
+    Player(PlayerBehaviour* iniBehaviour, string name, int electro, HouseColor color);
+    void setPlayerBehaviour(PlayerBehaviour* newBehaviour);
+    void executePlayerBehaviour();
 };
 
