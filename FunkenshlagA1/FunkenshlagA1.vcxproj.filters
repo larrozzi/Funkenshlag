@@ -72,13 +72,16 @@
     <ClCompile Include="Edges.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="A2_Part2_Driver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TempDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="A2_Part1_Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3_Part4_Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PPMarketSingleton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Edges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PPMarketSingleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

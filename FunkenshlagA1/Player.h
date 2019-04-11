@@ -9,7 +9,8 @@
 // included dependencies
 #include "House.h"
 #include "PowerPlantCards.h"
-#include "PPmarket.h"
+#include "PPMarketSingleton.h"
+//#include "PPmarket.h"
 #include <memory>
 #include <vector>
 #include <iostream>
@@ -49,8 +50,6 @@ public:
     Player(string name, int electro, HouseColor color);
     ~Player();
 
-
-	
     // setters
     void setName(string name);
     void setElektro(int elektro);
@@ -70,7 +69,6 @@ public:
 	int getGarbageHeld() const;
 	int getUraniumHeld() const;
 
-
     // method to create the grab 22 houses from board
     vector<House>grabhouses();
 
@@ -87,13 +85,13 @@ public:
     void printOwnedCities();
 
     //buypowerplant
-    bool buyPowerPlant(PPmarket&, int ,int);
+    bool buyPowerPlant(PPMarketSingleton&, int ,int);
 
 	void buyResource(Type,ResourceMarket*);
 
     bool OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant);
     
-    bool Auction(const PPmarket& ppMarket, int position, int mybid);
+    bool Auction(const PPMarketSingleton& ppMarketSingleton, int position, int mybid);
 
     bool Pass();
     

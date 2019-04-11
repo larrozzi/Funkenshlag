@@ -8,7 +8,8 @@
 #include <string>
 #include "Player.h"
 #include "SummaryCards.h"
-#include "PPmarket.h"
+//#include "PPmarket.h"
+#include "PPMarketSingleton.h"
 
 
 using std::string;
@@ -125,13 +126,13 @@ void  Player::printOwnedCities( ){
         cout << *i << ' ';
 }
 
-bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
+bool Player::buyPowerPlant(PPMarketSingleton& ppMarketSingleton, int position, int price) {
     if (position <= 3 &&  elektro >= price) {
 		if (myPowerPlants.size() < 3) {
 			setElektro(getElektro() - price);
-			OwnPowerPlant(ppMarket.getPlant(position));
-			ppMarket.RemovePlant(position);
-			ppMarket.DrawPlant();
+			OwnPowerPlant(ppMarketSingleton.getPlant(position));
+			ppMarketSingleton.RemovePlant(position);
+			ppMarketSingleton.DrawPlant();
 			return true;
 		}
     }
@@ -370,7 +371,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
      return true;
  }
 
- bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
+ bool Player::Auction(const PPMarketSingleton& ppMarketSingleton, int position, int mybid) {
      if (position <= 3 && elektro >= mybid  ) {
 
          return true;
