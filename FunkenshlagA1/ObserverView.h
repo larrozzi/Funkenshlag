@@ -2,13 +2,16 @@
 #include <iostream>
 #include "GameTurnSubject.h"
 #include <string>
+#include "Player.h"
+
+class GameTurnSubject;
 
 class ObserverView {
 private:
+	GameTurnSubject* gameTurn;
 	int phase;
 	int step;
-	shared_ptr<Player> playersTurn;
-	GameTurnSubject gameTurn;
+	std::shared_ptr<Player> playersTurn;
 
 
 	string playerMessage;
@@ -17,6 +20,6 @@ private:
 
 
 public:
-	void update(shared_ptr<Player>,int, int);
-	void displayeView();
+	void update(std::shared_ptr<Player>,int, int);
+	void displayView();
 };

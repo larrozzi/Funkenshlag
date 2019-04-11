@@ -1,4 +1,16 @@
 #include "GameTurnSubject.h"
+#include "ObserverView.h"
+
+GameTurnSubject::GameTurnSubject(shared_ptr<Player> pl,int phase,int step) {
+	this->playersTurn = pl;
+	this->phase = phase;
+	this->step = step;
+}
+GameTurnSubject::GameTurnSubject() {
+	phase = 1;
+	step = 1;
+	playersTurn = NULL;
+}
 
 void GameTurnSubject::regist(ObserverView* view)
 {

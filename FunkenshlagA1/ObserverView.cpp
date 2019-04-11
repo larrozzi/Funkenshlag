@@ -1,4 +1,5 @@
 #include "ObserverView.h"
+#include "GameTurnSubject.h"
 
 void ObserverView::update(shared_ptr<Player> newPlayer, int newPhase, int newStep)
 {

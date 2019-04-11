@@ -3,6 +3,8 @@
 #include "ObserverView.h"
 #include "Player.h"
 
+class ObserverView;
+
 class GameTurnSubject {
 private:
 	std::vector<ObserverView*> views;
@@ -12,6 +14,8 @@ private:
 public:
 	void regist(ObserverView*);
 	void notifyObserver();
+	GameTurnSubject();
+	GameTurnSubject(shared_ptr<Player> pl,int,int);
 	
 	//setters
 	void setStep(int);
