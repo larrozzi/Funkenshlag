@@ -9,13 +9,14 @@
 // included dependencies
 #include "House.h"
 #include "PowerPlantCards.h"
-#include "PPmarket.h"
+#include "PPMarketSingleton.h"
+//#include "PPmarket.h"
 #include <memory>
 #include <vector>
 #include <iostream>
 #include <fstream>
 #include "ResourceMarket.h"
-#include "Subject.h"
+#include "PlayerBehaviour.h"
 
 using std::string;
 using std::vector;
@@ -24,6 +25,7 @@ using std::shared_ptr;
 class Player : public Subject
 {
 private:
+    PlayerBehaviour* playB;
     string name;
     int elektro = 50;
     vector<House> houses;
@@ -48,8 +50,6 @@ public:
     Player(string name, int electro, HouseColor color);
     ~Player();
 
-
-	
     // setters
     void setName(string name);
     void setElektro(int elektro);
@@ -69,7 +69,6 @@ public:
 	int getGarbageHeld() const;
 	int getUraniumHeld() const;
 
-
     // method to create the grab 22 houses from board
     vector<House>grabhouses();
 
@@ -86,13 +85,13 @@ public:
     void printOwnedCities();
 
     //buypowerplant
-    bool buyPowerPlant(PPmarket&, int ,int);
+    bool buyPowerPlant(PPMarketSingleton&, int ,int);
 
 	void buyResource(Type,ResourceMarket*);
 
     bool OwnPowerPlant(shared_ptr<PowerPlantCards> powerplant);
     
-    bool Auction(const PPmarket& ppMarket, int position, int mybid);
+    bool Auction(const PPMarketSingleton& ppMarketSingleton, int position, int mybid);
 
     bool Pass();
     
@@ -108,5 +107,11 @@ public:
 	 
 	friend std::ostream& operator<<(std::ostream& outs, const HouseColor& color);
 	friend std::ostream& operator<<(std::ostream& outs, const Player& player);
+    
+    /** Strategy Design Pattern for PlayerBehaviour **/
+    Player(PlayerBehaviour* iniBehaviour);
+    Player(PlayerBehaviour* iniBehaviour, string name, int electro, HouseColor color);
+    void setPlayerBehaviour(PlayerBehaviour* newBehaviour);
+    void executePlayerBehaviour();
 };
 

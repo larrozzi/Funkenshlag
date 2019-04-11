@@ -8,30 +8,11 @@
 
 #pragma once
 
+/** Strategy Design Pattern for the player beahaiour**/
+
+// Strategy Abstract Class
 class PlayerBehaviour
 {
 public:
     virtual void executeBehaviour() = 0; // pure virutual function for polymorphism
-};
-
-class aggressivePlayer : public PlayerBehaviour
-{
-public:
-    void executeBehaviour() {
-        
-    }
-};
-
-class moderatePlayer : public PlayerBehaviour
-{
-    void executeBehaviour() {
-        
-    }
-};
-
-class environmentalistPlayer : public PlayerBehaviour
-{
-    void executeBehaviour() {
-        
-    }
 };

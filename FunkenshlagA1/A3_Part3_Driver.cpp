@@ -16,25 +16,46 @@
 #include "CityNode.h"
 #include "SummaryCards.h"
 
+#include "PlayerBehaviour.h"
+#include "EnviroPlayer.h"
+#include "AggressivePlayer.h"
+#include "ModeratePlayer.h"
+
 using namespace std;
 
 int main()
 {
-    MapLoader mapLoader = MapLoader();
-    GameMap gameMap = GameMap(mapLoader.readMap("map.txt")); // read Gamemap
-    gameMap.showMap(); // display Gamemap
-    Building phase4 = Building(); // Building phase
-    int numberPlayers = 0;
-    cout << std::endl;
-    
-    while (numberPlayers < 2 || numberPlayers > 6) {
-        cout << "Number of players should be between 2 and 6." << endl;
-        cout << "Enter Number of players \n> ";
-        cin >> numberPlayers;
-    }
-    phase4.NewGame(mapLoader, numberPlayers); // initialize players
-    
+//    EnviroPlayer enviroPlay;
+//    ModeratePlayer modPlay;
+//    AggressivePlayer aggPlay = nullptr;
+//
+//    Player p1 = Player(&enviroPlay,"Faruq", 500, BLUE);
+//    Player p2 = Player(&modPlay,"Tao", 500, RED);
+//    Player p3 = Player(&aggPlay,"Yassine", 500, GREEN);
 
-    system("pause");
+    Player p1 = Player(new EnviroPlayer,"Faruq", 500, BLUE);
+    Player p2 = Player(new ModeratePlayer,"Tao", 500, RED);
+    Player p3 = Player(new AggressivePlayer,"Yassine", 500, GREEN);
+    
+    p1.executePlayerBehaviour();
+    p2.executePlayerBehaviour();
+    p3.executePlayerBehaviour();
+
+//    MapLoader mapLoader = MapLoader();
+//    GameMap gameMap = GameMap(mapLoader.readMap("map.txt")); // read Gamemap
+//    gameMap.showMap(); // display Gamemap
+//    Building phase4 = Building(); // Building phase
+//    int numberPlayers = 0;
+//    cout << std::endl;
+//
+//    while (numberPlayers < 2 || numberPlayers > 6) {
+//        cout << "Number of players should be between 2 and 6." << endl;
+//        cout << "Enter Number of players \n> ";
+//        cin >> numberPlayers;
+//    }
+//    phase4.NewGame(mapLoader, numberPlayers); // initialize players
+//
+//
+//    system("pause");
     return 0 ;
 }

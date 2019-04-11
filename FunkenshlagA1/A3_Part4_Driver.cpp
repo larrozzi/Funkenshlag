@@ -1,4 +1,4 @@
-////////  COMP345A1
+//////  COMP345A1
 ////////
 ////////  Created by Yassine Laaroussi 2019-03-27.
 ////////  Updated 2019-03-06
@@ -16,21 +16,22 @@
 //#include "Player.h"
 //#include "SummaryCards.h"
 //#include "House.h"
-//#include "PPmarket.h"
+////#include "PPmarket.h"
+//#include "PPMarketSingleton.h"
 //
 //using namespace std;
-////using std::cout;
+//
 //
 //static HouseColor convert(const std::string& clr)
 //{
-//	if (clr == "NO_COLOR")		return NO_COLOR;
-//	else if (clr == "RED")		return RED;
-//	else if (clr == "BLUE")		return BLUE;
-//	else if (clr == "GREEN")	return GREEN;
-//	else if (clr == "YELLOW")	return YELLOW;
-//	else if (clr == "BLACK")	return BLACK;
-//	else if (clr == "PINK")		return PINK;
-//	else return NO_COLOR;
+//    if (clr == "NO_COLOR")        return NO_COLOR;
+//    else if (clr == "RED")        return RED;
+//    else if (clr == "BLUE")        return BLUE;
+//    else if (clr == "GREEN")    return GREEN;
+//    else if (clr == "YELLOW")    return YELLOW;
+//    else if (clr == "BLACK")    return BLACK;
+//    else if (clr == "PINK")        return PINK;
+//    else return NO_COLOR;
 //}
 //
 //int main()
@@ -110,7 +111,12 @@
 //        ///Auction time
 //    vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 //
-//    PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
+//    //replaced with a singleton
+//    //PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
+//    
+//    PPMarketSingleton *PPmarketSingleton = PPmarketSingleton->GetInstance();
+//    cout << PPmarketSingleton << endl;
+//
 //    vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
 //
 //    Pplants.size();
@@ -119,14 +125,14 @@
 //    PPlantsSptr.push_back(std::make_shared<PowerPlantCards>(Pplants[i])); //the powerplant market is now linked to the created pplants
 //
 //    //fill a vector of pointers to the powerplants created already
-//    ppmarket->SetMPlants(PPlantsSptr);
+//    PPmarketSingleton->SetMPlants(PPlantsSptr);
 //
 //    //make the market ready for auction, filling the visibleplants vector
-//    ppmarket->Setup();
+//    PPmarketSingleton->Setup();
 //
 //    // printing the PPmarket
 //    cout << "" << endl;
-//    ppmarket->printPPmarket();  // test needed
+//    PPmarketSingleton->printPPmarket();  // test needed
 //
 //    cout << "Phase I" << endl;
 //    cout << "Random Player order on first Auction as follows:" << endl;
@@ -158,7 +164,7 @@
 //
 //        //next line generates link ***********error cuz of getCard  to avoid player has manually put in at least card value
 //
-//        highestBid = ppmarket->GetvisiblePPlants().at(0)->getCardValue(); // bid starts at PPcard value Value
+//        highestBid = PPmarketSingleton->GetvisiblePPlants().at(0)->getCardValue(); // bid starts at PPcard value Value
 //
 //        InnerplayerOrder = OuterplayerOrder;
 //        cout << "----------------------------------------------------------------------------" << endl;
@@ -192,7 +198,7 @@
 //                cin >> PPindex >> playerbid;
 //
 //                if (playerbid >= highestBid) {
-//                    if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
+//                    if (currentPlayer->Auction(*PPmarketSingleton, PPindex, playerbid)) {
 //                        highestbidder = currentPlayer;
 //                        highestBid = playerbid;
 //                        cout << "The initial bid is " << highestBid << endl;
@@ -211,7 +217,7 @@
 //                cout << "> ";
 //                cin >> playerbid;
 //                if (playerbid > highestBid) {
-//                    if (currentPlayer->Auction(*ppmarket, PPindex, playerbid)) {
+//                    if (currentPlayer->Auction(*PPmarketSingleton, PPindex, playerbid)) {
 //                        highestbidder = currentPlayer;
 //                        highestBid = playerbid;
 //                        cout << "The highest bid is now " << highestBid << endl;
@@ -231,12 +237,12 @@
 //            }
 //     //}
 //        cout << "The winner of this auction round is: " << highestbidder->getName() << endl;
-//        highestbidder->buyPowerPlant(*ppmarket, PPindex, playerbid);
+//        highestbidder->buyPowerPlant(*PPmarketSingleton, PPindex, playerbid);
 //            // printing the PPmarket
 //            cout << "" << endl;
 //            cout << "the new Power plant market is now: " << endl;
 //            cout << "" << endl;
-//            ppmarket->printPPmarket();
+//            PPmarketSingleton->printPPmarket();
 //
 //            //remove winner from player order
 //        for (int i = 0; i < OuterplayerOrder.size(); ++i)
@@ -249,8 +255,9 @@
 //        cout << *players.at(i) << "\n";
 //
 //    system("pause");
-//    delete ppmarket;
 //
+//   // delete ppmarket;
+//    PPMarketSingleton::ResetInstance();
 //    return 0;
 //}
 //

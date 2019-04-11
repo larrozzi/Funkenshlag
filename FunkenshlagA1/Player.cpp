@@ -8,7 +8,8 @@
 #include <string>
 #include "Player.h"
 #include "SummaryCards.h"
-#include "PPmarket.h"
+//#include "PPmarket.h"
+#include "PPMarketSingleton.h"
 
 
 using std::string;
@@ -125,13 +126,13 @@ void  Player::printOwnedCities( ){
         cout << *i << ' ';
 }
 
-bool Player::buyPowerPlant(PPmarket& ppMarket, int position, int price) {
+bool Player::buyPowerPlant(PPMarketSingleton& ppMarketSingleton, int position, int price) {
     if (position <= 3 &&  elektro >= price) {
 		if (myPowerPlants.size() < 3) {
 			setElektro(getElektro() - price);
-			OwnPowerPlant(ppMarket.getPlant(position));
-			ppMarket.RemovePlant(position);
-			ppMarket.DrawPlant();
+			OwnPowerPlant(ppMarketSingleton.getPlant(position));
+			ppMarketSingleton.RemovePlant(position);
+			ppMarketSingleton.DrawPlant();
 			return true;
 		}
     }
@@ -370,7 +371,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
      return true;
  }
 
- bool Player::Auction(const PPmarket& ppMarket, int position, int mybid) {
+ bool Player::Auction(const PPMarketSingleton& ppMarketSingleton, int position, int mybid) {
      if (position <= 3 && elektro >= mybid  ) {
 
          return true;
@@ -441,3 +442,29 @@ std::ostream& operator<<(std::ostream& outs, const Player& player){
     return outs;
 }
 
+/** Strategy Design Pattern for PlayerBehaviour **/
+
+// Plugs in a specific Behaviour to be used
+Player::Player(PlayerBehaviour* iniBehaviour) {
+    playB = iniBehaviour;
+}
+
+Player::Player(PlayerBehaviour* iniBehaviour, string name, int elektro, HouseColor color) : name(name), elektro(elektro), color(color)
+{
+       coalCapacity = 0;
+       oilCapacity = 0;
+       garbageCapacity = 0;
+       uraniumCapacity = 0;
+       coalHeld = 0;
+       oilHeld = 0;
+       garbageHeld = 0;
+       uraniumHeld = 0;
+}
+
+void Player::setPlayerBehaviour(PlayerBehaviour* newBehaviour) {
+    playB = newBehaviour;
+}
+// This method executes a different depending on what behaviour was * inserted
+void Player::executePlayerBehaviour() {
+    playB->executeBehaviour();
+}
