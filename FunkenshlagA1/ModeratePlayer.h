@@ -16,5 +16,5 @@ class ModeratePlayer : public PlayerBehaviour
 public:
     ModeratePlayer();
     ~ModeratePlayer();
-    virtual void executeBehaviour();
+    void executeBehaviour();
 };

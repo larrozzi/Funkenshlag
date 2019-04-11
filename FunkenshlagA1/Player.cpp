@@ -449,7 +449,7 @@ Player::Player(PlayerBehaviour* iniBehaviour) {
     playB = iniBehaviour;
 }
 
-Player::Player(PlayerBehaviour* iniBehaviour, string name, int elektro, HouseColor color) : name(name), elektro(elektro), color(color)
+Player::Player(PlayerBehaviour* iniBehaviour, string name, int elektro, HouseColor color) : playB(iniBehaviour), name(name), elektro(elektro), color(color)
 {
        coalCapacity = 0;
        oilCapacity = 0;

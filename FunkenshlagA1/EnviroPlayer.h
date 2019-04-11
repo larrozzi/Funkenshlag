@@ -16,6 +16,6 @@ class EnviroPlayer : public PlayerBehaviour
 public:
     EnviroPlayer();
     ~EnviroPlayer();
-    virtual void executeBehaviour();
+    void executeBehaviour();
 };
 

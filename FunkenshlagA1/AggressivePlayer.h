@@ -16,5 +16,5 @@ class AggressivePlayer : public PlayerBehaviour
 public:
     AggressivePlayer();
     ~AggressivePlayer();
-    virtual void executeBehaviour();
+    void executeBehaviour();
 };
