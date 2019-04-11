@@ -11,7 +11,6 @@
 		2D49C7DA2213688B0001893D /* PowerPlantCards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D72213688A0001893D /* PowerPlantCards.cpp */; };
 		2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7D82213688A0001893D /* Step3Card.cpp */; };
 		2D49C7E3221381620001893D /* Cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D49C7E1221381620001893D /* Cards.cpp */; };
-		2DC827162242B2D50031F948 /* A2_Part2_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */; };
 		2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC827152242B2D50031F948 /* PPmarket.cpp */; };
 		2DC8272D224845130031F948 /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8272B224845130031F948 /* Building.cpp */; };
 		2DC8272F22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */; };
@@ -20,6 +19,8 @@
 		2DD0916E225E9A0200446F56 /* AggressivePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0916C225E9A0200446F56 /* AggressivePlayer.cpp */; };
 		2DD09173225E9B9900446F56 /* ModeratePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09170225E9B9900446F56 /* ModeratePlayer.cpp */; };
 		2DD09174225E9B9900446F56 /* EnviroPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09171225E9B9900446F56 /* EnviroPlayer.cpp */; };
+		2DD0917B225EC60C00446F56 /* PPMarketSingleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */; };
+		2DD0917D225EC60C00446F56 /* A3_Part4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */; };
 		2DF1AF9E224AE86E0075BE6F /* Edges.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1AF9B224AE86E0075BE6F /* Edges.cpp */; };
 		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
 		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
@@ -58,7 +59,6 @@
 		2D49C7E2221381620001893D /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 		2D4F6ED6224BF808002B314E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		2D54BF8A224C22F0001BB1BC /* map-A1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "map-A1.txt"; sourceTree = "<group>"; };
-		2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A2_Part2_Driver.cpp; sourceTree = "<group>"; };
 		2DC827142242B2D50031F948 /* PPmarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPmarket.h; sourceTree = "<group>"; };
 		2DC827152242B2D50031F948 /* PPmarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPmarket.cpp; sourceTree = "<group>"; };
 		2DC8272B224845130031F948 /* Building.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
@@ -73,6 +73,9 @@
 		2DD09170225E9B9900446F56 /* ModeratePlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModeratePlayer.cpp; sourceTree = "<group>"; };
 		2DD09171225E9B9900446F56 /* EnviroPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnviroPlayer.cpp; sourceTree = "<group>"; };
 		2DD09172225E9B9900446F56 /* ModeratePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeratePlayer.h; sourceTree = "<group>"; };
+		2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPMarketSingleton.cpp; sourceTree = "<group>"; };
+		2DD09178225EC60B00446F56 /* PPMarketSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMarketSingleton.h; sourceTree = "<group>"; };
+		2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A3_Part4_Driver.cpp; sourceTree = "<group>"; };
 		2DF1AF9A224AE86E0075BE6F /* Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edges.h; sourceTree = "<group>"; };
 		2DF1AF9B224AE86E0075BE6F /* Edges.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edges.cpp; sourceTree = "<group>"; };
 		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -139,8 +142,10 @@
 				2DD0916C225E9A0200446F56 /* AggressivePlayer.cpp */,
 				2DFFEF53222E2F9C00025912 /* Player.h */,
 				2DFFEF64222E2F9D00025912 /* Player.cpp */,
+				2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */,
+				2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */,
+				2DD09178225EC60B00446F56 /* PPMarketSingleton.h */,
 				2DFFEF78222F298B00025912 /* A2_Part1_Driver.cpp */,
-				2DC827132242B2D50031F948 /* A2_Part2_Driver.cpp */,
 				2DD09167225C5B3F00446F56 /* TempDriver.cpp */,
 				2DC8272E22487FCF0031F948 /* A2_Part3_Phase4_Driver.cpp */,
 				2DC827152242B2D50031F948 /* PPmarket.cpp */,
@@ -242,11 +247,11 @@
 				2DD09173225E9B9900446F56 /* ModeratePlayer.cpp in Sources */,
 				2DFFEF69222E2F9D00025912 /* House.cpp in Sources */,
 				2D49C7DB2213688B0001893D /* Step3Card.cpp in Sources */,
-				2DC827162242B2D50031F948 /* A2_Part2_Driver.cpp in Sources */,
 				2DFFEF6E222E2F9D00025912 /* ResourceMarket.cpp in Sources */,
 				2DFFEF79222F298B00025912 /* A2_Part1_Driver.cpp in Sources */,
 				2DC8272D224845130031F948 /* Building.cpp in Sources */,
 				2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */,
+				2DD0917B225EC60C00446F56 /* PPMarketSingleton.cpp in Sources */,
 				2DFFEF6C222E2F9D00025912 /* GameMap.cpp in Sources */,
 				2DC827172242B2D50031F948 /* PPmarket.cpp in Sources */,
 				2DFFEF8A2230D96700025912 /* Part5_Driver.cpp in Sources */,
@@ -262,6 +267,7 @@
 				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
 				2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */,
 				2DD09174225E9B9900446F56 /* EnviroPlayer.cpp in Sources */,
+				2DD0917D225EC60C00446F56 /* A3_Part4_Driver.cpp in Sources */,
 				2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,4 +16,3 @@ class PlayerBehaviour
 public:
     virtual void executeBehaviour() = 0; // pure virutual function for polymorphism
 };
-

@@ -15,6 +15,7 @@
 #include "Player.h"
 #include "CityNode.h"
 #include "SummaryCards.h"
+
 #include "PlayerBehaviour.h"
 #include "EnviroPlayer.h"
 #include "AggressivePlayer.h"
@@ -24,14 +25,18 @@ using namespace std;
 
 int main()
 {
-    EnviroPlayer enviroPlay;
-    ModeratePlayer modPlay;
-    AggressivePlayer aggPlay;
-    
-    Player p1 = Player(&enviroPlay,"Faruq", 500, BLUE);
-    Player p2 = Player(&modPlay,"Tao", 500, RED);
-    Player p3 = Player(&aggPlay,"Yassine", 500, GREEN);
+//    EnviroPlayer enviroPlay;
+//    ModeratePlayer modPlay;
+//    AggressivePlayer aggPlay = nullptr;
+//
+//    Player p1 = Player(&enviroPlay,"Faruq", 500, BLUE);
+//    Player p2 = Player(&modPlay,"Tao", 500, RED);
+//    Player p3 = Player(&aggPlay,"Yassine", 500, GREEN);
 
+    Player p1 = Player(new EnviroPlayer,"Faruq", 500, BLUE);
+    Player p2 = Player(new ModeratePlayer,"Tao", 500, RED);
+    Player p3 = Player(new AggressivePlayer,"Yassine", 500, GREEN);
+    
     p1.executePlayerBehaviour();
     p2.executePlayerBehaviour();
     p3.executePlayerBehaviour();
