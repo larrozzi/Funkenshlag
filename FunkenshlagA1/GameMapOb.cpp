@@ -23,9 +23,9 @@ void GameMapOb::Display()
 	{
 		cout << _subject->getActiveMap().at(i).getName();
 
-		for (int j = 0; j < _subject->getActiveMap().at(i).getOwners().size(); j++)
+		for (auto& elem : _subject->getActiveMap().at(i).getOwners())
 		{
-			cout << _subject->getActiveMap().at(i).getOwners();
+			std::cout << elem.first << " " << elem.second.first << " " << elem.second.second << "\n";
 		}
 	}
 }

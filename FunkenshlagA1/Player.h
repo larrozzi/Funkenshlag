@@ -17,6 +17,7 @@
 #include <fstream>
 #include "ResourceMarket.h"
 #include "PlayerBehaviour.h"
+#include "Subject.h"
 
 using std::string;
 using std::vector;
