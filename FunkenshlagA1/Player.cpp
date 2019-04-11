@@ -82,6 +82,7 @@ bool Player::buyHouse(shared_ptr<House> house)
     
     elektro -= housePrice;  // pay
     houses.push_back(*house); // save house to houses vector 
+	Notify();
     return true;
 }
 
@@ -109,6 +110,7 @@ bool Player::buildinCity(string city) {
         if (*i == city) {
             matchedCity = true;
             mycities.push_back(city);
+			Notify();
             return true;
         }
         else
@@ -133,6 +135,7 @@ bool Player::buyPowerPlant(PPMarketSingleton& ppMarketSingleton, int position, i
 			OwnPowerPlant(ppMarketSingleton.getPlant(position));
 			ppMarketSingleton.RemovePlant(position);
 			ppMarketSingleton.DrawPlant();
+			Notify();
 			return true;
 		}
     }
@@ -197,6 +200,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 
 		market->bought(type, amount);
 		elektro -= price;
+		Notify();
 		coalHeld += amount;
 		break;
 	case OIL:
@@ -244,6 +248,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 		}
 		market->bought(type, amount);
 		elektro -= price;
+		Notify();
 		oilHeld += amount;
 		break;
 	case GARBAGE:
@@ -291,6 +296,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 
 		market->bought(type, amount);
 		elektro -= price;
+		Notify();
 		garbageHeld += amount;
 		break;
 	case URANIUM:
@@ -338,6 +344,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 		market->bought(type, amount);
 		elektro -= price;
 		uraniumHeld += amount;
+		Notify();
 		break;
 	default:
 		break;
