@@ -116,5 +116,8 @@ public:
 	string executePlayerBehaviour();
     string executeAuction(bool& Initialbid, int& currentbid);
 	string executeAuction(bool& Initialbid, int& currentbid, int PPindex);
+	int executeAuction(int& currentbid);
+	int executeAuction(int& currentbid, int PPindex, bool returnIndex );
+
 };
 

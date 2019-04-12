@@ -90,10 +90,10 @@ GameFunctions::~GameFunctions()
                 //current player auction
             cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro()<< endl;
             cout << "BID or PASS" << endl;
-
             cout << "> ";
            // cin >> BidOrPass;
-			currentPlayer->executeAuction(initialbid, highestBid);
+			BidOrPass= currentPlayer->executeAuction(initialbid, highestBid);
+			cout << BidOrPass << endl;
 
             if (BidOrPass == "PASS" && initialbid) {
                 cout << "You cannot pass your turn since you're the first to bid on this power plant." << endl;
@@ -111,8 +111,12 @@ GameFunctions::~GameFunctions()
                 cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid." << endl;
                 cout << "> ";
                // cin >> PPindex >> playerbid;
-				//currentPlayer->executeAuction();
-
+				PPindex = currentPlayer->executeAuction(playerbid,3,true);
+				cout << PPindex << endl;
+				cout << "> ";
+				playerbid= currentPlayer->executeAuction(playerbid,3,false);
+				cout << playerbid << endl;
+				
                 if (playerbid >= highestBid) {
                     if (currentPlayer->Auction(*PPmarketSingleton, PPindex, playerbid)) {
                         highestbidder = currentPlayer;
@@ -132,7 +136,9 @@ GameFunctions::~GameFunctions()
                 cout << "Please enter your bid" << endl;
                 cout << "> ";
                 //cin >> playerbid;
-				//currentPlayer->executeAuction();
+				playerbid=currentPlayer->executeAuction(playerbid);
+				cout << playerbid << endl;
+
                 if (playerbid > highestBid) {
                     if (currentPlayer->Auction(*PPmarketSingleton, PPindex, playerbid)) {
                         highestbidder = currentPlayer;

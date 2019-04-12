@@ -478,3 +478,11 @@ string Player::executeAuction(bool& Initialbid, int& currentbid) {
 	return playB->executeAuction(Initialbid, currentbid, PPindex);
 }
 
+ int Player::executeAuction(int& currentbid) {
+	 return playB->executeAuction(currentbid);
+ }
+
+ int Player:: executeAuction(int& currentbid, int PPindex, bool returnIndex) {
+	return playB->executeAuction(currentbid, PPindex, returnIndex);	
+ }
+
