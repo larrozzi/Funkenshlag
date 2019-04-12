@@ -112,6 +112,8 @@ public:
     Player(PlayerBehaviour* iniBehaviour);
     Player(PlayerBehaviour* iniBehaviour, string name, int electro, HouseColor color);
     void setPlayerBehaviour(PlayerBehaviour* newBehaviour);
-    void executePlayerBehaviour();
+    string executePlayerBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid);
+    void executeAuction(std::shared_ptr<PowerPlantCards>pp, string bidPass);
+    Type executeResourceMarket(/*ResourceMarket* market, string bidPass, int bid*/);
 };
 

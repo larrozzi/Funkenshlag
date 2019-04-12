@@ -9,7 +9,7 @@
 //#include <memory>
 //#include <algorithm>
 //#include <random>
-//#include <time.h> 
+//#include <time.h>
 //#include <vector>
 //#include <map>
 //#include <set>
@@ -113,7 +113,7 @@
 //
 //    //replaced with a singleton
 //    //PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
-//    
+//
 //    PPMarketSingleton *PPmarketSingleton = PPmarketSingleton->GetInstance();
 //    cout << PPmarketSingleton << endl;
 //

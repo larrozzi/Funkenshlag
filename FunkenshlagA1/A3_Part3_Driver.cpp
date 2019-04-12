@@ -23,23 +23,127 @@
 
 using namespace std;
 
+
+// method that converts Type to string
+string Type2String(Type t) {
+    switch (t) {
+        case COAL:
+            return "COAL";
+        case OIL:
+            return "OIL";
+        case GARBAGE:
+            return "GARBAGE";
+        case URANIUM:
+            return "URANIUM";
+        default:
+            return "NONE";
+    }
+}
+
+// main                                                                                              
 int main()
 {
+    vector<shared_ptr<Player>> players; // vector of players
+    shared_ptr<Player> currentPlayer; // current player
+    int i = 0; // current player index
+    int numberOfPlayers = 0;
+    
+    // Different Player Behviour
     EnviroPlayer enviroPlay;
     ModeratePlayer modPlay;
     AggressivePlayer aggPlay;
 
-    Player p1 = Player(&enviroPlay,"Faruq", 500, BLUE);
-    Player p2 = Player(&modPlay,"Tao", 500, RED);
-    Player p3 = Player(&aggPlay,"Yassine", 500, GREEN);
-
-//    Player p1 = Player(new EnviroPlayer,"Faruq", 500, BLUE);
-//    Player p2 = Player(new ModeratePlayer,"Tao", 500, RED);
-//    Player p3 = Player(new AggressivePlayer,"Yassine", 500, GREEN);
+    // Players with different Behaviours
+    shared_ptr<Player> p1 = make_shared<Player>(&enviroPlay,"Faruq", 500, BLUE);
+    shared_ptr<Player> p2 = make_shared<Player>(&modPlay,"Tao", 500, RED);
+    shared_ptr<Player> p3 = make_shared<Player>(&aggPlay,"Yassine", 500, GREEN);
     
-    p1.executePlayerBehaviour();
-    p2.executePlayerBehaviour();
-    p3.executePlayerBehaviour();
+    // store players into players vector
+    players.push_back(p1);
+    players.push_back(p2);
+    players.push_back(p3);
+    
+    numberOfPlayers = static_cast<int>(players.size()); // get the number of players
+    
+    cout << "WELCOME TO POWERPLANT AUCTION" << endl;
+    shared_ptr<PowerPlantCards> card1 = make_shared<PowerPlantCards>(3, COAL, 100, 100, 1);
+    shared_ptr<PowerPlantCards> card2 = make_shared<PowerPlantCards>(3, OIL, 100,100, 1);
+    shared_ptr<PowerPlantCards> card3 = make_shared<PowerPlantCards>(3, URANIUM, 100, 100, 1);
+    
+    p2->OwnPowerPlant(card1);
+    p2->OwnPowerPlant(card2);
+    p2->OwnPowerPlant(card3);
+
+    cout << "WELCOME TO RESOURCE BUYING\n" << endl;
+    ResourceMarket* market = new ResourceMarket();
+    std::cout << *market << std::endl; // print market
+   
+    currentPlayer = players[i]; // set current player to initial player in players vector
+    string yOn = "";
+    Type type = NONE;
+    
+    cout << "Player " << currentPlayer->getName() << ", ";
+    cout << "Would you like to buy resources?(Y/N): > ";
+    cin >> yOn;
+    
+    while (yOn == "N")
+    {
+        currentPlayer = players[++i]; // go to next player
+        cout << "Player " << currentPlayer->getName() << ", ";
+        cout << "Would you like to buy resources?(Y/N): > ";
+        cin >> yOn;
+        
+        // reset player order
+//        if (i == numberOfPlayers-1) {
+//            i = -1;
+//        }
+        
+        // all players skipped, no players buying resources ==> END OF RESOURCE BUYING
+        if (i >= numberOfPlayers-1) {
+            break;
+        }
+    }
+    
+    while (yOn == "Y")
+    {
+        cout << "Player " << currentPlayer->getName() << ", ";
+        cout << "What type of resource would you like to buy? (COAL,OIL,GARBAGE,URANIUM): > ";
+        type = currentPlayer->executeResourceMarket(); // get the Resource Type
+        cout << Type2String(type) << endl; // convert Type to string
+        
+        currentPlayer->buyResource(type, market); // buy the resource
+        cout << *market << endl;
+        cout << *currentPlayer << endl;
+        
+        cout << "Player " << currentPlayer->getName() << ", ";
+        cout << "Would you like to buy more resources?(Y/N): > ";
+        cin >> yOn;
+        
+        if (yOn == "N")
+        {
+            currentPlayer = players[++i]; // go to next player
+            cout << "Player " << currentPlayer->getName() << ", ";
+            cout << "Would you like to buy resources?(Y/N): ";
+            cin >> yOn;
+            
+            if (i >= numberOfPlayers-1) {
+                break;
+            }
+        }
+    }
+    cout << "\nEnd of Resource Buying";
+    // Print players inventory
+    for (int i = 0; i < players.size(); ++i) {
+        cout << *players[i] << endl;
+    }
+    
+    // Deallocation of memory
+    delete market; market = nullptr;
+    //system("pause");
+    return 0;
+}
+
+
 
 //    MapLoader mapLoader = MapLoader();
 //    GameMap gameMap = GameMap(mapLoader.readMap("map.txt")); // read Gamemap
@@ -57,5 +161,3 @@ int main()
 //
 //
 //    system("pause");
-    return 0 ;
-}

@@ -14,8 +14,23 @@ EnviroPlayer::EnviroPlayer() {};
 EnviroPlayer::~EnviroPlayer() {};
 
 // Evironmentalist Behaviour
-void EnviroPlayer::executeBehaviour()
+string EnviroPlayer::executeBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid)
 {
-    cout << "I'm an Environmentalist Player\n";
+    return "I'm an Environmentalist Player\n";
+}
+
+void EnviroPlayer::executeAuction(std::shared_ptr<PowerPlantCards>pp, string bidPass)
+{
+    cout << "Auction Environmental Player\n";
     
+    if(pp->getNumbResource() == 0)
+        bidPass = "BID";
+    else
+        bidPass = "PASS";
+}
+
+Type EnviroPlayer::executeResourceMarket()
+{
+    Type resType = NONE; // no need to buy resource for ECOFUSION powerplants
+    return resType;
 }

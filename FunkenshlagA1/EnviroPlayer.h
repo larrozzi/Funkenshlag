@@ -16,6 +16,7 @@ class EnviroPlayer : public PlayerBehaviour
 public:
     EnviroPlayer();
     ~EnviroPlayer();
-    void executeBehaviour();
+    string executeBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid);
+    void executeAuction(std::shared_ptr<PowerPlantCards>pp, string bidPass);
+    Type executeResourceMarket();
 };
-
