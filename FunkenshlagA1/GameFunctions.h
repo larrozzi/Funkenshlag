@@ -41,7 +41,7 @@ public:
 	~GameFunctions();
 
 	void setupDeckCards();
-	void RandomplayerOrder();
+	void RandomplayerOrder(vector<shared_ptr<Player>> players);
 	void AuctionTime();
 	
 };

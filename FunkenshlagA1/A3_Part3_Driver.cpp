@@ -165,8 +165,16 @@ int main()
 			}
 		}
 		GameFunctions* newgame= new GameFunctions();
-		newgame->RandomplayerOrder();
+		cout << "Phase I" << endl;
+		cout << "Random Player order on first Auction as follows:" << endl;
+		cout << "" << endl;
+		cout << "----------------------------------------------------------------------------" << endl;
+		cout << "" << endl;
+
+		newgame->RandomplayerOrder(players);
+
 		newgame->setupDeckCards();
+
 		newgame->AuctionTime();
 
     return 0 ;
