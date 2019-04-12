@@ -16,7 +16,7 @@ AggressivePlayer::~AggressivePlayer() {}
 // Aggressive Behaviour
 string AggressivePlayer::executeBehaviour()
 {
-  return "I'm an Aggressive Player\n" ;
+  return "Aggressive Player\n" ;
 
 }
 

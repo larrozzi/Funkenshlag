@@ -16,7 +16,7 @@ EnviroPlayer::~EnviroPlayer() {};
 // Evironmentalist Behaviour
 string EnviroPlayer::executeBehaviour()
 {
-    return "I'm an Environmentalist Player\n";
+    return "Environmentalist Player\n";
     
 }
 string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid) {
@@ -29,7 +29,8 @@ string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid, int PPind
     return "";
 }
 
-int EnviroPlayer::executeAuction(int& currentbid) {
+int EnviroPlayer::executeAuction(int& currentbid)
+{
 	int mybid = currentbid++;
 	return mybid;
 }
@@ -48,5 +49,19 @@ int EnviroPlayer::executeAuction(int& currentbid, int PPindex, bool returnIndex)
 Type EnviroPlayer::executeResourceMarket()
 {
     Type resType = NONE; // no need to buy resource for ECOFUSION powerplants
-    return resType;
+    srand(time(NULL));
+    int random = rand() % 3 + 1; // random number b/w 1 and 3
+    switch (random) {
+        case 1:
+            resType = COAL;
+            return resType;
+        case 2:
+            resType = NONE;
+            return resType;
+        case 3:
+            resType = GARBAGE;
+            return resType;
+        default:
+            return NONE;
+    }
 }
