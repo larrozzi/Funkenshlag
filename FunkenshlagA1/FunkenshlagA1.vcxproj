@@ -120,6 +120,7 @@
     <ClCompile Include="A2_Part1_Driver.cpp" />
     <ClCompile Include="A2_Part3_Phase4_Driver.cpp" />
     <ClCompile Include="A3_Part1_Driver.cpp" />
+    <ClCompile Include="A3_Part3_Driver.cpp" />
     <ClCompile Include="A3_Part4_Driver.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Cards.cpp" />

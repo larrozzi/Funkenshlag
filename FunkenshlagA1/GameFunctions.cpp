@@ -34,9 +34,7 @@ GameFunctions::~GameFunctions()
 //
 	//replaced with a singleton
 	//PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
-
-	//	 PPMarketSingleton *PPmarketSingleton = PPmarketSingleton->GetInstance();
-		 cout << PPmarketSingleton << endl;
+		
 
 		 vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
 
@@ -51,9 +49,6 @@ GameFunctions::~GameFunctions()
 		 //make the market ready for auction, filling the visibleplants vector
 		 PPmarketSingleton->Setup();
 
-		 // printing the PPmarket
-		 cout << "" << endl;
-		 PPmarketSingleton->printPPmarket();  // test needed
 	 }
 
  void GameFunctions::RandomPlayerOrder() {
@@ -92,19 +87,31 @@ bool playerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {
 }
 
 // updating player order
+void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder,GameFunctions* game) {
+	sort(playerOrder.begin(), playerOrder.end(), playerPriority);
+
+	if (reverse) // if reverse is true= reverses the player order
+		std::reverse(playerOrder.begin(), playerOrder.end());
+	
+	game->currentPlayer = playerOrder[0];
+	
+}
 void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
 	sort(playerOrder.begin(), playerOrder.end(), playerPriority);
 
 	if (reverse) // if reverse is true= reverses the player order
 		std::reverse(playerOrder.begin(), playerOrder.end());
 
-	
 }
 
  void GameFunctions::AuctionTime(GameTurnSubject* gameTurn) {
 
     cout << "Let the Auctions begin" << endl;
     cout << "" << endl;
+
+	// printing the PPmarket
+	cout << "" << endl;
+	PPmarketSingleton->printPPmarket();
 
     //  loop for auctions
 	while (OuterplayerOrder.size() > 1) { //  rounds necessary for each player to win a powerplant
@@ -122,10 +129,10 @@ void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
 		while (InnerplayerOrder.size() > 1) { // number of turns to purchase one pp, end loop after only one player is remaining
 			// Set current player by order
 			currentPlayer = InnerplayerOrder[turn]; //player order inside a round
+			gameTurn->setPlayersTurn(currentPlayer);
 			cout << InnerplayerOrder.size() << " players are still in this round of auction." << endl;
 
 			//current player auction
-			cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro() << endl;
 			cout << "BID or PASS" << endl;
 			cout << "> ";
 			cin >> BidOrPass;
@@ -203,7 +210,7 @@ void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
 
 		if (OuterplayerOrder.size() == 1) {
 			currentPlayer = OuterplayerOrder.at(0);
-			cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro() << endl;
+			gameTurn->setPlayersTurn(currentPlayer);
 			cout << "BID or PASS" << endl;
 			cout << "> ";
 			cin >> BidOrPass;
@@ -217,4 +224,5 @@ void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
 			}
 		}
 	}
+	cin.ignore();
 }
