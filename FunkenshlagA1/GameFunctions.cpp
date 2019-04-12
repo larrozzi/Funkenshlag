@@ -19,7 +19,7 @@ GameFunctions::~GameFunctions()
 	//PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
 
 	//	 PPMarketSingleton *PPmarketSingleton = PPmarketSingleton->GetInstance();
-		 cout << PPmarketSingleton << endl;
+	//	 cout << PPmarketSingleton << endl;
 
 		 vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
 
@@ -36,13 +36,14 @@ GameFunctions::~GameFunctions()
 
 		 // printing the PPmarket
 		 cout << "" << endl;
-		 PPmarketSingleton->printPPmarket();  // test needed
+		 PPmarketSingleton->printPPmarket();  
 	 }
 
- void GameFunctions::RandomplayerOrder() {
+ void GameFunctions::RandomplayerOrder(vector<shared_ptr<Player>> players) {
 	 /// random Player Order before first Auction
-	 vector<int> rvec(NumofPlayers);
-	 for (int i = 0; i < NumofPlayers; ++i)
+	 vector<int> rvec(3);
+	 //vector<int> rvec(NumofPlayers);
+	 for (int i = 0; i < 3; ++i)
 		 rvec[i] = i;
 	 auto rng = std::default_random_engine{};
 	 shuffle(begin(rvec), end(rvec), rng);
@@ -50,7 +51,7 @@ GameFunctions::~GameFunctions()
 		 InnerplayerOrder.push_back(players[rvec[i]]);
 		 OuterplayerOrder.push_back(players[rvec[i]]);
 		 cout << InnerplayerOrder[i]->getName() << ' ';
-	 }
+	 }	 
  }
 
  void GameFunctions::AuctionTime() {
