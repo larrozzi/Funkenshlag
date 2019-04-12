@@ -2,6 +2,7 @@
 #include "ResourceMarket.h"
 #include "GameTurnSubject.h"
 #include "SummaryCards.h"
+#include "GameFunctions.h"
 
 static HouseColor convert(const std::string& clr)
 {
@@ -25,6 +26,7 @@ int main() {
 	bool alreadyPickedClr = false;
 	vector<shared_ptr<Player>> players;
 	SummaryCards overviewCard;
+	GameFunctions* game;
 
 
 	GameTurnSubject* gameTurn = new GameTurnSubject();
@@ -80,5 +82,13 @@ int main() {
 	    std::cout << overviewCard;
 		
 	}
+	game = new GameFunctions(numOfPlayers, players);
+	game->setupDeckCards();
+
+	game->RandomPlayerOrder();
+
+	game->AuctionTime(gameTurn);
+
+	system("pause");
 }
 

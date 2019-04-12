@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <memory>
 #include "Building.h"
+#include "GameFunctions.h"
 
 using std::cout;
 using std::cin;
@@ -108,30 +109,6 @@ void Building::NewGame(MapLoader map, int numbPlayer)
 	cout << "------------------------------------------" << endl;
 }
 
-// used to determine the player turn order
-bool playerPriority(shared_ptr<Player> p1, shared_ptr<Player> p2) {
-    
-    // priority1 - based on number of Houses owned
-    if (p1->getOwnedHouses().size() > p2->getOwnedHouses().size())
-        return true;
-    
-    if (p1->getOwnedHouses().size() < p2->getOwnedHouses().size())
-        return false;
-    
-    // priority2 - based on Highest powerplant owned
-    if (p1->getHighestPowerPlant() > p2->getHighestPowerPlant())
-        return true;
-    
-    return false;
-}
-
-// updating player order
-void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
-    sort(playerOrder.begin(), playerOrder.end(), playerPriority);
-    
-    if (reverse) // if reverse is true= reverses the player order
-        std::reverse(playerOrder.begin(), playerOrder.end());
-}
 
 // next player in the player order
 int Building::getNextPlayer()

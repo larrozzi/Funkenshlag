@@ -125,6 +125,7 @@
     <ClCompile Include="Cards.cpp" />
     <ClCompile Include="CityNode.cpp" />
     <ClCompile Include="Edges.cpp" />
+    <ClCompile Include="GameFunctions.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="GameTurnSubject.cpp" />
     <ClCompile Include="House.cpp" />
@@ -148,6 +149,7 @@
     <ClInclude Include="Cards.h" />
     <ClInclude Include="CityNode.h" />
     <ClInclude Include="Edges.h" />
+    <ClInclude Include="GameFunctions.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="GameTurnSubject.h" />
     <ClInclude Include="House.h" />
