@@ -88,7 +88,7 @@ GameFunctions::~GameFunctions()
                 cout << InnerplayerOrder.size()<< " players are still in this round of auction."<<endl;
 
                 //current player auction
-            cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro()<< endl;
+            cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro() << " " << currentPlayer->executePlayerBehaviour() << endl;
             cout << "BID or PASS" << endl;
             cout << "> ";
            // cin >> BidOrPass;
@@ -171,6 +171,29 @@ GameFunctions::~GameFunctions()
         for (int i = 0; i < OuterplayerOrder.size(); ++i)
             if (OuterplayerOrder[i] == highestbidder)
                 OuterplayerOrder.erase(OuterplayerOrder.begin() + i);
+        
+        if (OuterplayerOrder.size() == 1) {
+            currentPlayer = OuterplayerOrder.at(0);
+            //gameTurn->setPlayersTurn(currentPlayer);
+            cout << "BID or PASS" << endl;
+            cout << "> ";
+            //cin >> BidOrPass;
+            BidOrPass = "BID";
+            cout << BidOrPass << endl;
+            
+            if (BidOrPass == "BID") {
+                cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid." << endl;
+                cout << "> ";
+                //cin >> PPindex >> playerbid;
+                PPindex = currentPlayer->executeAuction(playerbid,3,true);
+                cout << PPindex << endl;
+                cout << "> ";
+                playerbid= currentPlayer->executeAuction(playerbid,3,false);
+                cout << playerbid << endl;
+                currentPlayer->buyPowerPlant(*PPmarketSingleton, PPindex, playerbid);
+                cout << "The winner of this auction round is: " << currentPlayer->getName() << endl;
+            }
+        }
     }
 }
 

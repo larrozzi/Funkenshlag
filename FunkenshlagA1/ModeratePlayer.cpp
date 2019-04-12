@@ -16,7 +16,7 @@ ModeratePlayer::~ModeratePlayer() {}
 // Moderate Behaviour
 string ModeratePlayer::executeBehaviour()
 {
-    return "I'm a Moderate Player \n";
+    return "Moderate Player \n";
 }
 
  string ModeratePlayer::executeAuction(bool& Initialbid, int& currentbid) {
@@ -50,12 +50,15 @@ string ModeratePlayer::executeBehaviour()
 Type ModeratePlayer::executeResourceMarket()
 {
     Type resType = NONE;
-    int random = rand() % 2 + 1; // random number b/w 1=COAL and 2=NONE
+    int random = rand() % 3 + 1; // random number b/w 1=COAL and 2=NONE
     switch (random) {
         case 1:
             resType = COAL;
             return resType;
         case 2:
+            resType = OIL;
+            return resType;
+        case 3:
             resType = NONE;
             return resType;
         default:

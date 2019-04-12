@@ -184,21 +184,24 @@ int main()
 				break;
 			}
 		}
-//        GameFunctions* newgame= new GameFunctions();
-//        cout << "Phase I" << endl;
-//        cout << "Random Player order on first Auction as follows:" << endl;
-//        cout << "" << endl;
-//        cout << "----------------------------------------------------------------------------" << endl;
-//        cout << "" << endl;
-//
-//        newgame->RandomplayerOrder(players);
-//
-//        newgame->setupDeckCards();
-//
-//        newgame->AuctionTime();
+    
+    GameFunctions* newgame= new GameFunctions();
+    cout << "Phase I" << endl;
+    cout << "Random Player order on first Auction as follows:" << endl;
+    cout << "" << endl;
+    cout << "----------------------------------------------------------------------------" << endl;
+    cout << "" << endl;
 
+    newgame->RandomplayerOrder(players);
+    newgame->setupDeckCards();
+    newgame->AuctionTime();
+
+    // Print players inventory
+    for (int i = 0; i < players.size(); ++i) {
+        cout << *players[i] << endl;
+    }
     
-    
+    /**** RESOURCE MARKET ******/
     shared_ptr<Player> currentPlayer; // current player
     int i = 0; // current player index
     int numberOfPlayers = 0;
@@ -271,12 +274,12 @@ int main()
         cout << "Would you like to buy more resources?--(Y/N): \n> ";
         cin >> yOn;
         
-        while (yOn == "N" || yOn == "n")
+        if (yOn == "N" || yOn == "n")
         {
             if (i >= numberOfPlayers-1) {
                 break;
             }
-            currentPlayer = players[i++]; // go to next player
+            currentPlayer = players[++i]; // go to next player
             cout << "Player " << currentPlayer->getName() << ", ";
             cout << "Would you like to buy resources?(Y/N): \n> ";
             cin >> yOn;
@@ -290,6 +293,7 @@ int main()
     
     // deallocation of memory
     delete market; market = nullptr;
+    delete newgame; newgame = nullptr;
     
     //system("pause");
     return 0 ;
