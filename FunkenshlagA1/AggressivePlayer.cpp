@@ -22,10 +22,10 @@ string AggressivePlayer::executeBehaviour()
 
 
 string AggressivePlayer::executeAuction(bool& Initialbid, int& currentbid) {
-
+	return "";
 }
 
 
 string AggressivePlayer:: executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
-
+	return "";
 }

@@ -19,9 +19,21 @@
 #include "EnviroPlayer.h"
 #include "AggressivePlayer.h"
 #include "ModeratePlayer.h"
-#include "GameFunctions.cpp"
+#include "GameFunctions.h"
 
 using namespace std;
+
+static  HouseColor convert(const std::string& clr)
+{
+	if (clr == "NO_COLOR")        return NO_COLOR;
+	else if (clr == "RED")        return RED;
+	else if (clr == "BLUE")        return BLUE;
+	else if (clr == "GREEN")    return GREEN;
+	else if (clr == "YELLOW")    return YELLOW;
+	else if (clr == "BLACK")    return BLACK;
+	else if (clr == "PINK")        return PINK;
+	else return NO_COLOR;
+}
 
 int main()
 {
@@ -152,10 +164,10 @@ int main()
 				break;
 			}
 		}
-		GameFunctions newgame;
-		newgame.RandomplayerOrder();
-		newgame.setupDeckCards();
-		newgame.AuctionTime();
+		GameFunctions* newgame= new GameFunctions();
+		newgame->RandomplayerOrder();
+		newgame->setupDeckCards();
+		newgame->AuctionTime();
 
     return 0 ;
 }
