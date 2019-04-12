@@ -21,6 +21,7 @@
 		2DD09174225E9B9900446F56 /* EnviroPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09171225E9B9900446F56 /* EnviroPlayer.cpp */; };
 		2DD0917B225EC60C00446F56 /* PPMarketSingleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */; };
 		2DD0917D225EC60C00446F56 /* A3_Part4_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */; };
+		2DD0918B2260415400446F56 /* GameFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD091892260415400446F56 /* GameFunctions.cpp */; };
 		2DF1AF9E224AE86E0075BE6F /* Edges.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1AF9B224AE86E0075BE6F /* Edges.cpp */; };
 		2DFFEF68222E2F9D00025912 /* Part3_Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF56222E2F9C00025912 /* Part3_Driver.cpp */; };
 		2DFFEF69222E2F9D00025912 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DFFEF58222E2F9C00025912 /* House.cpp */; };
@@ -76,6 +77,8 @@
 		2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPMarketSingleton.cpp; sourceTree = "<group>"; };
 		2DD09178225EC60B00446F56 /* PPMarketSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMarketSingleton.h; sourceTree = "<group>"; };
 		2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A3_Part4_Driver.cpp; sourceTree = "<group>"; };
+		2DD091892260415400446F56 /* GameFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameFunctions.cpp; sourceTree = "<group>"; };
+		2DD0918A2260415400446F56 /* GameFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFunctions.h; sourceTree = "<group>"; };
 		2DF1AF9A224AE86E0075BE6F /* Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edges.h; sourceTree = "<group>"; };
 		2DF1AF9B224AE86E0075BE6F /* Edges.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edges.cpp; sourceTree = "<group>"; };
 		2DFFEF53222E2F9C00025912 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				2DD0916C225E9A0200446F56 /* AggressivePlayer.cpp */,
 				2DFFEF53222E2F9C00025912 /* Player.h */,
 				2DFFEF64222E2F9D00025912 /* Player.cpp */,
+				2DD091892260415400446F56 /* GameFunctions.cpp */,
+				2DD0918A2260415400446F56 /* GameFunctions.h */,
 				2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */,
 				2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */,
 				2DD09178225EC60B00446F56 /* PPMarketSingleton.h */,
@@ -266,6 +271,7 @@
 				2DD0916A225C61A100446F56 /* A3_Part3_Driver.cpp in Sources */,
 				2D49C7E3221381620001893D /* Cards.cpp in Sources */,
 				2DFFEF6D222E2F9D00025912 /* Resource.cpp in Sources */,
+				2DD0918B2260415400446F56 /* GameFunctions.cpp in Sources */,
 				2DD09174225E9B9900446F56 /* EnviroPlayer.cpp in Sources */,
 				2DD0917D225EC60C00446F56 /* A3_Part4_Driver.cpp in Sources */,
 				2DFFEF6B222E2F9D00025912 /* ResourceManager.cpp in Sources */,
