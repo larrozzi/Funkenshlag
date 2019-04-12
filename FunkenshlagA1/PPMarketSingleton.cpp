@@ -10,7 +10,7 @@ using std::endl;
 //constructor
 PPMarketSingleton::PPMarketSingleton()
 {
-	cout << "SingletonClass instance created!\n";
+	//cout << "SingletonClass instance created!\n";
 }
 
 //destructor

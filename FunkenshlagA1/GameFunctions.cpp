@@ -13,45 +13,45 @@ GameFunctions::~GameFunctions()
 
 
  void GameFunctions::setupDeckCards() {
-		 vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
+         vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 //
-	//replaced with a singleton
-	//PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
+    //replaced with a singleton
+    //PPmarket *ppmarket = new PPmarket(); //creating a PP market that will show the visible first 8 plants to players
 
-	//	 PPMarketSingleton *PPmarketSingleton = PPmarketSingleton->GetInstance();
-	//	 cout << PPmarketSingleton << endl;
+    //     PPMarketSingleton *PPmarketSingleton = PPmarketSingleton->GetInstance();
+    //     cout << PPmarketSingleton << endl;
 
-		 vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
+         vector<shared_ptr<PowerPlantCards>> PPlantsSptr; //the market PPlants in this vector need to point to the plants created
 
-		 Pplants.size();
+         Pplants.size();
 
-		 for (int i = 0; i < 42; ++i)
-			 PPlantsSptr.push_back(std::make_shared<PowerPlantCards>(Pplants[i])); //the powerplant market is now linked to the created pplants
+         for (int i = 0; i < 42; ++i)
+             PPlantsSptr.push_back(std::make_shared<PowerPlantCards>(Pplants[i])); //the powerplant market is now linked to the created pplants
 
-			 //fill a vector of pointers to the powerplants created already
-		 PPmarketSingleton->SetMPlants(PPlantsSptr);
+             //fill a vector of pointers to the powerplants created already
+         PPmarketSingleton->SetMPlants(PPlantsSptr);
 
-		 //make the market ready for auction, filling the visibleplants vector
-		 PPmarketSingleton->Setup();
+         //make the market ready for auction, filling the visibleplants vector
+         PPmarketSingleton->Setup();
 
-		 // printing the PPmarket
-		 cout << "" << endl;
-		 PPmarketSingleton->printPPmarket();  
-	 }
+         // printing the PPmarket
+         cout << "" << endl;
+         PPmarketSingleton->printPPmarket();  
+     }
 
  void GameFunctions::RandomplayerOrder(vector<shared_ptr<Player>> players) {
-	 /// random Player Order before first Auction
-	 vector<int> rvec(3);
-	 //vector<int> rvec(NumofPlayers);
-	 for (int i = 0; i < 3; ++i)
-		 rvec[i] = i;
-	 auto rng = std::default_random_engine{};
-	 shuffle(begin(rvec), end(rvec), rng);
-	 for (int i = 0; i < NumofPlayers; ++i) {
-		 InnerplayerOrder.push_back(players[rvec[i]]);
-		 OuterplayerOrder.push_back(players[rvec[i]]);
-		 cout << InnerplayerOrder[i]->getName() << ' ';
-	 }	 
+     /// random Player Order before first Auction
+     vector<int> rvec(3);
+     //vector<int> rvec(NumofPlayers);
+     for (int i = 0; i < 3; ++i)
+         rvec[i] = i;
+     auto rng = std::default_random_engine{};
+     shuffle(begin(rvec), end(rvec), rng);
+     for (int i = 0; i < NumofPlayers; ++i) {
+         InnerplayerOrder.push_back(players[rvec[i]]);
+         OuterplayerOrder.push_back(players[rvec[i]]);
+         cout << InnerplayerOrder[i]->getName() << ' ';
+     }     
  }
 
  void GameFunctions::AuctionTime() {
@@ -59,7 +59,7 @@ GameFunctions::~GameFunctions()
    /* cout << "Phase I" << endl;
     cout << "Random Player order on first Auction as follows:" << endl;
 
-	RandomplayerOrder();
+    RandomplayerOrder();
 
     cout << "" << endl;
     cout << "----------------------------------------------------------------------------" << endl;
@@ -90,10 +90,10 @@ GameFunctions::~GameFunctions()
                 //current player auction
             cout << currentPlayer->getName() << "'s turn, Elekro: " << currentPlayer->getElektro()<< endl;
             cout << "BID or PASS" << endl;
-
             cout << "> ";
            // cin >> BidOrPass;
-			currentPlayer->executeAuction(initialbid, highestBid);
+            BidOrPass= currentPlayer->executeAuction(initialbid, highestBid);
+            cout << BidOrPass << endl;
 
             if (BidOrPass == "PASS" && initialbid) {
                 cout << "You cannot pass your turn since you're the first to bid on this power plant." << endl;
@@ -111,8 +111,12 @@ GameFunctions::~GameFunctions()
                 cout << "Please pick the index of the powerplant you'd like to bid on, followed by your bid." << endl;
                 cout << "> ";
                // cin >> PPindex >> playerbid;
-				//currentPlayer->executeAuction();
-
+				PPindex = currentPlayer->executeAuction(playerbid,3,true);
+				cout << PPindex << endl;
+				cout << "> ";
+				playerbid= currentPlayer->executeAuction(playerbid,3,false);
+				cout << playerbid << endl;
+				
                 if (playerbid >= highestBid) {
                     if (currentPlayer->Auction(*PPmarketSingleton, PPindex, playerbid)) {
                         highestbidder = currentPlayer;
@@ -132,7 +136,9 @@ GameFunctions::~GameFunctions()
                 cout << "Please enter your bid" << endl;
                 cout << "> ";
                 //cin >> playerbid;
-				//currentPlayer->executeAuction();
+                playerbid=currentPlayer->executeAuction(playerbid);
+                cout << playerbid << endl;
+
                 if (playerbid > highestBid) {
                     if (currentPlayer->Auction(*PPmarketSingleton, PPindex, playerbid)) {
                         highestbidder = currentPlayer;

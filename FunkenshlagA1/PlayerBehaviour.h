@@ -20,8 +20,11 @@ class PlayerBehaviour
 {
 public:
     virtual string executeBehaviour() = 0; // pure virtual function for polymorphism
-	virtual string executeAuction(bool& Initialbid, int& currentbid) = 0;
-	virtual string executeAuction(bool& Initialbid, int& currentbid, int PPindex) = 0;
+    virtual string executeAuction(bool& Initialbid, int& currentbid) = 0;
+    virtual string executeAuction(bool& Initialbid, int& currentbid, int PPindex) = 0;
+	virtual int executeAuction(int& currentbid)=0;
+
+	virtual int executeAuction(int& currentbid, int PPindex, bool returnIndex) = 0;
     virtual Type executeResourceMarket() = 0;
 };
 
