@@ -7,6 +7,8 @@
 //
 
 #include "ModeratePlayer.h"
+#include "ResourceMarket.h"
+#include "PowerPlantCards.h"
 #include <iostream>
 using namespace std;
 
@@ -14,7 +16,25 @@ ModeratePlayer::ModeratePlayer() {}
 ModeratePlayer::~ModeratePlayer() {}
 
 // Moderate Behaviour
-void ModeratePlayer::executeBehaviour()
+
+string ModeratePlayer::executeBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid)
 {
-    cout << "I'm a Moderate Player \n";
+    if (resType->getType() == COAL) {
+        bidPass = "BID";
+        return bidPass;
+    }
+    return "I'm a Moderate Player \n";
+}
+
+void ModeratePlayer::executeAuction(std::shared_ptr<PowerPlantCards>pp, string bidPass)
+{
+    cout << "Auct. mod player\n";
+}
+
+Type ModeratePlayer::executeResourceMarket()
+{
+    Type resType = COAL;
+    //cout << "ResourceMarket Moderate Player\n";
+    
+    return resType;
 }

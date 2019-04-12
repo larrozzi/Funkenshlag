@@ -151,7 +151,7 @@ void Player::buyResource(Type type, ResourceMarket* market) {
 			break;
 		}
 		cout << "How much coal would you like to buy?: ";
-		cin >> amount;
+            cin >> amount;  cout << endl;
 		
 		while (resourceInMarket < amount) {
 			cout << "The market does not have that much coal." << endl;
@@ -420,7 +420,7 @@ bool Player::HasElektro(int elektro)
 //}
 
 // overloading output stream operator with cities
-std::ostream& operator<<(std::ostream& outs, const Player& player){
+std::ostream& operator<<(std::ostream& outs, const Player& player) {
     string separator = "\n\n=========================================================================================\n\n";
 	outs << separator << player.name + " has the following items: \n"
 		<< "\t" << player.elektro << " Elektros \n"
@@ -429,16 +429,18 @@ std::ostream& operator<<(std::ostream& outs, const Player& player){
 		<< "\t" << "Oil: " << player.oilHeld << std::endl
 		<< "\t" << "Garbage: " << player.garbageHeld << std::endl
 		<< "\t" << "Uranium: " << player.uraniumHeld << std::endl
-        << "He owns the following power plants: ";
+        << "He owns the following power plants: \n";
 
-        for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p)
-            outs << **p << ' ';
-            outs << endl; 
-            outs << "And owns the following cities: ";
-        string cities;
-        for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c)
-            outs << *c << ' ';
-            outs << endl;
+    for (vector<shared_ptr<PowerPlantCards>>::const_iterator p = player.myPowerPlants.begin(); p != player.myPowerPlants.end(); ++p) {
+        outs << **p << ' ';
+        outs << endl;
+    }
+    outs << "And owns the following cities: ";
+    string cities;
+    for (vector<string>::const_iterator c = player.mycities.begin(); c != player.mycities.end(); ++c) {
+        outs << *c << ' ';
+        outs << endl;
+    }
     return outs;
 }
 
@@ -465,6 +467,15 @@ void Player::setPlayerBehaviour(PlayerBehaviour* newBehaviour) {
     playB = newBehaviour;
 }
 // This method executes a different depending on what behaviour was * inserted
-void Player::executePlayerBehaviour() {
-    playB->executeBehaviour();
+string Player::executePlayerBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid) {
+    return playB->executeBehaviour(pp, market, resType, bidPass, bid);
+}
+
+void Player::executeAuction(std::shared_ptr<PowerPlantCards>pp, string bidPass)
+{
+    playB->executeAuction(pp, bidPass);
+}
+Type Player::executeResourceMarket(/*ResourceMarket* market, string bidPass, int bid*/)
+{
+    return playB->executeResourceMarket(/*market, bidPass, bid*/);
 }
