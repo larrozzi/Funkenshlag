@@ -9,6 +9,8 @@
 #pragma once
 
 #include <string>
+#include "PowerPlantCards.h"
+#include "ResourceMarket.h"
 using namespace std;
 
 /** Strategy Design Pattern for the player beahaiour**/
@@ -20,7 +22,7 @@ public:
     virtual string executeBehaviour() = 0; // pure virtual function for polymorphism
 	virtual string executeAuction(bool& Initialbid, int& currentbid) = 0;
 	virtual string executeAuction(bool& Initialbid, int& currentbid, int PPindex) = 0;
-
+    virtual Type executeResourceMarket() = 0;
 };
 
 

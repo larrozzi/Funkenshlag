@@ -29,3 +29,24 @@ string AggressivePlayer::executeAuction(bool& Initialbid, int& currentbid) {
 string AggressivePlayer:: executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
 	return "";
 }
+
+Type AggressivePlayer::executeResourceMarket()
+{
+    Type resType = NONE;
+    srand(time(NULL));
+    
+    int random = rand() % 3 + 1; // random number b/w 1 and 3
+    switch (random) {
+        case 1:
+            resType = COAL;
+            return resType;
+        case 2:
+            resType = OIL;
+            return resType;
+        case 3:
+            resType = URANIUM;
+            return resType;
+        default:
+            return NONE;
+    }
+}

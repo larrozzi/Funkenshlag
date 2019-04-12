@@ -21,4 +21,6 @@ public:
 	string executeAuction(bool& Initialbid, int& currentbid);
 
 	string executeAuction(bool& Initialbid, int& currentbid, int PPindex);
+    
+    Type executeResourceMarket();
 };

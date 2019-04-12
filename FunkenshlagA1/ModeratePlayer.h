@@ -19,8 +19,11 @@ public:
     ~ModeratePlayer();
 	string executeBehaviour();
 
-	 string executeAuction(bool& Initialbid, int& currentbid);
+    string executeAuction(bool& Initialbid, int& currentbid);
 
-	 string executeAuction(bool& Initialbid, int& currentbid, int PPindex);
+    string executeAuction(bool& Initialbid, int& currentbid, int PPindex);
+    
+    Type executeResourceMarket();
+
 };
 

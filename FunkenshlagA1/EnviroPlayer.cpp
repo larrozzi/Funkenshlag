@@ -26,3 +26,9 @@ string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid) {
 string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
 	return "";
 }
+
+Type EnviroPlayer::executeResourceMarket()
+{
+    Type resType = NONE; // no need to buy resource for ECOFUSION powerplants
+    return resType;
+}

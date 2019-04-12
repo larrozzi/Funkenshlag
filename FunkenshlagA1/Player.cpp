@@ -478,3 +478,7 @@ string Player::executeAuction(bool& Initialbid, int& currentbid) {
 	return playB->executeAuction(Initialbid, currentbid, PPindex);
 }
 
+Type Player::executeResourceMarket(/*ResourceMarket* market, string bidPass, int bid*/)
+{
+    return playB->executeResourceMarket(/*market, bidPass, bid*/);
+}
