@@ -136,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD09169225C61A100446F56 /* A3_Part3_Driver.cpp */,
+				2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */,
 				2DD0916B225E545700446F56 /* PlayerBehaviour.h */,
 				2DD0916F225E9B9800446F56 /* EnviroPlayer.h */,
 				2DD09171225E9B9900446F56 /* EnviroPlayer.cpp */,
@@ -147,7 +148,6 @@
 				2DFFEF64222E2F9D00025912 /* Player.cpp */,
 				2DD091892260415400446F56 /* GameFunctions.cpp */,
 				2DD0918A2260415400446F56 /* GameFunctions.h */,
-				2DD0917A225EC60C00446F56 /* A3_Part4_Driver.cpp */,
 				2DD09177225EC60B00446F56 /* PPMarketSingleton.cpp */,
 				2DD09178225EC60B00446F56 /* PPMarketSingleton.h */,
 				2DFFEF78222F298B00025912 /* A2_Part1_Driver.cpp */,
