@@ -48,7 +48,6 @@
 //		cout << *p1 << endl;
 //
 //		cout << "Would you like to buy more resources?(Y/N): ";
-//		cin.ignore();
 //		getline(cin, yOn);
 //	}
 //
