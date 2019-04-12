@@ -9,6 +9,8 @@
 #pragma once
 
 #include <string>
+using namespace std;
+
 /** Strategy Design Pattern for the player beahaiour**/
 
 // Strategy Abstract Class

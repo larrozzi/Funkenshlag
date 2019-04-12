@@ -20,9 +20,9 @@ string EnviroPlayer::executeBehaviour()
     
 }
 string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid) {
-
+	return "";
 }
 
 string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
-
+	return "";
 }
