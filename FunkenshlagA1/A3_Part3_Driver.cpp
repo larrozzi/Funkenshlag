@@ -63,7 +63,7 @@ int main()
     players.push_back(p2);
     players.push_back(p3);
     
-    numberOfPlayers = players.size(); // get the number of players
+    numberOfPlayers = static_cast<int>(players.size()); // get the number of players
     
     cout << "WELCOME TO POWERPLANT AUCTION" << endl;
     shared_ptr<PowerPlantCards> card1 = make_shared<PowerPlantCards>(3, COAL, 100, 100, 1);
@@ -74,7 +74,7 @@ int main()
     p2->OwnPowerPlant(card2);
     p2->OwnPowerPlant(card3);
 
-    cout << "WELCOME TO RESOURCE BUYING" << endl;
+    cout << "WELCOME TO RESOURCE BUYING\n" << endl;
     ResourceMarket* market = new ResourceMarket();
     std::cout << *market << std::endl; // print market
    
@@ -136,6 +136,9 @@ int main()
     for (int i = 0; i < players.size(); ++i) {
         cout << *players[i] << endl;
     }
+    
+    // Deallocation of memory
+    delete market; market = nullptr;
     //system("pause");
     return 0;
 }

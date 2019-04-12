@@ -41,7 +41,7 @@ Type AggressivePlayer::executeResourceMarket()
             return resType;
         case 3:
             resType = URANIUM;
-            return resType ;
+            return resType;
         default:
             return NONE;
     }

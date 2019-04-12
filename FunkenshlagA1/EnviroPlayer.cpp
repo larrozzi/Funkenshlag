@@ -31,6 +31,6 @@ void EnviroPlayer::executeAuction(std::shared_ptr<PowerPlantCards>pp, string bid
 
 Type EnviroPlayer::executeResourceMarket()
 {
-    Type resType = NONE;
+    Type resType = NONE; // no need to buy resource for ECOFUSION powerplants
     return resType;
 }

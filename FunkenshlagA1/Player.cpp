@@ -469,7 +469,8 @@ void Player::setPlayerBehaviour(PlayerBehaviour* newBehaviour) {
     playB = newBehaviour;
 }
 // This method executes a different depending on what behaviour was * inserted
-string Player::executePlayerBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid) {
+string Player::executePlayerBehaviour(PowerPlantCards* pp, ResourceMarket* market, Resource* resType, string bidPass, int bid)
+{
     return playB->executeBehaviour(pp, market, resType, bidPass, bid);
 }
 
@@ -477,6 +478,7 @@ void Player::executeAuction(std::shared_ptr<PowerPlantCards>pp, string bidPass)
 {
     playB->executeAuction(pp, bidPass);
 }
+
 Type Player::executeResourceMarket(/*ResourceMarket* market, string bidPass, int bid*/)
 {
     return playB->executeResourceMarket(/*market, bidPass, bid*/);
