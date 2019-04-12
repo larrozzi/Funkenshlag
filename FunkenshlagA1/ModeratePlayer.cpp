@@ -14,7 +14,15 @@ ModeratePlayer::ModeratePlayer() {}
 ModeratePlayer::~ModeratePlayer() {}
 
 // Moderate Behaviour
-void ModeratePlayer::executeBehaviour()
+string ModeratePlayer::executeBehaviour()
 {
-    cout << "I'm a Moderate Player \n";
+	return "I'm a Moderate Player \n";
 }
+
+ string ModeratePlayer::executeAuction(bool& Initialbid, int& currentbid) {
+
+}
+
+ string ModeratePlayer::executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
+
+ }

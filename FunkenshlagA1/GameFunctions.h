@@ -40,8 +40,10 @@ public:
 	GameFunctions();
 	~GameFunctions();
 
-	void AuctionTime();
 	void setupDeckCards();
+	void RandomplayerOrder();
+	void AuctionTime();
+	
 };
 
 

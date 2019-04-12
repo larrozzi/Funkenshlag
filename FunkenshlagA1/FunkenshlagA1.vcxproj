@@ -119,14 +119,19 @@
   <ItemGroup>
     <ClCompile Include="A2_Part1_Driver.cpp" />
     <ClCompile Include="A2_Part3_Phase4_Driver.cpp" />
+    <ClCompile Include="A3_Part3_Driver.cpp" />
     <ClCompile Include="A3_Part4_Driver.cpp" />
+    <ClCompile Include="AggressivePlayer.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Cards.cpp" />
     <ClCompile Include="CityNode.cpp" />
     <ClCompile Include="Edges.cpp" />
+    <ClCompile Include="EnviroPlayer.cpp" />
+    <ClCompile Include="GameFunctions.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="ModeratePlayer.cpp" />
     <ClCompile Include="Part3_Driver.cpp" />
     <ClCompile Include="Part5_Driver.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -141,14 +146,19 @@
     <ClCompile Include="TempDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AggressivePlayer.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Cards.h" />
     <ClInclude Include="CityNode.h" />
     <ClInclude Include="Edges.h" />
+    <ClInclude Include="EnviroPlayer.h" />
+    <ClInclude Include="GameFunctions.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="House.h" />
     <ClInclude Include="MapLoader.h" />
+    <ClInclude Include="ModeratePlayer.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerBehaviour.h" />
     <ClInclude Include="PowerPlantCards.h" />
     <ClInclude Include="PPmarket.h" />
     <ClInclude Include="PPMarketSingleton.h" />

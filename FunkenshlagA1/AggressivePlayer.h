@@ -16,5 +16,9 @@ class AggressivePlayer : public PlayerBehaviour
 public:
     AggressivePlayer();
     ~AggressivePlayer();
-    void executeBehaviour();
+	string executeBehaviour();
+
+	string executeAuction(bool& Initialbid, int& currentbid);
+
+	string executeAuction(bool& Initialbid, int& currentbid, int PPindex);
 };

@@ -464,7 +464,17 @@ Player::Player(PlayerBehaviour* iniBehaviour, string name, int elektro, HouseCol
 void Player::setPlayerBehaviour(PlayerBehaviour* newBehaviour) {
     playB = newBehaviour;
 }
+
 // This method executes a different depending on what behaviour was * inserted
-void Player::executePlayerBehaviour() {
-    playB->executeBehaviour();
+string Player::executePlayerBehaviour() {
+   return playB->executeBehaviour();
 }
+
+string Player::executeAuction(bool& Initialbid, int& currentbid) {
+	return playB->executeAuction(Initialbid, currentbid);
+}
+
+ string Player::executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
+	return playB->executeAuction(Initialbid, currentbid, PPindex);
+}
+

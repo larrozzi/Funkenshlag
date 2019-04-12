@@ -8,11 +8,19 @@
 
 #pragma once
 
+#include <string>
 /** Strategy Design Pattern for the player beahaiour**/
 
 // Strategy Abstract Class
 class PlayerBehaviour
 {
 public:
-    virtual void executeBehaviour() = 0; // pure virutual function for polymorphism
+    virtual string executeBehaviour() = 0; // pure virtual function for polymorphism
+	virtual string executeAuction(bool& Initialbid, int& currentbid) = 0;
+	virtual string executeAuction(bool& Initialbid, int& currentbid, int PPindex) = 0;
+
 };
+
+
+
+

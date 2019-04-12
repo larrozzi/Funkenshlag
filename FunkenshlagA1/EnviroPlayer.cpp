@@ -14,8 +14,15 @@ EnviroPlayer::EnviroPlayer() {};
 EnviroPlayer::~EnviroPlayer() {};
 
 // Evironmentalist Behaviour
-void EnviroPlayer::executeBehaviour()
+string EnviroPlayer::executeBehaviour()
 {
-    cout << "I'm an Environmentalist Player\n";
+	return "I'm an Environmentalist Player\n";
     
+}
+string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid) {
+
+}
+
+string EnviroPlayer::executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
+
 }

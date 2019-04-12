@@ -112,6 +112,9 @@ public:
     Player(PlayerBehaviour* iniBehaviour);
     Player(PlayerBehaviour* iniBehaviour, string name, int electro, HouseColor color);
     void setPlayerBehaviour(PlayerBehaviour* newBehaviour);
-    void executePlayerBehaviour();
+
+	string executePlayerBehaviour();
+    string executeAuction(bool& Initialbid, int& currentbid);
+	string executeAuction(bool& Initialbid, int& currentbid, int PPindex);
 };
 

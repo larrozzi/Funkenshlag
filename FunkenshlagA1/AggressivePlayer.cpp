@@ -14,8 +14,18 @@ AggressivePlayer::AggressivePlayer() {}
 AggressivePlayer::~AggressivePlayer() {}
 
 // Aggressive Behaviour
-void AggressivePlayer::executeBehaviour()
+string AggressivePlayer::executeBehaviour()
 {
-    cout << "I'm an Aggressive Player\n";
+  return "I'm an Aggressive Player\n" ;
+
+}
+
+
+string AggressivePlayer::executeAuction(bool& Initialbid, int& currentbid) {
+
+}
+
+
+string AggressivePlayer:: executeAuction(bool& Initialbid, int& currentbid, int PPindex) {
 
 }

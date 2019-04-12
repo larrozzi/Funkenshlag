@@ -18,7 +18,6 @@ private:
 	PPMarketSingleton(PPMarketSingleton const&) = delete;
 	void operator=(PPMarketSingleton const&) = delete;
 
-
 	vector<shared_ptr<PowerPlantCards>> PPlants;  // filled from vector of PP objects inside vector<PowerPlantCards> Pplants 
 	//vector<PowerPlantCards> *PPlants; //raw pointer alternative
 	vector<shared_ptr<PowerPlantCards>> visiblePPlants;
