@@ -29,7 +29,6 @@ int main() {
 	GameFunctions* game;
 
 
-	GameTurnSubject* gameTurn = new GameTurnSubject();
 	ResourceMarket* market = new ResourceMarket();
 
 	//INITIAL PLAYER SETUP
@@ -86,8 +85,15 @@ int main() {
 	game->setupDeckCards();
 
 	game->RandomPlayerOrder();
+	GameTurnSubject* gameTurn = new GameTurnSubject(game->currentPlayer,phase,step);
+	ObserverView* view = new ObserverView(gameTurn);
 
+	phase = 2;
+
+	gameTurn->setPhase(phase);
 	game->AuctionTime(gameTurn);
+
+	updatePlayOrder(false, players);
 
 	system("pause");
 }

@@ -15,6 +15,7 @@ GameTurnSubject::GameTurnSubject() {
 void GameTurnSubject::regist(ObserverView* view)
 {
 	views.push_back(view);
+	notifyObserver();
 }
 
 void GameTurnSubject::notifyObserver()

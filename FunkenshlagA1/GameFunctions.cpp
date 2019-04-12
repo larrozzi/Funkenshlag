@@ -67,6 +67,11 @@ GameFunctions::~GameFunctions()
 		 InnerplayerOrder.push_back(players[rvec[i]]);
 		 OuterplayerOrder.push_back(players[rvec[i]]);
 	 }
+	 players.clear();
+	 for (int i = 0; i < NumofPlayers; ++i) {
+		 players.push_back(InnerplayerOrder[i]);
+	 }
+	 currentPlayer = players[0];
  }
 
 // used to determine the player turn order
@@ -92,6 +97,8 @@ void updatePlayOrder(bool reverse, vector<shared_ptr<Player>> playerOrder) {
 
 	if (reverse) // if reverse is true= reverses the player order
 		std::reverse(playerOrder.begin(), playerOrder.end());
+
+	
 }
 
  void GameFunctions::AuctionTime(GameTurnSubject* gameTurn) {

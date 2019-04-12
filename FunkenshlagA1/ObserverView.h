@@ -20,6 +20,7 @@ private:
 
 
 public:
+	ObserverView(GameTurnSubject*);
 	void update(std::shared_ptr<Player>,int, int);
 	void displayView();
 };
