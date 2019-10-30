@@ -9,6 +9,8 @@
 #pragma once
 #include <stdio.h>
 #include <string>
+#include <ctime>
+#include <stdlib.h>
 #include "PlayerBehaviour.h"
 
 // A concrete Strategy that implements a moderatePlayer

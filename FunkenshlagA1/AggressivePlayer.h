@@ -8,6 +8,8 @@
 
 #pragma once
 #include <stdio.h>
+#include <ctime>
+#include <stdlib.h>
 #include "PlayerBehaviour.h"
 
 // A concrete Strategy that implements an aggressivePlayer

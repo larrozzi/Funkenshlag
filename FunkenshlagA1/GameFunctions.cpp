@@ -11,7 +11,6 @@ GameFunctions::~GameFunctions()
 }
 
 
-
  void GameFunctions::setupDeckCards() {
          vector<PowerPlantCards> Pplants = PowerPlantCards::createPowerPlantCards();  // holds the created PowerPlantCards
 //
